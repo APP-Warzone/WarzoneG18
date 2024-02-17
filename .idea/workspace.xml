@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6f00ced-2ab4-4c49-a87c-164ba7f6bdb2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/brazil.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/canada.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/europe.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/simple.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testCommands/commands.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/controller/CommonController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/model/GameContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/service/GameEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/view/GenericView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/warzone/controller/CommonControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/warzone/model/GameContextTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/warzone/service/GameEngineTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/warzone/view/GenericViewTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/brazil.map" beforeDir="false" afterPath="$PROJECT_DIR$/docs/map/brazil.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/canada.map" beforeDir="false" afterPath="$PROJECT_DIR$/docs/map/canada.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/europe.map" beforeDir="false" afterPath="$PROJECT_DIR$/docs/map/europe.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/simple.map" beforeDir="false" afterPath="$PROJECT_DIR$/docs/map/simple.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCommands/commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/testCommands/commands.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,19 +33,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "khushi-build1",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/College/Concordia ImP/APP/WarzoneG19"
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Concordia University/APP/WarzoneG19"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;khushi-build1&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/College/Concordia ImP/APP/WarzoneG19&quot;
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Concordia University/APP/WarzoneG19&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\khush\OneDrive\Documents\GitHub\WarzoneG19\docs\map" />
+      <recent name="C:\Users\khush\OneDrive\Documents\GitHub\WarzoneG19\docs" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
