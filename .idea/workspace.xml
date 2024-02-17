@@ -5,6 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6f00ced-2ab4-4c49-a87c-164ba7f6bdb2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/brazil.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/canada.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/europe.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/simple.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testCommands/commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/warzone/controller/CommonController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/warzone/model/GameContext.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/warzone/service/GameEngine.java" afterDir="false" />
@@ -43,6 +49,9 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "khushi-build1",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/College/Concordia ImP/APP/WarzoneG19"
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/Concordia University/APP/WarzoneG19"
