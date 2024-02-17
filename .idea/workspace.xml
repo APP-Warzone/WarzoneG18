@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6f00ced-2ab4-4c49-a87c-164ba7f6bdb2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/warzone/model/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/model/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/model/Continent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/model/ControllerName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/model/Country.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/model/DeployOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/model/ErrorType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/model/Render.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/view/HelpView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/view/MapView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/ControllerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/CountryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/model/GameContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/model/GameContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/view/GenericView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/view/GenericView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/CommandTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/CommandTool.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="khushi-build1" />
+        <entry key="$PROJECT_DIR$" value="build1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,13 +42,14 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "build1",
+    "git-widget-placeholder": "vrushabh-build1",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/College/Concordia ImP/APP/WarzoneG19"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Concordia University\APP\WarzoneG19\src\warzone" />
       <recent name="C:\Users\khush\OneDrive\Documents\GitHub\WarzoneG19\docs\map" />
       <recent name="C:\Users\khush\OneDrive\Documents\GitHub\WarzoneG19\docs" />
     </key>
