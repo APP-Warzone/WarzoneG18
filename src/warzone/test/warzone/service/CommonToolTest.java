@@ -3,8 +3,8 @@ package warzone.service;
 import static org.junit.Assert.*;
 
 /**
- * tests for GameEngine class
+ * tests for CommonTool class
  */
-public class GameEngineTest {
+public class CommonToolTest {
 
 }
