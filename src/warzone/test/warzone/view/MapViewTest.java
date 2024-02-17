@@ -3,8 +3,8 @@ package warzone.view;
 import static org.junit.Assert.*;
 
 /**
- * tests for GenericView class
+ * tests for MapView class
  */
-public class GenericViewTest {
+public class MapViewTest {
 
 }
