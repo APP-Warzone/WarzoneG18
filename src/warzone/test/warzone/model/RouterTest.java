@@ -3,8 +3,8 @@ package warzone.model;
 import static org.junit.Assert.*;
 
 /**
- * tests for GameContext class
+ * Tests for Router Class
  */
-public class GameContextTest {
+public class RouterTest {
 
 }

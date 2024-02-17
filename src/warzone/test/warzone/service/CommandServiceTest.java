@@ -3,8 +3,8 @@ package warzone.service;
 import static org.junit.Assert.*;
 
 /**
- * tests for GameEngine class
+ * tests for CommandService class
  */
-public class GameEngineTest {
+public class CommandServiceTest {
 
 }

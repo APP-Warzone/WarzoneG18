@@ -3,8 +3,8 @@ package warzone.model;
 import static org.junit.Assert.*;
 
 /**
- * tests for GameContext class
+ * tests for Country class
  */
-public class GameContextTest {
+public class CountryTest {
 
 }
