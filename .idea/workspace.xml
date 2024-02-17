@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6f00ced-2ab4-4c49-a87c-164ba7f6bdb2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/ControllerFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/CountryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/controller/ContinentControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/controller/CountryControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/CommandTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/CommandTool.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,15 +37,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "vrushabh-build1",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/College/Concordia ImP/APP/WarzoneG19"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;vrushabh-build1&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/College/Concordia ImP/APP/WarzoneG19&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Concordia University\APP\WarzoneG19\src\warzone" />
