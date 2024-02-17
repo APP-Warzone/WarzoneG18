@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6f00ced-2ab4-4c49-a87c-164ba7f6bdb2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/model/Action.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/model/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/model/Continent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/model/ControllerName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/model/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/model/DeployOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/model/ErrorType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/model/Render.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/view/HelpView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/view/MapView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/model/GameContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/model/GameContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/view/GenericView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/view/GenericView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,13 +25,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="khushi-build1" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2cTGsytKNYLG8pKhmLcjUxZfCPf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -28,10 +51,17 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "git-widget-placeholder": "build1",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/College/Concordia ImP/APP/WarzoneG19"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\khush\OneDrive\Documents\GitHub\WarzoneG19\docs\map" />
+      <recent name="C:\Users\khush\OneDrive\Documents\GitHub\WarzoneG19\docs" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -49,5 +79,8 @@
       <updated>1708128366835</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
