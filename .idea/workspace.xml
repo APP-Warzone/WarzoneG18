@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6f00ced-2ab4-4c49-a87c-164ba7f6bdb2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/controller/CommonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/model/GameContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/service/GameEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/view/GenericView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/warzone/controller/CommonControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/warzone/model/GameContextTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/warzone/service/GameEngineTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/warzone/view/GenericViewTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,21 +24,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2cTGsytKNYLG8pKhmLcjUxZfCPf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/Concordia University/APP/WarzoneG19"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -49,5 +65,8 @@
       <updated>1708128366835</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
