@@ -1,22 +1,23 @@
 package warzone.service;
 
-import warzone.controller.*;
-import warzone.model.*;
-import warzone.view.GenericView;
-
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+
+import warzone.controller.*;
+import warzone.model.*;
+import warzone.view.GenericView;
 
 /**
  * This class can offer service related router to controllers.
  *
  */
 public class RouterService {
-		
+
 	private static RouterService ROUTER_SERVICE;
-	
+
 	private GameContext d_gameContext;
 
 	/**
@@ -25,8 +26,8 @@ public class RouterService {
 	 */
 	private RouterService(GameContext p_gameContext) {
 		d_gameContext = p_gameContext;
-	}	
-	
+	}
+
 	/**
 	 * This method will return a routerService instance and create it if the instance
 	 * is null.
@@ -51,7 +52,7 @@ public class RouterService {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * This method will parse a single console commands entered by the user and call the corresponding controller by controller name
 	 * @param p_router the Router parsed from the command
@@ -73,7 +74,7 @@ public class RouterService {
 						break;
 					case "changephase":
 						l_commonController.changePhase(p_router.getActionParameters());
-						break;						
+						break;
 				}
 				break;
 			case CONTINENT:
@@ -169,16 +170,16 @@ public class RouterService {
 						break;
 					case "assigncountries":
 						l_startupController.assignCountries();
-						break;						
+						break;
 				}
 				break;
 			case ERROR:
 				ErrorController l_errorController = l_controllerFactory.getErrorController();
 				l_errorController.error(p_router.getActionName());
-		}	
-		
+		}
+
 	}
-	
+
 	/**
 	 * This method can parse a list of commands
 	 * @param p_routers the list of router
@@ -190,13 +191,13 @@ public class RouterService {
 					GenericView.printDebug("Excuting router: " + router.toString() );
 					route(router);
 				}
-				catch(Exception ex){	
+				catch(Exception ex){
 					GenericView.printError("Exception occur: " + ex.toString());
 				}
-			});			
+			});
 		}
 	}
-	
+
 	/**
 	 * This method parses the command entered by the player, and construct corresponding Router
 	 * by different commands
@@ -209,30 +210,30 @@ public class RouterService {
 	 */
 	public List<Router> parseCommand(String p_command) {
 		List<Router> l_routerList = new LinkedList<Router>();
-		
+
 		//validation
 		if( p_command == null || p_command.trim().equals("") ){
 			l_routerList.add(createErrorRouter(ErrorType.MISSING_COMMAND.toString()));
 			return l_routerList;
 		}
-			
+
 		GenericView.printDebug("parseCommand: start to work on command: " + p_command);
-		
+
 		// remove prefix whitespace and convert the String to lower case 
 		p_command = p_command.toLowerCase().trim();
-				
+
 		// split command with any number of whitespace
 		String[] l_commandArray = p_command.split("\\s+");
-		
+
 		String l_firstWord = l_commandArray[0];
 		// TODO move these commands into the properties file
 		String l_complexCommand = "editcontinent,editcountry,editneighbor,gameplayer";
 		String l_simpleCommand = "loadmap,editmap,savemap,assigncountries,validatemap,showmap,help,play,reboot,startup,mapeditor";
-		 if(l_simpleCommand.indexOf(l_firstWord) > -1) {
-				//simple command with only one router
-				GenericView.printDebug("parseCommand: start to work on simple command: " + p_command);
-				l_routerList.add(parseSimpleCommand(l_commandArray));				
-		}		 
+		if(l_simpleCommand.indexOf(l_firstWord) > -1) {
+			//simple command with only one router
+			GenericView.printDebug("parseCommand: start to work on simple command: " + p_command);
+			l_routerList.add(parseSimpleCommand(l_commandArray));
+		}
 		else if(l_complexCommand.indexOf(l_firstWord) > -1) {
 			//complex command with multiple routers
 			GenericView.printDebug("parseCommand: start to work on complex command: " + p_command);
@@ -243,8 +244,8 @@ public class RouterService {
 			return l_routerList;
 		}
 		return l_routerList;
-	}	
-	
+	}
+
 	/**
 	 * A command can be divided into two types, complex command and simple command. 
 	 * This method is responsible to parse complex commands, such as editCountry and editContinent, 
@@ -254,27 +255,27 @@ public class RouterService {
 	 */
 	private List<Router> parseComplexCommand(String[] p_commandArray) {
 		List<Router> l_routers = new LinkedList<Router>();
-		List<Action> l_actions = parseCommandToAction(p_commandArray);		
-		 
+		List<Action> l_actions = parseCommandToAction(p_commandArray);
+
 		if(l_actions.isEmpty() ) {
 			l_routers.add(createErrorRouter(ErrorType.MISSING_PARAMETER.toString()));
 			GenericView.printDebug("parseComplexCommand: Empty Action" );
 			return l_routers;
 		}
-		
-		ControllerName l_controllerName = ControllerName.COMMON;		
+
+		ControllerName l_controllerName = ControllerName.COMMON;
 		switch (p_commandArray[0]) {
 			case "editcontinent":
 				l_controllerName = ControllerName.CONTINENT;
 				break;
 			case "editcountry":
-				l_controllerName = ControllerName.COUNTRY;				
+				l_controllerName = ControllerName.COUNTRY;
 				break;
 			case "editneighbor":
-				l_controllerName = ControllerName.NEIGHBOR;				
+				l_controllerName = ControllerName.NEIGHBOR;
 				break;
 			case "gameplayer":
-				l_controllerName = ControllerName.STARTUP;				
+				l_controllerName = ControllerName.STARTUP;
 				break;
 		}
 		GenericView.printDebug("ControllerName is :" + l_controllerName.toString() );
@@ -282,7 +283,7 @@ public class RouterService {
 		for(Action l_action: l_actions) {
 			//TODO add it in the property file
 			String l_actionArray = "-add,-remove";
-			if(l_actionArray.indexOf(l_action.getAction()) > -1) { 
+			if(l_actionArray.indexOf(l_action.getAction()) > -1) {
 				l_routers.add(new Router(l_controllerName, l_action.getAction(), l_action.getParameters()));
 				GenericView.printDebug("Add an action to a router");
 			}
@@ -292,10 +293,10 @@ public class RouterService {
 				GenericView.printDebug("Meet an error when adding an action to a router");
 				return l_routers;
 			}
-		}		
+		}
 		return l_routers;
 	}
-	
+
 	/**
 	 * This method is responsible to parse simple commands, such as showmap and validatemap, 
 	 * and convert the command into a list of Router
@@ -314,7 +315,7 @@ public class RouterService {
 				break;
 			case  "help":
 				l_router = new Router(ControllerName.COMMON, "help");
-				break;		
+				break;
 			case  "showmap":
 				if(this.d_gameContext.getGamePhase().equals(GamePhase.MAPEDITOR))
 					l_router = new Router(ControllerName.MAP, "showmap");
@@ -326,7 +327,7 @@ public class RouterService {
 				break;
 			case  "play":
 				l_router =  new Router(ControllerName.GAMEPLAY, "play");
-				break;				
+				break;
 			case  "assigncountries":
 				l_router =  new Router(ControllerName.STARTUP, "assigncountries");
 				break;
@@ -365,7 +366,7 @@ public class RouterService {
 				break;
 			//TODO other routers for simple commands
 		}
-		
+
 		return l_router;
 	}
 
@@ -403,7 +404,7 @@ public class RouterService {
 		}
 		return l_actions;
 	}
-	
+
 	/**
 	 * This method will create the error controller by its error type.
 	 * @param p_errorType the error type of the command
