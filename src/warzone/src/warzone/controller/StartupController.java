@@ -2,8 +2,6 @@ package warzone.controller;
 
 import warzone.view.*;
 import warzone.model.*;
-import warzone.service.CommonTool;
-import warzone.service.MapService;
 import warzone.service.StartupService;
 
 /**

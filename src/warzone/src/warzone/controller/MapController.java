@@ -1,15 +1,13 @@
 package warzone.controller;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+
 import warzone.model.*;
 import warzone.view.GenericView;
 import warzone.view.*;
 import java.io.IOException;
 import warzone.model.*;
 import warzone.service.*;
-import java.util.Map;
+
 
 /**
  * map controller is to manipulate the map
