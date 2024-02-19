@@ -1,8 +1,8 @@
 package warzone.controller;
 
-import warzone.model.GameContext;
-import warzone.view.GenericView;
-import warzone.view.HelpView;
+
+import warzone.view.*;
+import warzone.model.*;
 
 /**
  * Common controller is for manipulate the welcome and help action

@@ -5,141 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6f00ced-2ab4-4c49-a87c-164ba7f6bdb2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/allclasses-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/allpackages-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/copy.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/element-list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/help-doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-10.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-11.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-12.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-13.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-14.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-15.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-16.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-17.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-18.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-19.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-20.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index-files/index-9.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/jquery-ui.overrides.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/legal/COPYRIGHT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/legal/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/legal/jquery.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/legal/jqueryUI.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/member-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/module-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/overview-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/overview-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/package-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/resources/glass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/resources/x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/script-dir/jquery-3.6.0.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/script-dir/jquery-ui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/script-dir/jquery-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/search-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/stylesheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/tag-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/type-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/CommonController.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/CommonControllerTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/ContinentController.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/ContinentControllerTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/CountryController.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/CountryControllerTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/ErrorController.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/ErrorControllerTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/GameplayController.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/GameplayControllerTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/MapController.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/MapControllerTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/NeighborController.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/NeighborControllerTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/StartupController.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/StartupControllerTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/controller/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/Action.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/ActionTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/Color.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/Continent.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/ContinentTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/ControllerName.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/Country.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/CountryTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/DeployOrder.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/DeployOrderTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/ErrorType.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/GameContext.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/GameContextTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/GamePhase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/Observable.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/ObservableTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/Observer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/Order.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/OrderType.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/Player.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/PlayerTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/Render.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/Router.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/RouterTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/WarzoneProperties.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/WarzonePropertiesTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/model/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/CommandService.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/CommandServiceTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/CommonTool.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/CommonToolTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/ContinentService.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/ContinentServiceTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/ControllerFactory.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/ControllerFactoryTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/CountryService.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/CountryServiceTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/GameEngine.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/GameEngineTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/MapService.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/MapServiceTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/NeighborService.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/NeighborServiceTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/RouterService.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/RouterServiceTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/StartupService.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/StartupServiceTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/service/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/view/GenericView.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/view/GenericViewTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/view/HelpView.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/view/HelpViewTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/view/MapView.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/view/MapViewTest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/view/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/javadoc/warzone/view/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/22.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/bigmap.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/brasil.map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map/brazil.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/brazil" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/canada.map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map/canada.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/default.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/europe.cards" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/europe.map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map/europe.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/europe_map.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/europe_pic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/germany.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/mapTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/not-connected.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/simple-do-not-change.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/simple-starwar.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/simple.map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map/simple.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/spain.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/starwar-test.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/starwar.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/test1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/test4savegamecontext" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/MapController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/StartupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/StartupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/view/HelpView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/view/HelpView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="khushi-build1" />
+        <entry key="$PROJECT_DIR$" value="build1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -159,21 +68,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;vrushabh-build1&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/College/Concordia ImP/APP/WarzoneG19&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GameEngine.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "vrushabh-build1",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/vrush/Downloads/WarzoneG19",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.editor",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Concordia University\APP\WarzoneG19\src\warzone" />
       <recent name="C:\Users\khush\OneDrive\Documents\GitHub\WarzoneG19\docs\map" />
       <recent name="C:\Users\khush\OneDrive\Documents\GitHub\WarzoneG19\docs" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="GameEngine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="warzone.service.GameEngine" />
+      <module name="WarzoneG19" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="warzone.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GameEngine" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -190,8 +135,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708128366835</updated>
+      <workItem from="1708293615481" duration="123000" />
+      <workItem from="1708293751099" duration="250000" />
+      <workItem from="1708294018004" duration="10935000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
