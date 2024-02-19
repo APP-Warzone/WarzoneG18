@@ -5,29 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6f00ced-2ab4-4c49-a87c-164ba7f6bdb2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/22.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/bigmap.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/brasil.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/canada.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/default.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/europe.cards" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/europe.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/europe_map.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/europe_pic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/germany.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/mapTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/not-connected.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/simple-do-not-change.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/simple-starwar.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/simple.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/spain.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/starwar-test.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/starwar.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/test1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/map/test4savegamecontext" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/22.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/bigmap.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/brasil.map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map/brazil.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/brazil" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/canada.map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map/canada.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/default.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/europe.cards" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/europe.map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map/europe.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/europe_map.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/europe_pic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/germany.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/mapTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/not-connected.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/simple-do-not-change.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/simple-starwar.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/simple.map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map/simple.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/spain.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/starwar-test.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/starwar.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/test1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/map/test4savegamecontext" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/MapController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/StartupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/StartupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/view/HelpView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/view/HelpView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,23 +68,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GameEngine.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;vrushabh-build1&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/College/Concordia ImP/APP/WarzoneG19&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GameEngine.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "vrushabh-build1",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/vrush/Downloads/WarzoneG19",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.editor",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Concordia University\APP\WarzoneG19\src\warzone" />
@@ -124,8 +135,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708128366835</updated>
+      <workItem from="1708293615481" duration="123000" />
+      <workItem from="1708293751099" duration="250000" />
+      <workItem from="1708294018004" duration="10935000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
