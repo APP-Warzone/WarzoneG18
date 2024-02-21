@@ -16,8 +16,10 @@ public class HelpView {
     public static void printWelcome() {
         System.out.println("");
         System.out.println("**********************************");
-        System.out.println("||      WELCOME TO WARZONE      ||");
-        System.out.println("**********************************\n");
+        System.out.println("||      WELCOME TO WAR ZONE      ||");
+        System.out.println("**********************************");
+        System.out.println("||     DEVELOPED BY GROUP 18    ||");
+        System.out.println("**********************************");
     }
 
 
@@ -70,7 +72,7 @@ public class HelpView {
                         + " You are in game PLAYING phase, you can deploy the armies. \n"
                         + " -  deploy countryID num\n"
                         + " \n"
-                        + " -  reboot \n"	    				);
+                        + " -  reboot \n");
                 break;
         }
         System.out.println(String.format("--------------------------------------------------    HELP IN PHASE [ %s ]  --------------------------------------------------",  p_gamePhase));

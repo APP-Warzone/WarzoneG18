@@ -1,4 +1,10 @@
 package warzone.view;
-public class GenericViewTest{
+
+import static org.junit.Assert.*;
+
+/**
+ * tests for GenericView class
+ */
+public class GenericViewTest {
 
 }

@@ -1,11 +1,13 @@
 package warzone.controller;
 
-import warzone.model.GameContext;
-import warzone.service.*;
-import warzone.view.GenericView;
-import warzone.view.MapView;
 
+import warzone.model.*;
+import warzone.view.GenericView;
+import warzone.view.*;
 import java.io.IOException;
+import warzone.model.*;
+import warzone.service.*;
+
 
 /**
  * map controller is to manipulate the map

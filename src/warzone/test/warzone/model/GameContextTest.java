@@ -1,4 +1,10 @@
 package warzone.model;
-public class GameContextTest{
+
+import static org.junit.Assert.*;
+
+/**
+ * tests for GameContext class
+ */
+public class GameContextTest {
 
 }

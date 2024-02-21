@@ -1,4 +1,10 @@
 package warzone.service;
-public class GameEngineTest{
+
+import static org.junit.Assert.*;
+
+/**
+ * tests for GameEngine class
+ */
+public class GameEngineTest {
 
 }

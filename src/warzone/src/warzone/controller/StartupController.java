@@ -1,8 +1,8 @@
 package warzone.controller;
 
-import warzone.model.GameContext;
+import warzone.view.*;
+import warzone.model.*;
 import warzone.service.StartupService;
-import warzone.view.GenericView;
 
 /**
  * startup controller is to manipulate the startup phase in game
