@@ -1,13 +1,20 @@
-
 package warzone.controller;
 
-import warzone.view.Console;
+import warzone.view.*;
+import warzone.model.*;
 
 public class CommonController {
-    public void welcome() {
-        String body = "Hello world";
-        Console.println(body);
 
+    private GameContext d_gameContext;
+
+    public CommonController(GameContext p_gameContext) {
+        d_gameContext = p_gameContext;
+    }
+
+    public String welcome(String p_actionParameters) {
+        String body = "Hello world";
+        GenericView.println(body);
+        return body;
     }
 
 

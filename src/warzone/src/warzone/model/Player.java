@@ -2,11 +2,11 @@ package warzone.model;
 
 import java.util.Map;
 import java.util.Queue;
-public class Player {
+public class Player implements IOrder{
 
     private String name;
     private Map<Integer, Country> conqueredCountries;
-    private Queue<Order> orders;
+    private Queue<IOrder> orders;
 
 
     /**
@@ -29,10 +29,15 @@ public class Player {
      *
      * @return
      */
-    public Order next_order() {
+    public IOrder next_order() {
 
         // TODO Auto-generated method stub
 
         return null;
+    }
+    @Override
+    public boolean execute() {
+        // pick up the next order and excute
+        return false;
     }
 }

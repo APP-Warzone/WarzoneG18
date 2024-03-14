@@ -1,14 +1,13 @@
 package warzone.service;
 
 import warzone.model.*;
-import warzone.service.*;
+
+import warzone.model.*;
 
 public class Startup {
 
-
-
     public static void main(String[] args) {
-        System.out.print("1");
+
         RouterService d_RouterService;
         d_RouterService = new RouterService();
 
@@ -19,6 +18,11 @@ public class Startup {
         //2 init the game
         //3 standby
         //System.in.read();
-        //Scanner.
+//		while(System.IO.Readline()) {
+//			//parse the command to a router
+//			//route the router
+////			Router welcome = new Router(ControllerName.COMMON, "welcome");
+////			d_RouterService.route(welcome);
+//		}
     }
 }
