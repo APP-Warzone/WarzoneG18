@@ -1,16 +1,11 @@
 package warzone.model;
 
-/**
- * the controller name in the game
- */
 public enum ControllerName {
 
     COMMON,
+    GAME,
     CONTINENT,
     COUNTRY,
     MAP,
-    NEIGHBOR,
-    GAMEPLAY,
-    ERROR,
-    STARTUP;
+    NEIGHBOR
 }
