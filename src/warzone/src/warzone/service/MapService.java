@@ -1,6 +1,6 @@
 package warzone.service;
 
-import warzone.model.*;
+import  warzone.model.*;
 import warzone.view.GenericView;
 
 import java.io.BufferedWriter;
@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class MapService {
@@ -83,13 +84,26 @@ public class MapService {
 
 	public boolean editMap (String p_fileName) {
 
-		String mapDirectory = "./doc/map/europe/"; //LOAD FROM PROPERTIES FILE
-
-		//Clear gameContext
-		d_gameContext.getContinents().clear();
-		d_gameContext.getCountries().clear();
+		String mapDirectory = null;
 
 		try {
+
+			//Get the map directory from the properties file
+			Properties properties = new Properties();
+			properties.load(getClass().getClassLoader().getResourceAsStream("config.properties"));
+			mapDirectory = properties.getProperty("gameMapDirectory");
+
+		} catch (IOException ex) {
+
+			GenericView.printError("Error loading properties file.");
+			return false;
+		}
+
+		try {
+
+			//Clear gameContext
+			d_gameContext.getContinents().clear();
+			d_gameContext.getCountries().clear();
 
 			File mapFile = new File(mapDirectory + p_fileName);
 
@@ -98,7 +112,7 @@ public class MapService {
 			//Specified file name does not exist (new map)
 			if(!mapFile.exists() || mapFile.isDirectory()) {
 
-				GenericView.println("Creating a new map: " + p_fileName);
+				GenericView.printSuccess("Creating a new map: " + p_fileName);
 				return true;
 			}
 
@@ -213,8 +227,6 @@ public class MapService {
 					d_gameContext.getCountries().put(id, country);
 
 					d_gameContext.getContinents().get(Integer.parseInt(splitArray[2])).getCountries().put(id, country);
-
-					//TODO ADD CONTINENT
 				}
 				else if(processingBorders && !line.trim().isEmpty()) {
 
@@ -239,11 +251,12 @@ public class MapService {
 
 			scanner.close();
 
-			GenericView.println("Map succesfully loaded: " + p_fileName);
+			GenericView.printSuccess("Map succesfully loaded: " + p_fileName);
 
 		} catch (Exception e) {
 
-			GenericView.println("An error occured reading the map file: " + p_fileName);
+			GenericView.printError("An error occured reading the map file: " + p_fileName);
+			return false;
 		}
 
 		return true;

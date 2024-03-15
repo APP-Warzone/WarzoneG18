@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96d1c144-8a57-42e7-986a-e3106e8c6b0f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/CommonTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CommonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/ContinentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/ContinentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CountryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/MapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/NeighborController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/NeighborController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Continent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Continent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/StartupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/StartupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Country.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/ContinentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/ContinentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/ControllerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/StartupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/StartupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/service/StartupServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/service/StartupServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,15 +32,24 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2deD2d9nv2Br4UDKD8bjEtKvYrH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "khushi-build1",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "vrushabh-build1",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/College/Concordia ImP/APP/WarzoneG18",
     "node.js.detected.package.eslint": "true",
@@ -55,9 +57,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -108,5 +110,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/warzone/src/warzone/model/Country.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
