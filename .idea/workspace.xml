@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96d1c144-8a57-42e7-986a-e3106e8c6b0f" name="Changes" comment="">
+
       <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Color.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/CommonTool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -91,7 +92,7 @@
       <updated>1710359446970</updated>
       <workItem from="1710359448050" duration="1168000" />
       <workItem from="1710360882897" duration="748000" />
-      <workItem from="1710458968179" duration="2930000" />
+      <workItem from="1710458968179" duration="4302000" />
     </task>
     <servers />
   </component>
