@@ -5,19 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96d1c144-8a57-42e7-986a-e3106e8c6b0f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/WarzoneG18-Build2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/CommonTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CommonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/ContinentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/ContinentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CountryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/MapController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/NeighborController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/NeighborController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Continent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Continent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Country.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/view/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/view/MapView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/ContinentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/ContinentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/ControllerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/ControllerFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -78,7 +91,7 @@
       <updated>1710359446970</updated>
       <workItem from="1710359448050" duration="1168000" />
       <workItem from="1710360882897" duration="748000" />
-      <workItem from="1710458968179" duration="1962000" />
+      <workItem from="1710458968179" duration="2930000" />
     </task>
     <servers />
   </component>

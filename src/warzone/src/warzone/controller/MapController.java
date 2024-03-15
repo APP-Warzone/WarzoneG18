@@ -1,12 +1,14 @@
 package warzone.controller;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import warzone.model.*;
+import warzone.view.GenericView;
 import warzone.view.*;
-
 import java.io.IOException;
-
 import warzone.model.*;
 import warzone.service.*;
-
 import java.util.Map;
 
 public class MapController {
@@ -15,6 +17,7 @@ public class MapController {
 	private GameContext d_gameContext;
 
 	public MapController(GameContext p_gameContext) {
+
 		d_gameContext = p_gameContext;
 		d_mapService = new MapService(p_gameContext);
 	}
@@ -66,19 +69,17 @@ public class MapController {
 	 *
 	 * Load a map from an existing "domination" map file, or create a new map from scratch if the file does not exist
 	 */
-	public boolean editMap (String fileName) {
+	public boolean editMap (String p_fileName) {
 
-		// TODO Auto-generated method stub
-
-		return false;
+		return d_mapService.editMap(p_fileName);
 	}
 
 	/**
 	 * Performs the action for the user command: validatemap
 	 *
-	 * Verification of map correctness. The map should be automatically validated upon loading 
-	 * and before saving (at least 3 types of incorrect maps). The validatemap command can be 
-	 * triggered any time during map editing. 
+	 * Verification of map correctness. The map should be automatically validated upon loading
+	 * and before saving (at least 3 types of incorrect maps). The validatemap command can be
+	 * triggered any time during map editing.
 	 */
 	public boolean validateMap () {
 

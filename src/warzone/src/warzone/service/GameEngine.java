@@ -30,6 +30,9 @@ public class GameEngine {
 //		Router showMapRouter = new Router(ControllerName.MAP, "showMap");
 //		d_RouterService.route(showMapRouter);
 
+//		Router addContinentRouter = new Router(ControllerName.CONTINENT, "add", "1 veu");
+//		d_RouterService.route(addContinentRouter);
+
 
 
 		//2 init the game
@@ -52,9 +55,9 @@ public class GameEngine {
 	}
 
 	/**
-	 * The GameEngine class calls the issue_order() method of the Player. This method will wait for the following command, 
-	 * then create a deploy order object on the players list of orders, then reduce the number of armies in the 
-	 * players reinforcement pool. The game engine does this for all players in round-robin fashion until all the players 
+	 * The GameEngine class calls the issue_order() method of the Player. This method will wait for the following command,
+	 * then create a deploy order object on the players list of orders, then reduce the number of armies in the
+	 * players reinforcement pool. The game engine does this for all players in round-robin fashion until all the players
 	 * have placed all their reinforcement armies on the map.
 	 */
 	private void issueOrders() {
