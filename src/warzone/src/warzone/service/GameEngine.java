@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 import warzone.model.*;
+import warzone.view.GenericView;
 
 /**
  * Main game loop.
@@ -14,59 +16,69 @@ import warzone.model.*;
  * 
  */
 public class GameEngine {
-	private GameContext d_gameContext;
-	
-	public GameEngine(GameContext p_gameContext) {
+	private GameContext d_gameContext;	
+	private static GameEngine GAME_ENGINE;
+
+	/**
+	 * private constructor
+	 * set the game context
+	 * @param p_gameContext the game context
+	 */
+	private GameEngine(GameContext p_gameContext) {
 		d_gameContext = p_gameContext;
 	}
 
+	/**
+	 * return the game engine
+	 * if game engine is not created, then create a new game engine
+	 * @param p_gameContext the game context
+	 * @return the game engine
+	 */
+	public static GameEngine getGameEngine(GameContext p_gameContext) {
+		if( GAME_ENGINE == null)
+			GAME_ENGINE = new GameEngine(p_gameContext);
+		return GAME_ENGINE;
+	}	
+
+	/**
+	 * This method is the entrance of the game. It will initiate the game context and use
+	 * command scanner to get the command of the player.
+	 * @param args the parameters for Java Virtual Machine
+	 * @throws IOException the exception of creating or deleting files
+	 */
 	public static void main(String[] args) throws IOException {
 
-		RouterService d_RouterService;
-		d_RouterService = new RouterService();
+		GameContext l_gameContext = GameContext.getGameContext();
+		RouterService l_routerService =  RouterService.getRouterService();
+		CommandService l_commandService =  CommandService.getCommandService(l_gameContext);
+		
 		
 		//1 welcome
 		Router l_welcomeRouter = new Router(ControllerName.COMMON, "welcome");
-		d_RouterService.route(l_welcomeRouter);
+		l_routerService.route(l_welcomeRouter);
 		
-		List<Router> l_routers = d_RouterService.parseCommand("showmap");
-		d_RouterService.route(l_routers);
-		
-		l_routers = d_RouterService.parseCommand("savemap eu");
-		d_RouterService.route(l_routers);
-		
-		l_routers = d_RouterService.parseCommand("editcontinent -add 5 testsdfsdf -add 6 6666666666name -remove 3");
-		d_RouterService.route(l_routers);
-		
-		l_routers = d_RouterService.parseCommand("showmap");
-		d_RouterService.route(l_routers);
-		
-		Router tempRouter = new Router(ControllerName.GAMEPLAY, "play");
-		d_RouterService.route(tempRouter);
-		
-//		Router saveMapRouter = new Router(ControllerName.MAP, "saveMap","map-na");
-//		d_RouterService.route(saveMapRouter);
-
-
-//		Router showMapRouter = new Router(ControllerName.MAP, "showMap");
-//		d_RouterService.route(showMapRouter);
-		
-//		Router addContinentRouter = new Router(ControllerName.CONTINENT, "add", "1 veu");
-//		d_RouterService.route(addContinentRouter);
-
-
-
-		//2 init the game
-		//3 standby
-		//System.in.read();
-//		while(System.IO.Readline()) {
-//			//parse the command to a router
-//			//route the router
-////			Router welcome = new Router(ControllerName.COMMON, "welcome");
-////			d_RouterService.route(welcome);
-//		}
-	}
+		l_commandService.commandScanner(l_routerService);
+//		
+//		List<Router> l_routers = l_routerService.parseCommand("showmap");
+//		l_routerService.route(l_routers);
+//		
+//		l_routers = l_routerService.parseCommand("savemap eu");
+//		l_routerService.route(l_routers);
+//		
+//		l_routers = l_routerService.parseCommand("editcontinent -add 5 testsdfsdf -add 6 6666666666name -remove 3");
+//		l_routerService.route(l_routers);
+//		
+//		l_routers = l_routerService.parseCommand("showmap");
+//		l_routerService.route(l_routers);
+//		
+//		Router tempRouter = new Router(ControllerName.GAMEPLAY, "play");
+//		l_routerService.route(tempRouter);
+	}	
 	
+	/**
+	 * This method will show whether the game can start.
+	 * @return true if the game can start
+	 */
 	public boolean isReadyToStart() {
 		if(this.d_gameContext == null || this.d_gameContext.getContinents().size() <1 
 				|| this.d_gameContext.getCountries().size() < 1 || this.d_gameContext.getPlayers().size() < 1 )
@@ -75,6 +87,10 @@ public class GameEngine {
 			return true;
 	}
 	
+	/**
+	 * If the game turn is greater than 100, the game will end.
+	 * @return true if the game can end.
+	 */
 	public boolean play() {
 		if(! isReadyToStart())
 			return false;
@@ -89,12 +105,21 @@ public class GameEngine {
 	}
 	
 	
+	/**
+	 * This method represent one turn for each player. It contains three steps: 
+	 * 1. assigning reinforcements 2. issuing orders 3.executing orders
+	 */
 	private void startTurn() {		
 		assignReinforcements();
 		issueOrders();
 		executeOrders();		
 	}
 	
+	/**
+	 * This method will determine if the game whether can end.
+	 * @return true if the current state satisfy the end condition: 
+	 * 1. there is just one player left 2. the number of game turn is greater than 100.
+	 */
 	private boolean isGameEnded() {
 		//check and update PlayerStatus		
 		//set p_isLoser = true, when the player does not have any country
@@ -110,7 +135,8 @@ public class GameEngine {
 	
 
 	/**
-	 * Assign each player the correct number of reinforcement armies according to the Warzone rules.
+	 * This method will assign each player the correct number of reinforcement armies 
+	 * according to the Warzone rules.
 	 */
 	private void assignReinforcements() {
 		d_gameContext.getPlayers().forEach((k, player) -> {
@@ -130,8 +156,7 @@ public class GameEngine {
 		d_gameContext.getPlayers().forEach((k, player) -> {
 			if(player.getIsAlive())
 				player.issue_order();
-		});
-			
+		});			
 	}
 	
 	
