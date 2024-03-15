@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96d1c144-8a57-42e7-986a-e3106e8c6b0f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/ContinentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/ContinentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/StartupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/StartupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/StartupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/StartupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/view/MapView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/view/MapView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +47,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "vrushabh-build1",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/College/Concordia ImP/APP/WarzoneG18",

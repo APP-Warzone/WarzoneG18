@@ -11,7 +11,7 @@ public class MapView {
 
     /**
      * generate the table of continent information
-     * continentId & Name, countryId & Name, neighbours
+     * continentId, Name, countryId, Name, neighbours
      * @param p_continents map of continent
      */
     public static void printMap(Map<Integer, Continent> p_continents) {
