@@ -13,7 +13,7 @@ import warzone.model.*;
  * test cases for map service
  */
 public class MapServiceTest {
-
+	
     GameContext d_gameContext;
 
     /**
@@ -21,7 +21,7 @@ public class MapServiceTest {
      */
     @Before
     public void beforeEachTetCase(){
-        d_gameContext = GameContext.clear();
+        d_gameContext = GameContext.getGameContext();
     }
 
     /**
@@ -32,25 +32,25 @@ public class MapServiceTest {
         GameContext.clear();
     }
 
-    @Test
-    public void testEditMap() {
-
-        GameContext gameContext = GameContext.getGameContext();
-        MapController mapController = new MapController(gameContext);
-
-        mapController.editMap("europe.map");
-
-        System.out.println("Map File Name: " + gameContext.getMapFileName());
-        System.out.println("Map File Pic: " + gameContext.getMapFilePic());
-        System.out.println("Map File Map: " + gameContext.getMapFileMap());
-        System.out.println("Map File Name: " + gameContext.getMapFileCards());
-
-        System.out.println();
-
-        System.out.println("Number of Continents: " + gameContext.getContinents().size());
-        System.out.println("Number of Countries: " + gameContext.getCountries().size());
-    }
-
+	@Test
+	public void testEditMap() {
+		
+		GameContext gameContext = GameContext.getGameContext();
+		MapController mapController = new MapController(gameContext);
+		
+		mapController.editMap("europe.map");
+		
+		System.out.println("Map File Name: " + gameContext.getMapFileName());
+		System.out.println("Map File Pic: " + gameContext.getMapFilePic());
+		System.out.println("Map File Map: " + gameContext.getMapFileMap());
+		System.out.println("Map File Name: " + gameContext.getMapFileCards());
+		
+		System.out.println();
+		
+		System.out.println("Number of Continents: " + gameContext.getContinents().size());
+		System.out.println("Number of Countries: " + gameContext.getCountries().size());
+	}
+	
     /**
      * map1 is valid
      */
@@ -109,8 +109,8 @@ public class MapServiceTest {
         MapService d_mapService = new MapService(d_gameContext);
         assertTrue(d_mapService.validateMap(d_gameContext));
     }
-
-    /**
+    
+	/**
      * map2 is invalid, a map only has one country
      */
     @Test
@@ -126,8 +126,8 @@ public class MapServiceTest {
         MapService d_mapService = new MapService(d_gameContext);
         assertFalse(d_mapService.validateMap(d_gameContext));
     }
-
-    /**
+    
+	/**
      * map3 is invalid, a map with a continent has no country
      */
     @Test
