@@ -1,274 +1,323 @@
-package warzone.model;
-import java.util.Scanner;
+package warzone.service;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Queue;
-
-import warzone.service.CommonTool;
+import java.util.Properties;
+import java.util.Scanner;
+import warzone.controller.MapController;
+import warzone.model.Color;
+import warzone.model.Continent;
+import warzone.model.Country;
+import warzone.model.GameContext;
+import warzone.model.Player;
 import warzone.view.GenericView;
 
 /**
- * This class represents the player in the game.
+ * This class will provide controllers with service associating with starup
  *
  */
-public class Player {
+public class StartupService {
 
-	private String d_name;
-	private Map<Integer, Country> d_conqueredCountries;
-	private Queue<Order> d_orders;
-	private int d_armyNumber = 0;//total number
-	private int d_armiesToDeploy = 0; 
-	private boolean d_isAlive = true;
-	
-	private Scanner d_keyboard = new Scanner(System.in);
-	
+	private GameContext d_gameContext;
+
 	/**
-	 * This constructor initiate the player instance.
-	 * @param p_name the name of the player
+	 * This constructor can initiate the game context of current instance.
+	 * @param p_gameContext the current game context
 	 */
-	public Player(String p_name) {
-		
-		d_name = p_name;
-		d_conqueredCountries = new HashMap<Integer, Country>();
-		d_orders = new LinkedList<Order>();
+	public StartupService(GameContext p_gameContext) {
+		d_gameContext = p_gameContext;
 	}
 	
 	/**
-	 * This method will provide the name of the player.
-	 * @return the name of the player
+	 * Add player
+	 * @param p_player Player object
+	 * @return true if add success else false
 	 */
-	public String getName() {
-		return d_name;
-	}
-
-	/**
-	 * This method can set the name of the player.
-	 * @param p_name the name of the player
-	 */
-	public void setName(String p_name) {
-		this.d_name = p_name;
-	}
-
-	/**
-	 * This method will provide all countries conquered by the current player as Map structure.
-	 * @return all coutries that are conquered by the player
-	 */
-	public Map<Integer, Country> getConqueredCountries() {
-		return d_conqueredCountries;
-	}
-
-	/**
-	 * This method will offer all Orders issued by the current player.
-	 * @return all orders issued by the player
-	 */
-	public Queue<Order> getOrders() {
-		return d_orders;
-	}
-	/**
-	 * clear the countries list for current player
-	 */
-	public void cleanConqueredCountries() {
-		d_conqueredCountries.clear();
-	}
-	
-	/**
-	 * This method will provide the number of armies owned by the current player.
-	 * @return the number of armies
-	 */
-	public int getArmyNumber() {
-		return d_armyNumber;
-	}
-
-	/**
-	 * This method can set the number of armies owned by the current player.
-	 * @param p_armyNumber the number of armies
-	 */
-	public void setArmyNumber(int p_armyNumber) {
-		this.d_armyNumber = p_armyNumber;
-	}
-	
-	/**
-	 * This method will provide the number of armies deployed by the current player.
-	 * @return the number of armies
-	 */
-	public int getArmiesToDeploy() {
-		return d_armiesToDeploy;
-	}
-
-	/**
-	 * This method can set the number of armies deployed by the current player.
-	 * @param p_armiesToDeploy the number to deploy the army
-	 */
-	public void setArmiesToDeploy(int p_armiesToDeploy) {
-		this.d_armiesToDeploy = p_armiesToDeploy;
-	}	
-	
-	/**
-	 * This method will show whether a player is out of the game.
-	 * @return true the current player still has at least one territory.
-	 */
-	public boolean getIsAlive() {
-		return d_isAlive;
-	}
-
-	/**
-	 * This method can set the survival of the current player.
-	 * @param p_isAlive false if the player has no territory.
-	 */
-	public void setIsAlive(boolean p_isAlive) {
-		this.d_isAlive = p_isAlive;
-	}
-	
-	/**
-	 * This method can convert command String into DeployOrder class.
-	 * @param p_command the command that should be converted
-	 * @return the converted command
-	 */
-	private DeployOrder conventDeployOrder(String p_command) {
-		if(p_command == null)
-			return null;
-		
-		p_command = p_command.trim().toLowerCase();
-
-		String [] l_commandInfos = CommonTool.conventToArray(p_command);
-		if(l_commandInfos.length == 3 &&  l_commandInfos[0].toString().equals("deploy")) {
-			int l_countryId = CommonTool.parseInt(l_commandInfos[1]);
-			int l_armyNumber = CommonTool.parseInt(l_commandInfos[2]);
-			Country l_country = this.getConqueredCountries().get(l_countryId);
-			
-			if(l_country != null && l_armyNumber > 0 ) {
-				return new DeployOrder(l_country, l_armyNumber );
-			}
+	public boolean addPlayer(Player p_player) {
+		//0. add the item to
+		Map<String,Player> l_players=d_gameContext.getPlayers();
+		if(p_player != null 
+				&& p_player.getName()!="" 
+				&& l_players.size()<= 5 ) {			
+			l_players.put(p_player.getName(), p_player);
+			return true;
 		}
-		return null;			
+		return false;
+	}
+	
+	/**
+	 * Remove player by name
+	 * @param p_playerName name of player
+	 * @return true if remove success else false
+	 */
+	public boolean removePlayer(String p_playerName) {
+		if(p_playerName != null && d_gameContext.getPlayers().containsKey(p_playerName)) {
+			Player l_player = d_gameContext.getPlayers().get(p_playerName);
+			for( Country l_country : l_player.getConqueredCountries().values() ) 
+				l_country.setOwner(null);					
+			d_gameContext.getPlayers().remove(p_playerName);
+			return true;
+		}
+		return false;
 	}
 
-
 	/**
-	 * The GameEngine class calls the issue_order() method of the Player. This method will wait for the following 
-	 * command, then create a deploy order object on the players list of orders, then reduce the number of armies in the 
-	 * players reinforcement pool. The game engine does this for all players in round-robin fashion until all the players 
-	 * have placed all their reinforcement armies on the map.
+	 * Performs the action for user command: loadmap filename
 	 * 
-	 * Issuing order command: deploy countryID num (until all reinforcements have been placed)
+	 * Game starts by user selection of a user-saved map file, which loads the map as a connected directed graph
+	 * 
+	 * @param p_fileName file name of map
+	 * @return if map successfully loaded
 	 */
-	public void issue_order() {
-		if( this.d_armiesToDeploy == 0 )
-			return ;
-
-		String l_command = "";
-		int l_armyToIssue = this.getArmiesToDeploy();
-		int l_armyHasIssued = 0;
-		GameContext l_gameContext = GameContext.getGameContext();
-		do {
-			GenericView.println(String.format("Please input the deploy command for player, there is %s army available for %s.", l_armyToIssue , this.getName() ));
-			DeployOrder l_deployOrder;
-
-			if(!l_gameContext.getIsDemoMode()) {
-				//1. issue order from interaction
-				l_command = d_keyboard.nextLine();				
-				//convent the commend to deploy order.
-				l_deployOrder = conventDeployOrder(l_command);
-				if(l_deployOrder != null && this.getConqueredCountries().containsKey(l_deployOrder.getCountry().getCountryID()) 
-					&&  l_deployOrder.getArmyNumber() <= l_armyToIssue	) {					
-					l_deployOrder.setPlayer(this);
-				}		
-			}
-			else {
-				//2. generate the command automatically.
-				List<Integer> l_countryKeys = new ArrayList(d_conqueredCountries.keySet());
-				Integer l_countryKey = l_countryKeys.get( CommonTool.getRandomNumber(0, (l_countryKeys.size() -1 )) );			
-				Country l_country = d_conqueredCountries.get(l_countryKey);
-				int l_armyNumber =  CommonTool.getRandomNumber(0, l_armyToIssue);
-				l_deployOrder = new DeployOrder(this, l_country, l_armyNumber );
-			}
+	public boolean loadMap(String p_fileName) {
+		
+		String mapDirectory = null;
+		
+		try {
 			
-			if(l_deployOrder != null)
-			{				
-				this.d_orders.add(l_deployOrder);
+			//Get the map directory from the properties file
+			Properties properties = new Properties();
+			properties.load(getClass().getClassLoader().getResourceAsStream("config.properties"));
+			mapDirectory = properties.getProperty("gameMapDirectory");
+			
+		} catch (IOException ex) {
 				
-				l_armyToIssue = l_armyToIssue - l_deployOrder.getArmyNumber();
-				l_armyHasIssued = l_armyHasIssued + l_deployOrder.getArmyNumber();
-			}
-			else {
-				GenericView.printWarning("Incorrect command, please check the countryID and the number of army");
-			}			
-		} while (l_armyToIssue > 0 );		
-	}
-	
-	
-	/**
-	 * The GameEngine calls the next_order() method of the Player. Then the Order objects execute() method is called, 
-	 * which will enact the order. 
-	 * 
-	 * @return the next Order of the player
-	 */
-	public Order next_order() {
-		
-		return this.d_orders.poll();
-	}
-	
-	/**
-	 * Assign reinforcements to a player based on the continents they have conquered. Each continent has a bonus number of reinforcements
-	 * per round if a player owns all the countries within it. This method loops through all the conquered countries, tracking counters of
-	 * the number of countries owned in each continent. If the number of countries owned in a continent matches the number of countries in that
-	 * continent, the player gets the bonus reinforcements added (for each applicable continent).
-	 * 
-	 * @param p_gameContext
-	 */
-	public void assignReinforcements(GameContext p_gameContext) {		
-		
-		//Set the armiesToDeploy to the minimum value
-		this.setArmiesToDeploy(WarzoneProperties.getWarzoneProperties().getMinimumReinforcementsEachRound()); 
-		
-		//Set armiesToDeploy based on the number of owned countries (if that number is greater than the minimum)
-		int l_conqueredCountriesBonus = (int)(Math.floor(this.getConqueredCountries().size() / WarzoneProperties.getWarzoneProperties().getMinimumCountriesPerReinforcementBonus()));
-		
-		if(l_conqueredCountriesBonus > this.getArmiesToDeploy()) {
-			
-			this.setArmiesToDeploy(l_conqueredCountriesBonus);
+			GenericView.printError("Error loading properties file.");
+			return false;
 		}
 		
-		//Key: continentID, Value: Number of countries player owns in this continent
-		Map<Integer, Integer> armiesPerContinent = new HashMap<Integer, Integer>(p_gameContext.getContinents().size());
-
-		//Create a list of playerIDs from the game context and shuffle their order
-		List<Integer> conqueredCountryIDs = new ArrayList<Integer>(this.getConqueredCountries().keySet());
-				
-		//Looping variables
-		int l_continentID;
-		Integer l_deployedArmies;
-		
-		//Loop through each conquered country, incrementing each counter of the conquered country's continent
-		for(Integer countryID : conqueredCountryIDs) {
-						
-			l_continentID = p_gameContext.getCountries().get(countryID).getContinent().getContinentID();
-			l_deployedArmies = armiesPerContinent.get(l_continentID); 
+		try {
 			
-			if(l_deployedArmies == null) {
-				
-				armiesPerContinent.put(l_continentID, 1);
-			}
-			else {
-				
-				armiesPerContinent.put(l_continentID, l_deployedArmies + 1);
-			}
-		}
+			//Clear gameContext
+			d_gameContext.getContinents().clear();
+			d_gameContext.getCountries().clear();
 		
-		//Loop through the continent counters and update the players' armiesToDeploy if they own all the countries in a continent
-		armiesPerContinent.forEach(
+			File mapFile = new File(mapDirectory + p_fileName);
+			
+			d_gameContext.setMapFileName(p_fileName);
+
+			//Specified file name does not exist (new map)
+			if(!mapFile.exists() || mapFile.isDirectory()) { 
+
+				GenericView.printError("The following map file is invalid, please select another one: " + p_fileName);
+				return false;
+			}
+			
+			Scanner scanner = new Scanner(mapFile);
+			String line;
+			String[] splitArray;
+			int continentCtr = 1;
+			int id;
+			Country country;
+			
+			boolean processingFiles = false;
+			boolean processingContinents = false;
+			boolean processingCountries = false;
+			boolean processingBorders = false;
+			
+			while (scanner.hasNextLine()) {
 				
-			(apcContinentID, apcDeployedArmies) -> {
+				line = scanner.nextLine();
 				
-				if(apcDeployedArmies == p_gameContext.getContinents().get(apcContinentID).getCountries().size()) {
+				if(line.equals("[files]")) {
 					
-					this.setArmiesToDeploy(this.getArmiesToDeploy() + p_gameContext.getContinents().get(apcContinentID).getBonusReinforcements());
+					processingFiles = true;
+					processingContinents = false;
+					processingCountries = false;
+					processingBorders = false;
+					
+					line = scanner.nextLine();
+				}
+				else if(line.equals("[continents]")) {
+					
+					processingFiles = false;
+					processingContinents = true;
+					processingCountries = false;
+					processingBorders = false;
+					
+					line = scanner.nextLine();
+				}
+				else if (line.equals("[countries]")) {
+					
+					processingFiles = false;
+					processingContinents = false;
+					processingCountries = true;
+					processingBorders = false;
+					
+					line = scanner.nextLine();
+				}
+				else if (line.equals("[borders]")) {
+					
+					processingFiles = false;
+					processingContinents = false;
+					processingCountries = false;
+					processingBorders = true;
+					
+					line = scanner.nextLine();
+				}
+				
+				if(processingFiles) {
+					
+					/*
+					 *  [files]
+					 *	pic europe_pic.jpg
+					 *	map europe_map.gif
+					 *	crd europe.cards
+					 */
+					
+					if(line.startsWith("pic")) {
+						
+						d_gameContext.setMapFilePic(line.substring(4));
+					}
+					else if(line.startsWith("map")) {
+						
+						d_gameContext.setMapFileMap(line.substring(4));
+					}
+					else if(line.startsWith("crd")) {
+						
+						d_gameContext.setMapFileCards(line.substring(4));
+					}
+				}
+				else if(processingContinents && !line.trim().isEmpty()) {
+					
+					/*
+					 *  [continents]
+					 *	North_Europe 5 red
+					 *	East_Europe 4 magenta
+					 *	South_Europe 5 green
+					 *	West_Europe 3 blue
+					 */
+					
+					splitArray = line.split("\\s+");
+										
+					d_gameContext.getContinents().put(continentCtr, 
+							new Continent(continentCtr, splitArray[0], Integer.parseInt(splitArray[1]), Color.valueOf(splitArray[2].toUpperCase())));
+					
+					continentCtr++;
+				}
+				else if(processingCountries && !line.trim().isEmpty()) {
+					
+					/*
+					 *  [countries]
+					 *	1 England 1 164 126
+					 *	2 Scotland 1 158 44
+					 *	3 N_Ireland 1 125 70
+					 *	4 Rep_Ireland 1 106 90
+					 */
+					
+					splitArray = line.split("\\s+");
+					
+					id = Integer.parseInt(splitArray[0]);
+					country = new Country(id, splitArray[1], Integer.parseInt(splitArray[3]), 
+							Integer.parseInt(splitArray[4]), d_gameContext.getContinents().get(Integer.parseInt(splitArray[2])));
+					
+					d_gameContext.getCountries().put(id, country);
+					
+					d_gameContext.getContinents().get(Integer.parseInt(splitArray[2])).getCountries().put(id, country);
+				}
+				else if(processingBorders && !line.trim().isEmpty()) {
+					
+					/*
+					 *  [borders]
+					 *	1 8 21 6 7 5 2 3 4
+					 *	2 8 1 3
+					 *	3 1 2
+					 *	4 22 1 5	
+					 */
+					
+					splitArray = line.split("\\s+");
+					country = d_gameContext.getCountries().get(Integer.parseInt(splitArray[0]));
+					
+					for(int i = 1; i < splitArray.length; i++) {
+						
+						id = Integer.parseInt(splitArray[i]);
+						country.getNeighbors().put(id, d_gameContext.getCountries().get(id));
+					}
 				}
 			}
-		);
-	}	
+		    
+			scanner.close();
+			
+			//Validate the map
+			if(!(new MapController(d_gameContext).validateMap())) {
+				
+				GenericView.printError("The map file selected failed validation: " + p_fileName);
+				return false;
+			}
+			
+			GenericView.printSuccess("Map succesfully loaded: " + p_fileName);
+		    
+		} catch (Exception e) {
+		      
+			GenericView.printError("An error occured reading the map file: " + p_fileName);
+			return false;
+		}
+		
+		return true;
+	}
+
+	/**
+	 * Performs the action for user command: assigncountries
+	 * 
+	 * After user creates all the players, all countries are randomly assigned to players. 
+	 * 1-reset the countries
+	 * 2-assign countries
+	 * 
+	 * @return true if successfully assign the countries, otherwise return false
+	 */
+	public boolean assignCountries() {
+
+		//Make sure there are enough countries to distribute between all the players
+		if(d_gameContext.getPlayers().size() > d_gameContext.getCountries().size()) {			
+			return false;
+		}
+		//reset the countries list and for each player.
+		for( Player l_player : d_gameContext.getPlayers().values()) {
+			l_player.cleanConqueredCountries();
+		}
+		//rest all the owner for countries
+		for( Country l_countryTemp: d_gameContext.getCountries().values()) {
+			l_countryTemp.setOwner(null);
+		}		
+		
+		//Each player will be assigned the same number of countries. Leftover countries will be unassigned (neutral)
+		//Create a list of playerIDs from the game context and shuffle their order
+		List<String> l_playerNames = new ArrayList<String>(d_gameContext.getPlayers().keySet());
+		Collections.shuffle(l_playerNames);
+		
+		//Create a list of countryIDs from the game context and shuffle their order
+		List<Integer> l_countryIDs = new ArrayList<Integer>(d_gameContext.getCountries().keySet());
+		Collections.shuffle(l_countryIDs);
+				
+		//Looping variables
+		Country l_country;
+		Player l_player;
+		int l_ctr = 0;
+		int l_playerIndex = 0;
+		
+		//Loop through each country to assign to a random player
+		for(Integer l_countryID : l_countryIDs) {			
+			//Reset the index once each player has been assigned a country
+			if(l_playerIndex >= l_playerNames.size()) {
+				l_playerIndex = 0;
+			}
+			
+			l_country = d_gameContext.getCountries().get(l_countryID);
+			l_player = d_gameContext.getPlayers().get(l_playerNames.get(l_playerIndex));
+			
+			l_country.setOwner(l_player);
+			l_player.getConqueredCountries().put(l_country.getCountryID(), l_country);
+			
+			//Update the looping variables
+			l_playerIndex++;
+			l_ctr++;
+		}
+		
+		return true;
+	}
 }
