@@ -1,5 +1,6 @@
 package warzone.service;
 
+import warzone.model.GameContext;
 import warzone.view.GenericView;
 
 /**
@@ -20,7 +21,8 @@ public class CommonTool {
 				 l_result = Integer.parseInt(p_number.trim());
 			}
 			catch(Exception ex) {
-				GenericView.printError("cannot convert " + p_number + " into integer.");
+//				GenericView.printError("cannot convert " + p_number + " into integer.");
+				GameContext.getLogEntryBuffer().setMessage("cannot convert " + p_number + " into integer.");
 			}
 		}
 		return l_result;		
@@ -58,9 +60,9 @@ public class CommonTool {
 	 */
 	public static String convertArray2String(String[] p_stringArray, String p_separator, int from, int to) {
 		StringBuilder l_sb = new StringBuilder();
-		for (int i = from; i < to + 1; i++) {
-			l_sb.append(p_stringArray[i]);
-			if (i < to && i < p_stringArray.length - 1) {
+		for (int l_temp = from; l_temp < to + 1; l_temp++) {
+			l_sb.append(p_stringArray[l_temp]);
+			if (l_temp < to && l_temp < p_stringArray.length - 1) {
 				l_sb.append(p_separator);
 			}
 		}
