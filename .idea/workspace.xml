@@ -4,33 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6f00ced-2ab4-4c49-a87c-164ba7f6bdb2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/22.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/bigmap.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/brasil.map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map/brazil.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/brazil" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/canada.map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map/canada.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/default.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/europe.cards" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/europe.map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map/europe.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/europe_map.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/europe_pic.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/germany.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/mapTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/not-connected.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/simple-do-not-change.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/simple-starwar.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/simple.map" beforeDir="false" afterPath="$PROJECT_DIR$/resources/map/simple.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/spain.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/starwar-test.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/starwar.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/test1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/map/test4savegamecontext" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/MapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/StartupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/StartupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/view/HelpView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/view/HelpView.java" afterDir="false" />
+    <list default="true" id="96d1c144-8a57-42e7-986a-e3106e8c6b0f" name="Changes" comment="">
+
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/GameplayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/GameplayController.java" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/DeployOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/DeployOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/CommonTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/CommonTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,24 +25,17 @@
       <list>
         <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="build1" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2cTGsytKNYLG8pKhmLcjUxZfCPf" />
+  <component name="ProjectId" id="2deD2d9nv2Br4UDKD8bjEtKvYrH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
@@ -70,55 +46,39 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.GameEngine.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "vrushabh-build1",
-    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/vrush/Downloads/WarzoneG19",
+    "last_opened_file_path": "C:/College/Concordia ImP/APP/WarzoneG18",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.editor",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Concordia University\APP\WarzoneG19\src\warzone" />
-      <recent name="C:\Users\khush\OneDrive\Documents\GitHub\WarzoneG19\docs\map" />
-      <recent name="C:\Users\khush\OneDrive\Documents\GitHub\WarzoneG19\docs" />
-    </key>
-  </component>
   <component name="RunManager">
-    <configuration name="GameEngine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="warzone.service.GameEngine" />
-      <module name="WarzoneG19" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="warzone.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.GameEngine" />
-      </list>
-    </recent_temporary>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -130,21 +90,29 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e6f00ced-2ab4-4c49-a87c-164ba7f6bdb2" name="Changes" comment="" />
-      <created>1708128366835</created>
+      <changelist id="96d1c144-8a57-42e7-986a-e3106e8c6b0f" name="Changes" comment="" />
+      <created>1710359446970</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1708128366835</updated>
-      <workItem from="1708293615481" duration="123000" />
-      <workItem from="1708293751099" duration="250000" />
-      <workItem from="1708294018004" duration="10935000" />
+      <updated>1710359446970</updated>
+      <workItem from="1710359448050" duration="1168000" />
+      <workItem from="1710360882897" duration="748000" />
+      <workItem from="1710458968179" duration="4302000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

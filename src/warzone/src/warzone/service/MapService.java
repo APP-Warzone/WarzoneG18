@@ -29,30 +29,25 @@ public class MapService {
 
 	/**
 	 * save map to file
-	 * @param p_fullFileName file name
+	 * @param p_fileName file name
 	 * @return if success
 	 * @throws IOException if any io exception
 	 */
-	public boolean saveMap(String p_fullFileName) throws IOException {
+	public boolean saveMap(String p_fileName) throws IOException {
 		try{
-			String l_fileName ;
-			if(p_fullFileName.indexOf(".") > -1)
-				l_fileName = p_fullFileName.substring(0,p_fullFileName.indexOf("."));
-			else
-				l_fileName = p_fullFileName;
-			String l_path = this.d_gameContext.getMapfolder();
+			String l_fullFileName = p_fileName + ".map";
 
 			//build the content using StringBuilder
 			StringBuilder l_map = new StringBuilder();
-			l_map.append("; map: " + l_fileName);
+			l_map.append("; map: " + p_fileName);
 			l_map.append("\n; map made with the 6441 Super Team");
 			l_map.append("\n; 6441.net  1.0.0.1 ");
 			l_map.append("\n");
 
 			l_map.append("\n[files]");
-			l_map.append("\npic "+ l_fileName +"_pic.jpg");
-			l_map.append("\nmap "+ l_fileName +"_map.gif");
-			l_map.append("\ncrd "+ l_fileName + "europe.cards");
+			l_map.append("\npic "+ p_fileName +"_pic.jpg");
+			l_map.append("\nmap "+ p_fileName +"_map.gif");
+			l_map.append("\ncrd "+ p_fileName + "europe.cards");
 			l_map.append("\n");
 
 			l_map.append("\n[continents]");
@@ -79,7 +74,11 @@ public class MapService {
 			l_map.append("\n");
 
 			//write the content into the map
-			BufferedWriter writer = new BufferedWriter(new FileWriter(l_path + p_fullFileName));
+//			Path l_fileFullPath = Path.of(l_fullFileName);
+//	        Files.write(l_fileFullPath, l_map.toString().getBytes());
+//
+
+			BufferedWriter writer = new BufferedWriter(new FileWriter(l_fullFileName));
 			writer.write(l_map.toString());
 
 			writer.close();
@@ -91,7 +90,7 @@ public class MapService {
 	}
 
 	/**
-	 * Load a map from an existing â€œdominationâ€� map file,
+	 * Load a map from an existing “domination” map file,
 	 * or create a new map from scratch if the file does not exist.
 	 * @param p_fileName file name
 	 * @return if success
@@ -116,7 +115,8 @@ public class MapService {
 		try {
 
 			//Clear gameContext
-			d_gameContext.clear();
+			d_gameContext.getContinents().clear();
+			d_gameContext.getCountries().clear();
 
 			File mapFile = new File(mapDirectory + p_fileName);
 
@@ -179,11 +179,7 @@ public class MapService {
 					processingCountries = false;
 					processingBorders = true;
 
-					if(!scanner.hasNextLine())
-						processingBorders = false;
-					else{
-						line = scanner.nextLine();
-					}
+					line = scanner.nextLine();
 				}
 
 				if(processingFiles) {
@@ -289,7 +285,7 @@ public class MapService {
 	Map<Integer, Integer> d_mapContinentIdToIndex = new HashMap<>();
 
 	LinkedList<Object>[] l_continentAdjList; // list to store the relationship between continents
-	int l_continentIndex; // the record of continent tree
+	int l_continentIndex = 0; // initiate the record of continent tree
 
 	/**
 	 * initiate the list of neighbours
@@ -319,6 +315,7 @@ public class MapService {
 	 * @return if map is valid
 	 */
 	public boolean validateMap(GameContext p_gameContext) {
+
 		d_mapIndexToContinentId.clear();
 		d_mapContinentIdToIndex.clear();
 
@@ -352,7 +349,7 @@ public class MapService {
 		// l_continentAdjList is the list store the relationship between continents
 		l_continentAdjList = new LinkedList[l_continent.size()];
 		l_continentAdjList = listInit(l_continent.size(), l_continentAdjList);
-		l_continentIndex = 0;
+
 		for( Continent _continent : l_continent.values()) {
 			// add the from continent as the head of the list l_continentAdjList
 			// also, check if the continent is recored in the map, if not, add to the map
@@ -371,7 +368,14 @@ public class MapService {
 
 		// condition6: check if the whole map is strongly connected
 		// if each connected continents are strongly connected, the whole map is connected
-		return ifConnected(l_continent.size(), l_continentAdjList);
+		if(!ifConnected(l_continent.size(), l_continentAdjList)) {
+			GenericView.printError("It is not a connected map.");
+			return false;
+		}
+		else {
+			GenericView.printSuccess("Yeah! You got a connected map!");
+			return true;
+		}
 	}
 
 	/**

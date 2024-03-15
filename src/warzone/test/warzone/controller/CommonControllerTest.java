@@ -1,4 +1,16 @@
 package warzone.controller;
-public class CommonControllerTest{
 
+import org.junit.Test;
+
+import warzone.controller.CommonController;
+
+public class CommonControllerTest {
+	@Test
+	public void welcomeTest() {
+		(new CommonController()).welcome("test");
+	}
+	@Test
+	public void standbyTest() {
+		(new CommonController()).standby();
+	}
 }
