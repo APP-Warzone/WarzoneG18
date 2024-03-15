@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96d1c144-8a57-42e7-986a-e3106e8c6b0f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/GamePhase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Observable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/OrderType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/GameplayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/GameplayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/ControllerName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/ControllerName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/DeployOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/DeployOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/MapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/MapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/view/GenericView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/view/GenericView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/service/MapServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/service/MapServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
