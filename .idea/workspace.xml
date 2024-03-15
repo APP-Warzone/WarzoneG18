@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96d1c144-8a57-42e7-986a-e3106e8c6b0f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/WarzoneProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/CommandService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/view/HelperView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/WarzonePropertiesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzoneTest/controller/CommonControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CommonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CountryController.java" afterDir="false" />
@@ -19,15 +16,18 @@
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/WarzoneProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/CommandService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/CountryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/CountryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/RouterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/RouterService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/StartupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/StartupService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/view/GenericView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/view/GenericView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/view/HelperView.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/controller/CommonControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/controller/CommonControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/controller/CountryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/controller/CountryControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/model/WarzonePropertiesTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/service/RouterServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/service/RouterServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzoneTest/controller/CommonControllerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +113,7 @@
       <workItem from="1710359448050" duration="1168000" />
       <workItem from="1710360882897" duration="748000" />
       <workItem from="1710458968179" duration="4302000" />
-      <workItem from="1710473625940" duration="2442000" />
+      <workItem from="1710473625940" duration="3878000" />
     </task>
     <servers />
   </component>

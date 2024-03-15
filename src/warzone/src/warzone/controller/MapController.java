@@ -82,7 +82,10 @@ public class MapController {
 	 * triggered any time during map editing.
 	 */
 	public boolean validateMap () {
-		return d_mapService.validateMap(d_gameContext);
+
+		// TODO Auto-generated method stub
+
+		return false;
 	}
 
 }
