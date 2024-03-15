@@ -35,5 +35,4 @@ public class GenericView {
 		if(IS_DEBUG)
 			System.out.println("Debug : " + p_text);
 	}
-}
-  
+}   
