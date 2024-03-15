@@ -11,16 +11,18 @@ public class Country {
 	private int d_deployedForces;
 	private int d_xPosition;
 	private int d_yPosition;
+	private int d_armyNumber = 0;
 	private Map<Integer, Country> d_neighbors;
 	private Continent d_continent;
 
-	public Country(int p_countryID, String p_countryName, int p_xPosition, int p_yPosition, Continent d_continent) {
+	public Country(int p_countryID, String p_countryName, int p_xPosition, int p_yPosition, Continent p_continent) {
 
 		d_countryID = p_countryID;
 		d_countryName = p_countryName;
 		d_xPosition = p_xPosition;
 		d_yPosition = p_yPosition;
 		d_neighbors = new HashMap<Integer, Country>();
+		d_continent = p_continent;
 	}
 
 	public int getCountryID() {
@@ -70,6 +72,16 @@ public class Country {
 	public void setYPosition(int p_yPosition) {
 		this.d_yPosition = p_yPosition;
 	}
+
+	public int getArmyNumber() {
+		return d_armyNumber;
+	}
+
+	public void setArmyNumber(int p_armyNumber) {
+		this.d_armyNumber = p_armyNumber;
+	}
+
+
 
 	public Map<Integer, Country> getNeighbors() {
 		return d_neighbors;
