@@ -1,5 +1,25 @@
 package warzone.model;
 
+/**
+ * This interface abstract the action of Order
+ *
+ */
 public interface Order {
-    public boolean execute();
+
+	/**
+	 * This method will execute the order.
+	 */
+	public void execute();
+
+	/**
+	 * check if the order can be executed
+	 * @return true if valid
+	 */
+	public boolean valid();
+
+	/**
+	 * print the order
+	 */
+	public void printOrder();
+	
 }
