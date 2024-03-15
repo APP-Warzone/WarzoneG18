@@ -45,7 +45,7 @@ public class GameplayController {
 	 */
 	public GameContext showMap() {
 		
-		MapView.printMap(d_gameContext);
+		MapView.printMap(d_gameContext.getContinents());
 		MapView.printMapWithArmies(d_gameContext.getContinents());
 		
 		return null;

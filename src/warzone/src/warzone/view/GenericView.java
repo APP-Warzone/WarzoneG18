@@ -1,22 +1,21 @@
 package warzone.view;
 
+import warzone.model.GameContext;
 import warzone.model.Render;
 
 /*
  * for specific ui, should create dedicated view class.
  * */
 public class GenericView {
-
-	private static boolean IS_DEBUG = true;
-
+	
 	public static void println(String p_text) {
 		System.out.println(p_text);
 	}
-
+	
 	public static void printWarning(String p_text) {
 		System.out.println("Warning : " + p_text );
 	}
-
+	
 	public static void printError(String p_text) {
 		System.out.println("Error : " + p_text);
 	}
@@ -32,7 +31,7 @@ public class GenericView {
 	 * @param p_text debug text
 	 */
 	public static void printDebug(String p_text) {
-		if(IS_DEBUG)
+		if(GameContext.getGameContext().getIsDebug())
 			System.out.println("Debug : " + p_text);
-	}
-}   
+	}	
+}
