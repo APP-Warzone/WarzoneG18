@@ -11,7 +11,7 @@ import warzone.view.MapView;
 public class DeployOrder implements Order {
 
 	private Country d_country;
-	private Player d_player;	
+	private Player d_player;
 	private int d_armyNumber;
 
 	/**
@@ -94,7 +94,7 @@ public class DeployOrder implements Order {
 		//check
 		if(this.d_country.getOwner()== null || !this.d_country.getOwner().equals(this.d_player) || this.d_armyNumber <0 ) {
 			return false;
-		} 
+		}
 		// if the remaining army is less than deploy number:
 		if( this.d_player.getArmiesToDeploy() <  this.d_armyNumber) {
 			this.d_armyNumber = this.d_player.getArmiesToDeploy();
@@ -103,7 +103,7 @@ public class DeployOrder implements Order {
 		//move army
 		this.d_country.setArmyNumber( this.d_country.getArmyNumber() +  this.d_armyNumber );
 		this.d_player.setArmiesToDeploy(this.d_player.getArmiesToDeploy() - this.d_armyNumber);
-		
+
 		return true;
 	}
 }

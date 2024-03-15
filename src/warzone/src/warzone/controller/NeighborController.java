@@ -9,7 +9,7 @@ import warzone.service.NeighborService;
  * Neighbor Controller is for manipulate the neighbor relationships in map
  */
 public class NeighborController {
-	
+
 	private NeighborService d_neighborService;
 	private GameContext d_gameContext;
 
@@ -31,7 +31,7 @@ public class NeighborController {
 	 */
 	public boolean addNeighbor (String p_parameters) {
 		//parse [p_parameters]
-		if(p_parameters == null){			
+		if(p_parameters == null){
 			GenericView.printError("Missing valid parameters.");
 			return false;
 		}
@@ -39,7 +39,7 @@ public class NeighborController {
 		int l_countryID = -1, l_neighborCountryID = -1;
 		String[] l_parameters = CommonTool.conventToArray(p_parameters);
 		// check if parameter length is valid
-		if(l_parameters.length == 2 ) {			
+		if(l_parameters.length == 2 ) {
 			l_countryID = CommonTool.parseInt(l_parameters[0]);
 			l_neighborCountryID = CommonTool.parseInt(l_parameters[1]);
 		}
@@ -62,11 +62,11 @@ public class NeighborController {
 		if( d_neighborService.add(p_countryID, p_neighborCountryID)) {
 			GenericView.printSuccess( String.format("Neighbor [%s] was added to Country [%s] successfully.", p_neighborCountryID, p_countryID) );
 			return true;
-		}			
+		}
 		else {
 			GenericView.printWarning( String.format("Failed to add Neighbor [%s] to Country [%s].", p_neighborCountryID, p_countryID) );
 			return false;
-		}	
+		}
 	}
 
 	/**
@@ -78,14 +78,14 @@ public class NeighborController {
 	 */
 	public boolean removeNeighbor (String p_parameters) {
 		//parse [p_parameters]
-		if(p_parameters == null){			
+		if(p_parameters == null){
 			GenericView.printError("Missing valid parameters.");
 			return false;
 		}
 
 		int l_countryID = -1, l_neighborCountryID = -1;
 		String[] l_parameters = CommonTool.conventToArray(p_parameters);
-		if(l_parameters.length == 2 ) {			
+		if(l_parameters.length == 2 ) {
 			l_countryID = CommonTool.parseInt(l_parameters[0]);
 			l_neighborCountryID = CommonTool.parseInt(l_parameters[1]);
 		}
@@ -108,10 +108,10 @@ public class NeighborController {
 		if( d_neighborService.remove(p_countryID, p_neighborCountryID)) {
 			GenericView.printSuccess( String.format("Neighbor [%s] was removed from Country [%s] successfully.", p_neighborCountryID, p_countryID) );
 			return true;
-		}			
+		}
 		else {
 			GenericView.printWarning( String.format("Failed to remove Neighbor [%s] to Country [%s].", p_neighborCountryID, p_countryID) );
 			return false;
-		}	
+		}
 	}
 }
