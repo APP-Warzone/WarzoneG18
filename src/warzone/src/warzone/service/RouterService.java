@@ -9,11 +9,11 @@ import warzone.model.*;
 import warzone.view.GenericView;
 
 public class RouterService {
-	
+
 	/**
 	 * This method will parse a single console commands entered by the user and call the corresponding controller by controller name
 	 * @param p_router the Router parsed from the command
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	public void route(Router p_router) throws IOException{
 		ControllerFactory l_controllerFactory = ControllerFactory.getControllerFactory();
@@ -32,7 +32,7 @@ public class RouterService {
 				switch(p_router.getActionName()) {
 					case "add":
 						GenericView.printDebug("route: CONTINENT-add- " + p_router.getActionParameters());
-						l_continentController.addContinent(p_router.getActionParameters());						
+						l_continentController.addContinent(p_router.getActionParameters());
 						break;
 					case "remove":
 						GenericView.printDebug("route: CONTINENT-remove-" + p_router.getActionParameters());
@@ -108,10 +108,10 @@ public class RouterService {
 			case ERROR:
 				ErrorController l_errorController = l_controllerFactory.getErrorController();
 				l_errorController.error(p_router.getActionName());
-		}	
-		
+		}
+
 	}
-	
+
 	/**
 	 * This method can parse a list of commands
 	 * @param p_routers the list of router
@@ -122,12 +122,12 @@ public class RouterService {
 				try {
 					route(router);
 				}
-				catch(Exception ex){					
+				catch(Exception ex){
 				}
-			});			
+			});
 		}
 	}
-	
+
 	/**
 	 * This method parses the command entered by the player, and construct corresponding Router
 	 * by different commands
@@ -140,21 +140,21 @@ public class RouterService {
 	 */
 	public List<Router> parseCommand(String p_command) {
 		List<Router> l_routerList = new LinkedList<Router>();
-		
+
 		//validation
 		if( p_command == null || p_command.trim().equals("") ){
 			l_routerList.add(createErrorRouter(ErrorType.MISSING_COMMAND.toString()));
 			return l_routerList;
 		}
-			
+
 		GenericView.printDebug("parseCommand: start to work on command: " + p_command);
-		
-		// remove prefix whitespace and convert the String to lower case 
+
+		// remove prefix whitespace and convert the String to lower case
 		p_command = p_command.toLowerCase().trim();
-				
+
 		// split command with any number of whitespace
 		String[] l_commandArray = p_command.split("\\s+");
-		
+
 		String l_firstWord = l_commandArray[0];
 		// TODO move these commands into the properties file
 		String l_complexCommand = "editcontinent,editcountry,editneighbor,gameplayer";
@@ -167,26 +167,26 @@ public class RouterService {
 		else if(l_simpleCommand.indexOf(l_firstWord) > -1) {
 			//simple command with only one router
 			GenericView.printDebug("parseCommand: start to work on simple command: " + p_command);
-			l_routerList.add(parseSimpleCommand(l_commandArray));				
+			l_routerList.add(parseSimpleCommand(l_commandArray));
 		}
 		else {
 			l_routerList.add(createErrorRouter(ErrorType.NO_SUCH_COMMAND.toString()));
 			return l_routerList;
 		}
 		return l_routerList;
-	}	
-	
+	}
+
 	/**
-	 * A command can be divided into two types, complex command and simple command. 
-	 * This method is responsible to parse complex commands, such as editCountry and editContinent, 
+	 * A command can be divided into two types, complex command and simple command.
+	 * This method is responsible to parse complex commands, such as editCountry and editContinent,
 	 * and convert the command into a list of Router
 	 * @param p_commandArray command divided by whitespace
 	 * @return a Router list representing the command
 	 */
 	private List<Router> parseComplexCommand(String[] p_commandArray) {
 		List<Router> l_routers = new LinkedList<Router>();
-		List<Action> l_actions = parseCommandToAction(p_commandArray);		
-		 
+		List<Action> l_actions = parseCommandToAction(p_commandArray);
+
 		if(l_actions.isEmpty() ) {
 			l_routers.add(createErrorRouter(ErrorType.MISSING_PARAMETER.toString()));
 			GenericView.printDebug("parseComplexCommand: Empty Action" );
@@ -198,21 +198,21 @@ public class RouterService {
 				l_controllerName = ControllerName.CONTINENT;
 				break;
 			case "editcountry":
-				l_controllerName = ControllerName.COUNTRY;				
+				l_controllerName = ControllerName.COUNTRY;
 				break;
 			case "editneighbor":
-				l_controllerName = ControllerName.NEIGHBOR;				
+				l_controllerName = ControllerName.NEIGHBOR;
 				break;
 			case "gameplayer":
-				l_controllerName = ControllerName.GAMEPLAY;				
+				l_controllerName = ControllerName.GAMEPLAY;
 				break;
 		}
-		
+
 		// if the action is not equal to 'add' or 'remove', we return an error router
 		for(Action l_action: l_actions) {
 			//TODO add it in the property file
 			String l_actionArray = "-add,-remove";
-			if(l_actionArray.indexOf(l_action.getAction()) > -1) { 
+			if(l_actionArray.indexOf(l_action.getAction()) > -1) {
 				l_routers.add(new Router(l_controllerName, l_action.getAction(), l_action.getParameters()));
 			}
 			else {
@@ -220,12 +220,12 @@ public class RouterService {
 				l_routers.add(createErrorRouter(ErrorType.BAD_OPTION.toString()));
 				return l_routers;
 			}
-		}		
+		}
 		return l_routers;
 	}
-	
+
 	/**
-	 * This method is responsible to parse simple commands, such as showmap and validatemap, 
+	 * This method is responsible to parse simple commands, such as showmap and validatemap,
 	 * and convert the command into a list of Router
 	 * @param p_commandArray command divided by whitespace
 	 * @return a Router list representing the command
@@ -279,7 +279,7 @@ public class RouterService {
 				break;
 			//TODO other routers for simple commands
 		}
-		
+
 		return l_router;
 	}
 
@@ -317,7 +317,7 @@ public class RouterService {
 		}
 		return l_actions;
 	}
-	
+
 	/**
 	 * This method will create the error controller by its error type.
 	 * @param p_errorType the error type of the command

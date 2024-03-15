@@ -15,6 +15,7 @@ public class GameContext {
 	private Map<Integer, Country> d_countries;
 	private Map<Integer, Continent> d_continents;
 
+
 	private String d_mapFileName;
 	private String d_mapFilePic;
 	private String d_mapFileMap;

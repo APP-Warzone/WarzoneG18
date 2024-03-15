@@ -34,7 +34,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getControllerName(), ControllerName.ERROR);
 		assertEquals(d_routerList.get(0).getActionName(), ErrorType.COMMAND_ERROR.toString());
 	}
-	
+
 	@Test
 	public void testParseCommand2() {
 		d_command = "editcontinent -add das 1 ds  sss";
@@ -44,7 +44,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getActionName(), "-add");
 		assertEquals(d_routerList.get(0).getActionParameters(), "das 1 ds sss");
 	}
-	
+
 	@Test
 	public void testParseCommand3() {
 		d_command = "editcontinent -remove 1 sad dsad   dsa  ";
@@ -53,7 +53,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getActionName(), "-remove");
 		assertEquals(d_routerList.get(0).getActionParameters(), "1 sad dsad dsa");
 	}
-	
+
 	@Test
 	public void testParseCommand4() {
 		d_command = "editcountry -add 1 sad sss";
@@ -62,7 +62,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getActionName(), "-add");
 		assertEquals(d_routerList.get(0).getActionParameters(), "1 sad sss");
 	}
-	
+
 	@Test
 	public void testParseCommand5() {
 		d_command = "editcountry -add 1 2 sss";
@@ -71,7 +71,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getActionName(), "-add");
 		assertEquals(d_routerList.get(0).getActionParameters(), "1 2 sss");
 	}
-	
+
 	@Test
 	public void testParseCommand6() {
 		d_command = "editneighbor -add 1 2 -remove 3 -add 44";
@@ -85,7 +85,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(2).getActionName(), "-add");
 		assertEquals(d_routerList.get(2).getActionParameters(), "44");
 	}
-	
+
 	@Test
 	public void testParseCommand7() {
 		d_command = "gameplayer -add 1    2    -remove  aaa 2 -add   3  555 2dsa  4  ";
@@ -99,7 +99,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(2).getActionName(), "-add");
 		assertEquals(d_routerList.get(2).getActionParameters(), "3 555 2dsa 4");
 	}
-	
+
 	@Test
 	public void testAssigncountries() {
 		d_command = "   assigncountries   ";
@@ -109,7 +109,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getActionName(), "assigncountries");
 		assertNull(d_routerList.get(0).getActionParameters());
 	}
-	
+
 	@Test
 	public void testValidatemap() {
 		d_command = " validatemap   ";
@@ -119,7 +119,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getActionName(), "validatemap");
 		assertNull(d_routerList.get(0).getActionParameters());
 	}
-	
+
 	@Test
 	public void testLoadMap1() {
 		d_command = "   loadmap aaass 111 ";
@@ -128,7 +128,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getControllerName(), ControllerName.ERROR);
 		assertEquals(d_routerList.get(0).getActionName(), ErrorType.TOO_MUCH_PARAMETERS.toString());
 	}
-	
+
 	@Test
 	public void testLoadMap2() {
 		d_command = "   loadmap aaass";
@@ -138,7 +138,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getActionName(), "loadmap");
 		assertEquals(d_routerList.get(0).getActionParameters(), "aaass");
 	}
-	
+
 	@Test
 	public void testLoadMap3() {
 		d_command = "   loadmap";
@@ -147,7 +147,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getControllerName(), ControllerName.ERROR);
 		assertEquals(d_routerList.get(0).getActionName(), ErrorType.MISSING_PARAMETER.toString());
 	}
-	
+
 	@Test
 	public void testEditMap() {
 		d_command = "   editmap sss ";
@@ -157,7 +157,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getActionName(), "editmap");
 		assertEquals(d_routerList.get(0).getActionParameters(), "sss");
 	}
-	
+
 	@Test
 	public void testSaveMap() {
 		d_command = "   savemap sdsadsa ";
@@ -167,7 +167,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getActionName(), "savemap");
 		assertEquals(d_routerList.get(0).getActionParameters(), "sdsadsa");
 	}
-	
+
 	@Test
 	public void testNoSuchCommand1() {
 		d_command = "dsadsa -dsad dsad";
@@ -176,7 +176,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getControllerName(), ControllerName.ERROR);
 		assertEquals(d_routerList.get(0).getActionName(), ErrorType.COMMAND_ERROR.toString());
 	}
-	
+
 	@Test
 	public void testNoSuchCommand2() {
 		d_command = "wrongCommand";
@@ -194,7 +194,7 @@ public class RouterServiceTest {
 		assertEquals(d_routerList.get(0).getControllerName(), ControllerName.ERROR);
 		assertEquals(d_routerList.get(0).getActionName(), ErrorType.MISSING_COMMAND.toString());
 	}
-	
+
 	@Test
 	public void testMissingCommand2() {
 		d_command = "";
