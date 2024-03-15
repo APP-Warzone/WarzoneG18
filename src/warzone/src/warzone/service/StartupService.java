@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Scanner;
 import warzone.controller.MapController;
-import warzone.model.Color;
 import warzone.model.Continent;
 import warzone.model.Country;
 import warzone.model.GameContext;
@@ -34,7 +33,7 @@ public class StartupService {
 	}
 	
 	/**
-	 * Add player
+	 * Add player, maximum number is 5.
 	 * @param p_player Player object
 	 * @return true if add success else false
 	 */
@@ -43,7 +42,8 @@ public class StartupService {
 		Map<String,Player> l_players=d_gameContext.getPlayers();
 		if(p_player != null 
 				&& p_player.getName()!="" 
-				&& l_players.size()<= 5 ) {			
+				&& l_players.size()<= 5 
+				&& !l_players.containsKey(p_player.getName())) {			
 			l_players.put(p_player.getName(), p_player);
 			return true;
 		}
@@ -94,8 +94,8 @@ public class StartupService {
 		try {
 			
 			//Clear gameContext
-			d_gameContext.getContinents().clear();
-			d_gameContext.getCountries().clear();
+			d_gameContext.reset();
+
 		
 			File mapFile = new File(mapDirectory + p_fileName);
 			
@@ -157,8 +157,12 @@ public class StartupService {
 					processingContinents = false;
 					processingCountries = false;
 					processingBorders = true;
-					
-					line = scanner.nextLine();
+
+					if(!scanner.hasNextLine())
+						processingBorders = false;
+					else{
+						line = scanner.nextLine();
+					}
 				}
 				
 				if(processingFiles) {
@@ -196,7 +200,7 @@ public class StartupService {
 					splitArray = line.split("\\s+");
 										
 					d_gameContext.getContinents().put(continentCtr, 
-							new Continent(continentCtr, splitArray[0], Integer.parseInt(splitArray[1]), Color.valueOf(splitArray[2].toUpperCase())));
+							new Continent(continentCtr, splitArray[0], Integer.parseInt(splitArray[1]), splitArray[2]));
 					
 					continentCtr++;
 				}
@@ -265,14 +269,16 @@ public class StartupService {
 	 * Performs the action for user command: assigncountries
 	 * 
 	 * After user creates all the players, all countries are randomly assigned to players. 
+	 * 1-reset the countries
+	 * 2-assign countries
 	 * 
 	 * @return true if successfully assign the countries, otherwise return false
 	 */
 	public boolean assignCountries() {
 
-		//Make sure there are enough countries to distribute between all the players
-		if(d_gameContext.getPlayers().size() > d_gameContext.getCountries().size()) {
-			
+		//Make sure there are more than 1 player
+		//and there are enough countries to distribute between all the players
+		if( d_gameContext.getPlayers().size() < 2 || d_gameContext.getPlayers().size() > d_gameContext.getCountries().size() ) {
 			return false;
 		}
 		//reset the countries list and for each player.
@@ -285,8 +291,6 @@ public class StartupService {
 		}		
 		
 		//Each player will be assigned the same number of countries. Leftover countries will be unassigned (neutral)
-		int l_countriesToAssign = d_gameContext.getCountries().size() - (d_gameContext.getCountries().size() % d_gameContext.getPlayers().size());
-		
 		//Create a list of playerIDs from the game context and shuffle their order
 		List<String> l_playerNames = new ArrayList<String>(d_gameContext.getPlayers().keySet());
 		Collections.shuffle(l_playerNames);
@@ -302,14 +306,7 @@ public class StartupService {
 		int l_playerIndex = 0;
 		
 		//Loop through each country to assign to a random player
-		for(Integer l_countryID : l_countryIDs) {		
-			
-			//Stop assigning countries once the remaining countries is less than the number of players
-			if (l_ctr >= l_countriesToAssign) {
-				
-				return true;
-			}
-			
+		for(Integer l_countryID : l_countryIDs) {			
 			//Reset the index once each player has been assigned a country
 			if(l_playerIndex >= l_playerNames.size()) {
 				l_playerIndex = 0;

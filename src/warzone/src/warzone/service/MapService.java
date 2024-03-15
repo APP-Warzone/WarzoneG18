@@ -116,8 +116,7 @@ public class MapService {
 		try {
 			
 			//Clear gameContext
-			d_gameContext.getContinents().clear();
-			d_gameContext.getCountries().clear();
+			d_gameContext.reset();
 			
 			File mapFile = new File(mapDirectory + p_fileName);
 			
@@ -179,8 +178,12 @@ public class MapService {
 					processingContinents = false;
 					processingCountries = false;
 					processingBorders = true;
-					
-					line = scanner.nextLine();
+
+					if(!scanner.hasNextLine())
+						processingBorders = false;
+					else{
+						line = scanner.nextLine();
+					}
 				}
 				
 				if(processingFiles) {
@@ -218,7 +221,7 @@ public class MapService {
 					splitArray = line.split("\\s+");
 										
 					d_gameContext.getContinents().put(continentCtr, 
-							new Continent(continentCtr, splitArray[0], Integer.parseInt(splitArray[1]), Color.valueOf(splitArray[2].toUpperCase())));
+							new Continent(continentCtr, splitArray[0], Integer.parseInt(splitArray[1]), splitArray[2]));
 					
 					continentCtr++;
 				}
