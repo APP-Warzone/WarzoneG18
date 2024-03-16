@@ -4,6 +4,8 @@ import warzone.view.GenericView;
 
 /**
  * This class represents one advance order of the gameplay
+ * @author Khushi
+ * @version 1.2
  */
 public class AdvanceOrder extends Order{
 

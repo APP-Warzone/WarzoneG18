@@ -5,8 +5,8 @@ import warzone.view.GenericView;
 /**
  *  Blockade Order
  *  the implimentation of Blockading a country
- * @author fzuray
- *
+ * @author love
+ * @version 1.1
  */
 public class BlockadeOrder extends Order {
 

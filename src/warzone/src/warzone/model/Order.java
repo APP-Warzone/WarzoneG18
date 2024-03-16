@@ -2,7 +2,8 @@ package warzone.model;
 
 /**
  * This abstract class of the action of Order
- *
+ * @author Love
+ * @version 1.1
  */
 public abstract class Order {
 

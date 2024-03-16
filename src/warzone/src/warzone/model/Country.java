@@ -7,6 +7,8 @@ import java.util.Map;
 
 /**
  * This class represents the country in the game
+ * @author Harsh
+ * @version 1.1
  */
 public class Country {
 

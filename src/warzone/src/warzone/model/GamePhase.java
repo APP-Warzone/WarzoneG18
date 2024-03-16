@@ -3,7 +3,8 @@ package warzone.model;
 /**
  * There are four phases in the game. They are map editing, startup, playing
  * and finished respectively.
- *
+ * @author Khushi
+ * @version 1.1
  */
 public enum GamePhase {
 	/**

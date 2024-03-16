@@ -4,6 +4,8 @@ import warzone.view.GenericView;
 
 /**
  * This class represents one deploy order of the gameplay
+ * @author Khushi
+ * @version 1.1
  */
 public class NegotiateOrder extends Order {
 

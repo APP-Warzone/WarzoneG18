@@ -4,6 +4,8 @@ import warzone.view.GenericView;
 
 /**
  * This class represents one airlift order of the gameplay
+ * @author love
+ * @version 1.1
  */
 public class AirliftOrder extends Order{
 

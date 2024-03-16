@@ -10,7 +10,8 @@ import java.util.Map;
 /**
  * This class represent the state of the game, and it contains some useful instances for
  * other classes.
- *
+ * @author vrushabh
+ * @version 1.1
  */
 public class GameContext {
 	/**

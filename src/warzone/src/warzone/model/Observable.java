@@ -5,7 +5,8 @@ import java.util.List;
 
 /**
  * This class represents observable in Observer pattern.
- *
+ * @author vrushabh
+ * @version 1.1
  */
 public class Observable {
 	/**
