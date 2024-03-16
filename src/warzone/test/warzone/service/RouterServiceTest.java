@@ -16,8 +16,8 @@ import warzone.model.Router;
 
 /**
  * This class is responsible to test the correctness of RouterService
- * @author Zexin
- *
+ * @author Love
+ * @version 1.1
  */
 public class RouterServiceTest {
 	/**

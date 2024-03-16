@@ -18,7 +18,8 @@ import warzone.view.GenericView;
 
 /**
  * This class will test the correctness of StartupService.
- *
+ * @author Love
+ * @version 1.1
  */
 public class StartupServiceTest {
 
