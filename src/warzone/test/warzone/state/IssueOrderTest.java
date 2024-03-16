@@ -9,6 +9,8 @@ import warzone.service.GameEngine;
 
 /**
  * Test class for issue order phase
+ * @author Khushi
+ * @version 1.1
  */
 public class IssueOrderTest {
 

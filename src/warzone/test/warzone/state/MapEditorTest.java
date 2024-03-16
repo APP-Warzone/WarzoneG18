@@ -14,6 +14,8 @@ import warzone.service.GameEngine;
 
 /**
  * test class for MapEditor
+ * @author Khushi
+ * @version 1.1
  */
 public class MapEditorTest {
 
