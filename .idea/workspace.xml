@@ -4,100 +4,130 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96d1c144-8a57-42e7-986a-e3106e8c6b0f" name="Changes" comment="">
-
-      <change afterPath="$PROJECT_DIR$/resources/map/not-connected.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/State/StartupTest.java" afterDir="false" />
+    <list default="true" id="0f15df41-6d75-4d85-9a33-ac12564575eb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CommonController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/ContinentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/CountryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/ErrorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/GameplayController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/MapController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/NeighborController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/controller/StartupController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Color.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/controller/CommonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/controller/CommonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/controller/ContinentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/controller/ContinentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/controller/CountryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/controller/CountryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/controller/ErrorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/controller/ErrorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/controller/GameplayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/controller/GameplayController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/controller/MapController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/controller/MapController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/controller/NeighborController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/controller/NeighborController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/controller/StartupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/controller/StartupController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/Action.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/AdvanceOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/AdvanceOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/Color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/Continent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/Continent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/ControllerName.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/ControllerName.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/Country.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/Country.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/DeployOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/DeployOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/ErrorType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/ErrorType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/GameContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/GameContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/GamePhase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/GamePhase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/LoadMapPhase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/LoadMapPhase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/LogEntryBuffer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/LogEntryBuffer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/Observable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/Observable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/OrderType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/OrderType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/Router.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/Router.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/WarzoneProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/WarzoneProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/service/CommandService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/service/CommandService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/service/CommonTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/service/CommonTool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/service/ContinentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/service/ContinentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/service/ControllerFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/service/CountryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/service/CountryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/service/GameEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/service/GameEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/service/LogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/service/LogService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/service/MapService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/service/MapService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/service/NeighborService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/service/NeighborService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/service/RouterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/service/RouterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/service/StartupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/service/StartupService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/state/GamePlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/state/GamePlay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/state/IssueOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/state/IssueOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/state/MapEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/state/MapEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/state/OrderExecution.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/state/OrderExecution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/state/Phase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/state/Phase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/state/Reinforcement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/state/Reinforcement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/state/Startup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/state/Startup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/view/GenericView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/view/GenericView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/view/HelpView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/view/HelpView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/view/MapView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/view/MapView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/controller/CommonControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/controller/ContinentControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/controller/CountryControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/controller/ErrorControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/controller/GameplayControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/controller/MapControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/controller/NeighborControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/controller/StartupControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/model/ActionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/model/ActionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/model/ContinentTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/model/ContinentTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/model/CountryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/model/CountryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/model/DeployOrderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/model/DeployOrderTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/model/GameContextTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/model/GameContextTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/model/ObservableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/model/ObservableTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/model/PlayerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/model/PlayerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/model/RouterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/model/RouterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/model/WarzonePropertiesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/model/WarzonePropertiesTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/service/CommandServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/service/CommandServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/service/CommonToolTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/service/CommonToolTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/service/ControllerFactoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/service/ControllerFactoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/service/CountryServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/service/CountryServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/service/GameEngineTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/service/GameEngineTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/service/MapServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/service/MapServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/service/NeighborServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/service/NeighborServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/service/RouterServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/service/RouterServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/service/StartupServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/service/StartupServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/view/GenericViewTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/view/GenericViewTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/view/HelpViewTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/view/HelpViewTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/warzone/view/MapViewTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/warzone/view/MapViewTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Enum" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
-  <component name="ProjectId" id="2deD2d9nv2Br4UDKD8bjEtKvYrH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <OptionsSetting value="false" id="Update" />
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2dmWZY4NjAWrCDZhFe4uPGZY4qM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;vrushabh-build1&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/College/Concordia ImP/APP/WarzoneG18&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "khushi-build1",
+    "git-widget-placeholder": "vrushabh-build1",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/College/Concordia ImP/APP/WarzoneG18",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -108,32 +138,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="96d1c144-8a57-42e7-986a-e3106e8c6b0f" name="Changes" comment="" />
-      <created>1710359446970</created>
+      <changelist id="0f15df41-6d75-4d85-9a33-ac12564575eb" name="Changes" comment="" />
+      <created>1710613794491</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1710359446970</updated>
-      <workItem from="1710359448050" duration="1168000" />
-      <workItem from="1710360882897" duration="748000" />
-      <workItem from="1710458968179" duration="4302000" />
-      <workItem from="1710473625940" duration="4512000" />
-      <workItem from="1710479123017" duration="342000" />
-      <workItem from="1710561432065" duration="652000" />
+      <updated>1710613794491</updated>
+      <workItem from="1710613797110" duration="1156000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
