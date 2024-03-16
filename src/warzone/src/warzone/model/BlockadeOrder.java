@@ -2,67 +2,122 @@ package warzone.model;
 
 import warzone.view.GenericView;
 
-public class BlockadeOrder extends Order {
+/**
+ * This class represents the bomb card in the game.
+ * @author zexin
+ *
+ */
+public class BombOrder extends Order{
 	
-	/** target country id */
-    private int d_targetCountryId;
-    
-    /** target country */
+	/**
+	 * target Country
+	 */
     private Country d_targetCountry;
-    
-    /** current player */
-    private Player d_player;
-    
-    /**
-     * constructor of blockade order
-     * @param p_player current player
-     * @param p_targetCountryId target country id
+    	
+    /** 
+     * current player     * 
      */
-    public BlockadeOrder(Player p_player,int p_targetCountryId) {
-        d_targetCountryId = p_targetCountryId;
+    private Player d_player;
+	
+	/**
+	 * This method is the constructor of the class.
+	 * @param p_player the current Player
+	 * @param p_targetCountry the target country 
+	 */
+	public BombOrder(Player p_player, Country p_targetCountry) {
+    	d_targetCountry = p_targetCountry;
         d_player=p_player;
+		this.d_orderType = OrderType.BOMB;
+        d_gameContext = GameContext.getGameContext();  
+	}
+	
+//    /**
+//     * set the player of the order
+//     * @param p_player the player
+//     */
+//    public void setPlayer(Player p_player){
+//        d_player = p_player;
+//    }
+
+    /**
+     * get the player of the order
+     * @return the player
+     */
+    public Player getPlayer() {
+        return  d_player;
     }
 
     /**
-     *  execute blockade order.
+     * This method will execute the current order.
      */
 	@Override
 	public void execute() {
-		if(!this.valid())	return;
-		//triple the number of armies on one of the current player's territories
-		d_targetCountry.setArmyNumber(d_targetCountry.getArmyNumber()*3);
-		//remove target country from conquered countries
-		d_targetCountry.getOwner().getConqueredCountries().remove(d_targetCountryId);
-		//set owner to null
-		d_targetCountry.setOwner(null);
+        if(!valid()) {
+        	GenericView.printWarning("Fail to execute order:" + toString());
+        	return;
+        }
+        
+        d_targetCountry.setArmyNumber( d_targetCountry.getArmyNumber() / 2); 
+
+		//print success information
+		GenericView.printSuccess("Success to execute order:" + toString());
 	}
 
-    /**
-     * check if the order can be executed
-     * @return true if valid
-     */
+	/**
+	 * This method is responsible to check the validity of the current order.
+	 * @return false if the current order is invalid
+	 */
 	@Override
 	public boolean valid() {
-		if(!d_player.getIsAlive()) {
-			GenericView.printError("Player "+d_player.getName()+" is dead!");
-			return false;
-		}
-		d_targetCountry=d_player.getConqueredCountries().get(d_targetCountryId);
-		if(d_targetCountry!=null) {
-			return true;
-		}else {
-			GenericView.printError("Blockade order invalid:target country not belong to current player!");
-			return false;
-		}
+//        //check if the player has a bomb card, checked it in the creation
+//        if(!d_player.getCards().contains(Card.BOMB)){
+//            GenericView.printError("Player " + d_player.getName() + " does not have a bomb card");
+//            return false;
+//        }
+        
+        //check whether the target country belongs to the player
+        if(d_player.getConqueredCountries().containsValue(d_targetCountry)){
+            GenericView.printError("The player cannot destroy armies in his own country.");
+            return false;
+        }
+        
+		//check if DIPLOMACY 
+		if( d_targetCountry.getOwner()!= null && this.d_player != null 
+				&& this.d_gameContext.isDiplomacyInCurrentTurn(d_player, d_targetCountry.getOwner())){
+      			GenericView.printWarning(String.format("The player [%s] and [%s] are in Diplomacy in current turn.", this.d_player.getName(), d_targetCountry.getOwner() ));
+      		    return false;
+		}		
+		
+        //check whether the target country is adjacent to one of the countries that belong to the player
+        boolean l_isAdjacent = false;
+        for (Integer l_conqueredCountryId : d_player.getConqueredCountries().keySet()) {
+        	if (d_player.getConqueredCountries().get(l_conqueredCountryId).getNeighbors().containsValue(d_targetCountry)) {
+        		//d_targetCountry = d_player.getConqueredCountries().get(l_conqueredCountryId).getNeighbors().get(d_targetCountry);
+        		l_isAdjacent = true;
+        		break;
+        	}
+        }
+        if (!l_isAdjacent) {
+        	GenericView.printError("The target country is not adjacent to one of the countries that belong to the player.");
+        	return false;
+        }
+        return true;
 	}
-
-    /**
-     * print the order
-     */
+	
+	/**
+	 * override of print the order
+	 */
 	@Override
-	public void printOrder() {
-		GenericView.println("Blockade order issued by player " + this.d_player.getName());
-		GenericView.println("Blockade " + this.d_targetCountry.getCountryName());
+	public void printOrder(){
+		GenericView.println(this.toString());		
+	}
+	
+	/**
+	 * override of print the order
+	 */
+	@Override
+	public String toString(){
+		return String.format("Bomb Order, issued by player [%s], bombing [%s]",  this.d_player.getName(), d_targetCountry.getCountryName() );		
 	}
 
 }
