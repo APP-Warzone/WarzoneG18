@@ -7,6 +7,8 @@ import warzone.view.GenericView;
 
 /**
  * This class will provide controllers with some service related to 'country' module.
+ * @author Harsh
+ * @version 1.1
  */
 public class CountryService {
 	/**

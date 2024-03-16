@@ -18,9 +18,9 @@ import java.util.Scanner;
 
 /**
  * Main game loop.
- *
  * Loop over each player for the assign reinforcements, issue orders, and execute orders main game loop phases
- *
+ * @author Vrushabh
+ * @version 1.1
  */
 public class GameEngine {
 
