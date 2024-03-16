@@ -6,6 +6,8 @@ import static org.junit.Assert.*;
 
 /**
  * tests for Country class
+ * @author Vrushabh
+ * @version 1.1
  */
 public class CountryTest {
 
