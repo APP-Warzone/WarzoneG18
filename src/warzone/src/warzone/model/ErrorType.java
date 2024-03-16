@@ -37,7 +37,7 @@ public enum ErrorType {
 	 * Error Type for TOO MUCH PARAMETERS
 	 */
 	TOO_MUCH_PARAMETERS;
-	
+
 	/**
 	 * This method can print error type.
 	 */
