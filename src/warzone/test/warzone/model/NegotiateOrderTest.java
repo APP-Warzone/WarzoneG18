@@ -5,7 +5,9 @@ import org.junit.Test;
 
 
 /**
- * Tests for NegotiateOrder  class
+ * Tests for NegotiateOrder class
+ * @author Love
+ * @version 1.1
  */
 public class NegotiateOrderTest {
 
