@@ -6,7 +6,8 @@ import static org.junit.Assert.*;
 
 /**
  * This class will test the bomb card
- *
+ * @author Khushi
+ * @version 1.1
  */
 public class BombOrderTest {
 
