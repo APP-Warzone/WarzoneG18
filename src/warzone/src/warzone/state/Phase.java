@@ -15,11 +15,11 @@ import warzone.view.*;
  *
  *		Phase
  *        MapEdit phase (abstract)
-
  *        GamePlay (abstract)
-
  *
  *      In each state, nextState() is defined so that it goes down in
+ *  @author Love
+ *  @version 1.1
  */
 public abstract class Phase {
 
