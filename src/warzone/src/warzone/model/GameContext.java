@@ -38,7 +38,7 @@ public class GameContext {
 
 	/**
 	 * check if there is a Diplomacy existed between 2 given players
-	 * @param p_playerA first given player 
+	 * @param p_playerA first given player
 	 * @param p_playerB second  given player
 	 * @return True if there is a Diplomacy existed, otherwise false
 	 */
@@ -281,6 +281,22 @@ public class GameContext {
 	}
 
 	/**
+	 * This method will return simple commands.
+	 * @return  simple command
+	 */
+	public String getSimpleCommand() {
+		return d_warzoneProperties.getSimpleCommand();
+	}
+
+	/**
+	 * This method will return complex commands.
+	 * @return  complex command
+	 */
+	public String getComplexCommand() {
+		return d_warzoneProperties.getComplexCommand();
+	}
+
+	/**
 	 * This method can provide the number of order in every round of the game.
 	 * @return the number of orders in each round
 	 */
@@ -298,7 +314,7 @@ public class GameContext {
 //		}
 //		return false;
 //	}
-//	
+//
 
 
 }
