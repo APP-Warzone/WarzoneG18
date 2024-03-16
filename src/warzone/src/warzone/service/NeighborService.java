@@ -11,7 +11,10 @@ import warzone.view.GenericView;
  *
  */
 public class NeighborService {
-	
+
+	/**
+	 * game context
+	 */
 	private GameContext d_gameContext;
 
 	/**
@@ -21,7 +24,7 @@ public class NeighborService {
 	public NeighborService(GameContext p_gameContext) {
 		d_gameContext = p_gameContext;
 	}
-	
+
 	/**
 	 * This method will add a neighbor country to another adjacent country.
 	 * @param p_countryID the ID of its adjacent country
@@ -33,13 +36,13 @@ public class NeighborService {
 		if(!l_countries.containsKey(p_countryID) || !l_countries.containsKey(p_neighborCountryID)) {
 			return false;
 		}
-		
+
 		Country l_country = l_countries.get(p_countryID);
 		Country l_neighborCountry = l_countries.get(p_neighborCountryID);
 
-		return l_country.addNeighbor(l_neighborCountry);		
+		return l_country.addNeighbor(l_neighborCountry);
 	}
-	
+
 	/**
 	 * This method will remove a country from its neighbor.
 	 * @param p_countryID the ID of the country that should be removed
@@ -51,7 +54,7 @@ public class NeighborService {
 		if(!l_countries.containsKey(p_countryID) || !l_countries.containsKey(p_neighborCountryID)) {
 			return false;
 		}
-		
+
 		Country l_country = l_countries.get(p_countryID);
 		if(!l_country.getNeighbors().containsKey(p_neighborCountryID)) {
 			GenericView.printError("Country ID " + p_neighborCountryID + " is not the neighbor of Country ID " + p_countryID);

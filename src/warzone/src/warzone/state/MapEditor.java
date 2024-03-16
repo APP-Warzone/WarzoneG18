@@ -23,8 +23,8 @@ public class MapEditor extends Phase {
 	 * Constructor for MapEditor
 	 * @param p_ge Game Engine
 	 */
-	public MapEditor(GameEngine p_ge) {
-		super(p_ge);
+	public MapEditor(GameEngine p_gameEngine) {
+		super(p_gameEngine);
 		d_mapService = new MapService(d_gameContext);
 		d_continentService = new ContinentService(d_gameContext);
 		d_countryService  = new CountryService(d_gameContext);
@@ -34,12 +34,12 @@ public class MapEditor extends Phase {
 	}
 
 	/**
-	 *  Call this method to go the the next state in the sequence. 
+	 *  Call this method to go the the next state in the sequence.
 	 */
 	public void next() {
 		d_gameEngine.setPhase(new Startup(d_gameEngine));
 	}
-	
+
 	/**
 	 * This methods can receive parameters from the Router, check the correctness of
 	 * commands and call the internal methods.
@@ -63,9 +63,6 @@ public class MapEditor extends Phase {
 		}
 		// if continent id or name is not correct, return error info
 		if(l_continentID == -1 || l_bonusReinforcements < 0){
-//			GenericView.printError("Missing valid parameters.");
-//			d_logEntryBuffer.setResult("ERROR").setMessage(d_logEntryBuffer.getMessage() +  " Missing valid parameters.").notify(d_logEntryBuffer);
-//			d_logEntryBuffer.clearMessage();
 			d_logEntryBuffer.logAction("ERROR", "Missing valid parameters.");
 			return;
 		}
@@ -86,8 +83,6 @@ public class MapEditor extends Phase {
 		d_continentService.add(l_Continent);
 
 		//3. render to view
-//		d_logEntryBuffer.setResult("SUCCESS").setMessage(d_logEntryBuffer.getMessage() +  String.format("Continent [%s] was added successfully.", l_Continent.getContinentName())).notify(d_logEntryBuffer);
-//		d_logEntryBuffer.clearMessage();
 		d_logEntryBuffer.logAction("SUCCESS", String.format("Continent [%s] was added successfully.", l_Continent.getContinentName()));
 	}
 
@@ -96,7 +91,7 @@ public class MapEditor extends Phase {
 	 * @param p_parameters id of continent
 	 */
 	public void removeContinent(String p_parameters) {
-		
+
 		//parse [p_parameters] to  [ l_continentID ]
 		if(p_parameters == null)
 		{
@@ -104,7 +99,7 @@ public class MapEditor extends Phase {
 			return;
 		}
 		int l_continentID = CommonTool.parseInt(p_parameters);
-		if(l_continentID == -1 ){	
+		if(l_continentID == -1 ){
 			d_logEntryBuffer.logAction("ERROR", "Missing valid parameters.");
 			return;
 		}
@@ -118,7 +113,7 @@ public class MapEditor extends Phase {
 	public void removeContinent(int p_continentID) {
 		if( d_continentService.remove(p_continentID)) {
 			d_logEntryBuffer.logAction("SUCCESS", String.format("Continent ID [%s] was removed successfully.", p_continentID));
-		}			
+		}
 		else {
 			d_logEntryBuffer.logAction("WARNING",String.format("Failed to remove Continent ID [%s].", p_continentID ));
 		}
@@ -131,7 +126,7 @@ public class MapEditor extends Phase {
 	 * @param p_parameters parameters parsed by parser
 	 */
 	public void addCountry (String p_parameters) {
-		
+
 		//parse [p_parameters] to  [ l_continentID, String l_continentName]
 		if(p_parameters == null){
 			d_logEntryBuffer.logAction("ERROR", "Missing valid parameters.");
@@ -162,7 +157,7 @@ public class MapEditor extends Phase {
 	public void addCountry (int p_countryID, int p_continentID) {
 		if( d_countryService.addCountryToContient(p_countryID, p_continentID) ) {
 			d_logEntryBuffer.logAction("SUCCESS", String.format("Country ID [%s] was added to Continent [%s] successfully.", p_countryID, p_continentID));
-		}			
+		}
 		else {
 			if(d_countryService.isExisted(p_countryID))
 				d_logEntryBuffer.logAction("WARNING", String.format(" Country [%s] was added, but failed to add Country ID [%s] to Continent [%s].", p_countryID , p_countryID , p_continentID));
@@ -176,17 +171,17 @@ public class MapEditor extends Phase {
 	 * @param p_parameters parameters parsed by parser
 	 */
 	public void removeCountry(String p_parameters) {
-		
-		//parse [p_parameters] 
+
+		//parse [p_parameters]
 		if(p_parameters == null) {
 			d_logEntryBuffer.logAction("ERROR", "Missing valid parameters.");
 			return;
 		}
 
-		int l_countryID = CommonTool.parseInt(p_parameters);		
-		if(l_countryID == -1 ){	
+		int l_countryID = CommonTool.parseInt(p_parameters);
+		if(l_countryID == -1 ){
 			d_logEntryBuffer.logAction("ERROR", "Missing valid parameters.");
-			return;	
+			return;
 		}
 
 		removeCountry(l_countryID);
@@ -199,7 +194,7 @@ public class MapEditor extends Phase {
 	public void removeCountry (int p_countryID) {
 		if( d_countryService.remove(p_countryID)) {
 			d_logEntryBuffer.logAction("SUCCESS", String.format("Country ID [%s] was removed successfully.", p_countryID));
-		}			
+		}
 		else {
 			d_logEntryBuffer.logAction("WARNING", String.format("Failed to remove Country ID [%s].", p_countryID ));
 		}
@@ -212,9 +207,9 @@ public class MapEditor extends Phase {
 	 * @param p_parameters parameters parsed by parser
 	 */
 	public void addNeighbor (String p_parameters) {
-		
+
 		//parse [p_parameters]
-		if(p_parameters == null){			
+		if(p_parameters == null){
 			d_logEntryBuffer.logAction("ERROR", "Missing valid parameters.");
 			return;
 		}
@@ -243,12 +238,12 @@ public class MapEditor extends Phase {
 
 		if( d_neighborService.add(p_countryID, p_neighborCountryID)) {
 			d_logEntryBuffer.logAction("SUCCESS", String.format("Neighbor [%s] was added to Country [%s] successfully.", p_neighborCountryID, p_countryID));
-		}			
+		}
 		else {
 			d_logEntryBuffer.logAction("WARNING", String.format("Failed to add Neighbor [%s] to Country [%s].", p_neighborCountryID, p_countryID));
 		}
-	}	
-	
+	}
+
 	/**
 	 * Performs the action for the user command: editneighbor -remove countryID neighborCountryID
 	 * This methods can receive parameters from the Router, check the correctness of
@@ -256,9 +251,9 @@ public class MapEditor extends Phase {
 	 * @param p_parameters parameters parsed by parser
 	 */
 	public void removeNeighbor (String p_parameters) {
-		
+
 		//parse [p_parameters]
-		if(p_parameters == null){			
+		if(p_parameters == null){
 			d_logEntryBuffer.logAction("ERROR", "Missing valid parameters.");
 			return;
 		}
@@ -286,12 +281,12 @@ public class MapEditor extends Phase {
 
 		if( d_neighborService.remove(p_countryID, p_neighborCountryID)) {
 			d_logEntryBuffer.logAction("SUCCESS",String.format("Neighbor [%s] was removed from Country [%s] successfully.", p_neighborCountryID, p_countryID));
-		}			
+		}
 		else {
 			d_logEntryBuffer.logAction("WARNING", String.format("Failed to remove Neighbor [%s] to Country [%s].", p_neighborCountryID, p_countryID));
 		}
 	}
-	 
+
 	/**
 	 * Performs the action for the user command: showmap
 	 *
@@ -317,7 +312,7 @@ public class MapEditor extends Phase {
 			d_logEntryBuffer.logAction("ERROR", "InValid File Name, please type a valid file name, with length less than 20.");
 			return false;
 		}
-		
+
 		if(! d_mapService.validateMap() ) {
 			d_logEntryBuffer.logAction("ERROR", "InValid map, please check the map.");
 			return false;
@@ -371,30 +366,72 @@ public class MapEditor extends Phase {
 			return true;
 		}
 	}
+
+	/**
+	 * execute issue_order or execute_order
+	 */
 	public void play(){
 		printInvalidCommandMessage();
 	}
+
+	/**
+	 * Performs the action for user command: gameplayer -add playerName
+	 *
+	 * @param p_playerName player's name
+	 */
 	public void addPlayer(String p_playerName) { printInvalidCommandMessage(); }
+
+	/**
+	 * Performs the action for user command: gameplayer -remove playerName
+	 *
+	 * @param p_playerName player's name
+	 */
 	public void removePlayer(String p_playerName){
-		 printInvalidCommandMessage();
-	 }	
+		printInvalidCommandMessage();
+	}
+
+	/**
+	 * Performs the action for user command: loadmap filename
+	 *
+	 * Game starts by user selection of a user-saved map file,
+	 * the map should be a connected graph
+	 *
+	 * @param p_fileName the file to load
+	 */
 	public void loadMap(String p_fileName){
-		 printInvalidCommandMessage();
-	 }		
+		printInvalidCommandMessage();
+	}
+
+	/**
+	 * Performs the action for user command: assigncountries
+	 *
+	 * After user creates all the players, all countries are randomly assigned to players.
+	 */
 	public void assigncountries(){
-		 printInvalidCommandMessage();
-	 }		
+		printInvalidCommandMessage();
+	}
+
+	/**
+	 * Performs the action for user command: reinforcement
+	 */
 	public void reinforcement(){
-		 printInvalidCommandMessage();
-	 }	
- 
+		printInvalidCommandMessage();
+	}
+
+	/**
+	 * Performs the action of issuing order
+	 */
 	public void issueOrder(){
-		 printInvalidCommandMessage();
-	 }	
+		printInvalidCommandMessage();
+	}
+
+	/**
+	 * Performs the action of order execution
+	 */
 	public void executeOrder(){
-		 printInvalidCommandMessage();
-	 }	
-	
-	
+		printInvalidCommandMessage();
+	}
+
+
 
 }

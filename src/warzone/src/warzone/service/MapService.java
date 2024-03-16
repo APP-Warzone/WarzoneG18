@@ -47,20 +47,20 @@ public class MapService {
 			else
 				l_fileName = p_fullFileName;
 			String l_path = this.d_gameContext.getMapfolder();
-			
+
 			//build the content using StringBuilder
 			StringBuilder l_map = new StringBuilder();
 			l_map.append("; map: " + l_fileName);
 			l_map.append("\n; map made with the 6441 Super Team");
 			l_map.append("\n; 6441.net  1.0.0.1 ");
 			l_map.append("\n");
-			
+
 			l_map.append("\n[files]");
 			l_map.append("\npic "+ l_fileName +"_pic.jpg");
 			l_map.append("\nmap "+ l_fileName +"_map.gif");
 			l_map.append("\ncrd "+ l_fileName + "europe.cards");
 			l_map.append("\n");
-			Map<Integer,Integer> l_continentIdMapping = new HashMap(); 
+			Map<Integer,Integer> l_continentIdMapping = new HashMap();
 			l_map.append("\n[continents]");
 			int l_continentId = 1;
 			for (Continent l_continent : d_gameContext.getContinents().values()) {
@@ -69,34 +69,34 @@ public class MapService {
 				l_continentId ++ ;
 			}
 			l_map.append("\n");
-			
+
 			l_map.append("\n[countries]");
 			for (Continent l_continent : d_gameContext.getContinents().values()) {
 				for (Country l_country : l_continent.getCountries().values()) {
 					l_map.append("\n" + l_country.getCountryID()  +  " " + l_country.getCountryName()  +  " " + l_continentIdMapping.get(l_continent.getContinentID()) +  " " + l_country.getXPosition()+  " " + l_country.getYPosition() );
-				}				
-			}			
+				}
+			}
 			l_map.append("\n");
-			
+
 			l_map.append("\n[borders]");
 			for (Country l_country : d_gameContext.getCountries().values()) {
 				l_map.append("\n" + l_country.getCountryID());
 				for (Country l_neighborCountry : l_country.getNeighbors().values()) {
 					l_map.append(" " + l_neighborCountry.getCountryID()  );
-				}				
-			}		
+				}
+			}
 			l_map.append("\n");
-			
+
 			//write the content into the map
-	        BufferedWriter writer = new BufferedWriter(new FileWriter(l_path + p_fullFileName));
-	        writer.write(l_map.toString());
-	        
-	        writer.close();
-	        return true;
+			BufferedWriter writer = new BufferedWriter(new FileWriter(l_path + p_fullFileName));
+			writer.write(l_map.toString());
+
+			writer.close();
+			return true;
 		}
 		catch(Exception ex) {
 			throw ex;
-		}		
+		}
 	}
 
 	/**
@@ -108,14 +108,14 @@ public class MapService {
 	public boolean editMap (String p_fileName) {
 
 		String l_mapDirectory = WarzoneProperties.getWarzoneProperties().getGameMapDirectory();
-		
+
 		try {
-			
+
 			//Clear gameContext
 			d_gameContext.reset();
-			
+
 			File l_mapFile = new File(l_mapDirectory + p_fileName);
-			
+
 			d_gameContext.setMapFileName(p_fileName);
 
 			//Specified file name does not exist (new map)
@@ -123,7 +123,7 @@ public class MapService {
 				d_logEntryBuffer.logAction("SUCCESS", "Creating a new map: " + p_fileName);
 				return true;
 			}
-			
+
 			Scanner l_scanner = new Scanner(l_mapFile);
 			String l_line;
 			String[] l_splitArray;
@@ -132,7 +132,7 @@ public class MapService {
 			Country l_country;
 
 			LoadMapPhase l_loadMapPhase = null;
-			
+
 			while (l_scanner.hasNextLine()) {
 				l_line = l_scanner.nextLine();
 
@@ -169,30 +169,30 @@ public class MapService {
 
 				// read file part
 				if(l_loadMapPhase == LoadMapPhase.FILES) {
-					
+
 					/*
 					 *  [files]
 					 *	pic europe_pic.jpg
 					 *	map europe_map.gif
 					 *	crd europe.cards
 					 */
-					
+
 					if(l_line.startsWith("pic")) {
-						
+
 						d_gameContext.setMapFilePic(l_line.substring(4));
 					}
 					else if(l_line.startsWith("map")) {
-						
+
 						d_gameContext.setMapFileMap(l_line.substring(4));
 					}
 					else if(l_line.startsWith("crd")) {
-						
+
 						d_gameContext.setMapFileCards(l_line.substring(4));
 					}
 				}
 				//read continent part
 				else if(l_loadMapPhase == LoadMapPhase.CONTINENTS && !l_line.trim().isEmpty()) {
-					
+
 					/*
 					 *  [continents]
 					 *	North_Europe 5 red
@@ -200,17 +200,17 @@ public class MapService {
 					 *	South_Europe 5 green
 					 *	West_Europe 3 blue
 					 */
-					
+
 					l_splitArray = l_line.split("\\s+");
-										
+
 					d_gameContext.getContinents().put(l_continentCtr,
 							new Continent(l_continentCtr, l_splitArray[0], Integer.parseInt(l_splitArray[1]), l_splitArray[2]));
-					
+
 					l_continentCtr++;
 				}
 				//read countries part
 				else if(l_loadMapPhase == LoadMapPhase.COUNTRIES && !l_line.trim().isEmpty()) {
-					
+
 					/*
 					 *  [countries]
 					 *	1 England 1 164 126
@@ -218,33 +218,33 @@ public class MapService {
 					 *	3 N_Ireland 1 125 70
 					 *	4 Rep_Ireland 1 106 90
 					 */
-					
+
 					l_splitArray = l_line.split("\\s+");
-					
+
 					l_id = Integer.parseInt(l_splitArray[0]);
 					l_country = new Country(l_id, l_splitArray[1], Integer.parseInt(l_splitArray[3]),
 							Integer.parseInt(l_splitArray[4]), d_gameContext.getContinents().get(Integer.parseInt(l_splitArray[2])));
-					
+
 					d_gameContext.getCountries().put(l_id, l_country);
-					
+
 					d_gameContext.getContinents().get(Integer.parseInt(l_splitArray[2])).getCountries().put(l_id, l_country);
 				}
 				//read border part
 				else if(l_loadMapPhase == LoadMapPhase.BORDERS && !l_line.trim().isEmpty()) {
-					
+
 					/*
 					 *  [borders]
 					 *	1 8 21 6 7 5 2 3 4
 					 *	2 8 1 3
 					 *	3 1 2
-					 *	4 22 1 5	
+					 *	4 22 1 5
 					 */
-					
+
 					l_splitArray = l_line.split("\\s+");
 					l_country = d_gameContext.getCountries().get(Integer.parseInt(l_splitArray[0]));
-					
+
 					for(int l_temp = 1; l_temp < l_splitArray.length; l_temp++) {
-						
+
 						l_id = Integer.parseInt(l_splitArray[l_temp]);
 						l_country.getNeighbors().put(l_id, d_gameContext.getCountries().get(l_id));
 					}
@@ -252,45 +252,28 @@ public class MapService {
 			}
 			//close reading the file
 			l_scanner.close();
-			
+
 			d_logEntryBuffer.logAction("SUCCESS", "Map succesfully loaded: " + p_fileName);
-		    
+
 		} catch (Exception e) {
 			d_logEntryBuffer.logAction("ERROR", "An error occured reading the map file: " + p_fileName);
 			return false;
 		}
-		
+
 		return true;
 	}
 
-	/**
-	 * map Index To CountryId
+	/*
+	 * 	Map validation
 	 */
+	// record the relationship between index of linkedlist and country/continent id
 	Map<Integer, Integer> d_mapIndexToCountryId = new HashMap<>();
-
-	/**
-	 * map CountryId To Index
-	 */
 	Map<Integer, Integer> d_mapCountryIdToIndex = new HashMap<>();
-
-	/**
-	 * map Index To ContinentId
-	 */
 	Map<Integer, Integer> d_mapIndexToContinentId = new HashMap<>();
-
-	/**
-	 * map ContinentId To Index
-	 */
 	Map<Integer, Integer> d_mapContinentIdToIndex = new HashMap<>();
 
-	/**
-	 * list to store the relationship between continents
-	 */
-	LinkedList<Object>[] l_continentAdjList;
-	/**
-	 * the record of continent tree
-	 */
-	int l_continentIndex;
+	LinkedList<Object>[] l_continentAdjList; // list to store the relationship between continents
+	int l_continentIndex; // the record of continent tree
 
 	/**
 	 * initiate the list of neighbours
@@ -328,7 +311,7 @@ public class MapService {
 			GenericView.printError("The map should contain more than one country.");
 			return false;
 		}
- 		// condition2: check if each country belongs to one continent
+		// condition2: check if each country belongs to one continent
 		for (Country l_countryTemp : d_gameContext.getCountries().values()){
 			if(l_countryTemp.getContinent() == null) {
 				GenericView.printError("Each country should belong to one continent.");
