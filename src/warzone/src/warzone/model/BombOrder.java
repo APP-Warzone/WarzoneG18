@@ -22,7 +22,7 @@ public class BombOrder extends Order{
 	/**
 	 * This method is the constructor of the class.
 	 * @param p_player the current Player
-	 * @param p_targetCountry the target country 
+	 * @param p_targetCountry the target country
 	 */
 	public BombOrder(Player p_player, Country p_targetCountry) {
 		d_targetCountry = p_targetCountry;
@@ -73,7 +73,7 @@ public class BombOrder extends Order{
 		//check if DIPLOMACY
 		if( d_targetCountry.getOwner()!= null && this.d_player != null
 				&& this.d_gameContext.isDiplomacyInCurrentTurn(d_player, d_targetCountry.getOwner())){
-			GenericView.printWarning(String.format("The player [%s] and [%s] are in Diplomacy in current turn.", this.d_player.getName(), d_targetCountry.getOwner() ));
+			GenericView.printWarning(String.format("The player [%s] and [%s] are in Diplomacy in current turn.", this.d_player.getName(), d_targetCountry.getOwner().getName() ));
 			return false;
 		}
 
