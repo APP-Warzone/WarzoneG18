@@ -21,28 +21,28 @@ public class Player {
 	private Map<Integer, Country> d_conqueredCountries;
 	private Queue<Order> d_orders;
 	private int d_armyNumber = 0;//total number
-	private int d_armiesToDeploy = 0;
+	private int d_armiesToDeploy = 0; 
 	private boolean d_isAlive = true;
 	private boolean d_hasFinishIssueOrder;
 	private boolean d_conqueredACountryThisTurn = false;
 	private List<Card> d_cards;
 	GameContext d_gameContext;
-
+	
 	private Scanner d_keyboard = new Scanner(System.in);
-
+	
 	/**
 	 * This constructor initiate the player instance.
 	 * @param p_name the name of the player
 	 */
 	public Player(String p_name) {
-
+		
 		d_name = p_name;
 		d_conqueredCountries = new HashMap<Integer, Country>();
 		d_orders = new LinkedList<Order>();
 		d_cards = new ArrayList<Card>();
 		d_gameContext = GameContext.getGameContext();
-	}
-
+	}		
+	
 	/**
 	 * This method will provide the name of the player.
 	 * @return the name of the player
@@ -80,7 +80,7 @@ public class Player {
 	public void cleanConqueredCountries() {
 		d_conqueredCountries.clear();
 	}
-
+	
 	/**
 	 * This method will provide the number of armies owned by the current player.
 	 * @return the number of armies
@@ -96,7 +96,7 @@ public class Player {
 	public void setArmyNumber(int p_armyNumber) {
 		this.d_armyNumber = p_armyNumber;
 	}
-
+	
 	/**
 	 * This method will provide the number of armies deployed by the current player.
 	 * @return the number of armies
@@ -111,8 +111,8 @@ public class Player {
 	 */
 	public void setArmiesToDeploy(int p_armiesToDeploy) {
 		this.d_armiesToDeploy = p_armiesToDeploy;
-	}
-
+	}	
+	
 	/**
 	 * This method will show whether a player is out of the game.
 	 * @return true the current player still has at least one territory.
@@ -144,7 +144,7 @@ public class Player {
 	public boolean getHasFinisedIssueOrder(){
 		return d_hasFinishIssueOrder;
 	}
-
+	
 	/**
 	 * get the value of conqueredACountryThisTurn
 	 * @return true if player has conquered a country this turn
@@ -154,13 +154,13 @@ public class Player {
 	}
 
 	/**
-	 * set if the player has conquered a country or not this turn
+	 * set if the player has conquered a country or not this turn 
 	 * @param p_conqueredACountryThisTurn
 	 */
 	public void setConqueredACountryThisTurn(boolean p_conqueredACountryThisTurn) {
 		this.d_conqueredACountryThisTurn = p_conqueredACountryThisTurn;
 	}
-
+	
 	/**
 	 * Cards the player has available to play
 	 * @return list of cards
@@ -177,7 +177,7 @@ public class Player {
 	private DeployOrder conventDeployOrder(String p_command) {
 		if(p_command == null)
 			return null;
-
+		
 		p_command = p_command.trim().toLowerCase();
 
 		String [] l_commandInfos = CommonTool.conventToArray(p_command);
@@ -185,14 +185,14 @@ public class Player {
 			int l_countryId = CommonTool.parseInt(l_commandInfos[1]);
 			int l_armyNumber = CommonTool.parseInt(l_commandInfos[2]);
 			Country l_country = this.getConqueredCountries().get(l_countryId);
-
+			
 			if(l_country != null && l_armyNumber > 0 ) {
 				return new DeployOrder(l_country, l_armyNumber );
 			}
 		}
-		return null;
+		return null;			
 	}
-
+	
 	/**
 	 * convert command into order
 	 * @param p_command command line
@@ -207,7 +207,7 @@ public class Player {
 		String [] l_commandInfos = CommonTool.conventToArray(p_command);
 		String l_orderName = "";
 		if(l_commandInfos[0] != null)
-			l_orderName = l_commandInfos[0];
+			 l_orderName = l_commandInfos[0];
 		switch(l_orderName.toLowerCase()){
 			case "deploy":
 				return createDeployOrder(l_commandInfos);
@@ -216,7 +216,7 @@ public class Player {
 			case "bomb":
 				return createBombOrder(l_commandInfos);
 			case "blockade":
-				break;
+				return createBlockadeOrder(l_commandInfos);
 			case "airlift":
 				return createAirliftOrder(l_commandInfos);
 			case "diplomacy":
@@ -254,7 +254,7 @@ public class Player {
 
 		return l_deployOrder;
 	}
-
+	
 	/**
 	 * create the bomb order by command
 	 * @param p_commandInfos command info
@@ -265,35 +265,35 @@ public class Player {
 
 		//read the information of command
 		int l_targetCountryId = CommonTool.parseInt(p_commandInfos[1]);
-
-		//check if the player has a bomb card
-		if(!this.getCards().contains(Card.BOMB)){
-			GenericView.printError("Player " + this.getName() + " does not have a bomb card");
-			return null;
-		}
+		
+        //check if the player has a bomb card
+        if(!this.getCards().contains(Card.BOMB)){
+            GenericView.printError("Player " + this.getName() + " does not have a bomb card");
+            return null;
+        }
 		//check if country exist
 		if(!GameContext.getGameContext().getCountries().containsKey(l_targetCountryId)){
 			GenericView.printError("The target country does not exist");
 			return null;
 		}
-		//check whether the target country belongs to the player
-		if(this.getConqueredCountries().containsKey(l_targetCountryId)){
-			GenericView.printError("The player cannot destroy armies in his own country.");
-			return null;
-		}
-		//check whether the target country is adjacent to one of the countries that belong to the player
-		boolean l_isAdjacent = false;
-		for (Integer l_conqueredCountryId : this.getConqueredCountries().keySet()) {
-			if (this.getConqueredCountries().get(l_conqueredCountryId).getNeighbors().containsKey(l_targetCountryId)) {
-				l_isAdjacent = true;
-				break;
-			}
-		}
-		if (!l_isAdjacent) {
-			GenericView.printError("The target country is not adjacent to one of the countries that belong to the player.");
-			return null;
-		}
-
+        //check whether the target country belongs to the player
+        if(this.getConqueredCountries().containsKey(l_targetCountryId)){
+            GenericView.printError("The player cannot destroy armies in his own country.");
+            return null;
+        }
+        //check whether the target country is adjacent to one of the countries that belong to the player
+        boolean l_isAdjacent = false;
+        for (Integer l_conqueredCountryId : this.getConqueredCountries().keySet()) {
+        	if (this.getConqueredCountries().get(l_conqueredCountryId).getNeighbors().containsKey(l_targetCountryId)) {
+        		l_isAdjacent = true;
+        		break;
+        	}
+        }
+        if (!l_isAdjacent) {
+        	GenericView.printError("The target country is not adjacent to one of the countries that belong to the player.");
+        	return null;
+        }
+        
 		BombOrder l_bombOrder = new BombOrder(l_targetCountryId);
 		l_bombOrder.setPlayer(this);
 
@@ -308,7 +308,7 @@ public class Player {
 	public AdvanceOrder createAdvanceOrder(String[] p_commandInfos){
 
 		if(p_commandInfos.length != 4) {
-
+			
 			GenericView.printError("Incorrect number of parameters. The command should be as follows: advance countryfromname countrytoname numarmies");
 			return null;
 		}
@@ -321,40 +321,40 @@ public class Player {
 
 		//check if the command is valid
 		if (l_fromCountry == null) {
-
+			
 			GenericView.printError("Country " + p_commandInfos[1] + " was not found. Please check your spelling.");
 			l_isValidCommand = false;
 		}
 		if (l_toCountry == null) {
-
+			
 			GenericView.printError("Country " + p_commandInfos[2] + " was not found. Please check your spelling.");
 			l_isValidCommand = false;
 		}
-
+		
 		if(l_isValidCommand) {
-
+			
 			//create the deploy order
 			return new AdvanceOrder(this, l_fromCountry, l_toCountry, l_numArmies);
 		}
 		return null;
 	}
-
+	
 	private Country findCountryByName(String p_countryName) {
-
+		
 		Map<Integer, Country> l_countries = GameContext.getGameContext().getCountries();
 		List<Integer> l_countryIDs = new ArrayList<Integer>(l_countries.keySet());
-
+		
 		for(Integer l_countryID : l_countryIDs) {
-
+			
 			if(l_countries.get(l_countryID).getCountryName().equalsIgnoreCase(p_countryName.trim())) {
-
+				
 				return l_countries.get(l_countryID);
 			}
 		}
-
+		
 		return null;
 	}
-
+	
 	/**
 	 * create the airlift order by command
 	 * @param p_commandInfos command info
@@ -387,27 +387,54 @@ public class Player {
 
 		return l_airliftOrder;
 	}
-
+	
+	/**
+	 * create the blockade order by command
+	 * @param p_commandInfos command info
+	 * @return the blockade order
+	 */
+	public BlockadeOrder createBlockadeOrder(String[] p_commandInfos) {
+		if(p_commandInfos.length != 2) return null;
+		int l_targetCountryId=CommonTool.parseInt(p_commandInfos[1]);
+		
+		//check if the player has a blockade card
+		if(!this.getCards().contains(Card.BLOCKADE)){
+			GenericView.printError("Player " + this.getName() + " does not have a blockade card");
+			return null;
+		}
+		//check if country exist
+		if(!GameContext.getGameContext().getCountries().containsKey(l_targetCountryId)){
+			GenericView.printError("Does not exist the target country");
+			return null;
+		}
+		//check if the player conquered the target country
+		if(!this.d_conqueredCountries.containsKey(l_targetCountryId)) {
+			GenericView.printError("Target country not belong to current player!");
+			return null;
+		}
+		return new BlockadeOrder(this, l_targetCountryId);
+	}
+	
 	/**
 	 *  create Diplomacy Order from command
 	 * @param p_commandInfos given command array
 	 * @return Diplomacy Order if the command is valid
 	 */
 	public NegotiateOrder createDiplomacyOrder(String[] p_commandInfos){
-		if(p_commandInfos.length != 2 || p_commandInfos[1]==null || p_commandInfos[1].toString() =="" )
+		if(p_commandInfos.length != 2 || p_commandInfos[1]==null || p_commandInfos[1].toString() =="" ) 
 			return null;
-
+		
 		//check if a card available?
-		if(!this.getCards().contains(Card.NEGOTIATE)){
-			GenericView.printError("Player " + this.getName() + " does not have a NEGOTIATE card");
-			return null;
-		}
+        if(!this.getCards().contains(Card.NEGOTIATE)){
+            GenericView.printError("Player " + this.getName() + " does not have a NEGOTIATE card");
+            return null;
+        }
 
 		//read the information of command
 		Player l_targetPlayer = d_gameContext.getPlayers().get(p_commandInfos[1].toString());
 		if(l_targetPlayer != null  && l_targetPlayer.getIsAlive()) {
 			NegotiateOrder l_diplomacyOrder = new NegotiateOrder(this, l_targetPlayer);
-			//remove one of NEGOTIATE the card
+			//remove one of NEGOTIATE the card 
 			this.d_cards.remove(Card.NEGOTIATE);
 			return l_diplomacyOrder;
 		}
@@ -415,13 +442,13 @@ public class Player {
 		return null;
 	}
 
-
+	
 	/**
-	 * The GameEngine class calls the issue_order() method of the Player. This method will wait for the following
-	 * command, then create a deploy order object on the players list of orders, then reduce the number of armies in the
-	 * players reinforcement pool. The game engine does this for all players in round-robin fashion until all the players
+	 * The GameEngine class calls the issue_order() method of the Player. This method will wait for the following 
+	 * command, then create a deploy order object on the players list of orders, then reduce the number of armies in the 
+	 * players reinforcement pool. The game engine does this for all players in round-robin fashion until all the players 
 	 * have placed all their reinforcement armies on the map.
-	 *
+	 * 
 	 * Issuing order command: deploy countryID num (until all reinforcements have been placed)
 	 */
 	public void issue_order() {
@@ -434,19 +461,19 @@ public class Player {
 		int l_armyToIssue = this.getArmiesToDeploy();
 		int l_armyHasIssued = 0;
 		GameContext l_gameContext = GameContext.getGameContext();
-
+		
 		GenericView.println(String.format("You have [%s] Countries and [%s] armies", this.getConqueredCountries().size(), l_armyToIssue ));
 		for(Country l_countryTemp : this.getConqueredCountries().values()) {
-			GenericView.println(String.format("Country ID : [%s] , Name : [%s]", l_countryTemp.getCountryID(), l_countryTemp.getCountryName() ));
-		}
-
+			GenericView.println(String.format("Country ID : [%s] , Name : [%s]", l_countryTemp.getCountryID(), l_countryTemp.getCountryName() ));	
+		}	
+		
 		Order l_order = null;
 		do {
 			GenericView.println(String.format("Please input command for player [%s] , there is [%s] army available", this.getName(), l_armyToIssue ));
 
 			if(!l_gameContext.getIsDemoMode()) {
 				//1. issue order from interaction
-				l_command = d_keyboard.nextLine();
+				l_command = d_keyboard.nextLine();				
 
 
 				//check if the issue order has finised
@@ -476,65 +503,65 @@ public class Player {
 			else {
 				//2. generate the command automatically.
 //				List<Integer> l_countryKeys = new ArrayList(d_conqueredCountries.keySet());
-//				Integer l_countryKey = l_countryKeys.get( CommonTool.getRandomNumber(0, (l_countryKeys.size() )) );
+//				Integer l_countryKey = l_countryKeys.get( CommonTool.getRandomNumber(0, (l_countryKeys.size() )) );			
 //				Country l_country = d_conqueredCountries.get(l_countryKey);
 //				int l_armyNumber =  CommonTool.getRandomNumber(1, l_armyToIssue);
 //				l_deployOrder = new DeployOrder(this, l_country, l_armyNumber );
 //				l_hasOrderGenerated = true;
 //				GenericView.printSuccess(String.format("Issue order of Deploying [%s] army to Country [%s]", l_armyNumber , l_country.getCountryName() ));
 			}
-
-		} while (l_hasOrderGenerated == false );
+					
+		} while (l_hasOrderGenerated == false );		
 	}
-
-
+	
+	
 	/**
-	 * The GameEngine calls the next_order() method of the Player. Then the Order objects execute() method is called,
-	 * which will enact the order.
-	 *
+	 * The GameEngine calls the next_order() method of the Player. Then the Order objects execute() method is called, 
+	 * which will enact the order. 
+	 * 
 	 * @return the next Order of the player
 	 */
 	public Order next_order() {
-
+		
 		return this.d_orders.poll();
 	}
-
+	
 	/**
 	 * Assign reinforcements to a player based on the continents they have conquered. Each continent has a bonus number of reinforcements
 	 * per round if a player owns all the countries within it. This method loops through all the conquered countries, tracking counters of
 	 * the number of countries owned in each continent. If the number of countries owned in a continent matches the number of countries in that
 	 * continent, the player gets the bonus reinforcements added (for each applicable continent).
-	 *
+	 * 
 	 * @param p_gameContext game context
 	 */
-	public void assignReinforcements() {
-
+	public void assignReinforcements() {		
+		
 		//Set the armiesToDeploy to the minimum value
-		this.setArmiesToDeploy(WarzoneProperties.getWarzoneProperties().getMinimumReinforcementsEachRound());
-
+		this.setArmiesToDeploy(WarzoneProperties.getWarzoneProperties().getMinimumReinforcementsEachRound()); 
+		
 		//Set armiesToDeploy based on the number of owned countries (if that number is greater than the minimum)
 		int l_conqueredCountriesBonus = (int)(Math.floor(this.getConqueredCountries().size() / WarzoneProperties.getWarzoneProperties().getMinimumCountriesPerReinforcementBonus()));
-
+		
 		if(l_conqueredCountriesBonus > this.getArmiesToDeploy()) {
 			this.setArmiesToDeploy(l_conqueredCountriesBonus);
 		}
-
+		
 		//Key: continentID, Value: Number of countries player owns in this continent
 		Map<Integer, Integer> l_armiesPerContinent = new HashMap<Integer, Integer>(d_gameContext.getContinents().size());
 
 		//Create a list of playerIDs from the game context and shuffle their order
 		List<Integer> l_conqueredCountryIDs = new ArrayList<Integer>(this.getConqueredCountries().keySet());
-
+				
 		//Looping variables
 		int l_continentID;
 		Integer l_deployedArmies;
-
+		
 		//Loop through each conquered country, incrementing each counter of the conquered country's continent
 		for(Integer countryID : l_conqueredCountryIDs) {
-
+						
 			l_continentID = d_gameContext.getCountries().get(countryID).getContinent().getContinentID();
 			l_deployedArmies = l_armiesPerContinent.get(l_continentID);
-
+			
 			if(l_deployedArmies == null) {
 				l_armiesPerContinent.put(l_continentID, 1);
 			}
@@ -542,14 +569,14 @@ public class Player {
 				l_armiesPerContinent.put(l_continentID, l_deployedArmies + 1);
 			}
 		}
-
+		
 		//Loop through the continent counters and update the players' armiesToDeploy if they own all the countries in a continent
 		l_armiesPerContinent.forEach(
-				(l_apcContinentID, l_apcDeployedArmies) -> {
-					if(l_apcDeployedArmies == d_gameContext.getContinents().get(l_apcContinentID).getCountries().size()) {
-						this.setArmiesToDeploy(this.getArmiesToDeploy() + d_gameContext.getContinents().get(l_apcContinentID).getBonusReinforcements());
-					}
+			(l_apcContinentID, l_apcDeployedArmies) -> {
+				if(l_apcDeployedArmies == d_gameContext.getContinents().get(l_apcContinentID).getCountries().size()) {
+					this.setArmiesToDeploy(this.getArmiesToDeploy() + d_gameContext.getContinents().get(l_apcContinentID).getBonusReinforcements());
 				}
+			}
 		);
-	}
+	}	
 }
