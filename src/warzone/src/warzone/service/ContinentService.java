@@ -9,7 +9,10 @@ import warzone.model.*;
  *
  */
 public class ContinentService {
-	
+
+	/**
+	 * game context
+	 */
 	private GameContext d_gameContext;
 
 	/**
@@ -19,7 +22,7 @@ public class ContinentService {
 	public ContinentService(GameContext p_gameContext) {
 		d_gameContext = p_gameContext;
 	}
-	
+
 	/**
 	 * This method will add new continent to current map.
 	 * @param p_continent the continent that should be added to current map
@@ -30,26 +33,26 @@ public class ContinentService {
 		if(p_continent != null) {
 			if(d_gameContext.getContinents().containsKey(p_continent.getContinentID())) {
 				Continent l_continent = d_gameContext.getContinents().get(p_continent.getContinentID());
-				l_continent.setBonusReinforcements(p_continent.getBonusReinforcements());				
+				l_continent.setBonusReinforcements(p_continent.getBonusReinforcements());
 			}
-			else {				
-				Map<Integer,Continent> l_continents=d_gameContext.getContinents();			
+			else {
+				Map<Integer,Continent> l_continents=d_gameContext.getContinents();
 				l_continents.put(p_continent.getContinentID(), p_continent);
 			}
 			return true;
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Check if a continent id is existed
 	 * @param p_continentID given continent id
 	 * @return true if existed otherwise false
 	 */
 	public boolean isExist(int p_continentID) {
-		return d_gameContext.getContinents().containsKey(p_continentID);		
+		return d_gameContext.getContinents().containsKey(p_continentID);
 	}
-	
+
 	/**
 	 * This method will remove a continent by its ID from the map.
 	 * @param p_continentID the ID of the continent
@@ -61,13 +64,13 @@ public class ContinentService {
 			if(l_continents.containsKey(p_continentID)){
 				Continent l_continent = l_continents.get(p_continentID);
 				//remove from continent list
-		        for (Country l_tempCountry : l_continent.getCountries().values())
-		        	l_tempCountry.setContinent(null);        
-		        
+				for (Country l_tempCountry : l_continent.getCountries().values())
+					l_tempCountry.setContinent(null);
+
 				//remove from the country reference
 				l_continents.remove(p_continentID);
 				return true;
-			}			
+			}
 		}
 		return false;
 	}

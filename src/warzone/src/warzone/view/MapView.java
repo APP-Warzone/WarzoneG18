@@ -3,10 +3,8 @@ package warzone.view;
 import warzone.model.Continent;
 import warzone.model.Country;
 import warzone.model.GameContext;
-import warzone.model.Render;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -37,23 +35,23 @@ public class MapView {
         for (Continent l_continent : p_gameContext.getContinents().values()) {
             System.out.println(String.format("%-2s", l_continent.getContinentID()) + l_continent.getContinentName() + "[" + l_continent.getBonusReinforcements() + "]");
 
-                for (Country l_country : l_continent.getCountries().values()) {
-                	l_countryKeys.remove(l_country.getCountryID());
-                    System.out.println(String.format("%22s", l_country.getCountryID()) + " " + l_country.getCountryName());
-                    for (Country l_nCountry : l_country.getNeighbors().values())
-                        System.out.println(String.format("%35s", l_nCountry.getCountryID()) + " " +l_nCountry.getCountryName());
-                }
+            for (Country l_country : l_continent.getCountries().values()) {
+                l_countryKeys.remove(l_country.getCountryID());
+                System.out.println(String.format("%22s", l_country.getCountryID()) + " " + l_country.getCountryName());
+                for (Country l_nCountry : l_country.getNeighbors().values())
+                    System.out.println(String.format("%35s", l_nCountry.getCountryID()) + " " +l_nCountry.getCountryName());
+            }
         }
         //printout Orphans Country
         if(l_countryKeys.size() > 0) {
-        	System.out.println(String.format("**    [%s]  Orphans Country - neighbors        **", l_countryKeys.size()));
-        	for( int l_countryKey : l_countryKeys) {
-        		Country l_country = p_gameContext.getCountries().get(l_countryKey);
-        		 System.out.println(String.format("%22s", l_country.getCountryID()) + " " + l_country.getCountryName());
-                 for (Country l_nCountry : l_country.getNeighbors().values())
-                     System.out.println(String.format("%35s", l_nCountry.getCountryID()) + " " +l_nCountry.getCountryName());
-        	}        	
-        }        
+            System.out.println(String.format("**    [%s]  Orphans Country - neighbors        **", l_countryKeys.size()));
+            for( int l_countryKey : l_countryKeys) {
+                Country l_country = p_gameContext.getCountries().get(l_countryKey);
+                System.out.println(String.format("%22s", l_country.getCountryID()) + " " + l_country.getCountryName());
+                for (Country l_nCountry : l_country.getNeighbors().values())
+                    System.out.println(String.format("%35s", l_nCountry.getCountryID()) + " " +l_nCountry.getCountryName());
+            }
+        }
     }
 
     /**

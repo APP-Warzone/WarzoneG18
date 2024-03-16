@@ -8,10 +8,26 @@ import java.util.Map;
  */
 public class Continent {
 
+	/**
+	 * continent id
+	 */
 	private int d_continentID;
+
+	/**
+	 * continent name
+	 */
 	private String d_continentName;
+	/**
+	 * bonusReinforcements of a continent
+	 */
 	private int d_bonusReinforcements;
+	/**
+	 * color of the continent
+	 */
 	private String d_color;
+	/**
+	 * countries in continent
+	 */
 	private Map<Integer, Country> d_countries;
 
 	/**

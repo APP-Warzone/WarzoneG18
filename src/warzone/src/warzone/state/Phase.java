@@ -9,7 +9,7 @@ import warzone.view.*;
 
 /**
  *	State of the State pattern. Here implemented as a abstract class. 
- *  
+ *
  *	In this example, the states represent states in the board game Risk. 
  *  There are many states, and even a hierarchy of states: 
  *
@@ -18,7 +18,7 @@ import warzone.view.*;
 
  *        GamePlay (abstract)
 
- *        
+ *
  *      In each state, nextState() is defined so that it goes down in 
  */
 public abstract class Phase {
@@ -33,19 +33,19 @@ public abstract class Phase {
 	 *  currenet phase
 	 */
 	protected GamePhase d_gamePhase = GamePhase.MAPEDITOR;
-	
+
 	/**
 	 * current Game Context
 	 */
-	protected GameContext d_gameContext;	
+	protected GameContext d_gameContext;
 
 	/**
 	 * Constructor for Phase
 	 * @param p_ge Game Engine
 	 */
-	Phase(GameEngine p_ge) {
-		d_gameEngine = p_ge;
-		d_gameContext = p_ge.getGameContext();
+	Phase(GameEngine p_gameEngine) {
+		d_gameEngine = p_gameEngine;
+		d_gameContext = p_gameEngine.getGameContext();
 	}
 
 	/**
@@ -164,21 +164,21 @@ public abstract class Phase {
 	public void printInvalidCommandMessage() {
 		System.out.println("Invalid command in state " + this.getClass().getSimpleName() );
 	}
-	
+
 	/**
 	 * show help for each phase
 	 */
 	public void help() {
 		HelpView.printHelp(this.d_gamePhase);
 	}
-	
+
 	/**
 	 * print out the error
 	 */
 	public void error() {
 		GenericView.printError("Incorrect command. ");
 	}
-	
+
 	/**
 	 * get current gamephase
 	 * @return current gamephase
