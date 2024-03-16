@@ -14,7 +14,15 @@ import java.util.*;
  */
 public class MapService {
 
+	/**
+	 * game context
+	 */
 	private GameContext d_gameContext;
+
+	/**
+	 * log entry buffer
+	 */
+	private LogEntryBuffer d_logEntryBuffer;
 
 	/**
 	 * constructor
@@ -22,6 +30,7 @@ public class MapService {
 	 */
 	public MapService(GameContext p_gameContext) {
 		d_gameContext = p_gameContext;
+		d_logEntryBuffer = p_gameContext.getLogEntryBuffer();
 	}
 
 	/**
@@ -111,8 +120,7 @@ public class MapService {
 
 			//Specified file name does not exist (new map)
 			if(!l_mapFile.exists() || l_mapFile.isDirectory()) {
-
-				GenericView.printSuccess("Creating a new map: " + p_fileName);
+				d_logEntryBuffer.logAction("SUCCESS", "Creating a new map: " + p_fileName);
 				return true;
 			}
 			
@@ -245,27 +253,44 @@ public class MapService {
 			//close reading the file
 			l_scanner.close();
 			
-			GenericView.printSuccess("Map succesfully loaded: " + p_fileName);
+			d_logEntryBuffer.logAction("SUCCESS", "Map succesfully loaded: " + p_fileName);
 		    
 		} catch (Exception e) {
-			GenericView.printError("An error occured reading the map file: " + p_fileName);
+			d_logEntryBuffer.logAction("ERROR", "An error occured reading the map file: " + p_fileName);
 			return false;
 		}
 		
 		return true;
 	}
 
-	/*
-	 * 	Map validation
+	/**
+	 * map Index To CountryId
 	 */
-	// record the relationship between index of linkedlist and country/continent id
 	Map<Integer, Integer> d_mapIndexToCountryId = new HashMap<>();
+
+	/**
+	 * map CountryId To Index
+	 */
 	Map<Integer, Integer> d_mapCountryIdToIndex = new HashMap<>();
+
+	/**
+	 * map Index To ContinentId
+	 */
 	Map<Integer, Integer> d_mapIndexToContinentId = new HashMap<>();
+
+	/**
+	 * map ContinentId To Index
+	 */
 	Map<Integer, Integer> d_mapContinentIdToIndex = new HashMap<>();
 
-	LinkedList<Object>[] l_continentAdjList; // list to store the relationship between continents
-	int l_continentIndex; // the record of continent tree
+	/**
+	 * list to store the relationship between continents
+	 */
+	LinkedList<Object>[] l_continentAdjList;
+	/**
+	 * the record of continent tree
+	 */
+	int l_continentIndex;
 
 	/**
 	 * initiate the list of neighbours
@@ -291,27 +316,28 @@ public class MapService {
 	 * condition5: check if each continent is strongly connected
 	 * condition6: check if the whole map is strongly connected
 	 *
-	 * @param p_gameContext game context
 	 * @return if map is valid
 	 */
-	public boolean validateMap(GameContext p_gameContext) {
+	public boolean validateMap() {
 		d_mapIndexToContinentId.clear();
 		d_mapContinentIdToIndex.clear();
 
 		// condition1: check if more than one country
-		int l_countryCount = p_gameContext.getCountries().size();
+		int l_countryCount = d_gameContext.getCountries().size();
 		if ( l_countryCount <= 1 ) {
 			GenericView.printError("The map should contain more than one country.");
 			return false;
 		}
  		// condition2: check if each country belongs to one continent
-		for (Country l_countryTemp : p_gameContext.getCountries().values()){
-			if(l_countryTemp.getContinent() == null)
+		for (Country l_countryTemp : d_gameContext.getCountries().values()){
+			if(l_countryTemp.getContinent() == null) {
 				GenericView.printError("Each country should belong to one continent.");
+				return false;
+			}
 
 		}
 		// condition3: check if more than one continent
-		Map<Integer, Continent> l_continent = p_gameContext.getContinents();
+		Map<Integer, Continent> l_continent = d_gameContext.getContinents();
 		if ( l_continent.size() <= 1 ) {
 			GenericView.printError("The map should contain at least one continent.");
 			return false;
@@ -410,7 +436,10 @@ public class MapService {
 		return true;
 	}
 
-	private int l_seq = 0; // the sequence it is read in tree
+	/**
+	 * the sequence it is read in tree
+	 */
+	private int l_seq = 0;
 
 
 	/**

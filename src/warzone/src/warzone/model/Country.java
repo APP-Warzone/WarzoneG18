@@ -1,5 +1,7 @@
 package warzone.model;
 
+import warzone.view.GenericView;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,7 +9,7 @@ import java.util.Map;
  * This class represents the country in the game
  */
 public class Country {
-
+	
 	private int d_countryID;
 	private String d_countryName;
 	private Player d_owner;
@@ -16,6 +18,7 @@ public class Country {
 	private int d_armyNumber = 0;
 	private Map<Integer, Country> d_neighbors;
 	private Continent d_continent;
+	private CountryState d_countryState;
 
 	/**
 	 * constructor
@@ -26,13 +29,14 @@ public class Country {
 	 * @param p_continent the coutinent it belongs to
 	 */
 	public Country(int p_countryID, String p_countryName, int p_xPosition, int p_yPosition, Continent p_continent) {
-
+		
 		d_countryID = p_countryID;
 		d_countryName = p_countryName;
 		d_xPosition = p_xPosition;
 		d_yPosition = p_yPosition;
 		d_neighbors = new HashMap<Integer, Country>();
 		d_continent = p_continent;
+		setCountryState(CountryState.Initial, null);
 	}
 
 	/**
@@ -44,7 +48,7 @@ public class Country {
 		d_countryID = p_countryID;
 		d_countryName = p_countryName;
 		d_neighbors = new HashMap<Integer, Country>();
-
+		setCountryState(CountryState.Initial, null);
 	}
 
 	/**
@@ -92,7 +96,11 @@ public class Country {
 	 * @param p_owner the Player who owns the country
 	 */
 	public void setOwner(Player p_owner) {
+		if (d_owner != null)
+			d_owner.getConqueredCountries().remove(this.getCountryID(), this);
 		this.d_owner = p_owner;
+		if(p_owner != null)
+			p_owner.getConqueredCountries().put(this.getCountryID(), this);
 	}
 
 	/**
@@ -155,8 +163,8 @@ public class Country {
 	 * get the continent it belongs to
 	 * @return the continent it belongs to
 	 */
-	public Continent getContinent() {
-		return d_continent;
+	public Continent getContinent() { 
+		return d_continent; 
 	}
 
 	/**
@@ -168,7 +176,7 @@ public class Country {
 		// the p_continent could be null, when removing the Continent was removed
 		d_continent = p_continent;
 		return true;
-
+		
 	}
 
 	/**
@@ -183,5 +191,39 @@ public class Country {
 		}
 		else
 			return false;
+	}
+
+	/**
+	 * get country state
+	 * @return the state of country
+	 */
+	public CountryState getCountryState(){
+		return d_countryState;
+	}
+
+	/**
+	 * set country state
+	 * @param p_countryState country state
+	 * @param p_player player, can be null
+	 */
+	public void setCountryState(CountryState p_countryState, Player p_player){
+		switch (p_countryState){
+			case Initial:
+				this.d_countryState = p_countryState;
+				this.d_owner = null;
+				return;
+			case Occupied:
+				if(p_player == null){
+					GenericView.printError("player can not be null.");
+					return;
+				}
+				this.setOwner(p_player);
+				this.d_countryState = p_countryState;
+				return;
+			case Neutral:
+				this.setOwner(null);
+				this.d_countryState = p_countryState;
+				return;
+		}
 	}
 }

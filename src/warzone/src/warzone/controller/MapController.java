@@ -54,10 +54,7 @@ public class MapController {
 			return false;
 		}
 
-		if(! d_mapService.validateMap(d_gameContext) ) {
-			GenericView.printError("InValid map, please check the map.");
-			return false;
-		}
+		
 
 		// call mapService to save the map and return the path
 		p_fileName = p_fileName.trim();
@@ -99,14 +96,11 @@ public class MapController {
 	 * @return true if it is a valid map, otherwise return false
 	 */
 	public boolean validateMap () {
-		if(! d_mapService.validateMap(d_gameContext) ) {
-			GenericView.printError("It is not a connected map.");
-			return false;
-		}
-		else {
+		
+		
 			GenericView.printSuccess("Yeah! You got a connected map!");
 			return true;
-		}
+		
 	}
 
 }

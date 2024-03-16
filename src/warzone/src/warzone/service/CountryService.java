@@ -35,14 +35,14 @@ public class CountryService {
 				d_gameContext.getCountries().put(p_countryID, l_country);
 			}
 			if(l_country.getContinent() != null)
-				d_gameContext.getLogEntryBuffer().logAction("WARNING", "Country ID " + l_country.getCountryID() + " is already belongs to Continent ID " + l_country.getContinent().getContinentID());
+				GenericView.printError("Country ID " + l_country.getCountryID() + " is already belongs to Continent ID " + l_country.getContinent().getContinentID());
 			else {
 				if (l_continent != null) {
 					l_continent.addCountry(l_country);
 					return true;
 				}
 				else
-					d_gameContext.getLogEntryBuffer().logAction("WARNING", "The continent " + p_ContinentID + " does not exist.");
+					GenericView.printError("The continent " + p_ContinentID + " does not exist.");
 			}
 		}
 		return false;
@@ -63,7 +63,8 @@ public class CountryService {
 	        }
 	        
 	        //remove from Continent
-	        d_gameContext.getContinents().get( l_country.getContinent().getContinentID() ).getCountries().remove(p_countryID);
+			if(l_country.getContinent() != null)
+				d_gameContext.getContinents().get( l_country.getContinent().getContinentID() ).getCountries().remove(p_countryID);
 
 	        //remove from players.
 			if(l_country.getOwner() != null && l_country.getOwner().getConqueredCountries() != null)
