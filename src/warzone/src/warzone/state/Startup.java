@@ -17,7 +17,7 @@ import warzone.view.*;
  *  that the command is invalid. 
  */
 public class Startup extends GamePlay {
-	
+
 	private StartupService d_startupService;
 	private LogEntryBuffer d_logEntryBuffer;
 
@@ -42,13 +42,13 @@ public class Startup extends GamePlay {
 			GenericView.printWarning("It is no ready to play, please check prerequists.");
 		}
 	}
-	
+
 	/**
 	 * Performs the action for user command: loadmap filename
-	 * 
+	 *
 	 * Game starts by user selection of a user-saved map file,
 	 * the map should be a connected graph
-	 * 
+	 *
 	 * @param p_fileName the file to load
 	 */
 	public void loadMap(String p_fileName){
@@ -57,7 +57,7 @@ public class Startup extends GamePlay {
 
 	/**
 	 * Performs the action for user command: gameplayer -add playerName
-	 * 
+	 *
 	 * @param p_playerName player's name
 	 */
 	public void addPlayer(String p_playerName) {
@@ -67,10 +67,10 @@ public class Startup extends GamePlay {
 		}
 		//1. create a new player instance
 		Player l_player = new Player(p_playerName);
-		
+
 		//2. add player to PlayerService
 		boolean l_ok=d_startupService.addPlayer(l_player);
-		
+
 		//3. render to view
 		if(l_ok) {
 			d_logEntryBuffer.logAction("SUCCESS", String.format("Player [%s] was added successfully.", l_player.getName()));
@@ -81,7 +81,7 @@ public class Startup extends GamePlay {
 
 	/**
 	 * Performs the action for user command: gameplayer -remove playerName
-	 * 
+	 *
 	 * @param p_playerName player's name
 	 */
 	public void removePlayer(String p_playerName){
@@ -94,10 +94,16 @@ public class Startup extends GamePlay {
 
 	/**
 	 * Performs the action for user command: assigncountries
-	 * 
+	 *
 	 * After user creates all the players, all countries are randomly assigned to players. 
 	 */
 	public void assigncountries(){
+		//check if current map is valid.
+		if(!(new MapService(d_gameContext).validateMap())) {
+			d_logEntryBuffer.logAction("ERROR","The map is invalid,please fix it before assigning countries");
+			return ;
+		}
+
 		boolean result = d_startupService.assignCountries();
 		if(result == false) {
 			d_logEntryBuffer.logAction("ERROR",  "Must have more than 2 players, and map have at least the same number of countries as players ");
