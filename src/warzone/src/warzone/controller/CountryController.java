@@ -3,7 +3,6 @@ package warzone.controller;
 import warzone.view.*;
 import warzone.model.*;
 import warzone.service.CommonTool;
-import warzone.service.ContinentService;
 import warzone.service.CountryService;
 
 /**
@@ -32,7 +31,7 @@ public class CountryController {
 	 */
 	public boolean addCountry (String p_parameters) {
 		//parse [p_parameters] to  [ l_continentID, String l_continentName]
-		if(p_parameters == null){			
+		if(p_parameters == null){
 			GenericView.printError("Missing valid parameters.");
 			return false;
 		}
@@ -40,7 +39,7 @@ public class CountryController {
 		int l_countryID = -1, l_continentID = -1;
 		String[] l_parameters = CommonTool.conventToArray(p_parameters);
 		// check if parameter length is valid
-		if(l_parameters.length == 2 ) {			
+		if(l_parameters.length == 2 ) {
 			l_countryID = CommonTool.parseInt(l_parameters[0]);
 			l_continentID = CommonTool.parseInt(l_parameters[1]);
 		}
@@ -59,18 +58,18 @@ public class CountryController {
 	 * @param p_continentID the id of countinent add to
 	 * @return true if successfully added, otherwise return false
 	 */
-	public boolean addCountry (int p_countryID, int p_continentID) {		
+	public boolean addCountry (int p_countryID, int p_continentID) {
 		if( d_countryService.addCountryToContient(p_countryID, p_continentID) ) {
 			GenericView.printSuccess( String.format("Country ID [%s] was added to Continent [%s] successfully.", p_countryID, p_continentID) );
 			return true;
-		}			
+		}
 		else {
 			if(d_countryService.isExisted(p_countryID))
-				GenericView.printWarning( String.format("Country [%s] was added, but failed to add Country ID [%s] to Continent [%s].", p_countryID , p_countryID , p_continentID) );	
+				GenericView.printWarning( String.format("Country [%s] was added, but failed to add Country ID [%s] to Continent [%s].", p_countryID , p_countryID , p_continentID) );
 			else
 				GenericView.printWarning( String.format("Failed to add Country ID [%s] to Continent [%s].", p_countryID , p_continentID) );
 			return false;
-		}	
+		}
 	}
 
 	/**
@@ -85,16 +84,16 @@ public class CountryController {
 			return false;
 		}
 
-		int l_countryID = CommonTool.parseInt(p_parameters);		
-		if(l_countryID == -1 ){	
-			GenericView.printError("Missing valid parameters.");	
-			return false;	
+		int l_countryID = CommonTool.parseInt(p_parameters);
+		if(l_countryID == -1 ){
+			GenericView.printError("Missing valid parameters.");
+			return false;
 		}
-		
+
 		return removeCountry(l_countryID);
-	}	
-	
-	
+	}
+
+
 	/**
 	 * Performs the action for the user command: editcountry -remove countryID
 	 * @param p_countryID the id of the country to remove
@@ -104,10 +103,10 @@ public class CountryController {
 		if( d_countryService.remove(p_countryID)) {
 			GenericView.printSuccess( String.format("Country ID [%s] was removed successfully.", p_countryID) );
 			return true;
-		}			
+		}
 		else {
 			GenericView.printWarning( String.format("Failed to remove Country ID [%s].", p_countryID ) );
 			return false;
-		}			
+		}
 	}
 }

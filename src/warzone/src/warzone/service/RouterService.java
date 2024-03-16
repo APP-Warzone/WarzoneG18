@@ -8,6 +8,7 @@ import java.util.List;
 
 import warzone.controller.*;
 import warzone.model.*;
+import warzone.state.Phase;
 import warzone.view.GenericView;
 
 /**
@@ -19,39 +20,42 @@ public class RouterService {
 	private static RouterService ROUTER_SERVICE;
 	
 	private GameContext d_gameContext;
-
+	private GameEngine d_gameEngine;
+	private Phase d_gamePhase;
 	/**
 	 * the constructor of it, only can be used inside this class.
-	 * @param p_gameContext the current game context
+	 * @param p_gameEngine the current  Game Engine
 	 */
-	private RouterService(GameContext p_gameContext) {
-		d_gameContext = p_gameContext;
+	private RouterService(GameEngine p_gameEngine) {
+		d_gameContext = p_gameEngine.getGameContext();
+		d_gameEngine = p_gameEngine;
+		d_gamePhase = p_gameEngine.getPhase();
 	}	
 	
 	/**
 	 * This method will return a routerService instance and create it if the instance
 	 * is null.
-	 * @param p_gameContext the game context instance
+	 * @param p_gameEngine the Game Engine instance
 	 * @return the RouterService instance
 	 */
-	public static RouterService getRouterService(GameContext p_gameContext) {
+	public static RouterService getRouterService( GameEngine p_gameEngine) {
 		if( ROUTER_SERVICE == null)
-			ROUTER_SERVICE = new RouterService(p_gameContext);
+			ROUTER_SERVICE = new RouterService(p_gameEngine);
 		return ROUTER_SERVICE;
 	}
-	/**
-	 * Check if current game phase is included in the given game phases list.
-	 * @param p_gamePhases Given game phases list
-	 * @return True if included, otherwise false.
-	 */
-	private boolean getIsContainCurrentPhase(List<GamePhase> p_gamePhases) {
-		if( d_gameContext.getIsContainCurrentPhase(p_gamePhases))
-			return true;
-		else {
-			GenericView.printWarning("The command is not valid in the current phase: " + d_gameContext.getGamePhase());
-			return false;
-		}
-	}
+//	/**
+//	 * Check if current game phase is included in the given game phases list.
+//	 * @param p_gamePhases Given game phases list
+//	 * @return True if included, otherwise false.
+//	 */
+//	private boolean getIsContainCurrentPhase(List<GamePhase> p_gamePhases) {
+//		if( d_gameContext.getIsContainCurrentPhase(p_gamePhases))
+//			return true;
+//		else {
+//			GenericView.printWarning("The command is not valid in the current phase: " + d_gameContext.getGamePhase());
+//			return false;
+//		}
+//	}
 	
 	/**
 	 * This method will parse a single console commands entered by the user and call the corresponding controller by controller name
@@ -59,125 +63,66 @@ public class RouterService {
 	 * @throws IOException exception from reading the commands
 	 */
 	public void route(Router p_router) throws IOException{
-		ControllerFactory l_controllerFactory = ControllerFactory.getControllerFactory();
-		switch(p_router.getControllerName()) {
-			case COMMON:
-				if(!getIsContainCurrentPhase( Arrays.asList(GamePhase.MAPEDITOR,GamePhase.PLAY, GamePhase.STARTUP) ))
-					break;
-				CommonController l_commonController = l_controllerFactory.getCommonController();
-				switch(p_router.getActionName()) {
-					case "welcome":
-						l_commonController.welcome(p_router.getActionParameters());
-						break;
-					case "help":
-						l_commonController.help();
-						break;
-					case "changephase":
-						l_commonController.changePhase(p_router.getActionParameters());
-						break;						
-				}
+		//todo: need to consider the controller name in the future
+		switch(p_router.getActionName().toLowerCase()) {
+			case "next":
+				d_gamePhase.next();
 				break;
-			case CONTINENT:
-				if(!getIsContainCurrentPhase( Arrays.asList(GamePhase.MAPEDITOR) ))
-					break;
-				ContinentController l_continentController= l_controllerFactory.getContinentController();
-				switch(p_router.getActionName()) {
-					case "add":
-						GenericView.printDebug("route: CONTINENT-add- " + p_router.getActionParameters());
-						l_continentController.addContinent(p_router.getActionParameters());
-						break;
-					case "remove":
-						GenericView.printDebug("route: CONTINENT-remove-" + p_router.getActionParameters());
-						l_continentController.removeContinent(p_router.getActionParameters());
-						break;
-				}
+			case "addcontinent":
+				d_gamePhase.addContinent(p_router.getActionParameters());
 				break;
-			case MAP:
-				MapController l_mapController= l_controllerFactory.getMapController();
-				switch(p_router.getActionName().toLowerCase()) {
-					case "savemap":
-						if(getIsContainCurrentPhase( Arrays.asList(GamePhase.MAPEDITOR) ))
-							l_mapController.saveMap(p_router.getActionParameters());
-						break;
-					case "editmap":
-						if(getIsContainCurrentPhase( Arrays.asList(GamePhase.MAPEDITOR) ))
-							l_mapController.editMap(p_router.getActionParameters());
-						break;
-					case "showmap":
-						if(getIsContainCurrentPhase( Arrays.asList(GamePhase.MAPEDITOR) ))
-							l_mapController.showMap();
-						break;
-					case "validatemap":
-						if(getIsContainCurrentPhase( Arrays.asList(GamePhase.MAPEDITOR, GamePhase.STARTUP) ))
-							l_mapController.validateMap();
-						break;
-				}
+			case "removecontinent":
+				d_gamePhase.removeContinent(p_router.getActionParameters());
 				break;
-			case COUNTRY:
-				if(!getIsContainCurrentPhase( Arrays.asList(GamePhase.MAPEDITOR) ))
-					break;
-				CountryController l_countryController= l_controllerFactory.getCountryController();
-				switch(p_router.getActionName()) {
-					case "add":
-						l_countryController.addCountry(p_router.getActionParameters());
-						break;
-					case "remove":
-						l_countryController.removeCountry(p_router.getActionParameters());
-						break;
-				}
+			case "addcountry":
+				d_gamePhase.addCountry(p_router.getActionParameters());
 				break;
-			case NEIGHBOR:
-				if(!getIsContainCurrentPhase( Arrays.asList(GamePhase.MAPEDITOR) ))
-					break;
-				NeighborController l_neighborController= l_controllerFactory.getNeighborController();
-
-				switch(p_router.getActionName()) {
-					case "add":
-						l_neighborController.addNeighbor(p_router.getActionParameters());
-						break;
-					case "remove":
-						l_neighborController.removeNeighbor(p_router.getActionParameters());
-						break;
-				}
+			case "removecountry":
+				d_gamePhase.removeCountry(p_router.getActionParameters());
 				break;
-			case GAMEPLAY:
-				if(!getIsContainCurrentPhase( Arrays.asList(GamePhase.PLAY,GamePhase.STARTUP) ))
-					break;
-				GameplayController l_gameplayController = l_controllerFactory.getGameplayController();
-
-				switch(p_router.getActionName()) {
-					case "showmap":
-						l_gameplayController.showMap();
-						break;
-					case "play":
-						l_gameplayController.play();
-						break;
-				}
+			case "showmap":
+				d_gamePhase.showMap();
 				break;
-			case STARTUP:
-				if(!getIsContainCurrentPhase( Arrays.asList(GamePhase.STARTUP) ))
-					break;
-				StartupController l_startupController = l_controllerFactory.getStartupController();
-				switch(p_router.getActionName()) {
-					case "add":
-						l_startupController.addPlayer(p_router.getActionParameters());
-						break;
-					case "remove":
-						l_startupController.removePlayer(p_router.getActionParameters());
-						break;
-					case "loadmap":
-						l_startupController.loadMap(p_router.getActionParameters());
-						break;
-					case "assigncountries":
-						l_startupController.assignCountries();
-						break;						
-				}
+			case "savemap":
+				d_gamePhase.saveMap(p_router.getActionParameters());
 				break;
-			case ERROR:
-				ErrorController l_errorController = l_controllerFactory.getErrorController();
-				l_errorController.error(p_router.getActionName());
-		}	
-		
+			case "editmap":
+				d_gamePhase.editMap(p_router.getActionParameters());
+				break;
+			case "validatemap":
+				d_gamePhase.validateMap();
+				break;
+			case "addneighbor":
+				d_gamePhase.addNeighbor(p_router.getActionParameters());
+				break;
+			case "removeneighbor":
+				d_gamePhase.removeNeighbor(p_router.getActionParameters());
+				break;
+			case "addplayer":
+				d_gamePhase.addPlayer(p_router.getActionParameters());
+				break;
+			case "removeplayer":
+				d_gamePhase.removePlayer(p_router.getActionParameters());
+				break;
+			case "loadmap":
+				d_gamePhase.loadMap(p_router.getActionParameters());
+				break;
+			case "populatecountries":
+				d_gamePhase.populatecountries();
+				break;
+//			case "reinforcement":
+//				d_gamePhase.reinforcement();
+//				break;
+//			case "issueOrder":
+//				d_gamePhase.issueOrder();
+//				break;
+//			case "executeOrder":
+//				d_gamePhase.executeOrder();
+//				break;
+			case "help":
+				d_gamePhase.help();
+				break;
+		}		
 	}
 	
 	/**
@@ -186,13 +131,14 @@ public class RouterService {
 	 */
 	public void route(List<Router> p_routers) {
 		if(p_routers != null) {
-			p_routers.forEach((router) ->{
+			p_routers.forEach((l_router) ->{
 				try {
-					GenericView.printDebug("Excuting router: " + router.toString() );
-					route(router);
+					GenericView.printDebug("Excuting router: " + l_router.toString() );
+					this.d_gameContext.setCurrentRouter(l_router);
+					route(l_router);
 				}
-				catch(Exception ex){	
-					GenericView.printError("Exception occur: " + ex.toString());
+				catch(Exception l_ex){
+					GenericView.printError("Exception occur: " + l_ex.toString());
 				}
 			});			
 		}
@@ -218,7 +164,7 @@ public class RouterService {
 		}
 			
 		GenericView.printDebug("parseCommand: start to work on command: " + p_command);
-		
+				
 		// remove prefix whitespace and convert the String to lower case 
 		p_command = p_command.toLowerCase().trim();
 				
@@ -284,7 +230,14 @@ public class RouterService {
 			//TODO add it in the property file
 			String l_actionArray = "-add,-remove";
 			if(l_actionArray.indexOf(l_action.getAction()) > -1) { 
-				l_routers.add(new Router(l_controllerName, l_action.getAction(), l_action.getParameters()));
+				String l_command = Arrays.toString(p_commandArray).replace(",", " ");
+//				String l_command =  String.format("%s %s %s", 
+//						p_commandArray[0], 
+//						(p_commandArray.length > 1)? p_commandArray[1]:"", 
+//						(p_commandArray.length > 2)? p_commandArray[2]:"" ) ;
+				Router l_router = new Router(l_controllerName, l_action.getAction(), l_action.getParameters(),l_command);
+				
+				l_routers.add(l_router);
 				GenericView.printDebug("Add an action to a router");
 			}
 			else {
@@ -307,47 +260,49 @@ public class RouterService {
 		// create the router according to the command
 		Router l_router = null;
 		// the first element of commandArray is command
+		String l_command = Arrays.toString(p_commandArray).replace(",", " ");
+//		String l_command = String.format("%s %s %s", 
+//					p_commandArray[0], 
+//					(p_commandArray.length > 1)? p_commandArray[1]:"", 
+//					(p_commandArray.length > 2)? p_commandArray[2]:"" );
 		switch (p_commandArray[0]) {
 			case "reboot":
 			case "startup":
 			case "mapeditor":
-				l_router = new Router(ControllerName.COMMON, "changephase",p_commandArray[0]);
+				l_router = new Router(ControllerName.COMMON, "changephase",p_commandArray[0],l_command);
 				break;
 			case  "help":
-				l_router = new Router(ControllerName.COMMON, "help");
+				l_router = new Router(ControllerName.COMMON, "help", l_command);
 				break;		
 			case  "showmap":
-				if(this.d_gameContext.getGamePhase().equals(GamePhase.MAPEDITOR))
-					l_router = new Router(ControllerName.MAP, "showmap");
-				else
-					l_router = new Router(ControllerName.GAMEPLAY, "showmap");
+					l_router = new Router(ControllerName.MAP, "showmap", l_command);
 				break;
 			case  "validatemap":
-				l_router =  new Router(ControllerName.MAP, "validatemap");
+				l_router =  new Router(ControllerName.MAP, "validatemap", l_command);
 				break;
 			case  "play":
-				l_router =  new Router(ControllerName.GAMEPLAY, "play");
+				l_router =  new Router(ControllerName.GAMEPLAY, "play", l_command);
 				break;				
 			case  "assigncountries":
-				l_router =  new Router(ControllerName.STARTUP, "assigncountries");
+				l_router =  new Router(ControllerName.STARTUP, "assigncountries", l_command);
 				break;
 			case  "savemap":
 				if (p_commandArray.length == 1) {
-					return createErrorRouter(ErrorType.MISSING_PARAMETER.toString());
+					return createErrorRouter(ErrorType.MISSING_PARAMETER.toString(), l_command);
 				}
-				if(p_commandArray.length == 2 ) {
-					l_router =  new Router(ControllerName.MAP, "savemap", p_commandArray[1]);
+				else if(p_commandArray.length == 2 ) {
+					l_router =  new Router(ControllerName.MAP, "savemap", p_commandArray[1], l_command);
 				}
 				else {
-					return createErrorRouter(ErrorType.TOO_MUCH_PARAMETERS.toString());
+					return createErrorRouter(ErrorType.TOO_MUCH_PARAMETERS.toString(), l_command);
 				}
 				break;
 			case  "editmap":
 				if (p_commandArray.length == 1) {
-					return createErrorRouter(ErrorType.MISSING_PARAMETER.toString());
+					return createErrorRouter(ErrorType.MISSING_PARAMETER.toString(), l_command);
 				}
 				if(p_commandArray.length == 2 ) {
-					l_router =  new Router(ControllerName.MAP, "editmap", p_commandArray[1]);
+					l_router =  new Router(ControllerName.MAP, "editmap", p_commandArray[1], l_command);
 				}
 				else {
 					return createErrorRouter(ErrorType.TOO_MUCH_PARAMETERS.toString());
@@ -358,7 +313,7 @@ public class RouterService {
 					return createErrorRouter(ErrorType.MISSING_PARAMETER.toString());
 				}
 				if(p_commandArray.length == 2 ) {
-					l_router =  new Router(ControllerName.STARTUP, "loadmap", p_commandArray[1]);
+					l_router =  new Router(ControllerName.STARTUP, "loadmap", p_commandArray[1], l_command);
 				}
 				else {
 					return createErrorRouter(ErrorType.TOO_MUCH_PARAMETERS.toString());
@@ -366,7 +321,6 @@ public class RouterService {
 				break;
 			//TODO other routers for simple commands
 		}
-		
 		return l_router;
 	}
 
@@ -380,24 +334,24 @@ public class RouterService {
 		List<Action> l_actions = new LinkedList<Action>();
 
 		// in this loop we recognize option and according parameter
-		for(int i = 1; i < p_commandArray.length; i++) {
+		for(int l_tempi = 1; l_tempi < p_commandArray.length; l_tempi++) {
 			// judge that if p_commandArray[i] is an option
-			if(p_commandArray[i].charAt(0) == '-') {
+			if(p_commandArray[l_tempi].charAt(0) == '-') {
 				// if an option is the last element of the array or there are two
 				// continuous options, we still return missing parameter error
-				if (i == p_commandArray.length - 1 || p_commandArray[i + 1].charAt(0) == '-') {
+				if (l_tempi == p_commandArray.length - 1 || p_commandArray[l_tempi + 1].charAt(0) == '-') {
 					return new LinkedList<Action>();
 				}
-				for (int j = i + 1; j < p_commandArray.length; j++) {
-					if (p_commandArray[j].charAt(0) == '-') {
-						Action l_action = new Action(p_commandArray[i].replace("-", ""), CommonTool.convertArray2String(p_commandArray, " ", i + 1, j - 1));
+				for (int l_tempj = l_tempi + 1; l_tempj < p_commandArray.length; l_tempj++) {
+					if (p_commandArray[l_tempj].charAt(0) == '-') {
+						Action l_action = new Action(p_commandArray[l_tempi].replace("-", ""), CommonTool.convertArray2String(p_commandArray, " ", l_tempi + 1, l_tempj - 1));
 						l_actions.add(l_action);
-						i = j;
+						l_tempi = l_tempj;
 					}
-					if (j == p_commandArray.length - 1) {
-						Action l_action = new Action(p_commandArray[i].replace("-", ""), CommonTool.convertArray2String(p_commandArray, " ", i + 1, j));
+					if (l_tempj == p_commandArray.length - 1) {
+						Action l_action = new Action(p_commandArray[l_tempi].replace("-", ""), CommonTool.convertArray2String(p_commandArray, " ", l_tempi + 1, l_tempj));
 						l_actions.add(l_action);
-						i = j;
+						l_tempi = l_tempj;
 					}
 				}
 			}
@@ -410,7 +364,19 @@ public class RouterService {
 	 * @param p_errorType the error type of the command
 	 * @return Router representing error
 	 */
-	private Router createErrorRouter(String p_errorType){
-		return new Router(ControllerName.ERROR, p_errorType);
+	private Router createErrorRouter(String p_errorType) {
+		return new Router(ControllerName.ERROR, p_errorType, "");
 	}
+	
+	/**
+	 * This method will create the error controller by its error type.
+	 * @param p_errorType the error type of the command
+	 * @param p_command the command for this action
+	 * @return Router representing error
+	 */
+	private Router createErrorRouter(String p_errorType, String p_command) {
+		return new Router(ControllerName.ERROR, p_errorType,p_command);
+	}
+	
+	
 }

@@ -27,17 +27,17 @@ public class GameplayController {
 	 */
 	public boolean play() {
 		
-		this.d_gameContext.setGamePhase(GamePhase.PLAY);
-		GenericView.printSuccess("Warzone is in the phase :" + d_gameContext.getGamePhase());
-		HelpView.printHelp(d_gameContext.getGamePhase() );
-		
+		//this.d_gameContext.setGamePhase(GamePhase.PLAY);
+		GenericView.printSuccess("Warzone is in the phase :" + d_gameEngine.getPhase());
+		HelpView.printHelp(d_gameEngine.getPhase().getGamePhase() );
+		//check if gameengine is ready to start
 		if( !d_gameEngine.isReadyToStart()) {
 			GenericView.printWarning("Game is not ready to start, please check the map， countries and players.");
 			return false;
 		}
 		else
 			GenericView.println("The game start to play........");
-			
+		//printout the result
 		boolean l_finished = d_gameEngine.play();
 		if(l_finished) {
 			GenericView.printSuccess( String.format("Game was finished successfully."));
