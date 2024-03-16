@@ -13,6 +13,9 @@ import warzone.state.MapEditor;
  */
 public class MapServiceTest {
 
+    /**
+     * gamecontext before each test
+     */
     GameContext d_gameContext;
 
     /**
@@ -88,7 +91,7 @@ public class MapServiceTest {
         new Country(7,"agentina", 343,435, d_gameContext.getContinents().get(2) );
         l_countryService.addCountryToContient(7,2);
 
-        //NeighborService 
+        //NeighborService
 
         NeighborService l_neighborService = new NeighborService(d_gameContext);
         l_neighborService.add(1,2);
