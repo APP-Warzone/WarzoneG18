@@ -6,6 +6,8 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * tests for GenericView class
+ * @author Khushi
+ * @version 1.1
  */
 public class GenericViewTest {
 

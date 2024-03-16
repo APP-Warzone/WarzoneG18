@@ -3,6 +3,8 @@ import org.junit.runners.Suite;
 
 /**
  * Run all test cases
+ * @author Vrushabh
+ * @version 1.1
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
