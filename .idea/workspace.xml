@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96d1c144-8a57-42e7-986a-e3106e8c6b0f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/State/TestSuite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/TestSuite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/service/TestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/AdvanceOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/AdvanceOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/LogEntryBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/LogEntryBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/model/AirliftOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/AirliftOrderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
