@@ -196,7 +196,7 @@ public class RouterService {
 
 		GenericView.printDebug("parseCommand: start to work on command: " + p_command);
 
-		// remove prefix whitespace and convert the String to lower case 
+		// remove prefix whitespace and convert the String to lower case
 		p_command = p_command.toLowerCase().trim();
 
 		// split command with any number of whitespace
@@ -204,8 +204,8 @@ public class RouterService {
 
 		String l_firstWord = "," + l_commandArray[0] + ",";
 		// TODO move these commands into the properties file
-		String l_complexCommand = d_gameContext.getComplexCommand();
-		String l_simpleCommand = d_gameContext.getSimpleCommand();
+		String l_complexCommand = ",editcontinent,editcountry,editneighbor,gameplayer,";
+		String l_simpleCommand = ",loadmap,editmap,savemap,assigncountries,validatemap,showmap,help,qamode,play,next,reboot,startup,mapeditor,";
 		if(l_simpleCommand.indexOf(l_firstWord) > -1) {
 			//simple command with only one router
 			GenericView.printDebug("parseCommand: start to work on simple command: " + p_command);
@@ -224,8 +224,8 @@ public class RouterService {
 	}
 
 	/**
-	 * A command can be divided into two types, complex command and simple command. 
-	 * This method is responsible to parse complex commands, such as editCountry and editContinent, 
+	 * A command can be divided into two types, complex command and simple command.
+	 * This method is responsible to parse complex commands, such as editCountry and editContinent,
 	 * and convert the command into a list of Router
 	 * @param p_commandArray command divided by whitespace
 	 * @return a Router list representing the command
@@ -262,9 +262,9 @@ public class RouterService {
 			String l_actionArray = "-add,-remove";
 			if(l_actionArray.indexOf(l_action.getAction()) > -1) {
 				String l_command = Arrays.toString(p_commandArray).replace(",", " ");
-//				String l_command =  String.format("%s %s %s", 
-//						p_commandArray[0], 
-//						(p_commandArray.length > 1)? p_commandArray[1]:"", 
+//				String l_command =  String.format("%s %s %s",
+//						p_commandArray[0],
+//						(p_commandArray.length > 1)? p_commandArray[1]:"",
 //						(p_commandArray.length > 2)? p_commandArray[2]:"" ) ;
 				Router l_router = new Router(l_controllerName, l_action.getAction(), l_action.getParameters(),l_command);
 
@@ -282,7 +282,7 @@ public class RouterService {
 	}
 
 	/**
-	 * This method is responsible to parse simple commands, such as showmap and validatemap, 
+	 * This method is responsible to parse simple commands, such as showmap and validatemap,
 	 * and convert the command into a list of Router
 	 * @param p_commandArray command divided by whitespace
 	 * @return a Router list representing the command
@@ -292,9 +292,9 @@ public class RouterService {
 		Router l_router = null;
 		// the first element of commandArray is command
 		String l_command = Arrays.toString(p_commandArray).replace(",", " ");
-//		String l_command = String.format("%s %s %s", 
-//					p_commandArray[0], 
-//					(p_commandArray.length > 1)? p_commandArray[1]:"", 
+//		String l_command = String.format("%s %s %s",
+//					p_commandArray[0],
+//					(p_commandArray.length > 1)? p_commandArray[1]:"",
 //					(p_commandArray.length > 2)? p_commandArray[2]:"" );
 		switch (p_commandArray[0]) {
 			case "reboot":

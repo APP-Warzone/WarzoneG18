@@ -37,7 +37,7 @@ public class LogEntryBuffer extends Observable{
 
 	/**
 	 *  log Issue Order
-	 * @param p_result result of logging Issue Order
+	 * @param p_order result of logging Issue Order
 	 * @param p_message  msg of logging Issue Order
 	 * @param p_command  command which create the order
 	 */
@@ -53,9 +53,9 @@ public class LogEntryBuffer extends Observable{
 
 	/**
 	 *  log executing Order
-	 * @param p_result result of executing Order
+	 * @param p_order result of executing Order
 	 * @param p_message  msg of executing Order
-	 * @param p_order  the order
+	 * @param p_command  command which create the order
 	 */
 	public void logExecuteOrder(String p_result, String p_message, Order p_order) {
 		this.d_message = p_message;
@@ -69,7 +69,6 @@ public class LogEntryBuffer extends Observable{
 
 	/**
 	 * This is the constructor of the class.
-	 * @param p_gameContext the game context
 	 */
 	public LogEntryBuffer(GameContext p_gameContext) {
 		d_gameContext = p_gameContext;
@@ -96,7 +95,7 @@ public class LogEntryBuffer extends Observable{
 //		d_time = df.format(new Date());
 //		return this;
 //	}
-//	
+//
 //	/**
 //	 * This method will return the time that the command is issued.
 //	 * @return the time that the command is issued
@@ -104,7 +103,7 @@ public class LogEntryBuffer extends Observable{
 //	public String getTime() {
 //		return d_time;
 //	}
-//	
+//
 //	/**
 //	 * This method will return the current order.
 //	 * @return the current order
@@ -130,7 +129,7 @@ public class LogEntryBuffer extends Observable{
 //	public String getResult() {
 //		return d_result;
 //	}
-//	
+//
 //	/**
 //	 * This method will set the result of the issued order.
 //	 * @param d_result the result of the issued order
@@ -140,7 +139,7 @@ public class LogEntryBuffer extends Observable{
 //		this.d_result = d_result;
 //		return this;
 //	}
-//	
+//
 //	/**
 //	 * This method will show the current phase.
 //	 * @return the current phase
@@ -175,7 +174,7 @@ public class LogEntryBuffer extends Observable{
 //		}
 //		return this;
 //	}
-//	
+//
 //	/**
 //	 * This method will show the message of the issued order.
 //	 * @return the message of the issued order
