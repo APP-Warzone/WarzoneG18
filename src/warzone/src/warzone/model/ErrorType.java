@@ -1,39 +1,47 @@
 package warzone.model;
 
+/**
+ * There are eight types of error during the game.
+ *
+ */
 public enum ErrorType {
+	/**
+	 * Error Type for NO SUCH COMMAND
+	 */
 	NO_SUCH_COMMAND,
+	/**
+	 * Error Type for MISSING PARAMETER
+	 */
 	MISSING_PARAMETER,
+	/**
+	 * Error Type for MISSING COMMAND
+	 */
 	MISSING_COMMAND,
+	/**
+	 * Error Type for BAD PARAMETER
+	 */
 	BAD_PARAMETER,
+	/**
+	 * Error Type for BAD OPTION
+	 */
 	BAD_OPTION,
+	/**
+	 * Error Type for WRONG PARAMETER
+	 */
 	WRONG_PARAMETER,
+	/**
+	 * Error Type for COMMAND ERROR
+	 */
 	COMMAND_ERROR,
+	/**
+	 * Error Type for TOO MUCH PARAMETERS
+	 */
 	TOO_MUCH_PARAMETERS;
 	
-	public String toStripackage warzone.model;
-
 	/**
-	 * There are eight types of error during the game.
-	 *
+	 * This method can print error type.
 	 */
-	public enum ErrorType {
-		NO_SUCH_COMMAND,
-		MISSING_PARAMETER,
-		MISSING_COMMAND,
-		BAD_PARAMETER,
-		BAD_OPTION,
-		WRONG_PARAMETER,
-		COMMAND_ERROR,
-		TOO_MUCH_PARAMETERS;
-		
-		/**
-		 * This method can print error type.
-		 */
-		public String toString() {
-			return this.getClass().getName();
-		}
-	}
-	ng() {
+	public String toString() {
 		return this.getClass().getName();
 	}
 }

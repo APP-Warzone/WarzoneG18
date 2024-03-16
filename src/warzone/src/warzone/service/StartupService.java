@@ -8,11 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Scanner;
-import warzone.model.Continent;
-import warzone.model.Country;
-import warzone.model.GameContext;
-import warzone.model.Player;
-import warzone.view.GenericView;
+
+import warzone.model.*;
 
 /**
  * This class will provide controllers with service associating with starup
@@ -20,7 +17,15 @@ import warzone.view.GenericView;
  */
 public class StartupService {
 
+	/**
+	 * game context
+	 */
 	private GameContext d_gameContext;
+
+	/**
+	 * log entry buffer
+	 */
+	private LogEntryBuffer d_logEntryBuffer;
 
 	/**
 	 * This constructor can initiate the game context of current instance.
@@ -28,6 +33,7 @@ public class StartupService {
 	 */
 	public StartupService(GameContext p_gameContext) {
 		d_gameContext = p_gameContext;
+		d_logEntryBuffer = d_gameContext.getLogEntryBuffer();
 	}
 	
 	/**
@@ -57,7 +63,7 @@ public class StartupService {
 		if(p_playerName != null && d_gameContext.getPlayers().containsKey(p_playerName)) {
 			Player l_player = d_gameContext.getPlayers().get(p_playerName);
 			for( Country l_country : l_player.getConqueredCountries().values() ) 
-				l_country.setOwner(null);					
+				l_country.setCountryState(CountryState.Initial, null);
 			d_gameContext.getPlayers().remove(p_playerName);
 			return true;
 		}
@@ -77,15 +83,13 @@ public class StartupService {
 		String l_mapDirectory = null;
 		
 		try {
-			
 			//Get the map directory from the properties file
 			Properties l_properties = new Properties();
 			l_properties.load(getClass().getClassLoader().getResourceAsStream("config.properties"));
 			l_mapDirectory = l_properties.getProperty("gameMapDirectory");
 			
 		} catch (IOException ex) {
-				
-			GenericView.printError("Error loading properties file.");
+			d_logEntryBuffer.logAction("ERROR", "Error loading properties file.");
 			return false;
 		}
 		
@@ -100,7 +104,7 @@ public class StartupService {
 
 			//Specified file name does not exist (new map)
 			if(!l_mapFile.exists() || l_mapFile.isDirectory()) {
-				GenericView.printError("The following map file is invalid, please select another one: " + p_fileName);
+				d_logEntryBuffer.logAction("ERROR", "The following map file is invalid, please select another one: " + p_fileName);
 				return false;
 			}
 			
@@ -255,15 +259,14 @@ public class StartupService {
 			
 			//Validate the map
 			if(!(new MapService(d_gameContext).validateMap())) {
-				
-				GenericView.printError("The map file selected failed validation: " + p_fileName);
+				d_logEntryBuffer.logAction("ERROR", "The map file selected failed validation: " + p_fileName);
 				return false;
 			}
-			
-			GenericView.printSuccess("Map succesfully loaded: " + p_fileName);
+
+			d_logEntryBuffer.logAction("SUCCESS", "Map succesfully loaded: " + p_fileName);
 		    
 		} catch (Exception e) {
-			GenericView.printError("An error occured reading the map file: " + p_fileName);
+			d_logEntryBuffer.logAction("ERROR", "An error occured reading the map file: " + p_fileName);
 			return false;
 		}
 		
@@ -280,10 +283,10 @@ public class StartupService {
 	 * @return true if successfully assign the countries, otherwise return false
 	 */
 	public boolean assignCountries() {
-
 		//Make sure there are more than 1 player
 		//and there are enough countries to distribute between all the players
 		if( d_gameContext.getPlayers().size() < 2 || d_gameContext.getPlayers().size() > d_gameContext.getCountries().size() ) {
+			d_logEntryBuffer.logAction("ERROR", "The game should have 2 players at least, and countriese number is greater than players number.");
 			return false;
 		}
 		//reset the countries list and for each player.
@@ -292,7 +295,7 @@ public class StartupService {
 		}
 		//rest all the owner for countries
 		for( Country l_countryTemp: d_gameContext.getCountries().values()) {
-			l_countryTemp.setOwner(null);
+			l_countryTemp.setCountryState(CountryState.Initial,null);
 		}		
 		
 		//Each player will be assigned the same number of countries. Leftover countries will be unassigned (neutral)
@@ -319,10 +322,9 @@ public class StartupService {
 			
 			l_country = d_gameContext.getCountries().get(l_countryID);
 			l_player = d_gameContext.getPlayers().get(l_playerNames.get(l_playerIndex));
-			
-			l_country.setOwner(l_player);
-			l_player.getConqueredCountries().put(l_country.getCountryID(), l_country);
-			
+
+			l_country.setCountryState(CountryState.Occupied, l_player);
+
 			//Update the looping variables
 			l_playerIndex++;
 			l_ctr++;
