@@ -13,7 +13,8 @@ import warzone.model.*;
 
 /**
  * This class will provide controllers with service associating with starup
- *
+ * @author Love
+ * @version 1.1
  */
 public class StartupService {
 

@@ -11,7 +11,8 @@ import warzone.view.GenericView;
 
 /**
  * This class can offer service related router to controllers.
- *
+ * @author Harsh
+ * @version 1.1
  */
 public class RouterService {
 

@@ -8,7 +8,8 @@ import warzone.view.GenericView;
 
 /**
  * This class can provide service to controllers.
- *
+ * @author Khushi
+ * @version 1.1
  */
 public class NeighborService {
 
