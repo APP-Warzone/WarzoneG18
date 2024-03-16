@@ -5,7 +5,8 @@ import warzone.model.Render;
 
 /**
  * for specific ui, this class can create dedicated view class.
- *
+ * @author Harsh
+ * @version 1.1
  */
 public class GenericView {
 

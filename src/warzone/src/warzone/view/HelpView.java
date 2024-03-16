@@ -6,7 +6,8 @@ import warzone.service.GameEngine;
 
 /**
  * This class can print some help hints to players.
- *
+ * @author Harsh
+ * @version 1.1
  */
 public class HelpView {
 
