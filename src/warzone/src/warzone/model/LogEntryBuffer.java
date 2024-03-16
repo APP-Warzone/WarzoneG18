@@ -19,7 +19,7 @@ public class LogEntryBuffer extends Observable{
 	private String d_result;
 	private GamePhase d_phase;
 	private GameContext d_gameContext;
-	
+
 	/**
 	 * This method will print log messages and save them to the log file.
 	 * @param p_result result of the action
@@ -34,10 +34,10 @@ public class LogEntryBuffer extends Observable{
 		this.d_order = this.d_gameContext.getCurrentRouter().getCommand();
 		this.notify(this);
 	}
-	
+
 	/**
 	 *  log Issue Order
-	 * @param p_order result of logging Issue Order
+	 * @param p_result result of logging Issue Order
 	 * @param p_message  msg of logging Issue Order
 	 * @param p_command  command which create the order
 	 */
@@ -50,12 +50,12 @@ public class LogEntryBuffer extends Observable{
 		this.d_order = p_command;
 		this.notify(this);
 	}
-		
+
 	/**
 	 *  log executing Order
-	 * @param p_order result of executing Order
+	 * @param p_result result of executing Order
 	 * @param p_message  msg of executing Order
-	 * @param p_command  command which create the order
+	 * @param p_order  the order
 	 */
 	public void logExecuteOrder(String p_result, String p_message, Order p_order) {
 		this.d_message = p_message;
@@ -66,9 +66,10 @@ public class LogEntryBuffer extends Observable{
 		this.d_order = p_order.getCommand();
 		this.notify(this);
 	}
-	
+
 	/**
 	 * This is the constructor of the class.
+	 * @param p_gameContext the game context
 	 */
 	public LogEntryBuffer(GameContext p_gameContext) {
 		d_gameContext = p_gameContext;
@@ -77,16 +78,16 @@ public class LogEntryBuffer extends Observable{
 	@Override
 	public String toString()
 	{
-		return String.format("%s %s :[Phase] %s [Order] %s [Message] %s", this.d_time, this.d_result, d_phase, this.d_order, this.d_message);	
+		return String.format("%s %s :[Phase] %s [Order] %s [Message] %s", this.d_time, this.d_result, d_phase, this.d_order, this.d_message);
 	}
-	
+
 //	/**
 //	 * This method will clear the message.
 //	 */
 //	public void clearMessage() {
 //		this.d_message = "";
 //	}
-	
+
 //	/**
 //	 * This method will set the time as current moment.
 //	 */
@@ -111,7 +112,7 @@ public class LogEntryBuffer extends Observable{
 //	public String getOrder() {
 //		return d_order;
 //	}
-	
+
 //	/**
 //	 * This method will set the current order.
 //	 * @param d_order the current order
@@ -121,7 +122,7 @@ public class LogEntryBuffer extends Observable{
 //		this.d_order = d_order;
 //		return this;
 //	}
-	
+
 //	/**
 //	 * This method will show the result of the issued order.
 //	 * @return the result of the issued order
@@ -147,7 +148,7 @@ public class LogEntryBuffer extends Observable{
 //	public GamePhase getPhase() {
 //		return d_phase;
 //	}
-	
+
 //	/**
 //	 * This method can set the current phase according to the class type of phase instance.
 //	 * @param p_phase the current phase instance
@@ -182,7 +183,7 @@ public class LogEntryBuffer extends Observable{
 //	public String getMessage() {
 //		return d_message;
 //	}
-	
+
 //	/**
 //	 * This method will set the message of the issued order.
 //	 * @param d_message the message of the issued order

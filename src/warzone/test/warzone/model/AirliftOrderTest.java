@@ -4,10 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * This class is responsible to test airlift card.
- *
- */
 public class AirliftOrderTest {
     /**
      * check if failed if the source country does not belongs to the owner
@@ -19,8 +15,6 @@ public class AirliftOrderTest {
         Player l_player = new Player("P1");
         Country l_country1 = new Country(1,"C1",0,0,null);
         Country l_country2 = new Country(2,"C2",0,0,null);
-        GameContext.getGameContext().getCountries().put(l_country1.getCountryID(),l_country1);
-        GameContext.getGameContext().getCountries().put(l_country2.getCountryID(),l_country2);
         l_country1.setArmyNumber(5);
         l_country2.setArmyNumber(3);
         l_country1.setCountryState(CountryState.Occupied, l_player);
@@ -45,8 +39,6 @@ public class AirliftOrderTest {
         Player l_player = new Player("P1");
         Country l_country1 = new Country(1,"C1",0,0,null);
         Country l_country2 = new Country(2,"C2",0,0,null);
-        GameContext.getGameContext().getCountries().put(l_country1.getCountryID(),l_country1);
-        GameContext.getGameContext().getCountries().put(l_country2.getCountryID(),l_country2);
         l_country1.setArmyNumber(5);
         l_country2.setArmyNumber(3);
         l_country1.setCountryState(CountryState.Occupied, l_player);
@@ -72,8 +64,6 @@ public class AirliftOrderTest {
         Player l_player2 = new Player("P2");
         Country l_country1 = new Country(1,"C1",0,0,null);
         Country l_country2 = new Country(2,"C2",0,0,null);
-        GameContext.getGameContext().getCountries().put(l_country1.getCountryID(),l_country1);
-        GameContext.getGameContext().getCountries().put(l_country2.getCountryID(),l_country2);
         l_country1.setArmyNumber(5);
         l_country2.setArmyNumber(3);
         l_country1.setCountryState(CountryState.Occupied, l_player);
@@ -98,8 +88,6 @@ public class AirliftOrderTest {
         Player l_player = new Player("P1");
         Country l_country1 = new Country(1,"C1",0,0,null);
         Country l_country2 = new Country(2,"C2",0,0,null);
-        GameContext.getGameContext().getCountries().put(l_country1.getCountryID(),l_country1);
-        GameContext.getGameContext().getCountries().put(l_country2.getCountryID(),l_country2);
         l_country1.setArmyNumber(5);
         l_country2.setArmyNumber(3);
         l_country1.setCountryState(CountryState.Occupied, l_player);
@@ -124,8 +112,6 @@ public class AirliftOrderTest {
         Player l_player = new Player("P1");
         Country l_country1 = new Country(1,"C1",0,0,null);
         Country l_country2 = new Country(2,"C2",0,0,null);
-        GameContext.getGameContext().getCountries().put(l_country1.getCountryID(),l_country1);
-        GameContext.getGameContext().getCountries().put(l_country2.getCountryID(),l_country2);
         l_country1.setArmyNumber(5);
         l_country2.setArmyNumber(3);
         l_country1.setCountryState(CountryState.Occupied, l_player);
@@ -151,8 +137,6 @@ public class AirliftOrderTest {
         Player l_player = new Player("P1");
         Country l_country1 = new Country(1,"C1",0,0,null);
         Country l_country2 = new Country(2,"C2",0,0,null);
-        GameContext.getGameContext().getCountries().put(l_country1.getCountryID(),l_country1);
-        GameContext.getGameContext().getCountries().put(l_country2.getCountryID(),l_country2);
         l_country1.setArmyNumber(5);
         l_country2.setArmyNumber(3);
         l_country1.setCountryState(CountryState.Occupied, l_player);
@@ -177,8 +161,6 @@ public class AirliftOrderTest {
         Player l_player = new Player("P1");
         Country l_country1 = new Country(1,"C1",0,0,null);
         Country l_country2 = new Country(2,"C2",0,0,null);
-        GameContext.getGameContext().getCountries().put(l_country1.getCountryID(),l_country1);
-        GameContext.getGameContext().getCountries().put(l_country2.getCountryID(),l_country2);
         l_country1.setArmyNumber(5);
         l_country2.setArmyNumber(3);
         l_country1.setCountryState(CountryState.Occupied, l_player);
@@ -205,10 +187,6 @@ public class AirliftOrderTest {
         Player l_player = new Player("P1");
         Country l_country1 = new Country(1,"C1",0,0,null);
         Country l_country2 = new Country(2,"C2",0,0,null);
-        Country l_country3 = new Country(3,"C3",0,0,null);
-
-        GameContext.getGameContext().getCountries().put(l_country1.getCountryID(),l_country1);
-        GameContext.getGameContext().getCountries().put(l_country2.getCountryID(),l_country2);
         l_country1.setArmyNumber(5);
         l_country2.setArmyNumber(3);
         l_country1.setCountryState(CountryState.Occupied, l_player);
@@ -218,11 +196,10 @@ public class AirliftOrderTest {
         l_player.getCards().add(Card.AIRLIFT);
 
         //act
-        AirliftOrder l_order = new AirliftOrder(l_player, l_country3, l_country1, 2);
-        l_order.valid();
+        Order l_order = l_player.conventOrder("airlift 3 2 2");
 
         //assert
-        assertEquals(l_order.valid(), false);
+        assertEquals(l_order, null);
     }
 
 }
