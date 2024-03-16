@@ -270,17 +270,17 @@ public class StartupService {
 	/**
 	 * Performs the action for user command: assigncountries
 	 *
-	 * After user creates all the players, all countries are randomly assigned to players. 
+	 * After user creates all the players, all countries are randomly assigned to players.
 	 * 1-reset the countries
 	 * 2-assign countries
 	 *
 	 * @return true if successfully assign the countries, otherwise return false
 	 */
 	public boolean assignCountries() {
+
 		//Make sure there are more than 1 player
 		//and there are enough countries to distribute between all the players
 		if( d_gameContext.getPlayers().size() < 2 || d_gameContext.getPlayers().size() > d_gameContext.getCountries().size() ) {
-			d_logEntryBuffer.logAction("ERROR", "The game should have 2 players at least, and countriese number is greater than players number.");
 			return false;
 		}
 		//reset the countries list and for each player.
