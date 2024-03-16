@@ -3,7 +3,8 @@ package warzone.model;
 /**
  * This class represents Router in the game which can route the command parsed by
  * command parser to the corresponding controller.
- *
+ * @author Harsh
+ * @version 1.1
  */
 public class Router {
 	/**

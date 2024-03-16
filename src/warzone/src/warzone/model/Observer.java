@@ -2,7 +2,8 @@ package warzone.model;
 
 /**
  * This interface abstract the action of Observer in Observer pattern.
- *
+ * @author Harsh
+ * @version 1.1
  */
 public interface Observer {
 	/**

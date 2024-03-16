@@ -2,6 +2,8 @@ package warzone.model;
 
 /**
  * Action is the model of command
+ * @author Harsh
+ * @version 1.1
  */
 public class Action {
 	/**

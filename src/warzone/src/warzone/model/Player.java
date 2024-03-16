@@ -14,7 +14,8 @@ import warzone.view.GenericView;
 
 /**
  * This class represents the player in the game.
- *
+ * @author Love
+ * @version 1.1
  */
 public class Player {
 

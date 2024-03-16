@@ -2,6 +2,8 @@ package warzone.model;
 
 /**
  * the controller name in the game
+ * @author Khushi
+ * @version 1.1
  */
 public enum ControllerName {
 

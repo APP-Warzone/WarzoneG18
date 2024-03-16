@@ -4,6 +4,8 @@ import warzone.view.GenericView;
 
 /**
  * This class represents one deploy order of the gameplay
+ * @author Vrushabh
+ * @version 1.1
  */
 public class DeployOrder extends Order {
 

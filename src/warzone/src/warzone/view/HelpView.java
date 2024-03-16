@@ -20,7 +20,7 @@ public class HelpView {
 		System.out.println("        #    # #    # #    #    #   #    # # #  # #####  ");
 		System.out.println("        # ## # ###### #####    #    #    # #  # # #      ");
 		System.out.println("        ##  ## #    # #   #   #     #    # #   ## #      ");
-		System.out.println("        #    # #    # #    # ######  ####  #    # ######  By 6441 Group #22");
+		System.out.println("        #    # #    # #    # ######  ####  #    # ###### ");
 		System.out.println("");
 	}
 

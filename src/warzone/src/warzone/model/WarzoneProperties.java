@@ -7,7 +7,8 @@ import warzone.view.GenericView;
 
 /**
  * This class is responsible to get all properties written in the properties file.
- *
+ * @author Harsh
+ * @version 1.1
  */
 public class WarzoneProperties {
 

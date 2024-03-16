@@ -2,6 +2,8 @@ package warzone.model;
 
 /**
  * enum of country state
+ * @author Khushi
+ * @version 1.1
  */
 public enum CountryState {
     /**

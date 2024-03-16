@@ -4,7 +4,8 @@ import warzone.view.GenericView;
 
 /**
  * This class represents the bomb card in the game.
- * @author zexin
+ * @author Khushi
+ * @version 1.1
  *
  */
 public class BombOrder extends Order{

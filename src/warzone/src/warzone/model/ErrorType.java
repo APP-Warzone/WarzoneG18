@@ -2,7 +2,8 @@ package warzone.model;
 
 /**
  * There are eight types of error during the game.
- *
+ * @author Love
+ * @version 1.1
  */
 public enum ErrorType {
 	/**
