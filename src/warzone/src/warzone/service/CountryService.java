@@ -7,8 +7,13 @@ import warzone.view.GenericView;
 
 /**
  * This class will provide controllers with some service related to 'country' module.
+ * @author Harsh
+ * @version 1.1
  */
 public class CountryService {
+	/**
+	 * game context
+	 */
 	private GameContext d_gameContext;
 
 	/**
@@ -18,7 +23,7 @@ public class CountryService {
 	public CountryService(GameContext p_gameContext) {
 		d_gameContext = p_gameContext;
 	}
-	
+
 	/**
 	 * This method will add a new country to the continent.
 	 * @param p_countryID the ID of the country that should insert
@@ -29,7 +34,7 @@ public class CountryService {
 		if(p_countryID > 0 && p_ContinentID>0) {
 			Country l_country = d_gameContext.getCountries().get(p_countryID);
 			Continent l_continent = d_gameContext.getContinents().get(p_ContinentID);
-			
+
 			if(l_country == null) {
 				l_country = new Country(p_countryID, "COUNTRY-"+p_countryID );
 				d_gameContext.getCountries().put(p_countryID, l_country);
@@ -46,8 +51,8 @@ public class CountryService {
 			}
 		}
 		return false;
-	}	
-	
+	}
+
 	/**
 	 * This method will remove a country from the continent.
 	 * @param p_countryID the ID of the country that should be removed
@@ -55,29 +60,29 @@ public class CountryService {
 	 */
 	public boolean remove(int p_countryID) {
 		Country l_country = d_gameContext.getCountries().get(p_countryID);
-		
+
 		if(l_country != null) {
 			//remove from neighbor
-	        for (Country l_tempCountry : d_gameContext.getCountries().values()) {
-	        	l_tempCountry.getNeighbors().remove(p_countryID);        	
-	        }
-	        
-	        //remove from Continent
+			for (Country l_tempCountry : d_gameContext.getCountries().values()) {
+				l_tempCountry.getNeighbors().remove(p_countryID);
+			}
+
+			//remove from Continent
 			if(l_country.getContinent() != null)
 				d_gameContext.getContinents().get( l_country.getContinent().getContinentID() ).getCountries().remove(p_countryID);
 
-	        //remove from players.
+			//remove from players.
 			if(l_country.getOwner() != null && l_country.getOwner().getConqueredCountries() != null)
-	        	l_country.getOwner().getConqueredCountries().remove(l_country);
-	        
-	        //remove from Country
+				l_country.getOwner().getConqueredCountries().remove(l_country);
+
+			//remove from Country
 			d_gameContext.getCountries().remove(p_countryID);
 			return true;
 		}
-		
-		return false;		
+
+		return false;
 	}
-	
+
 	/**
 	 * This method will show the existence of the country.
 	 * @param p_countryID the ID of the country

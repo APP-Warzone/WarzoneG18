@@ -2,9 +2,17 @@ package warzone.model;
 
 /**
  * Action is the model of command
+ * @author Harsh
+ * @version 1.1
  */
 public class Action {
+	/**
+	 * action
+	 */
 	private String d_action;
+	/**
+	 * parameters of the action
+	 */
 	private String d_parameters;
 
 	/**

@@ -6,7 +6,8 @@ import static org.junit.Assert.*;
 
 /**
  * This class is responsible to test airlift card.
- *
+ * @author Love
+ * @version 1.1
  */
 public class AirliftOrderTest {
     /**

@@ -5,18 +5,21 @@ import warzone.model.Render;
 
 /**
  * for specific ui, this class can create dedicated view class.
- *
+ * @author Harsh
+ * @version 1.1
  */
 public class GenericView {
-	
+
 	/**
 	 * This method can print normal messages from String
 	 * @param p_text the text that should be printed
+	 * @return if print succeed
 	 */
-	public static void println(String p_text) {
+	public static boolean println(String p_text) {
 		System.out.println(p_text);
+		return true;
 	}
-	
+
 	/**
 	 * This method can print warning messages
 	 * @param p_text the text that should be printed
@@ -24,7 +27,7 @@ public class GenericView {
 	public static void printWarning(String p_text) {
 		System.out.println("Warning : " + p_text );
 	}
-	
+
 	/**
 	 * This method can print error messages
 	 * @param p_text the text that should be printed
@@ -32,7 +35,7 @@ public class GenericView {
 	public static void printError(String p_text) {
 		System.out.println("Error : " + p_text);
 	}
-	
+
 	/**
 	 * This method can print success messages
 	 * @param p_text the text that should be printed
@@ -55,5 +58,5 @@ public class GenericView {
 	public static void printDebug(String p_text) {
 		if(GameContext.getGameContext().getIsDebug())
 			System.out.println("Debug : " + p_text);
-	}	
+	}
 }

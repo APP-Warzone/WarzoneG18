@@ -7,13 +7,15 @@ import org.junit.Before;
 import org.junit.Test;
 import warzone.model.*;
 import warzone.state.MapEditor;
-import warzone.state.Startup;
 
 /**
  * test cases for map service
  */
 public class MapServiceTest {
-	
+
+    /**
+     * gamecontext before each test
+     */
     GameContext d_gameContext;
 
     /**
@@ -23,8 +25,8 @@ public class MapServiceTest {
     public void beforeEachTetCase(){
         GameContext.clear();
         d_gameContext = GameContext.getGameContext();
-		GameEngine.getGameEngine(d_gameContext).setPhase(new MapEditor(GameEngine.getGameEngine(d_gameContext)));
-		d_gameContext.setCurrentRouter(new Router(null, null, null, "testCommand"));
+        GameEngine.getGameEngine(d_gameContext).setPhase(new MapEditor(GameEngine.getGameEngine(d_gameContext)));
+        d_gameContext.setCurrentRouter(new Router(null, null, null, "testCommand"));
     }
 
     /**
@@ -38,25 +40,25 @@ public class MapServiceTest {
     /**
      * test if successfully load map to edit
      */
-	@Test
-	public void testEditMap() {
-		
-		GameContext l_gameContext = GameContext.getGameContext();
-		MapService l_mapService = new MapService(l_gameContext);
-		
-		assertTrue(l_mapService.editMap("europe.map"));
-		
-		System.out.println("Map File Name: " + l_gameContext.getMapFileName());
-		System.out.println("Map File Pic: " + l_gameContext.getMapFilePic());
-		System.out.println("Map File Map: " + l_gameContext.getMapFileMap());
-		System.out.println("Map File Name: " + l_gameContext.getMapFileCards());
-		
-		System.out.println();
-		
-		System.out.println("Number of Continents: " + l_gameContext.getContinents().size());
-		System.out.println("Number of Countries: " + l_gameContext.getCountries().size());
-	}
-	
+    @Test
+    public void testEditMap() {
+
+        GameContext l_gameContext = GameContext.getGameContext();
+        MapService l_mapService = new MapService(l_gameContext);
+
+        assertTrue(l_mapService.editMap("europe.map"));
+
+        System.out.println("Map File Name: " + l_gameContext.getMapFileName());
+        System.out.println("Map File Pic: " + l_gameContext.getMapFilePic());
+        System.out.println("Map File Map: " + l_gameContext.getMapFileMap());
+        System.out.println("Map File Name: " + l_gameContext.getMapFileCards());
+
+        System.out.println();
+
+        System.out.println("Number of Continents: " + l_gameContext.getContinents().size());
+        System.out.println("Number of Countries: " + l_gameContext.getCountries().size());
+    }
+
     /**
      * map1 is valid
      */
@@ -89,8 +91,8 @@ public class MapServiceTest {
         new Country(7,"agentina", 343,435, d_gameContext.getContinents().get(2) );
         l_countryService.addCountryToContient(7,2);
 
-        //NeighborService 
-        
+        //NeighborService
+
         NeighborService l_neighborService = new NeighborService(d_gameContext);
         l_neighborService.add(1,2);
         l_neighborService.add(2,1);
@@ -113,8 +115,8 @@ public class MapServiceTest {
         MapService l_mapService = new MapService(d_gameContext);
         assertTrue(l_mapService.validateMap());
     }
-    
-	/**
+
+    /**
      * map2 is invalid, a map only has one country
      */
     @Test
@@ -130,8 +132,8 @@ public class MapServiceTest {
         MapService l_mapService = new MapService(d_gameContext);
         assertFalse(l_mapService.validateMap());
     }
-    
-	/**
+
+    /**
      * map3 is invalid, a map with a continent has no country
      */
     @Test

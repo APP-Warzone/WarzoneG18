@@ -13,6 +13,8 @@ import org.junit.Test;
 
 /**
  * tests for Player class
+ * @author Love
+ * @version 1.1
  */
 public class PlayerTest {
 

@@ -9,43 +9,43 @@ import warzone.view.*;
 
 /**
  *	State of the State pattern. Here implemented as a abstract class. 
- *  
- *	In this example, the states represent states in the board game Risk. 
- *  There are many states, and even a hierarchy of states: 
  *
- *		Phase 
+ *	In this example, the states represent states in the board game Risk.
+ *  There are many states, and even a hierarchy of states:
+ *
+ *		Phase
  *        MapEdit phase (abstract)
-
  *        GamePlay (abstract)
-
- *        
- *      In each state, nextState() is defined so that it goes down in 
+ *
+ *      In each state, nextState() is defined so that it goes down in
+ *  @author Love
+ *  @version 1.1
  */
 public abstract class Phase {
 
 	/**
-	 *  Contains a reference to the State of the GameEngine 
-	 *  so that the state object can change the state of 
-	 *  the GameEngine to transition between states. 
+	 *  Contains a reference to the State of the GameEngine
+	 *  so that the state object can change the state of
+	 *  the GameEngine to transition between states.
 	 */
 	protected GameEngine d_gameEngine;
 	/**
 	 *  currenet phase
 	 */
 	protected GamePhase d_gamePhase = GamePhase.MAPEDITOR;
-	
+
 	/**
 	 * current Game Context
 	 */
-	protected GameContext d_gameContext;	
+	protected GameContext d_gameContext;
 
 	/**
 	 * Constructor for Phase
-	 * @param p_ge Game Engine
+	 * @param p_gameEngine Game Engine
 	 */
-	Phase(GameEngine p_ge) {
-		d_gameEngine = p_ge;
-		d_gameContext = p_ge.getGameContext();
+	Phase(GameEngine p_gameEngine) {
+		d_gameEngine = p_gameEngine;
+		d_gameContext = p_gameEngine.getGameContext();
 	}
 
 	/**
@@ -151,7 +151,9 @@ public abstract class Phase {
 	/**
 	 * 	go to next phase
 	 */
-	abstract public void next();
+	public void next() {
+		this.d_gameContext.getLogEntryBuffer().logAction("SUCCESS", "go to next phase : " + this.d_gamePhase);
+	}
 
 	/**
 	 * execute issue_order or execute_order
@@ -159,26 +161,26 @@ public abstract class Phase {
 	abstract public void play();
 
 	/**
-	 *  Common method to all States. 
+	 *  Common method to all States.
 	 */
 	public void printInvalidCommandMessage() {
 		System.out.println("Invalid command in state " + this.getClass().getSimpleName() );
 	}
-	
+
 	/**
 	 * show help for each phase
 	 */
 	public void help() {
 		HelpView.printHelp(this.d_gamePhase);
 	}
-	
+
 	/**
 	 * print out the error
 	 */
 	public void error() {
 		GenericView.printError("Incorrect command. ");
 	}
-	
+
 	/**
 	 * get current gamephase
 	 * @return current gamephase

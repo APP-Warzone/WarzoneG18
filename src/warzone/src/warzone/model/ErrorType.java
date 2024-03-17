@@ -2,7 +2,8 @@ package warzone.model;
 
 /**
  * There are eight types of error during the game.
- *
+ * @author Love
+ * @version 1.1
  */
 public enum ErrorType {
 	/**
@@ -37,7 +38,7 @@ public enum ErrorType {
 	 * Error Type for TOO MUCH PARAMETERS
 	 */
 	TOO_MUCH_PARAMETERS;
-	
+
 	/**
 	 * This method can print error type.
 	 */

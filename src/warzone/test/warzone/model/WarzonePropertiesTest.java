@@ -6,6 +6,8 @@ import org.junit.Test;
 
 /**
  * Tests for WarzoneProperties test
+ * @author Harsh
+ * @version 1.1
  */
 public class WarzonePropertiesTest {
 

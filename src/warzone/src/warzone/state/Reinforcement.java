@@ -8,12 +8,14 @@ import warzone.model.*;
  * ConcreteState of the State pattern. In this example, defines behavior for
  * commands that are valid in this state, and for the others signifies that the
  * command is invalid.
+ * @author Love
+ * @version 1.1
  */
 public class Reinforcement extends GamePlay {
 
 	/**
 	 * This is the constructor of the class.
-	 * 
+	 *
 	 * @param p_gameEngine the game engine
 	 */
 	public Reinforcement(GameEngine p_gameEngine) {
@@ -28,7 +30,7 @@ public class Reinforcement extends GamePlay {
 	 */
 	public void next() {
 		d_gameEngine.setPhase(new IssueOrder(d_gameEngine));
-		
+		super.next();
 	}
 
 	/**

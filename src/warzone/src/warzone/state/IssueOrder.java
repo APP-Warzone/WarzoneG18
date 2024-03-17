@@ -1,20 +1,24 @@
 package warzone.state;
 import warzone.service.*;
 import warzone.model.*;
-import warzone.view.*;
 
 /**
  *	ConcreteState of the State pattern. In this example, defines behavior
  *  for commands that are valid in this state, and for the others signifies
  *  that the command is invalid.
+ * @author Vrushabh
+ * @version 1.1
  */
 public class IssueOrder extends GamePlay {
 
-	public IssueOrder(GameEngine p_ge) {
-		super(p_ge);
+	/**
+	 * The constructor of the class
+	 * @param p_gameEngine the game engine
+	 */
+	public IssueOrder(GameEngine p_gameEngine) {
+		super(p_gameEngine);
 
 		this.d_gamePhase = GamePhase.IssueOrder;
-		//d_gameEngine.issueOrders();
 	}
 
 	/**
@@ -22,34 +26,67 @@ public class IssueOrder extends GamePlay {
 	 */
 	public void next() {
 		d_gameEngine.setPhase(new OrderExecution(d_gameEngine));
+		super.next();
 	}
 
+	/**
+	 * Performs the action for user command: loadmap filename
+	 *
+	 * Game starts by user selection of a user-saved map file,
+	 * the map should be a connected graph
+	 *
+	 * @param p_fileName the file to load
+	 */
 	public void loadMap(String p_fileName){
-		 printInvalidCommandMessage();
-	 }
+		printInvalidCommandMessage();
+	}
 
 	/**
-	 *
+	 * execute issue_order or execute_order
 	 */
 	public void play(){
 		d_gameEngine.issueOrders();
 	}
+
+	/**
+	 * Performs the action for user command: gameplayer -add playerName
+	 *
+	 * @param p_playerName player's name
+	 */
 	public void addPlayer(String p_playerName) {
-		 printInvalidCommandMessage();
+		printInvalidCommandMessage();
 	}
+
+	/**
+	 * Performs the action for user command: gameplayer -remove playerName
+	 *
+	 * @param p_playerName player's name
+	 */
 	public void removePlayer(String p_playerName){
-		 printInvalidCommandMessage();
-	 }
+		printInvalidCommandMessage();
+	}
+
+	/**
+	 * Performs the action for user command: assigncountries
+	 *
+	 * After user creates all the players, all countries are randomly assigned to players.
+	 */
 	public void assigncountries(){
-		 printInvalidCommandMessage();
-	 }
+		printInvalidCommandMessage();
+	}
 
+	/**
+	 * Performs the action for user command: reinforcement
+	 */
 	public void reinforcement(){
-		 printInvalidCommandMessage();
-	 }
+		printInvalidCommandMessage();
+	}
 
+	/**
+	 * Performs the action of order execution
+	 */
 	public void executeOrder(){
-		 printInvalidCommandMessage();
-	 }
+		printInvalidCommandMessage();
+	}
 
 }

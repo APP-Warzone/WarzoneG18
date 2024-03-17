@@ -6,6 +6,8 @@ import static org.junit.Assert.*;
 
 /**
  * tests for DeployOrder class
+ * @author Love
+ * @version 1.1
  */
 public class DeployOrderTest {
 

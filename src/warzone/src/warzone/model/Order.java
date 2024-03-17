@@ -1,11 +1,12 @@
 package warzone.model;
 
 /**
- * This interface abstract the action of Order
- *
+ * This abstract class of the action of Order
+ * @author Love
+ * @version 1.1
  */
 public abstract class Order {
-	
+
 	/**
 	 * current Order Type
 	 */
@@ -19,7 +20,7 @@ public abstract class Order {
 	 * Current Game Context
 	 */
 	protected GameContext d_gameContext;
-	
+
 	/**
 	 * get Order Type
 	 * @return Order Type
@@ -27,8 +28,8 @@ public abstract class Order {
 	public OrderType getOrderType() {
 		return d_orderType;
 	}
-		
-	
+
+
 	/**
 	 * This method will execute the order.
 	 */
@@ -55,11 +56,12 @@ public abstract class Order {
 
 	/**
 	 * get command which create this order
+	 * @return the command
 	 */
 	public String getCommand() {
 		return d_command;
 	}
-	
+
 	/**
 	 *  log execution of order
 	 * @param p_result given result
