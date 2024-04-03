@@ -5,29 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f15df41-6d75-4d85-9a33-ac12564575eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/AggressiveStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/BenevolentStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/CheaterStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/HumanStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/PlayerStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/PlayerStrategyType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/RandomStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/TournamentContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/view/TournamentResultsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/RouterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/RouterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/state/IssueOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/state/IssueOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/state/MapEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/state/MapEditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/state/OrderExecution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/state/OrderExecution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/state/Phase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/state/Phase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/state/Reinforcement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/state/Reinforcement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/state/Startup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/state/Startup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/view/HelpView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/view/HelpView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/state/GamePlayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/state/GamePlayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/state/ReinforcementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/state/ReinforcementTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +92,7 @@
       <updated>1710613794491</updated>
       <workItem from="1710613797110" duration="7290000" />
       <workItem from="1710630143561" duration="208000" />
-      <workItem from="1712178415113" duration="2491000" />
+      <workItem from="1712178415113" duration="2606000" />
     </task>
     <servers />
   </component>
