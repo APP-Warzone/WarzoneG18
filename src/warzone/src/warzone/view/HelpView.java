@@ -22,7 +22,7 @@ public class HelpView {
 		System.out.println("        # ## # ###### #####    #    #    # #  # # #      ");
 		System.out.println("        ##  ## #    # #   #   #     #    # #   ## #      ");
 		System.out.println("        #    # #    # #    # ######  ####  #    # ###### ");
-		System.out.println("");
+		System.out.println("                               || Created by Group G18 ||");
 	}
 
 
