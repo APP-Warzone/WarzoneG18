@@ -22,7 +22,7 @@ public class HelpView {
 		System.out.println("        # ## # ###### #####    #    #    # #  # # #      ");
 		System.out.println("        ##  ## #    # #   #   #     #    # #   ## #      ");
 		System.out.println("        #    # #    # #    # ######  ####  #    # ###### ");
-		System.out.println("");
+		System.out.println("                               || Created by Group G18 ||");
 	}
 
 
@@ -66,6 +66,7 @@ public class HelpView {
 						+ " -  showmap\n"
 						+ " -  gameplayer -add playername -remove playername\n"
 						+ " -  assigncountries\n"
+						+ " -  tournament -m listofmapfiles -p listofplayerstrategies -g numberofgames -d maxnumberofturns\n"
 						+ " -  next\n"
 						+ " -  reboot \n");
 				break;
