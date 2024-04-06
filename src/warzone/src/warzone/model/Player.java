@@ -405,7 +405,7 @@ public class Player implements Serializable {
 
 		BombOrder l_bombOrder = new BombOrder(this, l_targetCountry);
 
-		//remove one of NEGOTIATE the card 
+		//remove one of NEGOTIATE the card
 		this.d_cards.remove(Card.BOMB);
 
 		return l_bombOrder;
@@ -436,7 +436,7 @@ public class Player implements Serializable {
 			l_targetCountry = this.d_gameContext.getCountries().get(l_targetCountryId);
 			if(l_targetCountry != null) {
 				BlockadeOrder l_order = new BlockadeOrder(this, l_targetCountry);
-				//remove one of BLOCKADE the card 
+				//remove one of BLOCKADE the card
 				this.d_cards.remove(Card.BLOCKADE);
 				return l_order;
 			}
@@ -539,7 +539,7 @@ public class Player implements Serializable {
 			return null;
 		}
 		AirliftOrder l_order = new AirliftOrder(this, l_fromCountry, l_toCountry, l_armyNumber);
-		//remove one of AIRLIFT the card 
+		//remove one of AIRLIFT the card
 		this.d_cards.remove(Card.AIRLIFT);
 		return l_order;
 	}
@@ -565,7 +565,7 @@ public class Player implements Serializable {
 		Player l_targetPlayer = d_gameContext.getPlayers().get(p_commandInfos[1].toString());
 		if(l_targetPlayer != null  && l_targetPlayer.getIsAlive()) {
 			NegotiateOrder l_diplomacyOrder = new NegotiateOrder(this, l_targetPlayer);
-			//remove one of NEGOTIATE the card 
+			//remove one of NEGOTIATE the card
 			this.d_cards.remove(Card.NEGOTIATE);
 			return l_diplomacyOrder;
 		}
@@ -577,9 +577,9 @@ public class Player implements Serializable {
 
 
 	/**
-	 * The GameEngine class calls the issue_order() method of the Player. This method will wait for the following 
-	 * command, then create a deploy order object on the players list of orders, then reduce the number of armies in the 
-	 * players reinforcement pool. The game engine does this for all players in round-robin fashion until all the players 
+	 * The GameEngine class calls the issue_order() method of the Player. This method will wait for the following
+	 * command, then create a deploy order object on the players list of orders, then reduce the number of armies in the
+	 * players reinforcement pool. The game engine does this for all players in round-robin fashion until all the players
 	 * have placed all their reinforcement armies on the map.
 	 *
 	 * Issuing order command: deploy countryID num (until all reinforcements have been placed)
@@ -606,10 +606,10 @@ public class Player implements Serializable {
 				GenericView.println(String.format("Country ID : [%s] , Name : [%s], Army: [%s]", l_countryTemp.getCountryID(), l_countryTemp.getCountryName(), l_countryTemp.getArmyNumber() ));
 			}
 
-			//render available cards 
+			//render available cards
 			renderAvailableCards();
 
-			//render current issued order 
+			//render current issued order
 			renderIssuedOrders();
 
 			//todo: will migrate this to HumanStrategy??
@@ -665,7 +665,7 @@ public class Player implements Serializable {
 		} while (l_order == null );
 	}
 	/**
-	 * render the issued orders 
+	 * render the issued orders
 	 */
 	private void renderIssuedOrders()	{
 		GenericView.println(String.format("----- Player [%s] has issued [%s] orders:", this.getName() ,d_orders.size() ) );
@@ -674,7 +674,7 @@ public class Player implements Serializable {
 		}
 	}
 	/**
-	 * render the avaliable cards 
+	 * render the avaliable cards
 	 */
 	private void renderAvailableCards()	{
 		GenericView.println(String.format("----- Player [%s] has [%s] cards available:", this.getName() , this.d_cards.size() ) );
@@ -686,8 +686,8 @@ public class Player implements Serializable {
 
 
 	/**
-	 * The GameEngine calls the next_order() method of the Player. Then the Order objects execute() method is called, 
-	 * which will enact the order. 
+	 * The GameEngine calls the next_order() method of the Player. Then the Order objects execute() method is called,
+	 * which will enact the order.
 	 *
 	 * @return the next Order of the player
 	 */

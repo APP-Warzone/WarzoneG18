@@ -203,7 +203,7 @@ public abstract class Phase implements Serializable {
 	abstract public void play(String p_mode);
 
 	/**
-	 *  Common method to all States. 
+	 *  Common method to all States.
 	 */
 	public void printInvalidCommandMessage() {
 		System.out.println("Invalid command in state " + this.getClass().getSimpleName() );

@@ -1,13 +1,5 @@
 package warzone.model;
 
-/**
- * This class represents Router in the game which can route the command parsed by
- * command parser to the corresponding controller.
- * @author Harsh
- * @version 1.1
- */
-
-
 import java.io.Serializable;
 
 /**
@@ -29,7 +21,7 @@ public class Router implements Serializable {
 		this.d_actionParameters = p_actionParameters;
 		this.d_command = p_command;
 	}
-	
+
 	/**
 	 * This constructor can initiate the Router without parameters
 	 * @param p_controllerName the name of controller
@@ -41,7 +33,7 @@ public class Router implements Serializable {
 		this.d_actionName = p_actionName;
 		this.d_command = p_command;
 	}
-	
+
 	/**
 	 * Controller Name
 	 */
@@ -53,13 +45,13 @@ public class Router implements Serializable {
 	/**
 	 *  action Parameters
 	 */
-	private String d_actionParameters;	
+	private String d_actionParameters;
 	/**
 	 *  command
 	 */
 	private String d_command;
-	
-	
+
+
 	/**
 	 * This method will show the command
 	 * @return the command
@@ -67,7 +59,7 @@ public class Router implements Serializable {
 	public String getCommand(){
 		return d_command;
 	}
-	
+
 	/**
 	 * This method will show the name of the controller
 	 * @return the name of the controller

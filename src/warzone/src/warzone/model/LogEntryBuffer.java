@@ -2,18 +2,9 @@ package warzone.model;
 
 import warzone.service.GameEngine;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-/**
- * This class represents the observable in the observer pattern. It is filled
- * with information about effect of the action that players take.
- * @author Pritesh
- * @version 1.1
- *
- */
-
-import java.io.Serializable;
 
 /**
  * This class represents the observable in the observer pattern. It is filled
@@ -46,7 +37,7 @@ public class LogEntryBuffer extends Observable implements Serializable {
 	 * game context
 	 */
 	private GameContext d_gameContext;
-	
+
 	/**
 	 * This method will print log messages and save them to the log file.
 	 * @param p_result result of the action
@@ -61,7 +52,7 @@ public class LogEntryBuffer extends Observable implements Serializable {
 		this.d_order = this.d_gameContext.getCurrentRouter().getCommand();
 		this.notify(this);
 	}
-	
+
 	/**
 	 *  log Issue Order
 	 * @param p_result result of logging Issue Order
@@ -77,7 +68,7 @@ public class LogEntryBuffer extends Observable implements Serializable {
 		this.d_order = p_command;
 		this.notify(this);
 	}
-		
+
 	/**
 	 *  log executing Order
 	 * @param p_result result of executing Order
@@ -93,7 +84,7 @@ public class LogEntryBuffer extends Observable implements Serializable {
 		this.d_order = p_order.getCommand();
 		this.notify(this);
 	}
-	
+
 	/**
 	 * This is the constructor of the class.
 	 * @param p_gameContext the game context
@@ -110,7 +101,7 @@ public class LogEntryBuffer extends Observable implements Serializable {
 	@Override
 	public String toString()
 	{
-		return String.format("%s %s :[Phase] %s [Order] %s [Message] %s", this.d_time, this.d_result, d_phase, this.d_order, this.d_message);	
+		return String.format("%s %s :[Phase] %s [Order] %s [Message] %s", this.d_time, this.d_result, d_phase, this.d_order, this.d_message);
 	}
 
 }
