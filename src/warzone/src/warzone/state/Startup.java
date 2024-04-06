@@ -64,7 +64,6 @@ public class Startup extends GamePlay {
 		}
 	}
 
-
 	/**
 	 * Performs the action for user command: loadmap filename
 	 *
@@ -224,8 +223,12 @@ public class Startup extends GamePlay {
 		List<PlayerStrategyType> playerStrategyTypes = new ArrayList<PlayerStrategyType>();
 
 		for(String playerStrategy : p_playerStrategies) {
-
-			playerStrategyTypes.add(PlayerStrategyType.valueOf(playerStrategy.toUpperCase()));
+			try {
+				playerStrategyTypes.add(PlayerStrategyType.valueOf(playerStrategy.toUpperCase()));
+			}catch(Exception ex) {
+				GenericView.printError("Fail occur when adding new player strategy into Tournament. " + ex.toString());
+				GenericView.printError("Skip this playerStrategy .");
+			}
 		}
 
 		TournamentContext.getTournamentContext().setPlayerStrategies(playerStrategyTypes);
