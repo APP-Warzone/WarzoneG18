@@ -5,21 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f15df41-6d75-4d85-9a33-ac12564575eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/AggressiveStrategyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/BenevolentStrategyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/CheaterStrategyTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/RandomStrategyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/AggressiveStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/AggressiveStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/BenevolentStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/BenevolentStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/CheaterStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/CheaterStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/PlayerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/PlayerStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/PlayerStrategyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/PlayerStrategyType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/RandomStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/RandomStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/WarzoneProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/WarzoneProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/RouterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/RouterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/model/ModelTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/ModelTestSuite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/map/simple-starwar.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/map/starwar.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/adapter/MapServiceAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/adapter/StartupServiceAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/MapType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/ConquestMapReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/ConquestMapWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/service/ConquestMapReaderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/service/ConquestMapWriterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/LoadMapPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/LoadMapPhase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/state/MapEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/state/MapEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/state/Startup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/state/Startup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/model/RandomStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/RandomStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/state/MapEditorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/state/MapEditorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
