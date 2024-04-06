@@ -105,7 +105,7 @@ public class Player implements Serializable {
 
 	/**
 	 * This method can set the name of the player.
-	 * @param p_name the name of the player
+	 * @return the strategy of the player
 	 */
 	public PlayerStrategy getPlayerStrategy() {
 		if(d_playerStrategy == null) {
@@ -587,7 +587,7 @@ public class Player implements Serializable {
 	public void issue_order() {
 
 		//todo: set the max turn number temporaly
-		if(d_orders.size() >= 10)
+		if(d_orders.size() >= WarzoneProperties.getWarzoneProperties().getMaxTurnPerRound())
 			this.setHasFinisedIssueOrder(true);
 
 		//check if the player finish the issue order
