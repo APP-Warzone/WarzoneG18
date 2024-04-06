@@ -1,16 +1,10 @@
 package warzone.model;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Properties;
 
 import warzone.view.GenericView;
-
-/**
- * This class is responsible to get all properties written in the properties file.
- * @author Harsh
- * @version 1.1
- */
-import java.io.Serializable;
 
 /**
  * This class is responsible to get all properties written in the properties file.
@@ -26,49 +20,49 @@ public class WarzoneProperties implements Serializable {
 	 * a private Properties
 	 */
 	private Properties d_properties;
-	
+
 	//Create singelton
 	/**
 	 * This method use Singleton pattern to ensure the singleton of the class.
 	 */
 	private WarzoneProperties() {
-		
+
 		try {
 
 			d_properties = new Properties();
 			d_properties.load(getClass().getClassLoader().getResourceAsStream("config.properties"));
-			
+
 			loadProperties();
-		
+
 		} catch (IOException e) {
 
 			GenericView.printError("Error loading properties file.");
 		}
 	}
-	
+
 	//Return singleton
 	/**
 	 * This method can provide a unique instance of this class.
 	 * @return the unique instance of this class
 	 */
 	public static WarzoneProperties getWarzoneProperties() {
-		
+
 		if(WARZONE_PROPERTIES == null) {
 			WARZONE_PROPERTIES = new WarzoneProperties();
 		}
 		return WARZONE_PROPERTIES;
 	}
-	
+
 	/**
-	 * Load each property from config.properties into the java variables 
+	 * Load each property from config.properties into the java variables
 	 */
 	private void loadProperties() {
-		
+
 		//Run Configurations
 		d_isDemoMode = Boolean.parseBoolean(d_properties.getProperty("isDemoMode"));
 		d_isDebug = Boolean.parseBoolean(d_properties.getProperty("isDebug"));
 		d_isLog = Boolean.parseBoolean(d_properties.getProperty("isLog"));
-		
+
 		//Gameplay Settings
 		d_gameMapDirectory = d_properties.getProperty("gameMapDirectory");
 		d_logDirectory = d_properties.getProperty("logDirectory");
@@ -76,30 +70,32 @@ public class WarzoneProperties implements Serializable {
 		d_minimumCountriesPerReinforcementBonus = Integer.parseInt(d_properties.getProperty("minimumCountriesPerReinforcementBonus"));
 		d_simpleCommand = d_properties.getProperty("simpleCommand");
 		d_complexCommand = d_properties.getProperty("complexCommand");
+		d_maxTurnPerRound = Integer.parseInt(d_properties.getProperty("maxTurnsPerRound"));
+		d_maxTurnNumberPerGame = Integer.parseInt(d_properties.getProperty("maxTurnNumberPerGame"));
 	}
-	
+
 	/**
 	 *  is running in Demo Mode
 	 */
-	private boolean d_isDemoMode; 
-	
+	private boolean d_isDemoMode;
+
 	/**
 	 * This method will show whether the current mode is demo mode
 	 * @return true if the current mode is demo
 	 */
 	public boolean getIsDemoMode() { return d_isDemoMode; }
-	
+
 	/**
 	 * is running in debug mode
 	 */
 	private boolean d_isDebug;
-	
+
 	/**
 	 * This method will show whether the current mode is debug mode
 	 * @return true if the current mode is debug mode
 	 */
 	public boolean getIsDebug() { return d_isDebug; }
-	
+
 	/**
 	 * true if log is enabled
 	 */
@@ -109,7 +105,7 @@ public class WarzoneProperties implements Serializable {
 	 * @return true if current game needs logs
 	 */
 	public boolean getIsLog() { return d_isLog; }
-		
+
 	/**
 	 *  game Map Directory
 	 */
@@ -119,7 +115,7 @@ public class WarzoneProperties implements Serializable {
 	 * @return all properties in the property file
 	 */
 	public String getGameMapDirectory() { return d_gameMapDirectory; }
-	
+
 	/**
 	 * log Directory
 	 */
@@ -140,7 +136,7 @@ public class WarzoneProperties implements Serializable {
 	public String getSimpleCommand() {
 		return d_simpleCommand;
 	}
-	
+
 	/**
 	 *  complex Command
 	 */
@@ -152,20 +148,20 @@ public class WarzoneProperties implements Serializable {
 	public String getComplexCommand() {
 		return d_complexCommand;
 	}
-		
+
 	/**
 	 *  minimum Reinforcements in Each Round
 	 */
 	private int d_minimumReinforcementsEachRound;
-	
+
 	/**
 	 * get minimum Reinforcements in Each Round
 	 * @return minimum Reinforcements in Each Round
 	 */
-	public int getMinimumReinforcementsEachRound() { 
-		return d_minimumReinforcementsEachRound; 
+	public int getMinimumReinforcementsEachRound() {
+		return d_minimumReinforcementsEachRound;
 	}
-	
+
 	/**
 	 *  minimum Countries PerReinforcement Bonus
 	 */
@@ -174,7 +170,31 @@ public class WarzoneProperties implements Serializable {
 	 * get minimum Countries PerReinforcement Bonus
 	 * @return minimum Countries PerReinforcement Bonus
 	 */
-	public int getMinimumCountriesPerReinforcementBonus() { 
-		return d_minimumCountriesPerReinforcementBonus; 
+	public int getMinimumCountriesPerReinforcementBonus() {
+		return d_minimumCountriesPerReinforcementBonus;
+	}
+
+	/**
+	 * max turn number per round
+	 */
+	private int d_maxTurnPerRound;
+
+	/**
+	 * max turn number per round
+	 * @return max turn number per round
+	 */
+	public int getMaxTurnPerRound() { return d_maxTurnPerRound; }
+
+	/**
+	 * max Turn Number Per Game
+	 */
+	private int d_maxTurnNumberPerGame = 10;
+
+	/**
+	 * the max number of turns in each game
+	 * @return the max number of turns in each game
+	 */
+	public int getMaxTurnNumberPerGame() {
+		return d_maxTurnNumberPerGame;
 	}
 }

@@ -12,24 +12,24 @@ import warzone.model.Observer;
 /**
  * This class is responsible to create print log messages
  * using information in LogEntryBuffer
- * @author Love
+ * @author 10413
  *
  */
 public class LogService implements Observer, Serializable {
-	
+
 	/**
 	 * Log file Name
 	 */
 	private String d_fileName ;
-	
-	
+
+
 	/**
 	 * construstor of the log service
 	 */
 	public LogService() {
 		d_fileName = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()) + ".log";
 	}
-	
+
 	/**
 	 * This method will print log message into console.
 	 */
@@ -37,12 +37,12 @@ public class LogService implements Observer, Serializable {
 	public void update(Observable p_observable) {
 		String l_log = p_observable.toString();
 		System.out.println(l_log);
-		
+
 		if (GameContext.getGameContext().getIsLog()) {
 			write2LogFile(l_log);
 		}
 	}
-	
+
 	/**
 	 * This method will write the message into log file if the log function is configured
 	 * in the configuration file
@@ -60,20 +60,20 @@ public class LogService implements Observer, Serializable {
 			if (!l_f.isFile()) {
 				l_f.createNewFile();
 			}
-	        l_fw = new FileWriter(l_f, true);
+			l_fw = new FileWriter(l_f, true);
 		} catch (IOException e) {
-	        e.printStackTrace();
+			e.printStackTrace();
 		}
 		//create print writer
 		PrintWriter l_pw = new PrintWriter(l_fw);
 		l_pw.println(p_content);
 		l_pw.flush();
 		try {
-		        l_fw.flush();
-		        l_pw.close();
-		        l_fw.close();
+			l_fw.flush();
+			l_pw.close();
+			l_fw.close();
 		} catch (IOException e) {
-		        e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 }

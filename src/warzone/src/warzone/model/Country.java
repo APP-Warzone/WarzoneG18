@@ -2,19 +2,9 @@ package warzone.model;
 
 import warzone.view.GenericView;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-
-/**
- * This class represents the country in the game
- * @author Harsh
- * @version 1.1
- */
-
-
-
-
-import java.io.Serializable;
 
 /**
  * This class represents the country in the game
@@ -67,7 +57,7 @@ public class Country implements Serializable {
 	 * @param p_continent the coutinent it belongs to
 	 */
 	public Country(int p_countryID, String p_countryName, int p_xPosition, int p_yPosition, Continent p_continent) {
-		
+
 		d_countryID = p_countryID;
 		d_countryName = p_countryName;
 		d_xPosition = p_xPosition;
@@ -201,8 +191,8 @@ public class Country implements Serializable {
 	 * get the continent it belongs to
 	 * @return the continent it belongs to
 	 */
-	public Continent getContinent() { 
-		return d_continent; 
+	public Continent getContinent() {
+		return d_continent;
 	}
 
 	/**
@@ -214,7 +204,7 @@ public class Country implements Serializable {
 		// the p_continent could be null, when removing the Continent was removed
 		d_continent = p_continent;
 		return true;
-		
+
 	}
 
 	/**

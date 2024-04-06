@@ -2,18 +2,11 @@ package warzone.model;
 
 import warzone.service.LogService;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-/**
- * This class represent the state of the game, and it contains some useful instances for
- * other classes.
- * @author vrushabh
- * @version 1.1
- */
-import java.io.Serializable;
 
 /**
  * This class represent the state of the game, and it contains some useful instances for
@@ -30,11 +23,6 @@ public class GameContext implements Serializable {
 	 * game context
 	 */
 	private static GameContext GAME_CONTEXT;
-
-	/**
-	 * order Number Per Round
-	 */
-	private int d_orderNumberPerRound = 5;
 
 	/**
 	 * players in game context
@@ -83,7 +71,10 @@ public class GameContext implements Serializable {
 	 *  is Tournament Mode
 	 */
 	private boolean d_isTournamentMode=false;
-	
+	/**
+	 * the type of the map
+	 */
+	private MapType d_mapType = MapType.DOMINATION;
 
 	/**
 	 * properties of the game
@@ -92,7 +83,7 @@ public class GameContext implements Serializable {
 
 	/**
 	 * check if there is a Diplomacy existed between 2 given players
-	 * @param p_playerA first given player 
+	 * @param p_playerA first given player
 	 * @param p_playerB second  given player
 	 * @return True if there is a Diplomacy existed, otherwise false
 	 */
@@ -107,14 +98,14 @@ public class GameContext implements Serializable {
 
 		return false;
 	}
-	
+
 	/**
 	 * rest Diplomacy Order List when a new turn is started
 	 */
 	public void resetDiplomacyOrderList() {
 		d_negotiateOrdersInCurrentTurn = new ArrayList<NegotiateOrder>();
 	}
-	
+
 	/**
 	 *  add Diplomacy Order To List for current turn
 	 * @param p_diplomacyOrder given Diplomacy Order
@@ -122,8 +113,8 @@ public class GameContext implements Serializable {
 	public void addDiplomacyOrderToList(NegotiateOrder p_diplomacyOrder) {
 		d_negotiateOrdersInCurrentTurn.add(p_diplomacyOrder);
 	}
-	
-	
+
+
 	/**
 	 * get current running router
 	 * @return current running router
@@ -131,7 +122,7 @@ public class GameContext implements Serializable {
 	public Router getCurrentRouter() {
 		return d_currentRouter;
 	}
-	
+
 	/**
 	 * set current running router
 	 * @param p_currentRouter current running router
@@ -139,7 +130,7 @@ public class GameContext implements Serializable {
 	public void setCurrentRouter(Router p_currentRouter) {
 		d_currentRouter =  p_currentRouter;
 	}
-	
+
 	/**
 	 * get  Is Tournament Mode
 	 * @return  if Is Tournament Mode
@@ -147,20 +138,20 @@ public class GameContext implements Serializable {
 	public boolean getIsTournamentMode() {
 		return d_isTournamentMode;
 	}
-	
+
 	/**
 	 * set  Is Tournament Mode
-	 * @param p_isTournamentMode 
+	 * @param p_isTournamentMode
 	 */
 	public void setIsTournamentMode(boolean p_isTournamentMode) {
 		d_isTournamentMode =  p_isTournamentMode;
-	}	
+	}
 
 	/**
 	 * singlton of LogEntryBuffer
 	 */
 	private LogEntryBuffer d_logEntryBuffer;
-	
+
 	/**
 	 * get map file cards
 	 * @return the map file cards
@@ -181,15 +172,15 @@ public class GameContext implements Serializable {
 	 * This constructor will initiate the players, countries and continents.
 	 */
 	private GameContext() {
-		
+
 		d_players = new HashMap<String, Player>() ;
 		d_countries = new HashMap<Integer, Country>();
 		d_continents = new HashMap<Integer, Continent>();
 		d_warzoneProperties = WarzoneProperties.getWarzoneProperties();
 		d_logService = new LogService();
 		d_negotiateOrdersInCurrentTurn = new ArrayList<NegotiateOrder>();
-	}		
-	
+	}
+
 	/**
 	 * This method can return the game context instance and create a new one if
 	 * it is null.
@@ -217,14 +208,14 @@ public class GameContext implements Serializable {
 		}
 		return d_logEntryBuffer;
 	}
-	
+
 	/**
 	 * clear the game context
 	 */
 	public static void clear(){
 		getGameContext().reset();
 	}
-	
+
 	/**
 	 * clear the game context
 	 */
@@ -240,7 +231,7 @@ public class GameContext implements Serializable {
 		d_mapFileMap = "";
 		d_mapFileCards = "";
 	}
-	
+
 	/**
 	 * This method will offer all players in Map structure.
 	 * @return a Map object containing all players
@@ -248,7 +239,7 @@ public class GameContext implements Serializable {
 	public Map<String, Player> getPlayers() {
 		return d_players;
 	}
-	
+
 	/**
 	 * This method will offer all countries in Map structure.
 	 * @return a Map object containing all countries
@@ -256,7 +247,7 @@ public class GameContext implements Serializable {
 	public Map<Integer, Country> getCountries() {
 		return d_countries;
 	}
-	
+
 	/**
 	 * This method will offer all continents in Map structure.
 	 * @return a Map object containing all continents
@@ -312,8 +303,8 @@ public class GameContext implements Serializable {
 	public void setMapFileMap(String p_mapFileMap) {
 		this.d_mapFileMap = p_mapFileMap;
 	}
-	
-	
+
+
 	/**
 	 * This method will show current mode whether is demo mode.
 	 * @return true if the current mode is demo
@@ -322,7 +313,7 @@ public class GameContext implements Serializable {
 		return d_warzoneProperties.getIsDemoMode();
 	}
 
-	
+
 	/**
 	 * This method will show current mode whether is debug mode.
 	 * @return true if the current mode is debug mode
@@ -330,7 +321,7 @@ public class GameContext implements Serializable {
 	public boolean getIsDebug() {
 		return d_warzoneProperties.getIsDebug();
 	}
-	
+
 	/**
 	 * This method will show whether needs logs
 	 * @return true if the game needs logs
@@ -338,15 +329,15 @@ public class GameContext implements Serializable {
 	public boolean getIsLog() {
 		return d_warzoneProperties.getIsLog();
 	}
-	
+
 	/**
 	 * This method will return Map folder.
 	 * @return  Map folder path
 	 */
 	public String getMapfolder() {
 		return d_warzoneProperties.getGameMapDirectory();
-	}	
-	
+	}
+
 	/**
 	 * This method will return Log folder.
 	 * @return  Map folder path
@@ -354,7 +345,7 @@ public class GameContext implements Serializable {
 	public String getLogfolder() {
 		return d_warzoneProperties.getLogDirectory();
 	}
-	
+
 	/**
 	 * This method will return simple commands.
 	 * @return  simple command
@@ -362,7 +353,7 @@ public class GameContext implements Serializable {
 	public String getSimpleCommand() {
 		return d_warzoneProperties.getSimpleCommand();
 	}
-	
+
 	/**
 	 * This method will return complex commands.
 	 * @return  complex command
@@ -370,12 +361,20 @@ public class GameContext implements Serializable {
 	public String getComplexCommand() {
 		return d_warzoneProperties.getComplexCommand();
 	}
-	
+
 	/**
-	 * This method can provide the number of order in every round of the game.
-	 * @return the number of orders in each round
+	 * get map type
+	 * @return the format of the current map
 	 */
-	public int getOrderNumberPerRound() {
-		return d_orderNumberPerRound;
+	public MapType getMapType() {
+		return d_mapType;
+	}
+
+	/**
+	 * set the format of the current map
+	 * @param d_mapType the format of the cureent map
+	 */
+	public void setMapType(MapType d_mapType) {
+		this.d_mapType = d_mapType;
 	}
 }

@@ -6,8 +6,7 @@ import warzone.service.GameEngine;
 
 /**
  * This class can print some help hints to players.
- * @author Harsh
- * @version 1.1
+ *
  */
 public class HelpView {
 
@@ -22,7 +21,7 @@ public class HelpView {
 		System.out.println("        # ## # ###### #####    #    #    # #  # # #      ");
 		System.out.println("        ##  ## #    # #   #   #     #    # #   ## #      ");
 		System.out.println("        #    # #    # #    # ######  ####  #    # ###### ");
-		System.out.println("                               || Created by Group G18 ||");
+		System.out.println("");
 	}
 
 
@@ -64,7 +63,8 @@ public class HelpView {
 				System.out.println(""
 						+ " -  loadmap filename\n"
 						+ " -  showmap\n"
-						+ " -  gameplayer -add playername -remove playername\n"
+						+ " -  gameplayer -add playername strategyName[optional] -remove playername\n"
+						+ "    **strategy Name  is: aggressive, benevolent,  random, cheater   \n"
 						+ " -  assigncountries\n"
 						+ " -  tournament -m listofmapfiles -p listofplayerstrategies -g numberofgames -d maxnumberofturns\n"
 						+ " -  next\n"

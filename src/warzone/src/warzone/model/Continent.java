@@ -1,13 +1,9 @@
 package warzone.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * This class represents the continent in the game
- * @author Harsh
- * @version 1.1
- */
 /**
  * This class represents the continent in the game
  */
@@ -41,7 +37,7 @@ public class Continent implements Serializable {
 	 * @param p_continentName continent name
 	 */
 	public Continent(int p_continentID, String p_continentName) {
-		
+
 		d_continentID = p_continentID;
 		d_continentName = p_continentName;
 		d_countries = new HashMap<Integer, Country>();
@@ -56,7 +52,7 @@ public class Continent implements Serializable {
 	 * @param p_color the color of the continent
 	 */
 	public Continent(int p_continentID, String p_continentName, int p_bonusReinforcements, String p_color) {
-		
+
 		d_continentID = p_continentID;
 		d_continentName = p_continentName;
 		d_bonusReinforcements = p_bonusReinforcements;
