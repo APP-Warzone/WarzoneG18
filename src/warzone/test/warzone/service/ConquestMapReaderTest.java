@@ -1,234 +1,84 @@
 package warzone.service;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Scanner;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import warzone.model.Continent;
-import warzone.model.Country;
+
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.Test;
+
 import warzone.model.GameContext;
-import warzone.model.LoadMapPhase;
-import warzone.model.LogEntryBuffer;
-import warzone.model.WarzoneProperties;
+import warzone.model.Router;
+import warzone.state.MapEditor;
 
 /**
- * Conquest map reader
+ * test cases for ConquestMapReader
+ * @author zexin
+ *
  */
-public class ConquestMapReader {
+public class ConquestMapReaderTest {
     /**
-     * game context
+     * gamecontext before each test
      */
-    private GameContext d_gameContext;
+    GameContext d_gameContext;
 
     /**
-     * log entry buffer
+     * conquestMapReader
      */
-    private LogEntryBuffer d_logEntryBuffer;
+    ConquestMapReader d_conquestMapReader;
 
     /**
-     * the scanner
+     * clear the gamecontext before each test
      */
-    private Scanner l_scanner;
-
-    /**
-     * The constructor of this class
-     * @param p_gameContext the current game context
-     */
-    public ConquestMapReader(GameContext p_gameContext) {
-        d_gameContext = p_gameContext;
-        d_logEntryBuffer = d_gameContext.getLogEntryBuffer();
+    @Before
+    public void beforeEachTetCase(){
+        GameContext.clear();
+        d_gameContext = GameContext.getGameContext();
+        d_conquestMapReader = new ConquestMapReader(d_gameContext);
+        GameEngine.getGameEngine(d_gameContext).setPhase(new MapEditor(GameEngine.getGameEngine(d_gameContext)));
+        d_gameContext.setCurrentRouter(new Router(null, null, null, "testCommand"));
     }
 
     /**
-     * Load a map with format 'conquest'
-     * or create a new map from scratch if the file does not exist.
-     * @param p_fileName file name
-     * @return true if success
+     * clear the gamecontext after this class run
      */
-    public boolean editConquestMap(String p_fileName) {
-
-        String l_mapDirectory = WarzoneProperties.getWarzoneProperties().getGameMapDirectory();
-
-        try {
-
-            //Clear gameContext
-            d_gameContext.reset();
-
-            File l_mapFile = new File(l_mapDirectory + p_fileName);
-
-            d_gameContext.setMapFileName(p_fileName);
-
-            //Specified file name does not exist (new map)
-            if(!l_mapFile.exists() || l_mapFile.isDirectory()) {
-                d_logEntryBuffer.logAction("SUCCESS", "Creating a new map: " + p_fileName);
-                return true;
-            }
-
-        } catch (Exception e) {
-            d_logEntryBuffer.logAction("ERROR", "An error occured reading the map file: " + p_fileName);
-            return false;
-        }
-
-        return loadConquestMap(p_fileName);
+    @AfterClass
+    public static void afterClass() {
+        GameContext.clear();
     }
 
     /**
-     * Game starts by user selection of a user-saved map file, which loads the map as a connected directed graph.
-     * This method will load map using 'conquest' game format
-     *
-     * @param p_fileName file name of map
-     * @return if map successfully loaded
+     * test map file "simple-starwar"
      */
-    public boolean loadConquestMap(String p_fileName) {
+    @Test
+    public void testLoadConquestMap() {
+        assertTrue(d_conquestMapReader.loadConquestMap("simple-starwar.map"));
+        assertEquals(d_gameContext.getContinents().size(), 2);
 
-        String l_mapDirectory = null;
+        assertEquals(d_gameContext.getContinents().get(1).getCountries().size(), 2);
+        assertEquals(d_gameContext.getContinents().get(2).getCountries().size(), 3);
 
-        try {
-            //Get the map directory from the properties file
-            Properties l_properties = new Properties();
-            l_properties.load(getClass().getClassLoader().getResourceAsStream("config.properties"));
-            l_mapDirectory = l_properties.getProperty("gameMapDirectory");
+        assertEquals(d_gameContext.getCountries().size(), 5);
+        assertEquals(d_gameContext.getCountries().get(1).getNeighbors().size(), 1);
+        assertEquals(d_gameContext.getCountries().get(2).getNeighbors().size(), 3);
+        assertEquals(d_gameContext.getCountries().get(3).getNeighbors().size(), 2);
+        assertEquals(d_gameContext.getCountries().get(4).getNeighbors().size(), 1);
+        assertEquals(d_gameContext.getCountries().get(5).getNeighbors().size(), 1);
 
-        } catch (IOException ex) {
-            d_logEntryBuffer.logAction("ERROR", "Error loading properties file.");
-            return false;
-        }
+        assertEquals(d_gameContext.getCountries().get(1).getContinent().getContinentID(), 1);
+        assertEquals(d_gameContext.getCountries().get(2).getContinent().getContinentID(), 1);
+        assertEquals(d_gameContext.getCountries().get(3).getContinent().getContinentID(), 2);
+        assertEquals(d_gameContext.getCountries().get(4).getContinent().getContinentID(), 2);
+        assertEquals(d_gameContext.getCountries().get(5).getContinent().getContinentID(), 2);
+    }
 
-        try {
-
-            //Clear gameContext
-            d_gameContext.reset();
-
-            File l_mapFile = new File(l_mapDirectory + p_fileName);
-
-            d_gameContext.setMapFileName(p_fileName);
-
-            //Specified file name does not exist (new map)
-            if(!l_mapFile.exists() || l_mapFile.isDirectory()) {
-                d_logEntryBuffer.logAction("ERROR", "The following map file is invalid, please select another one: " + p_fileName);
-                return false;
-            }
-
-            l_scanner = new Scanner(l_mapFile);
-            String l_line;
-            String[] l_splitArray;
-            int l_continentCtr = 1;
-            int l_id = 1;
-            Country l_country;
-            List<String[]> l_borderList = new LinkedList<String[]>();
-            Map<String, Integer> l_continentMap = new HashMap<String, Integer>();
-            Map<String, Integer> l_countryMap = new HashMap<String, Integer>();
-
-            LoadMapPhase l_loadMapPhase = null;
-
-            while (l_scanner.hasNextLine()) {
-                l_line = l_scanner.nextLine();
-
-                // determine which part it is
-                // file part
-                if(l_line.equals("[Map]")) {
-
-                    l_loadMapPhase = LoadMapPhase.FILES;
-                    l_line = l_scanner.nextLine();
-                }
-                // continents part
-                else if(l_line.equals("[Continents]")) {
-
-                    l_loadMapPhase = LoadMapPhase.CONTINENTS;
-                    l_line = l_scanner.nextLine();
-                }
-                // continents part
-                else if(l_line.equals("[Territories]")) {
-                    l_loadMapPhase = LoadMapPhase.TERRITORIES;
-                    l_line = l_scanner.nextLine();
-                }
-
-                // read file part
-                if(l_loadMapPhase == LoadMapPhase.FILES) {
-
-                    /*
-                     *  [files]
-                     *	pic europe_pic.jpg
-                     *	map europe_map.gif
-                     *	crd europe.cards
-                     */
-
-                    if(l_line.startsWith("image=")) {
-                        d_gameContext.setMapFilePic(l_line.substring(6));
-                    }
-                }
-                //read continent part
-                else if(l_loadMapPhase == LoadMapPhase.CONTINENTS && !l_line.trim().isEmpty()) {
-
-
-					/*
-					 *  [continents]
-						Cockpit=5
-						Right Thruster=6
-						Left Thruster=6
-						Right Cargo=10
-					 */
-
-                    l_splitArray = l_line.split("=");
-
-                    d_gameContext.getContinents().put(l_continentCtr,
-                            new Continent(l_continentCtr, l_splitArray[0], Integer.parseInt(l_splitArray[1]), null));
-                    l_continentMap.put(l_splitArray[0], l_continentCtr);
-                    l_continentCtr++;
-                }
-                //read territories part
-                else if(l_loadMapPhase == LoadMapPhase.TERRITORIES && !l_line.trim().isEmpty()) {
-
-					/*
-					 *  [territories]
-						Cockpit01,658,355,Cockpit,Cockpit02,Territory33
-						Cockpit02,658,375,Cockpit,Cockpit01,Cockpit03,Territory33,Territory85
-						Cockpit03,658,395,Cockpit,Cockpit02,Territory85
-					 */
-
-                    l_splitArray = l_line.split(",");
-
-                    // no such continent
-                    if (!l_continentMap.containsKey(l_splitArray[3])) {
-                        d_logEntryBuffer.logAction("ERROR", "No such continent: " + l_splitArray[3]);
-                        return false;
-                    }
-
-                    l_country = new Country(l_id, l_splitArray[0], Integer.parseInt(l_splitArray[1]),
-                            Integer.parseInt(l_splitArray[2]), d_gameContext.getContinents().get(l_continentMap.get(l_splitArray[3])));
-
-                    d_gameContext.getCountries().put(l_id, l_country);
-                    l_countryMap.put(l_country.getCountryName(), l_id);
-                    d_gameContext.getContinents().get(l_continentMap.get(l_splitArray[3])).getCountries().put(l_id, l_country);
-                    l_borderList.add(l_splitArray);
-                    l_id++;
-                }
-            }
-
-            // put borders into the map
-            int l_key = 1;
-            for (String[] l_borders: l_borderList) {
-                l_country = d_gameContext.getCountries().get(l_key);
-                for (int i = 4; i < l_borders.length; i++) {
-                    l_country.getNeighbors().put(l_countryMap.get(l_borders[i]), d_gameContext.getCountries().get(l_countryMap.get(l_borders[i])));
-                }
-                l_key++;
-            }
-
-            //close reading the file
-            l_scanner.close();
-
-            d_logEntryBuffer.logAction("SUCCESS", "Map succesfully loaded: " + p_fileName);
-
-        } catch (Exception e) {
-            d_logEntryBuffer.logAction("ERROR", "An error occured reading the map file: " + p_fileName);
-            return false;
-        }
-        return true;
+    /**
+     * test invalid map file "no-such-conquest-map"
+     */
+    @Test
+    public void testLoadConquestMap2() {
+        assertFalse(d_conquestMapReader.loadConquestMap("no-such-conquest-map.map"));
     }
 }
