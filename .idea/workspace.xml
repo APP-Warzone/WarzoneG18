@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f15df41-6d75-4d85-9a33-ac12564575eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/HumanStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/MapServiceAdapterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/StartupServiceAdapterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/TournamentContextTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/CheaterStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/CheaterStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/model/ModelTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/ModelTestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +109,7 @@
       <workItem from="1712371615406" duration="3253000" />
       <workItem from="1712376176583" duration="407000" />
       <workItem from="1712376793014" duration="139000" />
-      <workItem from="1712426269805" duration="2145000" />
+      <workItem from="1712426269805" duration="2446000" />
     </task>
     <servers />
   </component>

@@ -68,4 +68,3 @@ public class CheaterStrategy extends PlayerStrategy implements Serializable {
         return null;
     }
 }
-  
