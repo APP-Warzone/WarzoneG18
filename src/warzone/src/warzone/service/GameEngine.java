@@ -56,7 +56,7 @@ public class GameEngine implements Serializable {
 	/**
 	 * tournament mode boolean
 	 */
-	private boolean d_isInTournamentMode;
+	private boolean d_isInTournamentMode = false;
 
 	/**
 	 * game engine
@@ -135,6 +135,16 @@ public class GameEngine implements Serializable {
 	public void setIsInTournamentMode(boolean p_isInTournamentMode) {
 
 		this.d_isInTournamentMode = p_isInTournamentMode;
+	}
+
+	public void initializeTournamentContext() {
+		d_tournamentContext = TournamentContext.getTournamentContext();
+	}
+
+	public TournamentContext getTournamentContext() {
+		if(d_tournamentContext == null)
+			initializeTournamentContext();
+		return d_tournamentContext;
 	}
 
 	/**
@@ -246,6 +256,9 @@ public class GameEngine implements Serializable {
 					l_winersName += l_player.getName() + ",";
 					l_alivePlayers ++;
 				}
+				else {
+					l_player.setIsAlive(false);
+				}
 			}
 
 			if(l_alivePlayers == 1) {
@@ -264,7 +277,7 @@ public class GameEngine implements Serializable {
 	 *
 	 * @return true if the game can end.
 	 */
-	public boolean playTournament() {
+	public TournamentContext playTournament() {
 
 		int l_turnCounter;
 
@@ -293,7 +306,7 @@ public class GameEngine implements Serializable {
 
 		TournamentResultsView.printTournamentResults(d_tournamentContext);
 
-		return true;
+		return d_tournamentContext;
 	}
 
 	/**
@@ -529,6 +542,17 @@ public class GameEngine implements Serializable {
 					}
 				}
 			});
+
+			//update players status of IsAlive
+			for(Player l_player :d_gameContext.getPlayers().values() ){
+				if(l_player.getConqueredCountries().size() > 0)
+					l_player.setIsAlive( true );
+				else {
+					l_player.setIsAlive( false );
+					GenericView.printWarning(String.format("----- Player [%s] is died ", l_player.getName() ));
+				}
+			}
+
 			l_roundIndex ++;
 		}
 

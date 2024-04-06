@@ -64,7 +64,6 @@ public class Startup extends GamePlay {
 		}
 	}
 
-
 	/**
 	 * Performs the action for user command: loadmap filename
 	 *
@@ -162,9 +161,9 @@ public class Startup extends GamePlay {
 		// 3. render to view
 		if (l_ok) {
 			d_logEntryBuffer.logAction("SUCCESS",
-					String.format("Player [%s] was added successfully.", l_player.getName()));
+					String.format("Player [%s - %s] was added successfully.", l_player.getName(), l_player.getPlayerStrategyType() ));
 		} else {
-			d_logEntryBuffer.logAction("ERROR", String.format("Player [%s] was added failed.", l_player.getName()));
+			d_logEntryBuffer.logAction("ERROR", String.format("Player [%s - %s] was added failed.", l_player.getName(), l_player.getPlayerStrategyType()));
 		}
 	}
 
@@ -224,8 +223,12 @@ public class Startup extends GamePlay {
 		List<PlayerStrategyType> playerStrategyTypes = new ArrayList<PlayerStrategyType>();
 
 		for(String playerStrategy : p_playerStrategies) {
-
-			playerStrategyTypes.add(PlayerStrategyType.valueOf(playerStrategy.toUpperCase()));
+			try {
+				playerStrategyTypes.add(PlayerStrategyType.valueOf(playerStrategy.toUpperCase()));
+			}catch(Exception ex) {
+				GenericView.printError("Fail occur when adding new player strategy into Tournament. " + ex.toString());
+				GenericView.printError("Skip this playerStrategy .");
+			}
 		}
 
 		TournamentContext.getTournamentContext().setPlayerStrategies(playerStrategyTypes);
