@@ -65,11 +65,6 @@ public class Player implements Serializable {
 	int d_armyHasIssued = 0;
 
 	/**
-	 * scanner of the command
-	 */
-	private transient Scanner d_keyboard = new Scanner(System.in);
-
-	/**
 	 * PlayerStrategyType of player
 	 */
 	private PlayerStrategyType d_playerStrategyType;
@@ -214,6 +209,14 @@ public class Player implements Serializable {
 	 */
 	public boolean getIsAlive() {
 		return d_isAlive;
+	}
+
+	/**
+	 * This method will show whether a player is out of the game.
+	 * @return Alive the current player still has at least one territory.
+	 */
+	public String getLifeStatus() {
+		return d_isAlive ? "Alive" : "Died";
 	}
 
 	/**
@@ -597,11 +600,21 @@ public class Player implements Serializable {
 			this.setHasFinisedIssueOrder(true);
 
 		//check if the player finish the issue order
-		if(d_hasFinishIssueOrder) return;
+		if(d_hasFinishIssueOrder) {
+			GenericView.printWarning(String.format("----- Player [%s] has reached max orders in this Turn or has finished issuing order.", this.getName() ));
+			return;
+		}
+
+		if(!this.getIsAlive()) {
+			GenericView.printWarning(String.format("----- Player [%s] is died ", this.getName() ));
+			return;
+		}
 
 
 		String l_command = "";
 		int l_armyToIssue = this.d_armiesToDeploy - d_armyHasIssued;
+		if(l_armyToIssue < 0)
+			l_armyToIssue = 0;
 		GameEngine l_gameEngine = GameEngine.getGameEngine(d_gameContext);
 
 		Order l_order = null;
