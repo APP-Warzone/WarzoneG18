@@ -1,6 +1,7 @@
 package warzone.model;
 
 import warzone.view.GenericView;
+import java.io.Serializable;
 
 /**
  * This class represents one advance order of the gameplay
