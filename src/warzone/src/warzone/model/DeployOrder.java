@@ -7,7 +7,12 @@ import warzone.view.GenericView;
  * @author Vrushabh
  * @version 1.1
  */
-public class DeployOrder extends Order {
+import java.io.Serializable;
+
+/**
+ * This class represents one deploy order of the gameplay
+ */
+public class DeployOrder extends Order implements Serializable {
 
 	/**
 	 * country to deploy army
@@ -33,7 +38,6 @@ public class DeployOrder extends Order {
 		d_armyNumber = p_armyNumber;
 		d_player = p_player;
 		this.d_orderType = OrderType.DEPLOY;
-		this.d_gameContext = GameContext.getGameContext();
 	}
 
 	/**
@@ -90,16 +94,16 @@ public class DeployOrder extends Order {
 	 */
 	@Override
 	public void execute() {
-		if(!valid()){
+		if(!valid()){		
 			GenericView.printWarning("Fail to execute order:" + toString());
-			this.logExecution("Fail","The context does not satisfy the order" );
-			return;
+    		this.logExecution("Fail","The context does not satisfy the order" );
+    		return;
 		}
 
 		//move army
 		this.d_country.setArmyNumber( this.d_country.getArmyNumber() +  this.d_armyNumber );
 		this.d_player.setArmiesToDeploy(this.d_player.getArmiesToDeploy() - this.d_armyNumber);
-
+		
 		//print success information
 		GenericView.printSuccess("Success to execute order:" + toString());
 		this.logExecution("Success", this.toString() );
@@ -112,34 +116,34 @@ public class DeployOrder extends Order {
 	@Override
 	public boolean valid(){
 		if(this.d_country.getOwner()== null || !this.d_country.getOwner().equals(this.d_player) ) {
-			GenericView.printWarning("The player does not own the country or order ");
-			//this.d_player.setArmiesToDeploy(this.d_player.getArmiesToDeploy() + d_armyNumber );
+  			GenericView.printWarning("The player does not own the country or order ");
+  			//this.d_player.setArmiesToDeploy(this.d_player.getArmiesToDeploy() + d_armyNumber );
 			return false;
 		}
 		if (this.d_player.getArmiesToDeploy() <  this.d_armyNumber) {
 			d_armyNumber = this.d_player.getArmiesToDeploy();
 			GenericView.printWarning("The player does not have enough army to deploy, then the deploy army number is adjusted to " + d_armyNumber);
-		}
+		}		
 		if ( this.d_armyNumber <=0) {
-			GenericView.printWarning("The number of deploy army should greater than 0.");
+  			GenericView.printWarning("The number of deploy army should greater than 0.");
 			return false;
 		}
 		return true;
 	}
-
+	
 	/**
 	 * override of print the order
 	 */
 	@Override
 	public void printOrder(){
-		GenericView.println(this.toString());
+		GenericView.println(this.toString());		
 	}
-
+	
 	/**
 	 * override of print the order
 	 */
 	@Override
 	public String toString(){
-		return String.format("Deploy Order, issued by player [%s], deploying [%s] armies to [%s]",  this.d_player.getName(),d_armyNumber, d_country.getCountryName() );
-	}
+		return String.format("Deploy Order, issued by player [%s], deploying [%s] armies to [%s]",  this.d_player.getName(),d_armyNumber, d_country.getCountryName() );		
+	}	
 }

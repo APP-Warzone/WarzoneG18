@@ -2,12 +2,12 @@ package warzone.model;
 
 import warzone.view.GenericView;
 
+import java.io.Serializable;
+
 /**
  * This class represents one deploy order of the gameplay
- * @author Khushi
- * @version 1.1
  */
-public class NegotiateOrder extends Order {
+public class NegotiateOrder extends Order implements Serializable {
 
 	/**
 	 * owner of the order
@@ -27,7 +27,6 @@ public class NegotiateOrder extends Order {
 		d_targetPlayer = p_targetPlayer;
 		d_player = p_player;
 		this.d_orderType = OrderType.NEGOTIATE;
-		this.d_gameContext = GameContext.getGameContext();
 	}
 
 	/**
@@ -37,7 +36,7 @@ public class NegotiateOrder extends Order {
 	public Player getPlayer() {
 		return d_player;
 	}
-
+	
 	/**
 	 * the owner of Target order
 	 * @return the Target player
@@ -51,15 +50,15 @@ public class NegotiateOrder extends Order {
 	 */
 	@Override
 	public void execute() {
-		if(!valid()) {
-			GenericView.printWarning("Fail to execute order:" + toString());
-			this.logExecution("Fail","The context does not satisfy the order" );
-			return;
-		}
-
+        if(!valid()) {
+        	GenericView.printWarning("Fail to execute order:" + toString());
+    		this.logExecution("Fail","The context does not satisfy the order" );
+        	return;
+        }
+        
 		// add order to engine
-		d_gameContext.addDiplomacyOrderToList(this);
-
+		getGameContext().addDiplomacyOrderToList(this);
+		
 		//print success information
 		GenericView.printSuccess("Success to execute order:" + toString());
 		this.logExecution("Success", this.toString() );
@@ -71,8 +70,8 @@ public class NegotiateOrder extends Order {
 	 */
 	@Override
 	public boolean valid(){
-		if(d_player != null && d_player.getIsAlive()
-				&& d_targetPlayer != null && d_player.getIsAlive()
+		if(d_player != null && d_player.getIsAlive() 
+				&& d_targetPlayer != null && d_player.getIsAlive() 
 				&&  d_player != d_targetPlayer)
 			return true;
 		else {
@@ -86,15 +85,15 @@ public class NegotiateOrder extends Order {
 	 */
 	@Override
 	public void printOrder(){
-		GenericView.println(this.toString());
+		GenericView.println(this.toString());		
 	}
-
+	
 	/**
 	 * override of print the order
 	 */
 	@Override
 	public String toString(){
-		return String.format("Negotiate order, issued by player [%s], negotiating with player [%s] ",  this.d_player.getName(), this.d_targetPlayer.getName());
+		return String.format("Negotiate order, issued by player [%s], negotiating with player [%s] ",  this.d_player.getName(), this.d_targetPlayer.getName());		
 	}
-
+	
 }

@@ -21,23 +21,46 @@ import warzone.view.*;
  *  @author Love
  *  @version 1.1
  */
-public abstract class Phase {
+import java.io.Serializable;
+
+
+
+
+/**
+ *	State of the State pattern. Here implemented as a abstract class. 
+ *  
+ *	In this example, the states represent states in the board game Risk. 
+ *  There are many states, and even a hierarchy of states: 
+ *
+ *		Phase 
+ *        MapEdit phase (abstract)
+
+ *        GamePlay (abstract)
+
+ *        
+ *      In each state, nextState() is defined so that it goes down in 
+ */
+public abstract class Phase implements Serializable {
 
 	/**
-	 *  Contains a reference to the State of the GameEngine
-	 *  so that the state object can change the state of
-	 *  the GameEngine to transition between states.
+	 * serial id
+	 */
+	private static final long serialVersionUID = 2L;
+	/**
+	 *  Contains a reference to the State of the GameEngine 
+	 *  so that the state object can change the state of 
+	 *  the GameEngine to transition between states. 
 	 */
 	protected GameEngine d_gameEngine;
 	/**
 	 *  currenet phase
 	 */
 	protected GamePhase d_gamePhase = GamePhase.MAPEDITOR;
-
+	
 	/**
 	 * current Game Context
 	 */
-	protected GameContext d_gameContext;
+	protected GameContext d_gameContext;	
 
 	/**
 	 * Constructor for Phase
@@ -48,6 +71,14 @@ public abstract class Phase {
 		d_gameContext = p_gameEngine.getGameContext();
 	}
 
+	/**
+	 * refresh the game engine
+	 * @param p_gameEngine game engine
+	 */
+	public void refresh(GameEngine p_gameEngine){
+		d_gameEngine = p_gameEngine;
+		d_gameContext = p_gameEngine.getGameContext();
+	}
 	/**
 	 * This methods can receive parameters from the Router, check the correctness of
 	 * commands and call the internal methods.
@@ -147,32 +178,32 @@ public abstract class Phase {
 	 * After user creates all the players, all countries are randomly assigned to players.
 	 */
 	abstract public void assigncountries();
-
+	
 	/**
 	 * Sets the list of map files to be used in the tournament.
-	 *
+	 * 
 	 * @param p_mapFiles
 	 */
 	abstract public void setTournamentMapFiles(String[] p_mapFiles);
-
+	
 	/**
 	 * Sets the list of player strategies to be used in the tournament.
-	 *
+	 * 
 	 * @param p_playerStrategies
 	 */
 	abstract public void setTournamentPlayerStrategies(String[] p_playerStrategies);
 
 	/**
 	 * Sets the number of games to be played on each map in the tournament.
-	 *
+	 * 
 	 * @param p_numberOfGames
 	 */
 	abstract public void setTournamentNumberOfGames(int p_numberOfGames);
-
+	
 	/**
 	 * Sets the maximum number of turns for each player in the tournament.
 	 * If no player has won once this limit is reached, the game will end as a draw.
-	 *
+	 * 
 	 * @param p_maxTurns
 	 */
 	abstract public void setTournamentMaxTurns(int p_maxTurns);
@@ -190,26 +221,26 @@ public abstract class Phase {
 	abstract public void play();
 
 	/**
-	 *  Common method to all States.
+	 *  Common method to all States. 
 	 */
 	public void printInvalidCommandMessage() {
 		System.out.println("Invalid command in state " + this.getClass().getSimpleName() );
 	}
-
+	
 	/**
 	 * show help for each phase
 	 */
 	public void help() {
 		HelpView.printHelp(this.d_gamePhase);
 	}
-
+	
 	/**
 	 * print out the error
 	 */
 	public void error() {
 		GenericView.printError("Incorrect command. ");
 	}
-
+	
 	/**
 	 * get current gamephase
 	 * @return current gamephase
@@ -218,4 +249,17 @@ public abstract class Phase {
 		return this.d_gamePhase;
 	}
 
+	/**
+	 * save game context
+	 * @param p_fileName file name
+	 * @return true if success
+	 */
+	abstract public boolean saveGame(String p_fileName);
+
+	/**
+	 * load game context
+	 * @param p_fileName file name
+	 * @return true if success
+	 */
+	abstract public boolean loadGame(String p_fileName);
 }

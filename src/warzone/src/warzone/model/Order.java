@@ -2,11 +2,10 @@ package warzone.model;
 
 /**
  * This abstract class of the action of Order
- * @author Love
- * @version 1.1
+ *
  */
 public abstract class Order {
-
+	
 	/**
 	 * current Order Type
 	 */
@@ -17,10 +16,13 @@ public abstract class Order {
 	protected String d_command;
 
 	/**
-	 * Current Game Context
+	 * get game context
+	 * @return Current Game Context
 	 */
-	protected GameContext d_gameContext;
-
+	public GameContext getGameContext() {
+		return GameContext.getGameContext();
+	}
+	
 	/**
 	 * get Order Type
 	 * @return Order Type
@@ -28,8 +30,8 @@ public abstract class Order {
 	public OrderType getOrderType() {
 		return d_orderType;
 	}
-
-
+		
+	
 	/**
 	 * This method will execute the order.
 	 */
@@ -61,13 +63,13 @@ public abstract class Order {
 	public String getCommand() {
 		return d_command;
 	}
-
+	
 	/**
 	 *  log execution of order
 	 * @param p_result given result
 	 * @param p_message given message
 	 */
 	protected void logExecution(String p_result, String p_message) {
-		d_gameContext.getLogEntryBuffer().logExecuteOrder(p_result, p_message, this);
+		GameContext.getGameContext().getLogEntryBuffer().logExecuteOrder(p_result, p_message, this);
 	}
 }

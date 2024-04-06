@@ -8,7 +8,10 @@ import java.util.Map;
  * @author Harsh
  * @version 1.1
  */
-public class Continent {
+/**
+ * This class represents the continent in the game
+ */
+public class Continent implements Serializable {
 
 	/**
 	 * continent id
@@ -38,7 +41,7 @@ public class Continent {
 	 * @param p_continentName continent name
 	 */
 	public Continent(int p_continentID, String p_continentName) {
-
+		
 		d_continentID = p_continentID;
 		d_continentName = p_continentName;
 		d_countries = new HashMap<Integer, Country>();
@@ -53,7 +56,7 @@ public class Continent {
 	 * @param p_color the color of the continent
 	 */
 	public Continent(int p_continentID, String p_continentName, int p_bonusReinforcements, String p_color) {
-
+		
 		d_continentID = p_continentID;
 		d_continentName = p_continentName;
 		d_bonusReinforcements = p_bonusReinforcements;
