@@ -5,8 +5,6 @@ import org.junit.runners.Suite;
 
 /**
  * Test all test class of package warzone.service
- * @author Khushi
- * @version 1.1
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
@@ -17,7 +15,11 @@ import org.junit.runners.Suite;
         CountryTest.class,
         DeployOrderTest.class,
         NegotiateOrderTest.class,
-        WarzonePropertiesTest.class
+        WarzonePropertiesTest.class,
+        AggressiveStrategyTest.class,
+        BenevolentStrategyTest.class,
+        CheaterStrategyTest.class,
+        RandomStrategyTest.class
 })
 public class ModelTestSuite {
 

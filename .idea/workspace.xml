@@ -5,27 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f15df41-6d75-4d85-9a33-ac12564575eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/AdvanceOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/AdvanceOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/AirliftOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/AirliftOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/BlockadeOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/BlockadeOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/BombOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/BombOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Continent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Continent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/DeployOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/DeployOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/GameContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/LogEntryBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/LogEntryBuffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/NegotiateOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/NegotiateOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/AggressiveStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/BenevolentStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/CheaterStrategyTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/RandomStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/AggressiveStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/AggressiveStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/BenevolentStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/BenevolentStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/CheaterStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/CheaterStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Router.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/TournamentContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/TournamentContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/PlayerStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/PlayerStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/PlayerStrategyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/PlayerStrategyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/RandomStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/RandomStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/WarzoneProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/WarzoneProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/LogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/StartupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/StartupService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/state/Phase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/state/Phase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/service/StartupServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/service/StartupServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/RouterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/RouterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/model/ModelTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/ModelTestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,32 +48,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.GameEngine.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;vrushabh-build1&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/College/Concordia ImP/APP/WarzoneG18&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.GameEngine.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "khushi-build1",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/College/Concordia ImP/APP/WarzoneG18",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="GameEngine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="warzone.service.GameEngine" />
