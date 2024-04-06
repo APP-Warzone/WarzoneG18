@@ -1,7 +1,6 @@
 package warzone.service;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -10,18 +9,24 @@ import java.util.Properties;
 import java.util.Scanner;
 
 import warzone.model.*;
+import warzone.state.Phase;
+import warzone.view.GenericView;
 
 /**
  * This class will provide controllers with service associating with starup
- * @author Love
- * @version 1.1
+ *
  */
-public class StartupService {
+public class StartupService implements Serializable {
 
 	/**
 	 * game context
 	 */
 	private GameContext d_gameContext;
+
+	/**
+	 * game engine
+	 */
+	private GameEngine d_gameEngine;
 
 	/**
 	 * log entry buffer
@@ -33,7 +38,18 @@ public class StartupService {
 	 * @param p_gameContext the current game context
 	 */
 	public StartupService(GameContext p_gameContext) {
+		d_gameEngine = GameEngine.getGameEngine(p_gameContext);
 		d_gameContext = p_gameContext;
+		d_logEntryBuffer = d_gameContext.getLogEntryBuffer();
+	}
+
+	/**
+	 * This constructor can initiate the game context of current instance.
+	 * @param p_gameEngine the current game engine
+	 */
+	public StartupService(GameEngine p_gameEngine) {
+		d_gameEngine = p_gameEngine;
+		d_gameContext = p_gameEngine.getGameContext();
 		d_logEntryBuffer = d_gameContext.getLogEntryBuffer();
 	}
 
@@ -45,16 +61,16 @@ public class StartupService {
 	public boolean addPlayer(Player p_player) {
 		//0. add the item to
 		Map<String,Player> l_players=d_gameContext.getPlayers();
-		if(p_player != null
-				&& p_player.getName()!=""
-				&& l_players.size()<= 5
-				&& !l_players.containsKey(p_player.getName())) {
+		if(p_player != null 
+				&& p_player.getName()!="" 
+				&& l_players.size()<= 5 
+				&& !l_players.containsKey(p_player.getName())) {			
 			l_players.put(p_player.getName(), p_player);
 			return true;
 		}
 		return false;
 	}
-
+	
 	/**
 	 * Remove player by name
 	 * @param p_playerName name of player
@@ -63,7 +79,7 @@ public class StartupService {
 	public boolean removePlayer(String p_playerName) {
 		if(p_playerName != null && d_gameContext.getPlayers().containsKey(p_playerName)) {
 			Player l_player = d_gameContext.getPlayers().get(p_playerName);
-			for( Country l_country : l_player.getConqueredCountries().values() )
+			for( Country l_country : l_player.getConqueredCountries().values() ) 
 				l_country.setCountryState(CountryState.Initial, null);
 			d_gameContext.getPlayers().remove(p_playerName);
 			return true;
@@ -73,34 +89,34 @@ public class StartupService {
 
 	/**
 	 * Performs the action for user command: loadmap filename
-	 *
+	 * 
 	 * Game starts by user selection of a user-saved map file, which loads the map as a connected directed graph
-	 *
+	 * 
 	 * @param p_fileName file name of map
 	 * @return if map successfully loaded
 	 */
 	public boolean loadMap(String p_fileName) {
-
+		
 		String l_mapDirectory = null;
-
+		
 		try {
 			//Get the map directory from the properties file
 			Properties l_properties = new Properties();
 			l_properties.load(getClass().getClassLoader().getResourceAsStream("config.properties"));
 			l_mapDirectory = l_properties.getProperty("gameMapDirectory");
-
+			
 		} catch (IOException ex) {
 			d_logEntryBuffer.logAction("ERROR", "Error loading properties file.");
 			return false;
 		}
-
+		
 		try {
-
+			
 			//Clear gameContext
 			d_gameContext.reset();
 
 			File l_mapFile = new File(l_mapDirectory + p_fileName);
-
+			
 			d_gameContext.setMapFileName(p_fileName);
 
 			//Specified file name does not exist (new map)
@@ -108,7 +124,7 @@ public class StartupService {
 				d_logEntryBuffer.logAction("ERROR", "The following map file is invalid, please select another one: " + p_fileName);
 				return false;
 			}
-
+			
 			Scanner l_scanner = new Scanner(l_mapFile);
 			String l_line;
 			String[] l_splitArray;
@@ -121,7 +137,7 @@ public class StartupService {
 			boolean l_processingContinents = false;
 			boolean l_processingCountries = false;
 			boolean l_processingBorders = false;
-
+			
 			while (l_scanner.hasNextLine()) {
 				l_line = l_scanner.nextLine();
 
@@ -133,32 +149,32 @@ public class StartupService {
 					l_processingContinents = false;
 					l_processingCountries = false;
 					l_processingBorders = false;
-
+					
 					l_line = l_scanner.nextLine();
 				}
 				// continents part
 				else if(l_line.equals("[continents]")) {
-
+					
 					l_processingFiles = false;
 					l_processingContinents = true;
 					l_processingCountries = false;
 					l_processingBorders = false;
-
+					
 					l_line = l_scanner.nextLine();
 				}
 				//countries part
 				else if (l_line.equals("[countries]")) {
-
+					
 					l_processingFiles = false;
 					l_processingContinents = false;
 					l_processingCountries = true;
 					l_processingBorders = false;
-
+					
 					l_line = l_scanner.nextLine();
 				}
 				//borders part
 				else if (l_line.equals("[borders]")) {
-
+					
 					l_processingFiles = false;
 					l_processingContinents = false;
 					l_processingCountries = false;
@@ -173,30 +189,30 @@ public class StartupService {
 
 				// read file part
 				if(l_processingFiles) {
-
+					
 					/*
 					 *  [files]
 					 *	pic europe_pic.jpg
 					 *	map europe_map.gif
 					 *	crd europe.cards
 					 */
-
+					
 					if(l_line.startsWith("pic")) {
-
+						
 						d_gameContext.setMapFilePic(l_line.substring(4));
 					}
 					else if(l_line.startsWith("map")) {
-
+						
 						d_gameContext.setMapFileMap(l_line.substring(4));
 					}
 					else if(l_line.startsWith("crd")) {
-
+						
 						d_gameContext.setMapFileCards(l_line.substring(4));
 					}
 				}
 				//read continent part
 				else if(l_processingContinents && !l_line.trim().isEmpty()) {
-
+					
 					/*
 					 *  [continents]
 					 *	North_Europe 5 red
@@ -204,17 +220,17 @@ public class StartupService {
 					 *	South_Europe 5 green
 					 *	West_Europe 3 blue
 					 */
-
+					
 					l_splitArray = l_line.split("\\s+");
-
+										
 					d_gameContext.getContinents().put(l_continentCtr,
 							new Continent(l_continentCtr, l_splitArray[0], Integer.parseInt(l_splitArray[1]), l_splitArray[2]));
-
+					
 					l_continentCtr++;
 				}
 				//read countries part
 				else if(l_processingCountries && !l_line.trim().isEmpty()) {
-
+					
 					/*
 					 *  [countries]
 					 *	1 England 1 164 126
@@ -222,33 +238,33 @@ public class StartupService {
 					 *	3 N_Ireland 1 125 70
 					 *	4 Rep_Ireland 1 106 90
 					 */
-
+					
 					l_splitArray = l_line.split("\\s+");
-
+					
 					l_id = Integer.parseInt(l_splitArray[0]);
 					l_country = new Country(l_id, l_splitArray[1], Integer.parseInt(l_splitArray[3]),
 							Integer.parseInt(l_splitArray[4]), d_gameContext.getContinents().get(Integer.parseInt(l_splitArray[2])));
-
+					
 					d_gameContext.getCountries().put(l_id, l_country);
-
+					
 					d_gameContext.getContinents().get(Integer.parseInt(l_splitArray[2])).getCountries().put(l_id, l_country);
 				}
 				//read border part
 				else if(l_processingBorders && !l_line.trim().isEmpty()) {
-
+					
 					/*
 					 *  [borders]
 					 *	1 8 21 6 7 5 2 3 4
 					 *	2 8 1 3
 					 *	3 1 2
-					 *	4 22 1 5
+					 *	4 22 1 5	
 					 */
-
+					
 					l_splitArray = l_line.split("\\s+");
 					l_country = d_gameContext.getCountries().get(Integer.parseInt(l_splitArray[0]));
-
+					
 					for(int l_temp = 1; l_temp < l_splitArray.length; l_temp++) {
-
+						
 						l_id = Integer.parseInt(l_splitArray[l_temp]);
 						l_country.getNeighbors().put(l_id, d_gameContext.getCountries().get(l_id));
 					}
@@ -257,7 +273,7 @@ public class StartupService {
 
 			//close reading the file
 			l_scanner.close();
-
+			
 			//Validate the map
 			if(!(new MapService(d_gameContext).validateMap())) {
 				d_logEntryBuffer.logAction("ERROR", "The map file selected failed validation: " + p_fileName);
@@ -265,22 +281,22 @@ public class StartupService {
 			}
 
 			d_logEntryBuffer.logAction("SUCCESS", "Map succesfully loaded: " + p_fileName);
-
+		    
 		} catch (Exception e) {
 			d_logEntryBuffer.logAction("ERROR", "An error occured reading the map file: " + p_fileName);
 			return false;
 		}
-
+		
 		return true;
 	}
 
 	/**
 	 * Performs the action for user command: assigncountries
-	 *
-	 * After user creates all the players, all countries are randomly assigned to players.
+	 * 
+	 * After user creates all the players, all countries are randomly assigned to players. 
 	 * 1-reset the countries
 	 * 2-assign countries
-	 *
+	 * 
 	 * @return true if successfully assign the countries, otherwise return false
 	 */
 	public boolean assignCountries() {
@@ -297,30 +313,30 @@ public class StartupService {
 		//rest all the owner for countries
 		for( Country l_countryTemp: d_gameContext.getCountries().values()) {
 			l_countryTemp.setCountryState(CountryState.Initial,null);
-		}
-
+		}		
+		
 		//Each player will be assigned the same number of countries. Leftover countries will be unassigned (neutral)
 		//Create a list of playerIDs from the game context and shuffle their order
 		List<String> l_playerNames = new ArrayList<String>(d_gameContext.getPlayers().keySet());
 		Collections.shuffle(l_playerNames);
-
+		
 		//Create a list of countryIDs from the game context and shuffle their order
 		List<Integer> l_countryIDs = new ArrayList<Integer>(d_gameContext.getCountries().keySet());
 		Collections.shuffle(l_countryIDs);
-
+				
 		//Looping variables
 		Country l_country;
 		Player l_player;
 		int l_ctr = 0;
 		int l_playerIndex = 0;
-
+		
 		//Loop through each country to assign to a random player
-		for(Integer l_countryID : l_countryIDs) {
+		for(Integer l_countryID : l_countryIDs) {			
 			//Reset the index once each player has been assigned a country
 			if(l_playerIndex >= l_playerNames.size()) {
 				l_playerIndex = 0;
 			}
-
+			
 			l_country = d_gameContext.getCountries().get(l_countryID);
 			l_player = d_gameContext.getPlayers().get(l_playerNames.get(l_playerIndex));
 
@@ -330,7 +346,64 @@ public class StartupService {
 			l_playerIndex++;
 			l_ctr++;
 		}
-
+		
 		return true;
+	}
+
+	/**
+	 * save game context
+	 * @param p_fileName file name
+	 */
+	public boolean saveGame(String p_fileName) {
+		String l_path = this.d_gameContext.getMapfolder();
+		try {
+			ObjectOutputStream l_objectOutputStream = new ObjectOutputStream(new FileOutputStream(l_path + p_fileName));
+			//save the gameContext and game phase
+			l_objectOutputStream.writeObject(d_gameContext);
+			l_objectOutputStream.writeObject(GameEngine.getGameEngine(d_gameContext).getPhase());
+			l_objectOutputStream.close();
+			GenericView.printSuccess("Success to save the game to " + p_fileName);
+			return true;
+		}catch (IOException e) {
+			GenericView.printError("Failed to save the game to " + p_fileName);
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	/**
+	 * load game context
+	 * @param p_fileName file name
+	 */
+	public boolean loadGame(String p_fileName){
+		String l_path = this.d_gameContext.getMapfolder();
+		try {
+			//check if file exist
+			File l_file = new File(l_path + p_fileName);
+			if(!l_file.exists() || l_file.isDirectory()) {
+				GenericView.printError( String.format("File [%s] does not exist, please check.", p_fileName) );
+				return false;
+			}
+			//read from file
+			ObjectInputStream l_objectInputStream = new ObjectInputStream(new FileInputStream(l_path + p_fileName));
+			try {
+				//read the gameContext and game phase value
+				GameContext l_gameContext = (GameContext)l_objectInputStream.readObject();
+				Phase l_gamePhase = (Phase)l_objectInputStream.readObject();
+				//refresh the gameContext and game Phase
+				d_gameEngine.loadGameContext(l_gameContext);
+				GameEngine.getGameEngine(GameContext.getGameContext()).setPhase((Phase)l_gamePhase);
+				GenericView.printSuccess("Success to load the game from " + p_fileName);
+				return true;
+			} catch (ClassNotFoundException e) {
+				GenericView.printError("Failed to load the game from " + p_fileName);
+				e.printStackTrace();
+				return false;
+			}
+		} catch (IOException e) {
+			GenericView.printError("Failed to load the game from " + p_fileName);
+			e.printStackTrace();
+			return false;
+		}
 	}
 }
