@@ -2,8 +2,6 @@ package warzone.model;
 
 /**
  * phase of load map
- * @author Khushi
- * @version 1.1
  */
 public enum LoadMapPhase {
     /**
@@ -25,5 +23,9 @@ public enum LoadMapPhase {
     /**
      * Load Map Phase of COMPLETE
      */
-    COMPLETE
+    COMPLETE,
+    /**
+     * Load Map Phase of loading Territories
+     */
+    TERRITORIES
 }

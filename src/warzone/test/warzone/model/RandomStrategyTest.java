@@ -30,4 +30,4 @@ public class RandomStrategyTest {
 //		assert(l_order.d_orderType==OrderType.ADVANCE||l_order.d_orderType==OrderType.DEPLOY);
     }
 
-}  
+}
