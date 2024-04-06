@@ -10,14 +10,6 @@ import java.io.IOException;
  *	ConcreteState of the State pattern. In this example, defines behavior 
  *  for commands that are valid in this state, and for the others signifies  
  *  that the command is invalid.
- * @author Pritesh
- * @version 1.1
- */
-
-/**
- *	ConcreteState of the State pattern. In this example, defines behavior 
- *  for commands that are valid in this state, and for the others signifies  
- *  that the command is invalid. 
  */
 public class MapEditor extends Phase {
 
@@ -57,13 +49,13 @@ public class MapEditor extends Phase {
 	}
 
 	/**
-	 *  Call this method to go the the next state in the sequence. 
+	 *  Call this method to go the the next state in the sequence.
 	 */
 	public void next() {
 		d_gameEngine.setPhase(new Startup(d_gameEngine));
 		super.next();
 	}
-	
+
 	/**
 	 * This methods can receive parameters from the Router, check the correctness of
 	 * commands and call the internal methods.
@@ -115,7 +107,7 @@ public class MapEditor extends Phase {
 	 * @param p_parameters id of continent
 	 */
 	public void removeContinent(String p_parameters) {
-		
+
 		//parse [p_parameters] to  [ l_continentID ]
 		if(p_parameters == null)
 		{
@@ -123,7 +115,7 @@ public class MapEditor extends Phase {
 			return;
 		}
 		int l_continentID = CommonTool.parseInt(p_parameters);
-		if(l_continentID == -1 ){	
+		if(l_continentID == -1 ){
 			d_logEntryBuffer.logAction("ERROR", "Missing valid parameters.");
 			return;
 		}
@@ -137,7 +129,7 @@ public class MapEditor extends Phase {
 	public void removeContinent(int p_continentID) {
 		if( d_continentService.remove(p_continentID)) {
 			d_logEntryBuffer.logAction("SUCCESS", String.format("Continent ID [%s] was removed successfully.", p_continentID));
-		}			
+		}
 		else {
 			d_logEntryBuffer.logAction("WARNING",String.format("Failed to remove Continent ID [%s].", p_continentID ));
 		}
@@ -150,7 +142,7 @@ public class MapEditor extends Phase {
 	 * @param p_parameters parameters parsed by parser
 	 */
 	public void addCountry (String p_parameters) {
-		
+
 		//parse [p_parameters] to  [ l_continentID, String l_continentName]
 		if(p_parameters == null){
 			d_logEntryBuffer.logAction("ERROR", "Missing valid parameters.");
@@ -181,7 +173,7 @@ public class MapEditor extends Phase {
 	public void addCountry (int p_countryID, int p_continentID) {
 		if( d_countryService.addCountryToContient(p_countryID, p_continentID) ) {
 			d_logEntryBuffer.logAction("SUCCESS", String.format("Country ID [%s] was added to Continent [%s] successfully.", p_countryID, p_continentID));
-		}			
+		}
 		else {
 			if(d_countryService.isExisted(p_countryID))
 				d_logEntryBuffer.logAction("WARNING", String.format(" Country [%s] was added, but failed to add Country ID [%s] to Continent [%s].", p_countryID , p_countryID , p_continentID));
@@ -195,17 +187,17 @@ public class MapEditor extends Phase {
 	 * @param p_parameters parameters parsed by parser
 	 */
 	public void removeCountry(String p_parameters) {
-		
-		//parse [p_parameters] 
+
+		//parse [p_parameters]
 		if(p_parameters == null) {
 			d_logEntryBuffer.logAction("ERROR", "Missing valid parameters.");
 			return;
 		}
 
-		int l_countryID = CommonTool.parseInt(p_parameters);		
-		if(l_countryID == -1 ){	
+		int l_countryID = CommonTool.parseInt(p_parameters);
+		if(l_countryID == -1 ){
 			d_logEntryBuffer.logAction("ERROR", "Missing valid parameters.");
-			return;	
+			return;
 		}
 
 		removeCountry(l_countryID);
@@ -218,7 +210,7 @@ public class MapEditor extends Phase {
 	public void removeCountry (int p_countryID) {
 		if( d_countryService.remove(p_countryID)) {
 			d_logEntryBuffer.logAction("SUCCESS", String.format("Country ID [%s] was removed successfully.", p_countryID));
-		}			
+		}
 		else {
 			d_logEntryBuffer.logAction("WARNING", String.format("Failed to remove Country ID [%s].", p_countryID ));
 		}
@@ -231,9 +223,9 @@ public class MapEditor extends Phase {
 	 * @param p_parameters parameters parsed by parser
 	 */
 	public void addNeighbor (String p_parameters) {
-		
+
 		//parse [p_parameters]
-		if(p_parameters == null){			
+		if(p_parameters == null){
 			d_logEntryBuffer.logAction("ERROR", "Missing valid parameters.");
 			return;
 		}
@@ -262,12 +254,12 @@ public class MapEditor extends Phase {
 
 		if( d_neighborService.add(p_countryID, p_neighborCountryID)) {
 			d_logEntryBuffer.logAction("SUCCESS", String.format("Neighbor [%s] was added to Country [%s] successfully.", p_neighborCountryID, p_countryID));
-		}			
+		}
 		else {
 			d_logEntryBuffer.logAction("WARNING", String.format("Failed to add Neighbor [%s] to Country [%s].", p_neighborCountryID, p_countryID));
 		}
-	}	
-	
+	}
+
 	/**
 	 * Performs the action for the user command: editneighbor -remove countryID neighborCountryID
 	 * This methods can receive parameters from the Router, check the correctness of
@@ -275,9 +267,9 @@ public class MapEditor extends Phase {
 	 * @param p_parameters parameters parsed by parser
 	 */
 	public void removeNeighbor (String p_parameters) {
-		
+
 		//parse [p_parameters]
-		if(p_parameters == null){			
+		if(p_parameters == null){
 			d_logEntryBuffer.logAction("ERROR", "Missing valid parameters.");
 			return;
 		}
@@ -305,12 +297,12 @@ public class MapEditor extends Phase {
 
 		if( d_neighborService.remove(p_countryID, p_neighborCountryID)) {
 			d_logEntryBuffer.logAction("SUCCESS",String.format("Neighbor [%s] was removed from Country [%s] successfully.", p_neighborCountryID, p_countryID));
-		}			
+		}
 		else {
 			d_logEntryBuffer.logAction("WARNING", String.format("Failed to remove Neighbor [%s] to Country [%s].", p_neighborCountryID, p_countryID));
 		}
 	}
-	 
+
 	/**
 	 * Performs the action for the user command: showmap
 	 *
@@ -336,7 +328,7 @@ public class MapEditor extends Phase {
 			d_logEntryBuffer.logAction("ERROR", "InValid File Name, please type a valid file name, with length less than 20.");
 			return false;
 		}
-		
+
 		if(! d_mapService.validateMap() ) {
 			d_logEntryBuffer.logAction("ERROR", "InValid map, please check the map.");
 			return false;
@@ -390,30 +382,30 @@ public class MapEditor extends Phase {
 			return true;
 		}
 	}
-	
+
 	/**
 	 * execute issue_order or execute_order
 	 */
-	public void play(){
+	public void play(String p_mode){
 		printInvalidCommandMessage();
 	}
-	
+
 	/**
 	 * Performs the action for user command: gameplayer -add playerName
 	 *
 	 * @param p_playerName player's name
 	 */
 	public void addPlayer(String p_playerName) { printInvalidCommandMessage(); }
-	
+
 	/**
 	 * Performs the action for user command: gameplayer -remove playerName
 	 *
 	 * @param p_playerName player's name
 	 */
 	public void removePlayer(String p_playerName){
-		 printInvalidCommandMessage();
-	 }	
-	
+		printInvalidCommandMessage();
+	}
+
 	/**
 	 * Performs the action for user command: loadmap filename
 	 *
@@ -423,30 +415,30 @@ public class MapEditor extends Phase {
 	 * @param p_fileName the file to load
 	 */
 	public void loadMap(String p_fileName){
-		 printInvalidCommandMessage();
-	 }		
-	
+		printInvalidCommandMessage();
+	}
+
 	/**
 	 * Performs the action for user command: assigncountries
 	 *
 	 * After user creates all the players, all countries are randomly assigned to players.
 	 */
 	public void assigncountries(){
-		 printInvalidCommandMessage();
-	 }	
-	
+		printInvalidCommandMessage();
+	}
+
 	/**
 	 * Sets the list of map files to be used in the tournament.
-	 * 
+	 *
 	 * @param p_mapFiles
 	 */
 	public void setTournamentMapFiles(String[] p_mapFiles) {
 		printInvalidCommandMessage();
 	}
-	
+
 	/**
 	 * Sets the list of player strategies to be used in the tournament.
-	 * 
+	 *
 	 * @param p_playerStrategies
 	 */
 	public void setTournamentPlayerStrategies(String[] p_playerStrategies) {
@@ -455,43 +447,43 @@ public class MapEditor extends Phase {
 
 	/**
 	 * Sets the number of games to be played on each map in the tournament.
-	 * 
+	 *
 	 * @param p_numberOfGames
 	 */
 	public void setTournamentNumberOfGames(int p_numberOfGames) {
 		printInvalidCommandMessage();
 	}
-	
+
 	/**
 	 * Sets the maximum number of turns for each player in the tournament.
 	 * If no player has won once this limit is reached, the game will end as a draw.
-	 * 
+	 *
 	 * @param p_maxTurns
 	 */
 	public void setTournamentMaxTurns(int p_maxTurns) {
 		printInvalidCommandMessage();
 	}
-	
+
 	/**
 	 * Performs the action for user command: reinforcement
 	 */
 	public void reinforcement(){
-		 printInvalidCommandMessage();
-	 }	
- 
+		printInvalidCommandMessage();
+	}
+
 	/**
 	 * Performs the action of issuing order
 	 */
 	public void issueOrder(){
-		 printInvalidCommandMessage();
-	 }	
-	
+		printInvalidCommandMessage();
+	}
+
 	/**
 	 * Performs the action of order execution
 	 */
 	public void executeOrder(){
-		 printInvalidCommandMessage();
-	 }
+		printInvalidCommandMessage();
+	}
 
 	/**
 	 * preform the action of save game context

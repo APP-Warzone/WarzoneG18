@@ -2,6 +2,7 @@ package warzone.model;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.io.Serializable;
 
 /**
  * This class represents the continent in the game

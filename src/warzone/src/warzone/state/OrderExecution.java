@@ -7,8 +7,6 @@ import warzone.model.*;
  * ConcreteState of the State pattern. In this example, defines behavior for
  * commands that are valid in this state, and for the others signifies that the
  * command is invalid.
- * @author Vrushabh
- * @version 1.1
  */
 public class OrderExecution extends GamePlay {
 
@@ -49,7 +47,7 @@ public class OrderExecution extends GamePlay {
 	/**
 	 * execute issue_order or execute_order
 	 */
-	public void play() {
+	public void play(String p_mode) {
 		d_gameEngine.executeOrders();
 		if (!d_gameEngine.isGameEnded())
 			d_gameEngine.assignCards();

@@ -2,43 +2,25 @@ package warzone.state;
 import warzone.service.*;
 
 import java.io.IOException;
+import java.io.Serializable;
 
 import warzone.model.*;
 import warzone.view.*;
 
 
 /**
- *	State of the State pattern. Here implemented as a abstract class. 
+ *	State of the State pattern. Here implemented as a abstract class.
  *
  *	In this example, the states represent states in the board game Risk.
  *  There are many states, and even a hierarchy of states:
  *
  *		Phase
  *        MapEdit phase (abstract)
+
  *        GamePlay (abstract)
+
  *
  *      In each state, nextState() is defined so that it goes down in
- *  @author Love
- *  @version 1.1
- */
-import java.io.Serializable;
-
-
-
-
-/**
- *	State of the State pattern. Here implemented as a abstract class. 
- *  
- *	In this example, the states represent states in the board game Risk. 
- *  There are many states, and even a hierarchy of states: 
- *
- *		Phase 
- *        MapEdit phase (abstract)
-
- *        GamePlay (abstract)
-
- *        
- *      In each state, nextState() is defined so that it goes down in 
  */
 public abstract class Phase implements Serializable {
 
@@ -47,20 +29,20 @@ public abstract class Phase implements Serializable {
 	 */
 	private static final long serialVersionUID = 2L;
 	/**
-	 *  Contains a reference to the State of the GameEngine 
-	 *  so that the state object can change the state of 
-	 *  the GameEngine to transition between states. 
+	 *  Contains a reference to the State of the GameEngine
+	 *  so that the state object can change the state of
+	 *  the GameEngine to transition between states.
 	 */
 	protected GameEngine d_gameEngine;
 	/**
 	 *  currenet phase
 	 */
 	protected GamePhase d_gamePhase = GamePhase.MAPEDITOR;
-	
+
 	/**
 	 * current Game Context
 	 */
-	protected GameContext d_gameContext;	
+	protected GameContext d_gameContext;
 
 	/**
 	 * Constructor for Phase
@@ -178,32 +160,32 @@ public abstract class Phase implements Serializable {
 	 * After user creates all the players, all countries are randomly assigned to players.
 	 */
 	abstract public void assigncountries();
-	
+
 	/**
 	 * Sets the list of map files to be used in the tournament.
-	 * 
+	 *
 	 * @param p_mapFiles
 	 */
 	abstract public void setTournamentMapFiles(String[] p_mapFiles);
-	
+
 	/**
 	 * Sets the list of player strategies to be used in the tournament.
-	 * 
+	 *
 	 * @param p_playerStrategies
 	 */
 	abstract public void setTournamentPlayerStrategies(String[] p_playerStrategies);
 
 	/**
 	 * Sets the number of games to be played on each map in the tournament.
-	 * 
+	 *
 	 * @param p_numberOfGames
 	 */
 	abstract public void setTournamentNumberOfGames(int p_numberOfGames);
-	
+
 	/**
 	 * Sets the maximum number of turns for each player in the tournament.
 	 * If no player has won once this limit is reached, the game will end as a draw.
-	 * 
+	 *
 	 * @param p_maxTurns
 	 */
 	abstract public void setTournamentMaxTurns(int p_maxTurns);
@@ -218,7 +200,7 @@ public abstract class Phase implements Serializable {
 	/**
 	 * execute issue_order or execute_order
 	 */
-	abstract public void play();
+	abstract public void play(String p_mode);
 
 	/**
 	 *  Common method to all States. 
@@ -226,21 +208,21 @@ public abstract class Phase implements Serializable {
 	public void printInvalidCommandMessage() {
 		System.out.println("Invalid command in state " + this.getClass().getSimpleName() );
 	}
-	
+
 	/**
 	 * show help for each phase
 	 */
 	public void help() {
 		HelpView.printHelp(this.d_gamePhase);
 	}
-	
+
 	/**
 	 * print out the error
 	 */
 	public void error() {
 		GenericView.printError("Incorrect command. ");
 	}
-	
+
 	/**
 	 * get current gamephase
 	 * @return current gamephase

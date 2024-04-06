@@ -13,8 +13,6 @@ import warzone.view.*;
  * ConcreteState of the State pattern. In this example, defines behavior for
  * commands that are valid in this state, and for the others signifies that the
  * command is invalid.
- * @author Vrushabh
- * @version 1.1
  */
 public class Startup extends GamePlay {
 
@@ -34,7 +32,7 @@ public class Startup extends GamePlay {
 	 */
 	public Startup(GameEngine p_gameEngine) {
 		super(p_gameEngine);
-		d_startupService = new StartupService(d_gameContext);
+		d_startupService = new StartupService(p_gameEngine);
 		d_logEntryBuffer = d_gameContext.getLogEntryBuffer();
 		this.d_gamePhase = GamePhase.STARTUP;
 	}
@@ -118,7 +116,7 @@ public class Startup extends GamePlay {
 	 */
 	public void assigncountries() {
 		// check if current map is valid.
-		if (!(new MapService(d_gameContext).validateMap())) {
+		if (!(new MapService(GameContext.getGameContext()).validateMap())) {
 			d_logEntryBuffer.logAction("ERROR", "The map is invalid,please fix it before assigning countries");
 			return;
 		}
@@ -187,7 +185,7 @@ public class Startup extends GamePlay {
 	/**
 	 * execute issue_order or execute_order
 	 */
-	public void play() {
+	public void play(String p_mode) {
 		printInvalidCommandMessage();
 	}
 
