@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f15df41-6d75-4d85-9a33-ac12564575eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/AggressiveStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/AggressiveStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/LogEntryBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/LogEntryBuffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/RandomStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/RandomStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/GameEngine.java" afterDir="false" />
-    </list>
+    <list default="true" id="0f15df41-6d75-4d85-9a33-ac12564575eb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +102,7 @@
       <workItem from="1712371615406" duration="3253000" />
       <workItem from="1712376176583" duration="407000" />
       <workItem from="1712376793014" duration="139000" />
-      <workItem from="1712426269805" duration="1259000" />
+      <workItem from="1712426269805" duration="1671000" />
     </task>
     <servers />
   </component>
