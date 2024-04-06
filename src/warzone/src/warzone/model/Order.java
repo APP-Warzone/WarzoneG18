@@ -5,7 +5,7 @@ package warzone.model;
  *
  */
 public abstract class Order {
-	
+
 	/**
 	 * current Order Type
 	 */
@@ -22,7 +22,7 @@ public abstract class Order {
 	public GameContext getGameContext() {
 		return GameContext.getGameContext();
 	}
-	
+
 	/**
 	 * get Order Type
 	 * @return Order Type
@@ -30,8 +30,8 @@ public abstract class Order {
 	public OrderType getOrderType() {
 		return d_orderType;
 	}
-		
-	
+
+
 	/**
 	 * This method will execute the order.
 	 */
@@ -63,7 +63,7 @@ public abstract class Order {
 	public String getCommand() {
 		return d_command;
 	}
-	
+
 	/**
 	 *  log execution of order
 	 * @param p_result given result

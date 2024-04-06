@@ -36,7 +36,7 @@ public class NegotiateOrder extends Order implements Serializable {
 	public Player getPlayer() {
 		return d_player;
 	}
-	
+
 	/**
 	 * the owner of Target order
 	 * @return the Target player
@@ -50,15 +50,15 @@ public class NegotiateOrder extends Order implements Serializable {
 	 */
 	@Override
 	public void execute() {
-        if(!valid()) {
-        	GenericView.printWarning("Fail to execute order:" + toString());
-    		this.logExecution("Fail","The context does not satisfy the order" );
-        	return;
-        }
-        
+		if(!valid()) {
+			GenericView.printWarning("Fail to execute order:" + toString());
+			this.logExecution("Fail","The context does not satisfy the order" );
+			return;
+		}
+
 		// add order to engine
 		getGameContext().addDiplomacyOrderToList(this);
-		
+
 		//print success information
 		GenericView.printSuccess("Success to execute order:" + toString());
 		this.logExecution("Success", this.toString() );
@@ -70,8 +70,8 @@ public class NegotiateOrder extends Order implements Serializable {
 	 */
 	@Override
 	public boolean valid(){
-		if(d_player != null && d_player.getIsAlive() 
-				&& d_targetPlayer != null && d_player.getIsAlive() 
+		if(d_player != null && d_player.getIsAlive()
+				&& d_targetPlayer != null && d_player.getIsAlive()
 				&&  d_player != d_targetPlayer)
 			return true;
 		else {
@@ -85,15 +85,15 @@ public class NegotiateOrder extends Order implements Serializable {
 	 */
 	@Override
 	public void printOrder(){
-		GenericView.println(this.toString());		
+		GenericView.println(this.toString());
 	}
-	
+
 	/**
 	 * override of print the order
 	 */
 	@Override
 	public String toString(){
-		return String.format("Negotiate order, issued by player [%s], negotiating with player [%s] ",  this.d_player.getName(), this.d_targetPlayer.getName());		
+		return String.format("Negotiate order, issued by player [%s], negotiating with player [%s] ",  this.d_player.getName(), this.d_targetPlayer.getName());
 	}
-	
+
 }

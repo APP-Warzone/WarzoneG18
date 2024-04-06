@@ -2,11 +2,6 @@ package warzone.model;
 
 import warzone.view.GenericView;
 
-/**
- * This class represents one airlift order of the gameplay
- * @author love
- * @version 1.1
- */
 import java.io.Serializable;
 
 /**
@@ -40,11 +35,11 @@ public class AirliftOrder extends Order implements Serializable {
      * @param p_armyNumber army number
      */
     public AirliftOrder(Player p_player, Country p_fromCountry, Country p_toCountry, int p_armyNumber){
-    	d_player = p_player;
-		d_fromCountry = p_fromCountry;
-		d_toCountry = p_toCountry;
+        d_player = p_player;
+        d_fromCountry = p_fromCountry;
+        d_toCountry = p_toCountry;
         d_armyNumber = p_armyNumber;
-		this.d_orderType = OrderType.AIRLIFT;
+        this.d_orderType = OrderType.AIRLIFT;
     }
 
     /**
@@ -61,18 +56,18 @@ public class AirliftOrder extends Order implements Serializable {
     @Override
     public void execute(){
         if(!valid()) {
-        	GenericView.printWarning("Fail to execute order:" + toString());
-        	this.logExecution("Fail","The context does not satisfy the order" );
-        	return;
+            GenericView.printWarning("Fail to execute order:" + toString());
+            this.logExecution("Fail","The context does not satisfy the order" );
+            return;
         }
         int l_armyInTarget = d_toCountry.getArmyNumber() + d_armyNumber;
         int l_armyInSource = d_fromCountry.getArmyNumber() - d_armyNumber;
         d_toCountry.setArmyNumber(l_armyInTarget);
         d_fromCountry.setArmyNumber(l_armyInSource);
-        
-		//print success information
-		GenericView.printSuccess("Success to execute order:" + toString());
-		this.logExecution("Success", this.toString() );
+
+        //print success information
+        GenericView.printSuccess("Success to execute order:" + toString());
+        this.logExecution("Success", this.toString() );
     }
 
     /**
@@ -98,27 +93,27 @@ public class AirliftOrder extends Order implements Serializable {
             return false;
         }
         //if does not have enough army, adjust the army number
-		if (this.d_fromCountry.getArmyNumber() <  this.d_armyNumber) {
-			d_armyNumber = this.d_fromCountry.getArmyNumber();
-			GenericView.printWarning("The country does not have enough army to airlift, then the airlift army number is adjusted to " + this.d_fromCountry.getArmyNumber());
-		}
-		
+        if (this.d_fromCountry.getArmyNumber() <  this.d_armyNumber) {
+            d_armyNumber = this.d_fromCountry.getArmyNumber();
+            GenericView.printWarning("The country does not have enough army to airlift, then the airlift army number is adjusted to " + this.d_fromCountry.getArmyNumber());
+        }
+
         return true;
     }
-    
-	/**
-	 * override of print the order
-	 */
-	@Override
-	public void printOrder(){
-		GenericView.println(this.toString());		
-	}
-	
-	/**
-	 * override of print the order
-	 */
-	@Override
-	public String toString(){
-		return String.format("Airlift Order, issued by player [%s], airlifting [%s] armies from  [%s] to [%s]",  this.d_player.getName(), d_armyNumber, d_fromCountry.getCountryName(),  d_toCountry.getCountryName() );		
-	}
+
+    /**
+     * override of print the order
+     */
+    @Override
+    public void printOrder(){
+        GenericView.println(this.toString());
+    }
+
+    /**
+     * override of print the order
+     */
+    @Override
+    public String toString(){
+        return String.format("Airlift Order, issued by player [%s], airlifting [%s] armies from  [%s] to [%s]",  this.d_player.getName(), d_armyNumber, d_fromCountry.getCountryName(),  d_toCountry.getCountryName() );
+    }
 }

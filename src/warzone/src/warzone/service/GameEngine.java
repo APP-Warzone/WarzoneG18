@@ -20,9 +20,9 @@ import java.util.Scanner;
 
 /**
  * Main game loop.
+ *
  * Loop over each player for the assign reinforcements, issue orders, and execute orders main game loop phases
- * @author Vrushabh
- * @version 1.1
+ *
  */
 public class GameEngine implements Serializable {
 
@@ -359,9 +359,9 @@ public class GameEngine implements Serializable {
 	}
 
 	/**
-	 * The GameEngine class calls the issue_order() method of the Player. This method will wait for the following command, 
-	 * then create a deploy order object on the players list of orders, then reduce the number of armies in the 
-	 * players reinforcement pool. The game engine does this for all players in round-robin fashion until all the players 
+	 * The GameEngine class calls the issue_order() method of the Player. This method will wait for the following command,
+	 * then create a deploy order object on the players list of orders, then reduce the number of armies in the
+	 * players reinforcement pool. The game engine does this for all players in round-robin fashion until all the players
 	 * have placed all their reinforcement armies on the map.
 	 */
 	public void issueOrders() {
@@ -408,8 +408,8 @@ public class GameEngine implements Serializable {
 
 
 	/**
-	 * The GameEngine calls the next_order() method of the Player. Then the Order object�s execute() method is called 
-	 * which will enact the order. 
+	 * The GameEngine calls the next_order() method of the Player. Then the Order object�s execute() method is called
+	 * which will enact the order.
 	 * <ol>
 	 * <li>get the max number of the orders own by a single player</li>
 	 * <li>excute the orders from player's order list in round-robin fashion</li>
@@ -422,7 +422,7 @@ public class GameEngine implements Serializable {
 			return;
 		}
 
-		//1. get the max number of the orders in a player.		
+		//1. get the max number of the orders in a player.
 		int l_maxOrderNumber = 0;
 		for(Player l_player :d_gameContext.getPlayers().values() ){
 			if(l_player.getIsAlive()) {

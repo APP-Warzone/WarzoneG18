@@ -1,12 +1,11 @@
 package warzone.model;
 
 import warzone.view.GenericView;
+
 import java.io.Serializable;
 
 /**
  * This class represents one advance order of the gameplay
- * @author Khushi
- * @version 1.2
  */
 public class AdvanceOrder extends Order implements Serializable {
 
@@ -37,7 +36,7 @@ public class AdvanceOrder extends Order implements Serializable {
 
 	/**
 	 * AdvanceOrder constructor
-	 * 
+	 *
 	 * @param p_player the owner of the order
 	 * @param p_fromCountry advance from country
 	 * @param p_toCountry advance to country
@@ -50,10 +49,10 @@ public class AdvanceOrder extends Order implements Serializable {
 		d_numberOfArmies = p_numberOfArmies;
 		this.d_orderType = OrderType.ADVANCE;
 	}
-	
+
 	/**
 	 * Get fromCountry, the country that is attacking
-	 * 
+	 *
 	 * @return fromCountry The country that is attacking
 	 */
 	public Country getFromCountry() {
@@ -62,7 +61,7 @@ public class AdvanceOrder extends Order implements Serializable {
 
 	/**
 	 * Set fromCountry, the country that is attacking
-	 * 
+	 *
 	 * @param fromCountry advance from country
 	 */
 	public void setFromCountry(Country fromCountry) {
@@ -71,7 +70,7 @@ public class AdvanceOrder extends Order implements Serializable {
 
 	/**
 	 * Get toCountry, the country that is defending
-	 * 
+	 *
 	 * @return toCountry The country that is defending
 	 */
 	public Country getToCountry() {
@@ -80,7 +79,7 @@ public class AdvanceOrder extends Order implements Serializable {
 
 	/**
 	 * Set toCountry, the country that is defending
-	 * 
+	 *
 	 * @param toCountry advance to country
 	 */
 	public void setToCountry(Country toCountry) {
@@ -89,7 +88,7 @@ public class AdvanceOrder extends Order implements Serializable {
 
 	/**
 	 * Get the number of armies the attacker wants to send out
-	 * 
+	 *
 	 * @return numberOfArmies The number of armies the attacker wants to send out
 	 */
 	public int getNumberOfArmies() {
@@ -98,7 +97,7 @@ public class AdvanceOrder extends Order implements Serializable {
 
 	/**
 	 * Set the number of armies the attacker wants to send out
-	 * 
+	 *
 	 * @param numberOfArmies The number of armies the attacker wants to send out
 	 */
 	public void setNumberOfArmies(int numberOfArmies) {
@@ -107,7 +106,7 @@ public class AdvanceOrder extends Order implements Serializable {
 
 	/**
 	 * Get the player that initiated the advance order (the attacker)
-	 * 
+	 *
 	 * @return player The player that initiated the advance order (the attacker)
 	 */
 	public Player getPlayer() {
@@ -116,7 +115,7 @@ public class AdvanceOrder extends Order implements Serializable {
 
 	/**
 	 * Set the player that initiated the advance order (the attacker)
-	 * 
+	 *
 	 * @param player The player that initiated the advance order (the attacker)
 	 */
 	public void setPlayer(Player player) {
@@ -124,29 +123,29 @@ public class AdvanceOrder extends Order implements Serializable {
 	}
 
 	/**
-     * Perform the advanceOrder. A series of skirmishes occur between to attacking and defending countries.
-     * The attacker claims the defender's country if they defeat all the defender's armies and still have armies
-     * remaining to advance. If not, both countries will likely suffer casualties, but no change of ownership will occur.
-     */
+	 * Perform the advanceOrder. A series of skirmishes occur between to attacking and defending countries.
+	 * The attacker claims the defender's country if they defeat all the defender's armies and still have armies
+	 * remaining to advance. If not, both countries will likely suffer casualties, but no change of ownership will occur.
+	 */
 	@Override
 	public void execute() {
-		
+
 		if(!valid()){
 			GenericView.printWarning("Fail to execute order:" + toString());
 			this.logExecution("Fail","The context does not satisfy the order" );
 			return;
 		}
-	
+
 		//Make sure that there are enough armies to advance
 		if(d_fromCountry.getArmyNumber() < d_numberOfArmies) {
-			
+
 			d_numberOfArmies = d_fromCountry.getArmyNumber();
 		}
 
 		l_numberOfArmies = d_numberOfArmies;
 		//If toCountry is owned by current player -> advance armies
 		if(d_toCountry.getOwner() != null && d_toCountry.getOwner().equals(d_player)) {
-		
+
 			//Move the armies
 			d_fromCountry.setArmyNumber(d_fromCountry.getArmyNumber() - l_numberOfArmies);
 			d_toCountry.setArmyNumber(d_toCountry.getArmyNumber() + l_numberOfArmies);
@@ -189,7 +188,7 @@ public class AdvanceOrder extends Order implements Serializable {
 
 	/**
 	 * When an attacker conquers a defender's country, this method performs the exchange of the countries and armies. 
-	 * 
+	 *
 	 * @param p_toCountry to country
 	 * @param p_fromCountry from country
 	 * @param p_numberOfArmies number of armies set to the new country
@@ -205,52 +204,52 @@ public class AdvanceOrder extends Order implements Serializable {
 		this.getPlayer().setConqueredACountryThisTurn(true);
 		return;
 	}
-	
+
 	/**
-     * Override of valid check
-     * @return true if valid
-     */
-    @Override
-    public boolean valid(){        
-    	boolean l_isValid = true;
-    	Player l_player = d_fromCountry.getOwner();
-    	if(l_player == null || !l_player.getIsAlive()) {
+	 * Override of valid check
+	 * @return true if valid
+	 */
+	@Override
+	public boolean valid(){
+		boolean l_isValid = true;
+		Player l_player = d_fromCountry.getOwner();
+		if(l_player == null || !l_player.getIsAlive()) {
 			GenericView.printWarning(String.format(" The player of target country is not alive or is Null."));
 			return false;
 		}
-    	// check if army number above zero
-    	if(d_numberOfArmies <= 0){
+		// check if army number above zero
+		if(d_numberOfArmies <= 0){
 			GenericView.printWarning("Could not perform the advance order with below 0 armies.");
 			return false;
 		}
-    	//Check if fromCountry is owned by the current player
-		if(d_fromCountry.getOwner() == null || !d_fromCountry.getOwner().equals(d_player)) {			
-			GenericView.printWarning("Could not perform the advance order moving " + d_numberOfArmies + " armies from " + 
+		//Check if fromCountry is owned by the current player
+		if(d_fromCountry.getOwner() == null || !d_fromCountry.getOwner().equals(d_player)) {
+			GenericView.printWarning("Could not perform the advance order moving " + d_numberOfArmies + " armies from " +
 					d_fromCountry.getCountryName() + ", because " + d_player.getName() + " does not own [" + d_fromCountry.getCountryName() + "].");
-			
-		    return false;
-		}
-      
-		//check if DIPLOMACY 
-		if( d_toCountry.getOwner()!= null && this.d_player != null 
-				&& this.getGameContext().isDiplomacyInCurrentTurn(d_player, d_toCountry.getOwner())){
-      			GenericView.printWarning(String.format("The player [%s] and [%s] are in Diplomacy in current turn.", this.d_player.getName(), d_toCountry.getOwner().getName() ));
-      		    return false;
-		}		
-		
-		//Check if fromCountry and toCountry are neighbors
-		if(d_fromCountry.getNeighbors().get(d_toCountry.getCountryID()) == null) {			
-			GenericView.printWarning("Could not perform the advance order moving " + d_numberOfArmies + " armies from " + 
-					d_fromCountry.getCountryName() + " to " + d_toCountry.getCountryName() + " because they are not neighbors.");
-			
-		    return false;
+
+			return false;
 		}
 
-		if (this.d_numberOfArmies <= 0 ) {			
+		//check if DIPLOMACY 
+		if( d_toCountry.getOwner()!= null && this.d_player != null
+				&& this.getGameContext().isDiplomacyInCurrentTurn(d_player, d_toCountry.getOwner())){
+			GenericView.printWarning(String.format("The player [%s] and [%s] are in Diplomacy in current turn.", this.d_player.getName(), d_toCountry.getOwner().getName() ));
+			return false;
+		}
+
+		//Check if fromCountry and toCountry are neighbors
+		if(d_fromCountry.getNeighbors().get(d_toCountry.getCountryID()) == null) {
+			GenericView.printWarning("Could not perform the advance order moving " + d_numberOfArmies + " armies from " +
+					d_fromCountry.getCountryName() + " to " + d_toCountry.getCountryName() + " because they are not neighbors.");
+
+			return false;
+		}
+
+		if (this.d_numberOfArmies <= 0 ) {
 			GenericView.printWarning("The advance army number should greater than 0.");
 			return false;
-		}		
-		
+		}
+
 
 		if(d_fromCountry.getArmyNumber() < d_numberOfArmies && d_fromCountry.getArmyNumber() == 0) {
 			GenericView.printWarning("Could not perform the advance order moving with 0 army in "+ d_fromCountry.getCountryName());
@@ -258,22 +257,22 @@ public class AdvanceOrder extends Order implements Serializable {
 			return false;
 		}
 
-    	return true;
-    }
+		return true;
+	}
 
 	/**
 	 * override of print the order
 	 */
 	@Override
 	public void printOrder(){
-		GenericView.println(this.toString());		
+		GenericView.println(this.toString());
 	}
-	
+
 	/**
 	 * override of print the order
 	 */
 	@Override
 	public String toString(){
-		return String.format("Advance Order, issued by player [%s], sending [%s] armies from  [%s] to [%s]",  this.d_player.getName(), this.d_numberOfArmies, d_fromCountry.getCountryName(),  d_toCountry.getCountryName() );		
+		return String.format("Advance Order, issued by player [%s], sending [%s] armies from  [%s] to [%s]",  this.d_player.getName(), this.d_numberOfArmies, d_fromCountry.getCountryName(),  d_toCountry.getCountryName() );
 	}
 }
