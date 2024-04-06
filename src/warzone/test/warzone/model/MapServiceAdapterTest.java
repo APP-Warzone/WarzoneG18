@@ -2,7 +2,7 @@ package warzone.model;
 
 /**
  * test cases for MapServiceAdapter
- * @author zexin
+ * @author love
  *
  */
 public class MapServiceAdapterTest {
