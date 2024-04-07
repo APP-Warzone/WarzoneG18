@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f15df41-6d75-4d85-9a33-ac12564575eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/model/AdvanceOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/AdvanceOrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/model/AggressiveStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/AggressiveStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/model/BenevolentStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/BenevolentStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/model/CheaterStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/CheaterStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/model/ModelTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/ModelTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/model/RandomStrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/model/RandomStrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/service/GameEngineServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/service/GameEngineServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/service/ServiceTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/service/ServiceTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/test/warzone/state/StartupTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/test/warzone/state/StartupTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
