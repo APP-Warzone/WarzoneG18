@@ -86,13 +86,13 @@ public class GameEngine implements Serializable {
 
 
 	/**
-	 * State object of the GameEngine 
+	 * State object of the GameEngine
 	 */
 	private Phase d_gamePhase ;
 
 	/**
-	 * get  State of the Game 
-	 * @return State of the Game 
+	 * get  State of the Game
+	 * @return State of the Game
 	 */
 	public Phase getPhase() {
 		return d_gamePhase;
@@ -118,7 +118,7 @@ public class GameEngine implements Serializable {
 		}
 	}
 	/**
-	 * Method that allows the GameEngine object to change its state.  
+	 * Method that allows the GameEngine object to change its state.
 	 * @param p_phase new state to be set for the GameEngine object.
 	 */
 	public void setPhase(Phase p_phase) {
