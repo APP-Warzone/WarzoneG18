@@ -1,6 +1,5 @@
 package warzone.model;
 import java.io.Serializable;
-import java.util.List;
 import java.util.Random;
 
 
@@ -22,7 +21,7 @@ public class AggressiveStrategy extends PlayerStrategy implements Serializable {
 	/**
 	 * strongest country
 	 */
-	private Country l_strongestCountry = null;
+	private Country d_strongestCountry = null;
 	/**
 	 * constructor of AggressiveStrategy
 	 * @param p_player given Player
@@ -30,9 +29,9 @@ public class AggressiveStrategy extends PlayerStrategy implements Serializable {
 	AggressiveStrategy(Player p_player){
 		super(p_player);
 		d_hasAttack = false;
-		l_strongestCountry = getStrongestConqueredCountry();
+		d_strongestCountry = getStrongestConqueredCountry();
 	}
-	
+
 	/**
 	 * Get the conquered country which has maximum army number
 	 * @return the strongest conquered country
@@ -81,11 +80,11 @@ public class AggressiveStrategy extends PlayerStrategy implements Serializable {
 
 		//deploy and get the strongest country
 		if(d_player.getArmiesToDeploy() - d_player.d_armyHasIssued > 0) {
-			l_strongestCountry = getStrongestConqueredCountry();
-			l_order = new DeployOrder(d_player, l_strongestCountry, d_player.getArmiesToDeploy());
+			d_strongestCountry = getStrongestConqueredCountry();
+			l_order = new DeployOrder(d_player, d_strongestCountry, d_player.getArmiesToDeploy());
 			return l_order;
 		}
-		
+
 		//attack with bomb
 		if(d_player.getCards().size() > 0){
 			for(Card l_card: d_player.getCards()){
@@ -105,18 +104,20 @@ public class AggressiveStrategy extends PlayerStrategy implements Serializable {
 
 
 		//if has enemy, attack
-		for (Country l_c : l_strongestCountry.getNeighbors().values()) {
+		for (Country l_c : d_strongestCountry.getNeighbors().values()) {
 			if (l_c.getOwner() != d_player) {
-				l_order = new AdvanceOrder(d_player, l_strongestCountry, l_c, l_strongestCountry.getArmyNumber() + d_player.d_armyHasIssued);
+				l_order = new AdvanceOrder(d_player, d_strongestCountry, l_c, d_strongestCountry.getArmyNumber() + d_player.d_armyHasIssued);
+				d_strongestCountry = l_c;
 				return l_order;
 			}
 		}
 		//has no enemy, move the army to next country
-		for (Country l_c : l_strongestCountry.getNeighbors().values()) {
-			l_order = new AdvanceOrder(d_player, l_strongestCountry, l_c, l_strongestCountry.getArmyNumber() + d_player.d_armyHasIssued);
+		for (Country l_c : d_strongestCountry.getNeighbors().values()) {
+			l_order = new AdvanceOrder(d_player, d_strongestCountry, l_c, d_strongestCountry.getArmyNumber() + d_player.d_armyHasIssued);
+			d_strongestCountry = l_c;
 			return l_order;
 		}
-		
+
 		return null;
 	}
 }
