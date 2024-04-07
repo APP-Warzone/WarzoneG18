@@ -35,23 +35,23 @@ public class MapView {
         for (Continent l_continent : p_gameContext.getContinents().values()) {
             System.out.println(String.format("%-2s", l_continent.getContinentID()) + l_continent.getContinentName() + "[" + l_continent.getBonusReinforcements() + "]");
 
-                for (Country l_country : l_continent.getCountries().values()) {
-                	l_countryKeys.remove(l_country.getCountryID());
-                    System.out.println(String.format("%22s", l_country.getCountryID()) + " " + l_country.getCountryName());
-                    for (Country l_nCountry : l_country.getNeighbors().values())
-                        System.out.println(String.format("%35s", l_nCountry.getCountryID()) + " " +l_nCountry.getCountryName());
-                }
+            for (Country l_country : l_continent.getCountries().values()) {
+                l_countryKeys.remove(l_country.getCountryID());
+                System.out.println(String.format("%22s", l_country.getCountryID()) + " " + l_country.getCountryName());
+                for (Country l_nCountry : l_country.getNeighbors().values())
+                    System.out.println(String.format("%35s", l_nCountry.getCountryID()) + " " +l_nCountry.getCountryName());
+            }
         }
         //printout Orphans Country
         if(l_countryKeys.size() > 0) {
-        	System.out.println(String.format("**    [%s]  Orphans Country - neighbors        **", l_countryKeys.size()));
-        	for( int l_countryKey : l_countryKeys) {
-        		Country l_country = p_gameContext.getCountries().get(l_countryKey);
-        		 System.out.println(String.format("%22s", l_country.getCountryID()) + " " + l_country.getCountryName());
-                 for (Country l_nCountry : l_country.getNeighbors().values())
-                     System.out.println(String.format("%35s", l_nCountry.getCountryID()) + " " +l_nCountry.getCountryName());
-        	}        	
-        }        
+            System.out.println(String.format("**    [%s]  Orphans Country - neighbors        **", l_countryKeys.size()));
+            for( int l_countryKey : l_countryKeys) {
+                Country l_country = p_gameContext.getCountries().get(l_countryKey);
+                System.out.println(String.format("%22s", l_country.getCountryID()) + " " + l_country.getCountryName());
+                for (Country l_nCountry : l_country.getNeighbors().values())
+                    System.out.println(String.format("%35s", l_nCountry.getCountryID()) + " " +l_nCountry.getCountryName());
+            }
+        }
     }
 
     /**
@@ -74,8 +74,8 @@ public class MapView {
                 System.out.println(String.format("%27s", l_country.getCountryID()) + " "
                         + String.format("%-25s", l_country.getCountryName()) + " "
                         + String.format("%-10s",l_country.getArmyNumber()) + " "
-                        + String.format("%-25s", l_country.getCountryState().toString() + " [" + (l_country.getOwner()==null ? "": (l_country.getOwner().getName()) + " - "+ l_country.getOwner().getLifeStatus() +" - "+ l_country.getOwner().getArmiesToDeploy()) +" ]"));
-                        
+                        + String.format("%-25s", l_country.getCountryState().toString() + " [" + (l_country.getOwner()==null ? "": (l_country.getOwner().getName()) + " - "+ l_country.getOwner().getPlayerStrategyType() + " - "+ l_country.getOwner().getLifeStatus() +" - "+ l_country.getOwner().getArmiesToDeploy()) +" ]"));
+
                 for (Country l_nCountry : l_country.getNeighbors().values())
                     System.out.println(String.format("%40s", l_nCountry.getCountryID()) + " " +l_nCountry.getCountryName());
 
