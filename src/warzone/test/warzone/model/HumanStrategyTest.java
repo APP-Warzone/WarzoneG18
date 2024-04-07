@@ -2,7 +2,7 @@ package warzone.model;
 
 /**
  * test cases for HumanStrategy
- * @author zexin
+ * @author love
  *
  */
 public class HumanStrategyTest {
