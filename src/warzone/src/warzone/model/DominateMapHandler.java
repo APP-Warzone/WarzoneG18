@@ -16,7 +16,7 @@ import warzone.service.MapService;
 
 /**
  * Dominate Map Handler
- * @author fzuray
+ * @author Harsh
  *
  */
 public class DominateMapHandler implements Serializable {

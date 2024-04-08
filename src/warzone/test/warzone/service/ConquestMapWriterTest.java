@@ -16,7 +16,7 @@ import warzone.state.MapEditor;
 
 /**
  * test cases for ConquestMapWriter
- * @author zexin
+ * @author Vrushabh
  *
  */
 public class ConquestMapWriterTest {
