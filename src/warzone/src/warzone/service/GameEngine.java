@@ -20,9 +20,9 @@ import java.util.Scanner;
 
 /**
  * Main game loop.
- *
+ * 
  * Loop over each player for the assign reinforcements, issue orders, and execute orders main game loop phases
- *
+ * 
  */
 public class GameEngine implements Serializable {
 
@@ -47,17 +47,17 @@ public class GameEngine implements Serializable {
 	 * game context
 	 */
 	private GameContext d_gameContext;
-
+	
 	/**
 	 * tournament context
 	 */
 	private TournamentContext d_tournamentContext;
-
+	
 	/**
 	 * tournament mode boolean
 	 */
 	private boolean d_isInTournamentMode = false;
-
+	
 	/**
 	 * game engine
 	 */
@@ -82,22 +82,22 @@ public class GameEngine implements Serializable {
 		if( GAME_ENGINE == null)
 			GAME_ENGINE = new GameEngine(p_gameContext);
 		return GAME_ENGINE;
-	}
-
+	}	
+	
 
 	/**
-	 * State object of the GameEngine
+	 * State object of the GameEngine 
 	 */
 	private Phase d_gamePhase ;
-
+	
 	/**
-	 * get  State of the Game
-	 * @return State of the Game
+	 * get  State of the Game 
+	 * @return State of the Game 
 	 */
 	public Phase getPhase() {
 		return d_gamePhase;
 	}
-
+	
 	/**
 	 * get  State of the Game Context
 	 * @return State of the Game  Context
@@ -118,7 +118,7 @@ public class GameEngine implements Serializable {
 		}
 	}
 	/**
-	 * Method that allows the GameEngine object to change its state.
+	 * Method that allows the GameEngine object to change its state.  
 	 * @param p_phase new state to be set for the GameEngine object.
 	 */
 	public void setPhase(Phase p_phase) {
@@ -126,32 +126,32 @@ public class GameEngine implements Serializable {
 		p_phase.refresh(this);
 		System.out.println("new phase: " + p_phase.getClass().getSimpleName());
 	}
-
+	
 	/**
 	 * IsInTournamentMode getter
 	 * @return IsInTournamentMode
 	 */
 	public boolean getIsInTournamentMode() {
-
+		
 		return d_isInTournamentMode;
 	}
-
+	
 	/**
-	 * IsInTournamentMode setter
+	 * IsInTournamentMode setter 
 	 * @param p_isInTournamentMode IsInTournamentMode
 	 */
 	public void setIsInTournamentMode(boolean p_isInTournamentMode) {
-
+		
 		this.d_isInTournamentMode = p_isInTournamentMode;
 	}
-
+	
 	/**
 	 * This method will initialize the tournament context
 	 */
 	public void initializeTournamentContext() {
 		d_tournamentContext = TournamentContext.getTournamentContext();
 	}
-
+	
 	/**
 	 * TournamentContext getter
 	 * @return the TournamentContext
@@ -161,34 +161,34 @@ public class GameEngine implements Serializable {
 			initializeTournamentContext();
 		return d_tournamentContext;
 	}
-
+	
 	/**
-	 * This method will ask the user:
-	 * 1. What part of the game they want to start with (edit map or play game).
-	 *      Depending on the choice, the state will be set to a different object,
-	 *      which will set different behavior.
-	 * 2. What command they want to execute from the game.
-	 *      Depending on the state of the GameEngine, each command will potentially
-	 *      have a different behavior.
+	 * This method will ask the user: 
+	 * 1. What part of the game they want to start with (edit map or play game). 
+	 *      Depending on the choice, the state will be set to a different object, 
+	 *      which will set different behavior. 
+	 * 2. What command they want to execute from the game. 
+	 *      Depending on the state of the GameEngine, each command will potentially 
+	 *      have a different behavior. 
 	 */
 	public void start() {
 		RouterService l_routerService =  RouterService.getRouterService(this);
-		CommandService l_commandService =  CommandService.getCommandService(this );
-
+		CommandService l_commandService =  CommandService.getCommandService(this );		
+		
 		d_tournamentContext = TournamentContext.getTournamentContext();
-
+		
 		//1 welcome
 		HelpView.printWelcome();
-
-		l_commandService.commandScanner(l_routerService);
-	}
-
-	/**
-	 * This method will show whether the game can start.
-	 * @return true if the game can start
+		
+		l_commandService.commandScanner(l_routerService);		
+	}	
+	
+	/**	
+	 * This method will show whether the game can start.	
+	 * @return true if the game can start	
 	 */
 	public boolean isReadyToStart() {
-		if(this.d_gameContext == null || this.d_gameContext.getContinents().size() <1
+		if(this.d_gameContext == null || this.d_gameContext.getContinents().size() <1 
 				|| this.d_gameContext.getCountries().size() < 2 || this.d_gameContext.getPlayers().size() < 2
 				|| (this.d_gameContext.getCountries().size() < this.d_gameContext.getPlayers().size()) ) {
 			GenericView.printWarning("The number of Country, player and continent is not satisfy the requirement, game can't start.");
@@ -201,18 +201,18 @@ public class GameEngine implements Serializable {
 					return false;
 				}
 			}
-
+			
 		}
 		return true;
 	}
-
+	
 	/**
 	 * If the game turn is greater than 100, the game will end.
-	 *
+	 * 
 	 * @return true if the game can end.
 	 */
 	public boolean play() {
-
+		
 		if(! isReadyToStart())
 			return false;
 		if(this.d_gameContext.getIsDemoMode())
@@ -221,9 +221,9 @@ public class GameEngine implements Serializable {
 			while(!isGameEnded())
 				startTurn();
 		}
-		return true;
+		return true;		
 	}
-
+	
 	/**
 	 * the map index
 	 */
@@ -232,7 +232,7 @@ public class GameEngine implements Serializable {
 	 * the game index
 	 */
 	private int d_gameIndex;
-
+	
 	/**
 	 * if no player is human, it is single mode
 	 * @return if is Single Mode
@@ -240,15 +240,15 @@ public class GameEngine implements Serializable {
 	public boolean isSingleMode() {
 		if(d_gameContext.getPlayers().size() ==0)
 			return false;
-
+		
 		for(Player l_player :d_gameContext.getPlayers().values() ){
 			if(l_player.getPlayerStrategyType() == PlayerStrategyType.HUMAN )
 				return false;
 		}
-
+		
 		return true;
 	}
-
+	
 	/**
 	 * Play single mode
 	 * @return if it is finished
@@ -261,76 +261,82 @@ public class GameEngine implements Serializable {
 			startTurn();
 			l_turnCounter++;
 		}
-		renderAndUpdateGameResult();
-
+		renderAndUpdateGameResult();		
+		
 		GenericView.println("Single Mode is Ended after executing ["+ l_turnCounter +"] Turn. ");
-
-		return true;
+		
+		return true;	
 	}
-
+	
 	/**
 	 * Loop for tournament games
-	 *
+	 * 
 	 * @return true if the game can end.
 	 */
 	public TournamentContext playTournament() {
 
-		int l_turnCounter;
-
+		int l_turnCounter; 
+		
 		d_tournamentContext.prepareResultsTable();
-
+		
 		for(d_mapIndex = 0; d_mapIndex < d_tournamentContext.getMapFiles().size(); d_mapIndex++) {
-
+			
 			for(d_gameIndex = 0; d_gameIndex < d_tournamentContext.getNumberOfGames(); d_gameIndex++) {
-
+			
 				l_turnCounter = 0;
-
+				
 				//Prepare the current game context
-				prepareGameContextForTournamentMatch(d_tournamentContext.getMapFiles().get(d_mapIndex));
+				if(!prepareGameContextForTournamentMatch(d_tournamentContext.getMapFiles().get(d_mapIndex)))
+					continue;
 
+				
 				while(l_turnCounter < d_tournamentContext.getMaxTurns() && !isGameEnded() ) {
-
+						
 					startTurn();
 					l_turnCounter++;
 				}
 				GenericView.println(String.format("Game is end for map [%s] and game [%s], in Turn [%s]. ",d_mapIndex, d_gameIndex, l_turnCounter));
 				if(isGameEnded()) {
-					renderAndUpdateGameResult();
+					renderAndUpdateGameResult(true);					
 				}
-				else if(l_turnCounter >= d_tournamentContext.getMaxTurns()) {
+				else if(l_turnCounter >= d_tournamentContext.getMaxTurns()) {					
 					d_tournamentContext.getResults()[d_mapIndex][d_gameIndex] = "Draw";
 				}
 			}
 		}
 		TournamentResultsView.printTournamentResults(d_tournamentContext);
-
-		return d_tournamentContext;
+		
+		return d_tournamentContext;		
 	}
-
+	
 	/**
 	 * prepare Game Context For Tournament Match
 	 * @param p_mapFileName file name
+	 * @return if the game is prepared
 	 */
-	private void prepareGameContextForTournamentMatch(String p_mapFileName) {
-
+	private boolean prepareGameContextForTournamentMatch(String p_mapFileName) {
+		
 		d_gameContext.reset();
 		StartupService startupService = new StartupService(d_gameContext);
-
+		if(p_mapFileName == "" || d_tournamentContext.getPlayerStrategies().size() == 0)
+			return false;
+		
 		startupService.loadMap(p_mapFileName);
-
+		
 		int playerNameIndex = 1;
 		for(PlayerStrategyType playerStrategyType : d_tournamentContext.getPlayerStrategies()) {
-
+			
 			startupService.addPlayer(new Player(playerStrategyType.toString() + playerNameIndex, playerStrategyType));
 			playerNameIndex++;
 		}
-
+		
 		startupService.assignCountries();
+		return true;
 	}
-
-
+	
+	
 	/**
-	 * This method represent one turn for each player. It contains three steps:
+	 * This method represent one turn for each player. It contains three steps: 
 	 * 1. assigning reinforcements 2. issuing orders 3.executing orders
 	 */
 	private void startTurn() {
@@ -344,7 +350,7 @@ public class GameEngine implements Serializable {
 		GenericView.println("--------------------Start to assign cards randomly");
 		assignCards();
 	}
-
+	
 	/**
 	 * get alive player
 	 * @return number of alive players
@@ -366,6 +372,13 @@ public class GameEngine implements Serializable {
 	 * update Game Result for what ever game
 	 */
 	public void renderAndUpdateGameResult() {
+		renderAndUpdateGameResult(false);
+	}
+	/**
+	 * update Game Result for what ever game
+	 * @param p_isUpdateTournamentResult  is Update Tournament Result
+	 */
+	public void renderAndUpdateGameResult(boolean p_isUpdateTournamentResult) {
 		int l_alivePlayers = 0;
 		Player l_protentialWinner = null;
 		for(Player l_player :d_gameContext.getPlayers().values() ){
@@ -378,39 +391,39 @@ public class GameEngine implements Serializable {
 				l_player.setIsAlive( false );
 			}
 		}
-
+		
 		if(l_alivePlayers == 1) {
-
+			
 			GenericView.printSuccess("player " + l_protentialWinner.getName() + " wins the game.");
-
-			if(d_gameContext.getIsTournamentMode() == true) {
-
+			
+			if(p_isUpdateTournamentResult) {
+				
 				d_tournamentContext.getResults()[d_mapIndex][d_gameIndex] = l_protentialWinner.getName();
 			}
 		}
 		else if(l_alivePlayers == 0){
 			GenericView.printSuccess("All the player died.");
-
-			if(d_gameContext.getIsTournamentMode() == true) {
+			
+			if(p_isUpdateTournamentResult) {
 
 				d_tournamentContext.getResults()[d_mapIndex][d_gameIndex] = "Draw";
 			}
 		}
 		else{
 			GenericView.printSuccess("Many player alived.");
-
-			if(d_gameContext.getIsTournamentMode() == true) {
+			
+			if(p_isUpdateTournamentResult) {
 
 				d_tournamentContext.getResults()[d_mapIndex][d_gameIndex] = "Draw";
 			}
 		}
-
+		
 	}
-
-
+	
+	
 	/**
 	 * This method will determine if the game whether can end.
-	 * @return true if the current state satisfy the end condition:
+	 * @return true if the current state satisfy the end condition: 
 	 * 1. there is just one player left 2. the number of game turn is greater than 100.
 	 */
 	public boolean isGameEnded() {
@@ -418,16 +431,16 @@ public class GameEngine implements Serializable {
 	}
 	/**
 	 * This method will determine if the game whether can end.
-	 * update player 's status
+	 * update player 's status 
 	 * @param p_isShowResult is show result
-	 * @return true if the current state satisfy the end condition:
+	 * @return true if the current state satisfy the end condition: 
 	 * 1. there is just one player left 2. the number of game turn is greater than 100.
 	 */
 	public boolean isGameEnded(boolean p_isShowResult) {
 		if(this.d_gamePhase.getGamePhase() == GamePhase.MAPEDITOR)
 			return false;
-
-		//check and update PlayerStatus
+		
+		//check and update PlayerStatus		
 		//set p_isLoser = true, when the player does not have any country
 		int l_alivePlayers = 0;
 		Player l_protentialWinner = null;
@@ -441,15 +454,15 @@ public class GameEngine implements Serializable {
 				l_player.setIsAlive( false );
 			}
 		}
-		if(l_alivePlayers <= 1){
+		if(l_alivePlayers <= 1){			
 			return true;
 		}
 		else
 			return false;
 	}
-
+	
 	/**
-	 * This method will assign each player the correct number of reinforcement armies
+	 * This method will assign each player the correct number of reinforcement armies 
 	 * according to the Warzone rules.
 	 */
 	public void assignReinforcements() {
@@ -464,15 +477,15 @@ public class GameEngine implements Serializable {
 				l_player.assignReinforcements();
 			}
 		});
-		GenericView.println("-------------------- Finish assigning reinforcements");
-
+		GenericView.println("-------------------- Finish assigning reinforcements");		
+		
 	}
-
+	
 	/***
 	 * add card for all Alive players
 	 */
 	public void addCardsForAllAlivePlayers() {
-		d_gameContext.getPlayers().forEach((l_k, l_player) -> {
+		d_gameContext.getPlayers().forEach((l_k, l_player) -> {			
 			if(l_player.getIsAlive()) {
 				if( !l_player.getCards().contains(Card.AIRLIFT))
 					l_player.addCard(Card.AIRLIFT);
@@ -485,18 +498,18 @@ public class GameEngine implements Serializable {
 			}
 		});
 	}
-
+	
 	/**
-	 * The GameEngine class calls the issue_order() method of the Player. This method will wait for the following command,
-	 * then create a deploy order object on the players list of orders, then reduce the number of armies in the
-	 * players reinforcement pool. The game engine does this for all players in round-robin fashion until all the players
+	 * The GameEngine class calls the issue_order() method of the Player. This method will wait for the following command, 
+	 * then create a deploy order object on the players list of orders, then reduce the number of armies in the 
+	 * players reinforcement pool. The game engine does this for all players in round-robin fashion until all the players 
 	 * have placed all their reinforcement armies on the map.
 	 */
 	public void issueOrders() {
 		if( isGameEnded()) {
 			GenericView.println("Game is ended.");
 			return;
-		}
+		}		
 
 		//local list of player
 		List<Player> l_playersList = new ArrayList<>();
@@ -513,7 +526,7 @@ public class GameEngine implements Serializable {
 			GenericView.println(String.format("-------------------- Start to issue orders"));
 			do{
 				l_finishPlayerlist.clear();
-
+				
 				for (Player l_player : l_playersList) {
 					if (l_player.getIsAlive() && !l_player.getHasFinisedIssueOrder() ) {
 						GenericView.println("---------- Start to issue orders for player [" + l_player.getName() + "]");
@@ -524,54 +537,54 @@ public class GameEngine implements Serializable {
 						l_finishPlayerlist.add(l_player);
 				}
 				l_issuedOrderCounter ++;
-			}while (l_finishPlayerlist.size() != l_playersList.size()
+			}while (l_finishPlayerlist.size() != l_playersList.size() 
 					&& l_issuedOrderCounter < WarzoneProperties.getWarzoneProperties().getMaxTurnPerRound() );
-
+			
 			GenericView.println("-------------------- Finish issuing orders for this turn");
 		}
-
-
-
+		
+		
+		
 		//call the order execution
 		this.setPhase(new OrderExecution(this));
 
 	}
-
-
+	
+	
 	/**
-	 * The GameEngine calls the next_order() method of the Player. Then the Order object�s execute() method is called
-	 * which will enact the order.
+	 * The GameEngine calls the next_order() method of the Player. Then the Order object�s execute() method is called 
+	 * which will enact the order. 
 	 * <ol>
 	 * <li>get the max number of the orders own by a single player</li>
 	 * <li>excute the orders from player's order list in round-robin fashion</li>
 	 * </ol>
 	 */
-	public void executeOrders() {
+	public void executeOrders() {	
 
 		if( isGameEnded()) {
 			GenericView.println("Game is ended.");
 			return ;
 		}
-
-		//1. get the max number of the orders in a player.
-		int l_maxOrderNumber = 0;
+		
+		//1. get the max number of the orders in a player.		
+		int l_maxOrderNumber = 0;	
 		for(Player l_player :d_gameContext.getPlayers().values() ){
 			if(l_player.getIsAlive()) {
 				if( l_player.getOrders().size() > l_maxOrderNumber)
-					l_maxOrderNumber = l_player.getOrders().size();
-			}
+					l_maxOrderNumber = l_player.getOrders().size();				
+			}		
 		}
 
 		//2. excute the orders
 		GenericView.println("-------------------- Start to execute orders.");
-
+		
 		d_gameContext.resetDiplomacyOrderList();
 		int l_roundIndex = 1;
 		while(l_roundIndex <= l_maxOrderNumber ){
 			if( isGameEnded()) {
 				break;
-			}
-
+			}	
+			
 			GenericView.println("---------- Start to execute round [" + l_roundIndex + "] of orders");
 			d_gameContext.getPlayers().forEach((l_k, l_player) -> {
 				if(l_player.getIsAlive()) {
@@ -580,10 +593,10 @@ public class GameEngine implements Serializable {
 						l_order.execute();
 						MapView.printMapWithArmies(d_gameContext.getContinents());
 					}
-				}
+				}				
 			});
-
-			//update players status of IsAlive
+			
+			//update players status of IsAlive			
 			for(Player l_player :d_gameContext.getPlayers().values() ){
 				if(l_player.getConqueredCountries().size() > 0)
 					l_player.setIsAlive( true );
@@ -592,17 +605,17 @@ public class GameEngine implements Serializable {
 					GenericView.printWarning(String.format("----- Player [%s] is died ", l_player.getName() ));
 				}
 			}
-
-			l_roundIndex ++;
+			
+			l_roundIndex ++;			
 		}
-
+		
 		GenericView.println("-------------------- Finish executing orders for this turn");
 		if(isGameEnded() && !this.isSingleMode() && !this.getIsInTournamentMode() ) {
 			renderAndUpdateGameResult();
 			reboot();
 		}
-	}
-
+	}	
+	
 	/**
 	 * This method will assign a random card to each player that conquered a country this turn
 	 */
@@ -624,7 +637,7 @@ public class GameEngine implements Serializable {
 
 					l_player.getCards().add(Card.BLOCKADE);
 					GenericView.println(l_player.getName() + " was assigned a BLOCKADE card.");
-				}
+				} 
 				else if(l_randomNumber == 2) {
 
 					l_player.getCards().add(Card.AIRLIFT);
@@ -640,7 +653,7 @@ public class GameEngine implements Serializable {
 			}
 		});
 	}
-
+	
 	/**
 	 * reboot the game
 	 */
@@ -649,7 +662,7 @@ public class GameEngine implements Serializable {
 		d_gameContext.reset();
 		setPhase( new MapEditor(this));
 	}
-
+	
 	/**
 	 * 1)reset the context
 	 * 2) read commands from a file and run it sequencially
@@ -663,11 +676,11 @@ public class GameEngine implements Serializable {
 		}
 
 		reboot();
-
+		
 		//read file
 		String l_mapDirectory = WarzoneProperties.getWarzoneProperties().getGameMapDirectory();
 		File l_mapFile = new File(l_mapDirectory + p_fileName);
-
+		
 		d_gameContext.setMapFileName(p_fileName);
 
 		//Specified file name does not exist (new map)
@@ -676,24 +689,24 @@ public class GameEngine implements Serializable {
 			GenericView.printError("file is not existed.");
 			return;
 		}
-
+		
 		Scanner l_scanner = new Scanner(l_mapFile);
 		String l_command;
 		List<Router> l_routers;
 		RouterService l_routerService =  RouterService.getRouterService(this);
-		CommandService l_commandService =  CommandService.getCommandService(this );
+		CommandService l_commandService =  CommandService.getCommandService(this );	
 
 
 		LoadMapPhase l_loadMapPhase = null;
-
+		
 		while (l_scanner.hasNextLine()) {
-			l_command = l_scanner.nextLine();
+			l_command = l_scanner.nextLine();			
 
-			l_routers = l_routerService.parseCommand(l_command);
+			l_routers = l_routerService.parseCommand(l_command);						
 			//excute the command
 			GenericView.println(l_command);
-			l_routerService.route(l_routers);
+			l_routerService.route(l_routers);				
 		}
-
+		
 	}
 }
