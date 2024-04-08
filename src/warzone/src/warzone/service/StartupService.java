@@ -87,6 +87,20 @@ public class StartupService implements Serializable {
 		return false;
 	}
 
+		/**
+	 *  load map according to the type of map
+	 * @param p_fileName given filename
+	 * @return if succeed
+	 */
+	public boolean loadMap(String p_fileName) {
+		if(this.d_gameContext.getMapType() == MapType.CONQUEST) {
+			ConquestMapReader l_conquestMapReader= new ConquestMapReader(this.d_gameContext);
+			return l_conquestMapReader.loadConquestMap(p_fileName);
+		}
+		else
+			return loadDominateMap(p_fileName);
+	}
+
 	/**
 	 * Performs the action for user command: loadmap filename
 	 *
@@ -95,7 +109,7 @@ public class StartupService implements Serializable {
 	 * @param p_fileName file name of map
 	 * @return if map successfully loaded
 	 */
-	public boolean loadMap(String p_fileName) {
+	public boolean loadDominateMap(String p_fileName) {
 
 		String l_mapDirectory = null;
 
@@ -353,6 +367,7 @@ public class StartupService implements Serializable {
 	/**
 	 * save game context
 	 * @param p_fileName file name
+	 * @return if save game
 	 */
 	public boolean saveGame(String p_fileName) {
 		String l_path = this.d_gameContext.getMapfolder();
@@ -374,6 +389,7 @@ public class StartupService implements Serializable {
 	/**
 	 * load game context
 	 * @param p_fileName file name
+	 * @return true if load game
 	 */
 	public boolean loadGame(String p_fileName){
 		String l_path = this.d_gameContext.getMapfolder();

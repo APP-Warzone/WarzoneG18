@@ -8,7 +8,7 @@ import warzone.service.MapService;
 
 /**
  * This class is the adapter for MapServiceAdapter
- * @author zexin
+ * @author Harsh
  *
  */
 public class MapServiceAdapter extends MapService{
@@ -21,10 +21,12 @@ public class MapServiceAdapter extends MapService{
      */
     ConquestMapReader d_conquestMapReader;
 
-    /**
-     * the constructor of the class
-     * @param p_gameContext the current game context
-     */
+	/**
+	 * the constructor of the class
+	 * @param p_gameContext  the current game context
+	 * @param p_conquestMapWriter given map writer
+	 * @param p_conquestMapReader given map reader
+	 */
     public MapServiceAdapter(GameContext p_gameContext, ConquestMapWriter p_conquestMapWriter, ConquestMapReader p_conquestMapReader) {
         super(p_gameContext);
         this.d_conquestMapWriter = p_conquestMapWriter;

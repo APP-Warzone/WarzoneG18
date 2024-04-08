@@ -36,12 +36,27 @@ public class MapService {
 	}
 
 	/**
-	 * save map to file
+	 * save map to file according to the map type
 	 * @param p_fullFileName file name
 	 * @return if success
 	 * @throws IOException if any io exception
 	 */
 	public boolean saveMap(String p_fullFileName) throws IOException {
+		if(this.d_gameContext.getMapType() == MapType.CONQUEST) {
+			ConquestMapWriter l_conquestMapWriter= new ConquestMapWriter(this.d_gameContext);
+			return l_conquestMapWriter.saveConquestMap(p_fullFileName);
+		}
+		else
+			return saveDominateMap(p_fullFileName);
+	}
+
+	/**
+	 * save map to file
+	 * @param p_fullFileName file name
+	 * @return if success
+	 * @throws IOException if any io exception
+	 */
+	public boolean saveDominateMap(String p_fullFileName) throws IOException {
 		try{
 			String l_fileName ;
 			if(p_fullFileName.indexOf(".") > -1)

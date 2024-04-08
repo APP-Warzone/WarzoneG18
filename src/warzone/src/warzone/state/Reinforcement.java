@@ -13,7 +13,7 @@ public class Reinforcement extends GamePlay {
 
 	/**
 	 * This is the constructor of the class.
-	 *
+	 * 
 	 * @param p_gameEngine the game engine
 	 */
 	public Reinforcement(GameEngine p_gameEngine) {
@@ -70,20 +70,20 @@ public class Reinforcement extends GamePlay {
 	public void assigncountries() {
 		printInvalidCommandMessage();
 	}
-
+	
 	/**
 	 * Sets the list of map files to be used in the tournament.
-	 *
-	 * @param p_mapFiles
+	 * 
+	 * @param p_mapFiles given files
 	 */
 	public void setTournamentMapFiles(String[] p_mapFiles) {
 		printInvalidCommandMessage();
 	}
-
+	
 	/**
 	 * Sets the list of player strategies to be used in the tournament.
-	 *
-	 * @param p_playerStrategies
+	 * 
+	 * @param p_playerStrategies given strategies
 	 */
 	public void setTournamentPlayerStrategies(String[] p_playerStrategies) {
 		printInvalidCommandMessage();
@@ -91,18 +91,18 @@ public class Reinforcement extends GamePlay {
 
 	/**
 	 * Sets the number of games to be played on each map in the tournament.
-	 *
-	 * @param p_numberOfGames
+	 * 
+	 * @param p_numberOfGames given number of games
 	 */
 	public void setTournamentNumberOfGames(int p_numberOfGames) {
 		printInvalidCommandMessage();
 	}
-
+	
 	/**
 	 * Sets the maximum number of turns for each player in the tournament.
 	 * If no player has won once this limit is reached, the game will end as a draw.
-	 *
-	 * @param p_maxTurns
+	 * 
+	 * @param p_maxTurns given maximum number of turns
 	 */
 	public void setTournamentMaxTurns(int p_maxTurns) {
 		printInvalidCommandMessage();
