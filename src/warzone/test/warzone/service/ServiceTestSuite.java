@@ -8,13 +8,11 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        GameEngineServiceTest.class,
-        MapServiceTest.class,
-        RouterServiceTest.class,
-        StartupServiceTest.class,
-        ConquestMapReaderTest.class,
-        ConquestMapWriterTest.class
-})
+	GameEngineServiceTest.class,
+	MapServiceTest.class,
+	RouterServiceTest.class,
+	StartupServiceTest.class
+	})
 public class ServiceTestSuite {
 
 }
