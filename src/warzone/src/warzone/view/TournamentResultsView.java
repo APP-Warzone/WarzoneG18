@@ -4,7 +4,7 @@ import warzone.model.TournamentContext;
 
 /**
  * This class will print the result of tournament
- *
+ * @author Love
  */
 public class TournamentResultsView {
 

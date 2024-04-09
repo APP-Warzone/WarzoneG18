@@ -6,7 +6,7 @@ import warzone.service.GameEngine;
 
 /**
  * This class can print some help hints to players.
- *
+ * @author Harsh
  */
 public class HelpView {
 
@@ -21,7 +21,7 @@ public class HelpView {
 		System.out.println("        # ## # ###### #####    #    #    # #  # # #      ");
 		System.out.println("        ##  ## #    # #   #   #     #    # #   ## #      ");
 		System.out.println("        #    # #    # #    # ######  ####  #    # ###### ");
-		System.out.println("");
+		System.out.println("							   ||Developed by Group G18||");
 	}
 
 

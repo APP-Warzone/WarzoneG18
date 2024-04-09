@@ -8,6 +8,7 @@ import java.util.*;
 
 /**
  * service class for map
+ * @author Khushi
  */
 public class MapService implements Serializable {
 

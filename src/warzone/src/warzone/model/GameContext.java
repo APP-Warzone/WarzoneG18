@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * This class represent the state of the game, and it contains some useful instances for
  * other classes.
- *
+ * @author Love
  */
 public class GameContext implements Serializable {
 

@@ -20,7 +20,8 @@ import warzone.view.*;
  *        GamePlay (abstract)
 
  *        
- *      In each state, nextState() is defined so that it goes down in 
+ *      In each state, nextState() is defined so that it goes down in
+ * @author Love
  */
 public abstract class Phase implements Serializable {
 

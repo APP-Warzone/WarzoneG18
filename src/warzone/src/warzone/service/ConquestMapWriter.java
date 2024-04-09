@@ -12,6 +12,7 @@ import warzone.model.LogEntryBuffer;
 
 /**
  * Conquest Map Writer
+ * @author Khushi
  */
 public class ConquestMapWriter {
     /**

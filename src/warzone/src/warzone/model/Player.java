@@ -14,7 +14,7 @@ import warzone.view.GenericView;
 
 /**
  * This class represents the player in the game.
- *
+ * @author Love
  */
 public class Player implements Serializable {
 

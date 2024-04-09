@@ -6,7 +6,8 @@ import warzone.view.*;
 /**
  *	ConcreteState of the State pattern. In this example, defines behavior 
  *  for commands that are valid in this state, and for the others signifies  
- *  that the command is invalid. 
+ *  that the command is invalid.
+ * @author Vrushabh
  */
 public abstract class GamePlay extends Phase {
 

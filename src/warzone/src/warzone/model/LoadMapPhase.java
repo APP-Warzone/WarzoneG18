@@ -2,6 +2,7 @@ package warzone.model;
 
 /**
  * phase of load map
+ * @author Harsh
  */
 public enum LoadMapPhase {
     /**
