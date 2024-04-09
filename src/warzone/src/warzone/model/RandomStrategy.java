@@ -7,6 +7,7 @@ import java.util.Random;
 
 /**
  *	define of the RandomStrategy
+ * @author Pritesh
  */
 public class RandomStrategy extends PlayerStrategy implements Serializable {
 	

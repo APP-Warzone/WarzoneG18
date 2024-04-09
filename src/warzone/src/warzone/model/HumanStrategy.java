@@ -7,6 +7,7 @@ import warzone.view.GenericView;
 
 /**
  *	Strategy of the Strategy pattern
+ * @author Pritesh
  */
 public class HumanStrategy extends PlayerStrategy implements Serializable {
 

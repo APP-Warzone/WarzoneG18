@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 /**
  * This class represents one advance order of the gameplay
+ * @author Khushi
  */
 public class AdvanceOrder extends Order implements Serializable {
 

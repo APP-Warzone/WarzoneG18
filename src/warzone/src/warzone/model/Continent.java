@@ -6,6 +6,7 @@ import java.util.Map;
 
 /**
  * This class represents the continent in the game
+ * @author Harsh
  */
 public class Continent implements Serializable {
 

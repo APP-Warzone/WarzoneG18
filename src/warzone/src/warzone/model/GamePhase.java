@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * There are four phases in the game. They are map editing, startup, playing
  * and finished respectively.
- *
+ * @author Khushi
  */
 public enum GamePhase implements Serializable {
 	/**

@@ -8,6 +8,7 @@ import java.util.Map;
 
 /**
  * This class represents the country in the game
+ * @author Vrushabh
  */
 public class Country implements Serializable {
 

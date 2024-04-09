@@ -6,6 +6,7 @@ import warzone.service.GameEngine;
 
 /**
  *	Strategy of the Strategy pattern
+ * @author Khushi
  */
 public abstract class PlayerStrategy implements Serializable {
 

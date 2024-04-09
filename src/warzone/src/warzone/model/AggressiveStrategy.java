@@ -7,6 +7,7 @@ import java.util.Random;
 
 /**
  *	define of the AggressiveStrategy
+ * @author Vrushabh
  */
 public class AggressiveStrategy extends PlayerStrategy implements Serializable {
 
