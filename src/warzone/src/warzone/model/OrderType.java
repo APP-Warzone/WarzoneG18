@@ -1,9 +1,8 @@
 package warzone.model;
 
-/**
+/** 
  * There are four types of order. They are deployment, advance and special orders respectively.
- * @author Khushi
- * @version 1.1
+ * @author Harsh
  *
  */
 public enum OrderType {
