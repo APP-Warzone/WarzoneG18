@@ -1,0 +1,5 @@
+2024-04-08 20:20:38 SUCCESS :[Phase] STARTUP [Order] [next] [Message] go to next phase : MAPEDITOR
+2024-04-08 20:21:14 ERROR :[Phase] STARTUP [Order] [loadmap  sample.map] [Message] The following map file is invalid, please select another one: sample.map
+2024-04-08 20:21:50 SUCCESS :[Phase] STARTUP [Order] [loadmap  simple.map] [Message] Map succesfully loaded: simple.map
+2024-04-08 20:22:21 SUCCESS :[Phase] STARTUP [Order] [gameplayer  -add  vrushabh  aggressive] [Message] Player [vrushabh - AGGRESSIVE] was added successfully.
+2024-04-08 20:22:35 SUCCESS :[Phase] STARTUP [Order] [gameplayer  -add  pritesh] [Message] Player [pritesh - HUMAN] was added successfully.

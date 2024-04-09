@@ -1,0 +1,131 @@
+2024-04-09 17:25:38 SUCCESS :[Phase] STARTUP [Order] [next] [Message] go to next phase : MAPEDITOR
+2024-04-09 17:26:03 SUCCESS :[Phase] STARTUP [Order] [gameplayer  -add  vrushabh] [Message] Player [vrushabh - HUMAN] was added successfully.
+2024-04-09 17:26:12 SUCCESS :[Phase] STARTUP [Order] [gameplayer  -add  pritesh] [Message] Player [pritesh - HUMAN] was added successfully.
+2024-04-09 17:26:48 SUCCESS :[Phase] STARTUP [Order] [next] [Message] Map succesfully loaded: canada.map
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Prince_Edward_Island
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Quebec-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country N&L-Labrador
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Southern_Islands
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Baffin_Island
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Ontario-West
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Saskatchewan-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country BC-Vancouver_Island
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Alberta-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Alberta-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Yukon_Territory
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Saskatchewan-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Nunavut-Continental
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Victoria_Island-East
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Ellesmere_Island
+2024-04-09 17:26:48 SUCCESS :[Phase] OrderExecution [Order] [next] [Message] Map succesfully loaded: canada.map
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Prince_Edward_Island
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Quebec-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country N&L-Labrador
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Southern_Islands
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Ontario-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Manitoba-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Manitoba-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country British_Columbia-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Alberta-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Saskatchewan-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Northern_Islands
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NT-Victoria_Island-West
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NT-Northern_Islands
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Yukon_Territory
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater double the army in country Manitoba-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater double the army in country Alberta-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater double the army in country Saskatchewan-North
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] DEPLOY [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Prince_Edward_Island
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Quebec-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country N&L-Labrador
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Southern_Islands
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Ontario-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Manitoba-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Manitoba-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country British_Columbia-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Alberta-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Saskatchewan-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Northern_Islands
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NT-Victoria_Island-West
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NT-Northern_Islands
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Yukon_Territory
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Saskatchewan-South
+2024-04-09 17:26:48 SUCCESS :[Phase] OrderExecution [Order] [next] [Message] Map succesfully loaded: canada.map
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country New_Brunswick
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Quebec-Central
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Southern_Islands
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Baffin_Island
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Ontario-West
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Manitoba-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Saskatchewan-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country British_Columbia-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Alberta-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Northwest_Territories-Continental
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Victoria_Island-East
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Ellesmere_Island
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NT-Northern_Islands
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NT-Banks_Island
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater double the army in country Saskatchewan-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater double the army in country British_Columbia-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater double the army in country Alberta-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater double the army in country Manitoba-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater double the army in country Northwest_Territories-Continental
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] DEPLOY [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 17:26:48 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country New_Brunswick
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Quebec-Central
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Southern_Islands
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Baffin_Island
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Ontario-West
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Manitoba-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Saskatchewan-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country British_Columbia-South
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Alberta-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Northwest_Territories-Continental
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Victoria_Island-East
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NU-Ellesmere_Island
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NT-Northern_Islands
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country NT-Banks_Island
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Saskatchewan-North
+2024-04-09 17:26:48 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] Cheater get the country Alberta-South

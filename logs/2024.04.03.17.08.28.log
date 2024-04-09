@@ -1,7 +1,0 @@
-2024-04-03 17:08:42 SUCCESS :[Phase] STARTUP [Order] [next] [Message] go to next phase : MAPEDITOR
-2024-04-03 17:08:58 SUCCESS :[Phase] STARTUP [Order] [loadmap  simple.map] [Message] Map succesfully loaded: simple.map
-2024-04-03 17:09:09 SUCCESS :[Phase] STARTUP [Order] [gameplayer  -add  vrushabh] [Message] Player [vrushabh] was added successfully.
-2024-04-03 17:09:16 SUCCESS :[Phase] STARTUP [Order] [gameplayer  -add  pritesh] [Message] Player [pritesh] was added successfully.
-2024-04-03 17:09:23 SUCCESS :[Phase] STARTUP [Order] [assigncountries] [Message] Succeed to assign all the countries to players
-2024-04-03 17:09:28 SUCCESS :[Phase] Reinforcement [Order] [next] [Message] go to next phase : STARTUP
-2024-04-03 17:09:41 SUCCESS :[Phase] IssueOrder [Order] [next] [Message] go to next phase : Reinforcement
