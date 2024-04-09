@@ -51,8 +51,8 @@ jobs:
           if [ $(git status | grep -c "**/*.html") == "0" ]; then
             git checkout .
           else
-            git config --global user.name 'parikhalayy'
-            git config --global user.email 'parikh.alay58@gmail.com'
+            git config --global user.name 'vrushabh-savani'
+            git config --global user.email 'vrushabhsavani123@gmail.com'
             git add -A
             git commit -m "Javadoc updates."
           fi
