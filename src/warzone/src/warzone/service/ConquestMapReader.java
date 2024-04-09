@@ -19,6 +19,7 @@ import warzone.model.WarzoneProperties;
 
 /**
  * Conquest map reader
+ * @author Love
  */
 public class ConquestMapReader implements Serializable {
     /**

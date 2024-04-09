@@ -9,7 +9,6 @@ import warzone.view.*;
 /**
  * This class is responsible to deal with players' input
  * @author Harsh
- * @version 1.1
  */
 public class CommandService {
 	/**

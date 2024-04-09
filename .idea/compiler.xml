@@ -7,8 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="WarzoneG18-Build2" />
-        <module name="WarzoneG18" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="WarzoneG18-Build3" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

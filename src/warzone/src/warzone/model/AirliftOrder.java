@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 /**
  * This class represents one airlift order of the gameplay
+ * @author Love
  */
 public class AirliftOrder extends Order implements Serializable {
 

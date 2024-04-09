@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 /**
  * This class represents one deploy order of the gameplay
+ * @author Pritesh
  */
 public class NegotiateOrder extends Order implements Serializable {
 

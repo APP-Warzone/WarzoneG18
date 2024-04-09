@@ -8,7 +8,7 @@ import warzone.view.GenericView;
 
 /**
  * This class is responsible to get all properties written in the properties file.
- *
+ * @author Khushi
  */
 public class WarzoneProperties implements Serializable {
 

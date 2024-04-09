@@ -5,6 +5,7 @@ import java.util.*;
 
 /**
  *	define of the BenevolentStrategy
+ * @author Khushi
  */
 	public class BenevolentStrategy extends PlayerStrategy implements Serializable {
 

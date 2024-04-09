@@ -2,6 +2,7 @@ package warzone.model;
 
 /**
  * player strategy type
+ * @author Vrushabh
  */
 public enum PlayerStrategyType {
 	HUMAN,

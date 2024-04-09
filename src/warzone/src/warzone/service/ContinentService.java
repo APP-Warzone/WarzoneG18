@@ -6,7 +6,7 @@ import warzone.model.*;
 
 /**
  * This class can offer some services to controllers, including adding and removing continents.
- * @author Harsh
+ * @author Vrushabh
  * @version 1.1
  */
 public class ContinentService {

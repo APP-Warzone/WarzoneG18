@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  *	define of the CheaterStrategy
+ * @author Pritesh
  */
 public class CheaterStrategy extends PlayerStrategy implements Serializable {
 
