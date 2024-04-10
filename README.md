@@ -37,5 +37,6 @@ The implemented program is expected to offer the following functionalities:
     - java GameEngine
 
 ## 📑 References
+
 - [Warzone](https://www.warzone.com/)
 - [Domination game maps](https://domination.sourceforge.io/getmaps.shtml)
