@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f15df41-6d75-4d85-9a33-ac12564575eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/logs/2024.04.08.19.56.29.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/2024.04.09.17.03.03.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/2024.04.09.17.04.04.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/2024.04.09.17.25.32.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/StartupServiceAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/2024.03.16.15.46.59.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/2024.04.03.17.08.28.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +109,8 @@
       <workItem from="1712426269805" duration="2775000" />
       <workItem from="1712592418809" duration="2376000" />
       <workItem from="1712620243931" duration="4744000" />
-      <workItem from="1712694926468" duration="2898000" />
+      <workItem from="1712694926468" duration="4029000" />
+      <workItem from="1712700640224" duration="649000" />
     </task>
     <servers />
   </component>
