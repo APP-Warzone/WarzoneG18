@@ -1,9 +1,10 @@
 package warzone.view;
 
-import static org.junit.Assert.*;
 
 /**
  * tests for MapView class
+ * @author Pritesh
+ * @version 1.1
  */
 public class MapViewTest {
 
