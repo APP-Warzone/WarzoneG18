@@ -262,7 +262,7 @@ public class DominateMapHandler implements Serializable {
 			//build the content using StringBuilder
 			StringBuilder l_map = new StringBuilder();
 			l_map.append("; map: " + l_fileName);
-			l_map.append("\n; map made with the 6441 Super Team");
+			l_map.append("\n; map made by Group 18");
 			l_map.append("\n; 6441.net  1.0.0.1 ");
 			l_map.append("\n");
 			

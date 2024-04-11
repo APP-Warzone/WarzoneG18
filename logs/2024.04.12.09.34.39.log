@@ -1,0 +1,5 @@
+2024-04-12 09:34:44 SUCCESS :[Phase] STARTUP [Order] [next] [Message] go to next phase : MAPEDITOR
+2024-04-12 09:34:44 ERROR :[Phase] STARTUP [Order] [loadmap  22.map] [Message] The following map file is invalid, please select another one: 22.map
+2024-04-12 09:34:44 SUCCESS :[Phase] STARTUP [Order] [gameplayer  -add  mike  -add  rik] [Message] Player [mike - HUMAN] was added successfully.
+2024-04-12 09:34:44 SUCCESS :[Phase] STARTUP [Order] [gameplayer  -add  mike  -add  rik] [Message] Player [rik - HUMAN] was added successfully.
+2024-04-12 09:34:44 ERROR :[Phase] STARTUP [Order] [assigncountries] [Message] The map is invalid,please fix it before assigning countries

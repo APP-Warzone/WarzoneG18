@@ -1,0 +1,29 @@
+2024-04-11 22:31:18 SUCCESS :[Phase] STARTUP [Order] [next] [Message] go to next phase : MAPEDITOR
+2024-04-11 22:31:29 SUCCESS :[Phase] STARTUP [Order] [loadmap  simple.map] [Message] Map succesfully loaded: simple.map
+2024-04-11 22:31:37 SUCCESS :[Phase] STARTUP [Order] [gameplayer  -add  vrushabh  aggressive] [Message] Player [vrushabh - AGGRESSIVE] was added successfully.
+2024-04-11 22:32:07 SUCCESS :[Phase] STARTUP [Order] [gameplayer  -add  khushi  random] [Message] Player [khushi - RANDOM] was added successfully.
+2024-04-11 22:32:14 SUCCESS :[Phase] STARTUP [Order] [assigncountries] [Message] Succeed to assign all the countries to players
+2024-04-11 22:32:16 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-11 22:32:16 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-11 22:32:16 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-11 22:32:16 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-11 22:32:16 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-11 22:32:16 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-11 22:32:16 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-11 22:32:16 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-11 22:32:16 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-11 22:32:16 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-11 22:32:16 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-11 22:32:16 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-11 22:32:16 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [vrushabh], deploying [3] armies to [England]
+2024-04-11 22:32:16 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-11 22:32:16 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [vrushabh], sending [3] armies from  [England] to [Scotland]
+2024-04-11 22:32:16 Fail :[Phase] OrderExecution [Order] DEPLOY [Message] The context does not satisfy the order
+2024-04-11 22:32:16 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [vrushabh], sending [3] armies from  [Scotland] to [US]
+2024-04-11 22:42:45 SUCCESS :[Phase] STARTUP [Order] [next] [Message] go to next phase : MAPEDITOR
+2024-04-11 22:43:12 SUCCESS :[Phase] STARTUP [Order] [loadmap  canada.map] [Message] Map succesfully loaded: canada.map
+2024-04-11 22:43:30 SUCCESS :[Phase] STARTUP [Order] [loadmap  simple.map] [Message] Map succesfully loaded: simple.map
+2024-04-11 22:43:41 SUCCESS :[Phase] STARTUP [Order] [gameplayer  -add  vrushabh] [Message] Player [vrushabh - HUMAN] was added successfully.
+2024-04-11 22:43:59 SUCCESS :[Phase] STARTUP [Order] [gameplayer  -add  pritesh] [Message] Player [pritesh - HUMAN] was added successfully.
+2024-04-11 22:44:04 SUCCESS :[Phase] STARTUP [Order] [assigncountries] [Message] Succeed to assign all the countries to players
+2024-04-11 22:44:50 SUCCESS :[Phase] STARTUP [Order] [next] [Message] go to next phase : MAPEDITOR

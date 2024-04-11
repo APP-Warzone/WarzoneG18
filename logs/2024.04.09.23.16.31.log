@@ -1,0 +1,192 @@
+2024-04-09 23:16:34 SUCCESS :[Phase] STARTUP [Order] [next] [Message] go to next phase : MAPEDITOR
+2024-04-09 23:17:09 SUCCESS :[Phase] STARTUP [Order] [next] [Message] Map succesfully loaded: canada.map
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [AGGRESSIVE2], deploying [5] armies to [N&L-Newfoundland]
+2024-04-09 23:17:09 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [5] armies from  [N&L-Newfoundland] to [Nova_Scotia]
+2024-04-09 23:17:09 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [5] armies from  [Nova_Scotia] to [New_Brunswick]
+2024-04-09 23:17:09 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [5] armies from  [New_Brunswick] to [Prince_Edward_Island]
+2024-04-09 23:17:09 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [5] armies from  [Prince_Edward_Island] to [New_Brunswick]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [RANDOM1], deploying [5] armies to [NT-Victoria_Island-West]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [5] armies from  [New_Brunswick] to [Prince_Edward_Island]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [5] armies from  [Prince_Edward_Island] to [New_Brunswick]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [5] armies from  [New_Brunswick] to [Prince_Edward_Island]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [5] armies from  [Prince_Edward_Island] to [New_Brunswick]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [5] armies from  [New_Brunswick] to [Prince_Edward_Island]
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [AGGRESSIVE2], deploying [9] armies to [Prince_Edward_Island]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [RANDOM1], deploying [2] armies to [Quebec-North]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] BOMB [Message] Bomb Order, issued by player [AGGRESSIVE2], bombing [NT-Victoria_Island-West]
+2024-04-09 23:17:09 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [14] armies from  [Prince_Edward_Island] to [New_Brunswick]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [9] armies from  [New_Brunswick] to [Quebec-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [9] armies from  [Quebec-South] to [Ontario-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [9] armies from  [Ontario-South] to [Quebec-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [9] armies from  [Quebec-South] to [Ontario-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [9] armies from  [Ontario-South] to [Quebec-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [9] armies from  [Quebec-South] to [Ontario-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [9] armies from  [Ontario-South] to [Quebec-South]
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [AGGRESSIVE2], deploying [9] armies to [Quebec-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [RANDOM1], deploying [3] armies to [Manitoba-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] BOMB [Message] Bomb Order, issued by player [AGGRESSIVE2], bombing [Quebec-North]
+2024-04-09 23:17:09 Fail :[Phase] OrderExecution [Order] DEPLOY [Message] The context does not satisfy the order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [18] armies from  [Quebec-South] to [Quebec-Central]
+2024-04-09 23:17:09 Fail :[Phase] OrderExecution [Order] DEPLOY [Message] The context does not satisfy the order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [9] armies from  [Quebec-Central] to [Quebec-North]
+2024-04-09 23:17:09 Fail :[Phase] OrderExecution [Order] DEPLOY [Message] The context does not satisfy the order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [8] armies from  [Quebec-North] to [NU-Baffin_Island]
+2024-04-09 23:17:09 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [8] armies from  [NU-Baffin_Island] to [Quebec-North]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [8] armies from  [Quebec-North] to [NU-Baffin_Island]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [8] armies from  [NU-Baffin_Island] to [Quebec-North]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [8] armies from  [Quebec-North] to [NU-Baffin_Island]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [8] armies from  [NU-Baffin_Island] to [Quebec-North]
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [AGGRESSIVE2], deploying [13] armies to [Quebec-Central]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [RANDOM1], deploying [3] armies to [Northwest_Territories-Continental]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] BOMB [Message] Bomb Order, issued by player [AGGRESSIVE2], bombing [Manitoba-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [RANDOM1], sending [1] armies from  [Manitoba-South] to [Saskatchewan-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [22] armies from  [Quebec-Central] to [Ontario-North]
+2024-04-09 23:17:09 Fail :[Phase] OrderExecution [Order] ADVANCE [Message] The context does not satisfy the order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [13] armies from  [Ontario-North] to [Ontario-West]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [RANDOM1], sending [2] armies from  [Northwest_Territories-Continental] to [Alberta-North]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [13] armies from  [Ontario-West] to [Ontario-North]
+2024-04-09 23:17:09 Fail :[Phase] OrderExecution [Order] DEPLOY [Message] The context does not satisfy the order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [13] armies from  [Ontario-North] to [Ontario-West]
+2024-04-09 23:17:09 Fail :[Phase] OrderExecution [Order] DEPLOY [Message] The context does not satisfy the order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [13] armies from  [Ontario-West] to [Ontario-North]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [RANDOM1], sending [1] armies from  [Alberta-North] to [Northwest_Territories-Continental]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [13] armies from  [Ontario-North] to [Ontario-West]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [13] armies from  [Ontario-West] to [Ontario-North]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [13] armies from  [Ontario-North] to [Ontario-West]
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [AGGRESSIVE2], deploying [17] armies to [Ontario-West]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [RANDOM1], sending [1] armies from  [Alberta-North] to [British_Columbia-North]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [30] armies from  [Ontario-West] to [Manitoba-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [RANDOM1], deploying [2] armies to [Yukon_Territory]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [17] armies from  [Manitoba-South] to [Saskatchewan-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [15] armies from  [Saskatchewan-South] to [Manitoba-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [17] armies from  [Manitoba-South] to [Saskatchewan-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [17] armies from  [Saskatchewan-South] to [Manitoba-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [17] armies from  [Manitoba-South] to [Saskatchewan-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [17] armies from  [Saskatchewan-South] to [Manitoba-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [17] armies from  [Manitoba-South] to [Saskatchewan-South]
+2024-04-09 23:17:09 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [17] armies from  [Saskatchewan-South] to [Manitoba-South]
+2024-04-09 23:17:09 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [AGGRESSIVE2], deploying [21] armies to [Manitoba-South]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [49] armies from  [Manitoba-South] to [Manitoba-North]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [21] armies from  [Manitoba-North] to [Ontario-North]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [30] armies from  [Ontario-North] to [Ontario-West]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [21] armies from  [Ontario-West] to [Ontario-South]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [21] armies from  [Ontario-South] to [Quebec-South]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [21] armies from  [Quebec-South] to [Ontario-South]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [21] armies from  [Ontario-South] to [Ontario-North]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [21] armies from  [Ontario-North] to [Ontario-West]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [21] armies from  [Ontario-West] to [Manitoba-South]
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + AGGRESSIVE [Message] Issued an order
+2024-04-09 23:17:10 Succeed :[Phase] IssueOrder [Order] Issue an Order by Strategy + RANDOM [Message] Issued an order
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [AGGRESSIVE2], deploying [21] armies to [Manitoba-North]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] DEPLOY [Message] Deploy Order, issued by player [RANDOM1], deploying [3] armies to [Alberta-North]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [49] armies from  [Manitoba-North] to [Nunavut-Continental]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [RANDOM1], sending [2] armies from  [Northwest_Territories-Continental] to [British_Columbia-North]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [21] armies from  [Nunavut-Continental] to [Northwest_Territories-Continental]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] BLOCKADE [Message] Blockade Order, issued by player [RANDOM1], blockading [Alberta-North]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] ADVANCE [Message] Advance Order, issued by player [AGGRESSIVE2], sending [21] armies from  [Northwest_Territories-Continental] to [British_Columbia-North]
+2024-04-09 23:17:10 Success :[Phase] OrderExecution [Order] BLOCKADE [Message] Blockade Order, issued by player [RANDOM1], blockading [Yukon_Territory]

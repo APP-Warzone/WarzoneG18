@@ -1,0 +1,19 @@
+2024-04-11 23:09:47 SUCCESS :[Phase] STARTUP [Order] [next] [Message] go to next phase : MAPEDITOR
+2024-04-11 23:10:04 SUCCESS :[Phase] STARTUP [Order] [loadmap  simple-starwar.map] [Message] Map succesfully loaded: simple-starwar.map
+2024-04-11 23:10:29 SUCCESS :[Phase] STARTUP [Order] [loadmap  starwar.map] [Message] Map succesfully loaded: starwar.map
+2024-04-11 23:44:53 SUCCESS :[Phase] MAPEDITOR [Order] [editmap  vrushabh] [Message] Map succesfully loaded: vrushabh
+2024-04-11 23:45:15 ERROR :[Phase] MAPEDITOR [Order] [editcontinent  -add  1  -add  2] [Message] Missing valid parameters.
+2024-04-11 23:45:15 ERROR :[Phase] MAPEDITOR [Order] [editcontinent  -add  1  -add  2] [Message] Missing valid parameters.
+2024-04-11 23:45:51 SUCCESS :[Phase] MAPEDITOR [Order] [editcontinent  -add  1  11  -add  2  22] [Message] Continent [CONTINENT-1] was added successfully.
+2024-04-11 23:45:51 SUCCESS :[Phase] MAPEDITOR [Order] [editcontinent  -add  1  11  -add  2  22] [Message] Continent [CONTINENT-2] was added successfully.
+2024-04-11 23:45:54 SUCCESS :[Phase] MAPEDITOR [Order] [showmap] [Message] 
+2024-04-11 23:46:46 ERROR :[Phase] MAPEDITOR [Order] [validatemap] [Message] It is not a connected map.
+2024-04-11 23:47:18 SUCCESS :[Phase] MAPEDITOR [Order] [editcountry  -add  111  1  -add  222  2] [Message] Country ID [111] was added to Continent [1] successfully.
+2024-04-11 23:47:18 SUCCESS :[Phase] MAPEDITOR [Order] [editcountry  -add  111  1  -add  222  2] [Message] Country ID [222] was added to Continent [2] successfully.
+2024-04-11 23:47:21 SUCCESS :[Phase] MAPEDITOR [Order] [showmap] [Message] 
+2024-04-11 23:47:27 ERROR :[Phase] MAPEDITOR [Order] [validatemap] [Message] It is not a connected map.
+2024-04-11 23:47:51 SUCCESS :[Phase] MAPEDITOR [Order] [editneighbor  -add  111  222  -add  222  111] [Message] Neighbor [222] was added to Country [111] successfully.
+2024-04-11 23:47:51 SUCCESS :[Phase] MAPEDITOR [Order] [editneighbor  -add  111  222  -add  222  111] [Message] Neighbor [111] was added to Country [222] successfully.
+2024-04-11 23:47:56 SUCCESS :[Phase] MAPEDITOR [Order] [showmap] [Message] 
+2024-04-11 23:48:00 SUCCESS :[Phase] MAPEDITOR [Order] [validatemap] [Message] Yeah! You got a connected map!
+2024-04-11 23:49:11 SUCCESS :[Phase] MAPEDITOR [Order] [savemap  vrushabh.map] [Message] Map was saved in :./resources/map/vrushabh.map

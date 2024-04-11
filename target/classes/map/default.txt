@@ -1,0 +1,7 @@
+next
+loadmap simple.map
+showmap
+ gameplayer -add Mike -add Rik
+ assigncountries
+ next
+ next

@@ -1,0 +1,27 @@
+2024-04-11 21:46:00 SUCCESS :[Phase] MAPEDITOR [Order] [showmap] [Message] 
+2024-04-11 21:47:45 SUCCESS :[Phase] STARTUP [Order] [next] [Message] go to next phase : MAPEDITOR
+2024-04-11 21:47:53 SUCCESS :[Phase] STARTUP [Order] [loadmap  canada.map] [Message] Map succesfully loaded: canada.map
+2024-04-11 21:55:54 SUCCESS :[Phase] MAPEDITOR [Order] [editmap  vrushabh.map] [Message] Creating a new map: vrushabh.map
+2024-04-11 21:56:19 ERROR :[Phase] MAPEDITOR [Order] [editcontinent  -add  1  vrushabh] [Message] Missing valid parameters.
+2024-04-11 21:56:49 ERROR :[Phase] MAPEDITOR [Order] [editcontinent  -add  vrushabh  1] [Message] Missing valid parameters.
+2024-04-11 21:57:01 WARNING :[Phase] MAPEDITOR [Order] [editcountry  -add  1  123] [Message]  Country [1] was added, but failed to add Country ID [1] to Continent [123].
+2024-04-11 21:57:13 SUCCESS :[Phase] MAPEDITOR [Order] [editcontinent  -add  1  123] [Message] Continent [CONTINENT-1] was added successfully.
+2024-04-11 21:57:39 ERROR :[Phase] MAPEDITOR [Order] [editcountry  -add  vrushabh  1] [Message] Missing valid parameters.
+2024-04-11 21:57:50 SUCCESS :[Phase] MAPEDITOR [Order] [editcountry  -add  111  1] [Message] Country ID [111] was added to Continent [1] successfully.
+2024-04-11 21:57:54 ERROR :[Phase] MAPEDITOR [Order] [validatemap] [Message] It is not a connected map.
+2024-04-11 21:58:15 SUCCESS :[Phase] MAPEDITOR [Order] [showmap] [Message] 
+2024-04-11 21:59:18 SUCCESS :[Phase] MAPEDITOR [Order] [editcountry  -add  222  1] [Message] Country ID [222] was added to Continent [1] successfully.
+2024-04-11 21:59:20 SUCCESS :[Phase] MAPEDITOR [Order] [showmap] [Message] 
+2024-04-11 21:59:37 SUCCESS :[Phase] MAPEDITOR [Order] [editneighbor  -add  111  222] [Message] Neighbor [222] was added to Country [111] successfully.
+2024-04-11 21:59:41 SUCCESS :[Phase] MAPEDITOR [Order] [showmap] [Message] 
+2024-04-11 22:00:10 SUCCESS :[Phase] MAPEDITOR [Order] [editcountry  -remove  1] [Message] Country ID [1] was removed successfully.
+2024-04-11 22:00:12 SUCCESS :[Phase] MAPEDITOR [Order] [showmap] [Message] 
+2024-04-11 22:00:18 ERROR :[Phase] MAPEDITOR [Order] [validatemap] [Message] It is not a connected map.
+2024-04-11 22:00:52 SUCCESS :[Phase] MAPEDITOR [Order] [editneighbor  -add  222  111] [Message] Neighbor [111] was added to Country [222] successfully.
+2024-04-11 22:00:56 SUCCESS :[Phase] MAPEDITOR [Order] [showmap] [Message] 
+2024-04-11 22:01:02 ERROR :[Phase] MAPEDITOR [Order] [validatemap] [Message] It is not a connected map.
+2024-04-11 22:02:57 SUCCESS :[Phase] STARTUP [Order] [next] [Message] go to next phase : MAPEDITOR
+2024-04-11 22:03:01 SUCCESS :[Phase] STARTUP [Order] [loadmap  canada.map] [Message] Map succesfully loaded: canada.map
+2024-04-11 22:03:47 SUCCESS :[Phase] MAPEDITOR [Order] [editmap  canada.map] [Message] Map succesfully loaded: canada.map
+2024-04-11 22:03:52 SUCCESS :[Phase] MAPEDITOR [Order] [showmap] [Message] 
+2024-04-11 22:04:07 SUCCESS :[Phase] MAPEDITOR [Order] [validatemap] [Message] Yeah! You got a connected map!

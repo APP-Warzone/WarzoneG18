@@ -1,11 +1,11 @@
-; map: brazil.map
-; Made with yura.net Domination 1.2.9
-; OS: Mac OS X 13.6 null (64bit) on aarch64
+; map: brasil.map
+; map made with the map maker
+; yura.net Risk 1.0.9.5
 
 [files]
-pic brazil_pic.png
-map brazil_map.gif
-crd brazil.cards
+pic brasil_pic.png
+map brasil_map.gif
+crd brasil.cards
 
 [continents]
 North 4 #ff3333

@@ -1,0 +1,20 @@
+; map: vrushabh
+; map made with the 6441 Super Team
+; 6441.net  1.0.0.1 
+
+[files]
+pic vrushabh_pic.jpg
+map vrushabh_map.gif
+crd vrushabheurope.cards
+
+[continents]
+CONTINENT-1 11 null
+CONTINENT-2 22 null
+
+[countries]
+111 COUNTRY-111 1 0 0
+222 COUNTRY-222 2 0 0
+
+[borders]
+222 111
+111 222

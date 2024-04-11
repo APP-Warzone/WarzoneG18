@@ -94,7 +94,7 @@ public class ConquestMapWriter {
             StringBuilder l_map = new StringBuilder();
             // map part
             l_map.append("[Map]");
-            l_map.append("\nauthor=the 6441 Super Team");
+            l_map.append("\nauthor=G18");
             l_map.append("\nimage=" + l_fileName + ".bmp");
             l_map.append("\nwrap=no");
             l_map.append("\nscroll=no");

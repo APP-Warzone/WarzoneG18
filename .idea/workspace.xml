@@ -5,7 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f15df41-6d75-4d85-9a33-ac12564575eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/2024.04.11.21.45.53.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/2024.04.11.22.08.14.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/2024.04.11.22.24.01.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/2024.04.11.22.31.16.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/2024.04.11.23.09.42.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/2024.04.12.09.34.39.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/map/default.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/map/vrushabh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/map/vrushabh.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/DominateMapHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/DominateMapHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/model/StartupServiceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/model/StartupServiceAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/warzone/src/warzone/service/ConquestMapWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/warzone/src/warzone/service/ConquestMapWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/map/brazil.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/map/europe.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/map/europe.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/DominateMapHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/DominateMapHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/model/StartupServiceAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/model/StartupServiceAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/warzone/service/ConquestMapWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/warzone/service/ConquestMapWriter.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +42,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://C:/Program Files/Java/jdk-21/lib/src.zip!/java.base/java/io/Serializable.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -34,33 +56,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.GameEngine.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;vrushabh-build1&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/College/Concordia ImP/APP/WarzoneG18&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.GameEngine.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "vrushabh-build1",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/Concordia University/APP/WarzoneG18-Build3/resources/map",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Concordia University\APP\WarzoneG18-Build3\resources\map" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="GameEngine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="warzone.service.GameEngine" />
@@ -111,6 +138,11 @@
       <workItem from="1712620243931" duration="4744000" />
       <workItem from="1712694926468" duration="4029000" />
       <workItem from="1712700640224" duration="649000" />
+      <workItem from="1712718840383" duration="665000" />
+      <workItem from="1712719806116" duration="45000" />
+      <workItem from="1712784772101" duration="8991000" />
+      <workItem from="1712886285693" duration="8908000" />
+      <workItem from="1712924699674" duration="6292000" />
     </task>
     <servers />
   </component>
@@ -119,5 +151,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
